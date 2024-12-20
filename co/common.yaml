@@ -28878,5 +28878,5 @@ tags:
 servers:
   - url: https://apicsdemo.teamsystem.io
     description: Ambiente demo
-  - url: https://apitest1.teamsystem.io
+  - url: https://{serverpath}.teamsystem.io
     description: Ambiente test
