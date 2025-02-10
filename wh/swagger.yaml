@@ -14539,13 +14539,12 @@ components:
           nullable: true
         beginDatePriceList:
           type: string
-          description: List price start date
+          description: List price start date (default current date)
           format: date-time
         endDatePriceList:
           type: string
-          description: List price end date
+          description: List price end date (default 31/12/2099)
           format: date-time
-          default: '2099-12-31'
       additionalProperties: false
     ImportItemWHParameterDTO:
       required:
@@ -18232,6 +18231,10 @@ components:
           type: string
           description: CG15_ROWVERSION - Rowversion
           format: byte
+          nullable: true
+        tiporapporto:
+          type: string
+          description: CG15_TIPORAPPPREV - Tipo rapporto
           nullable: true
         extensionData:
           type: array

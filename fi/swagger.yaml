@@ -85581,6 +85581,9 @@ components:
           type: string
           format: byte
           nullable: true
+        tiporapporto:
+          type: string
+          nullable: true
         languageDescriptionCO:
           type: array
           items:
@@ -85879,6 +85882,10 @@ components:
           type: string
           description: CG15_ROWVERSION - Rowversion
           format: byte
+          nullable: true
+        tiporapporto:
+          type: string
+          description: CG15_TIPORAPPPREV - Tipo rapporto
           nullable: true
         extensionData:
           type: array

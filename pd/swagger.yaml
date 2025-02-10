@@ -10,6 +10,852 @@ info:
     name: Supporto TeamSystem
     url: https://mysupport.teamsystem.com/
 paths:
+  /api/v1/{environment}/PD/AnagraficaTurnoPD/{id}:
+    get:
+      tags:
+        - AnagraficaTurnoPD
+      summary: Get by ID
+      description: Get an object of type corresponding the requested id
+      parameters:
+        - name: id
+          in: path
+          description: Id to get the object
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+    put:
+      tags:
+        - AnagraficaTurnoPD
+      summary: Update
+      description: Updating an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: >-
+            Set 'reload', if you want the DTO updated in the response request,
+            otherwise will be returned null value
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+        '400':
+          description: >-
+            If the object has not been updated: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been updated due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    delete:
+      tags:
+        - AnagraficaTurnoPD
+      summary: Delete
+      description: 'Deleting object of type '
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: If object has been deleted
+        '400':
+          description: >-
+            if object has not been deleted: the content response contains the
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been deleted due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    patch:
+      tags:
+        - AnagraficaTurnoPD
+      summary: Update partial
+      description: Patching an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: Set 'reload', if you want the DTO updated in the response request
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to patch
+        content:
+          application/json:
+            schema: {}
+          application/xml:
+            schema: {}
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+        '400':
+          description: >-
+            If the object has not been patched: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been patched due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/AnagraficaTurnoPD:
+    get:
+      tags:
+        - AnagraficaTurnoPD
+      summary: Get new
+      description: Get an empty object of type corresponding
+      parameters:
+        - name: _op
+          in: query
+          description: The value must be 'new'
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The empty object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+    post:
+      tags:
+        - AnagraficaTurnoPD
+      summary: Create
+      description: Creating new object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+        required: true
+      responses:
+        '201':
+          description: If object has been created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+        '400':
+          description: >-
+            If the object has not been created: the content response contains
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object has not been created due to business rules violation: the
+            content response contains validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/AnagraficaTurnoPD/validate:
+    post:
+      tags:
+        - AnagraficaTurnoPD
+      summary: Validate
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to validate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+        required: true
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/AnagraficaTurnoPD/validateProperties:
+    post:
+      tags:
+        - AnagraficaTurnoPD
+      summary: Validation of one on more properties of Type
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: ' - One or more key-value pairs where the key is the DTO property name and the value is value to validate * REQUIRED<br> - The id of an existing object to validate properties, or '''' if the object does not exist yet <br>'
+        content:
+          application/json:
+            schema:
+              type: string
+              properties:
+                propertyName=Value&id=Value:
+                  type: string
+                  format: string
+              example: propertyName=Value&id=Value
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/AnagraficaTurnoPD/search:
+    post:
+      tags:
+        - AnagraficaTurnoPD
+      summary: Search
+      description: Search among object of type
+      parameters:
+        - name: loadEntireDomain
+          in: query
+          description: Specify 'loadEntireDomain=true' if you want all the aggregate
+          style: form
+          schema:
+            type: string
+        - name: gettotalcount
+          in: query
+          description: >-
+            Specify 'gettotalcount=true' if you want the total number of
+            elements
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+        required: true
+      responses:
+        '200':
+          description: The list of object of type as result of search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+        '400':
+          description: If the search criteria is not supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+  /api/v1/{environment}/PD/AnagraficaTurnoPD/read:
+    post:
+      tags:
+        - AnagraficaTurnoPD
+      summary: Read
+      description: Read among object of type
+      parameters:
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+        required: true
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
   /api/v1/{environment}/PD/BomPD/{id}:
     get:
       tags:
@@ -856,6 +1702,852 @@ paths:
           description: Forbidden access
         '404':
           description: If object not found
+  /api/v1/{environment}/PD/DipendentePD/{id}:
+    get:
+      tags:
+        - DipendentePD
+      summary: Get by ID
+      description: Get an object of type corresponding the requested id
+      parameters:
+        - name: id
+          in: path
+          description: Id to get the object
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+    put:
+      tags:
+        - DipendentePD
+      summary: Update
+      description: Updating an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: >-
+            Set 'reload', if you want the DTO updated in the response request,
+            otherwise will be returned null value
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DipendentePDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DipendentePDDTO'
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+        '400':
+          description: >-
+            If the object has not been updated: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been updated due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    delete:
+      tags:
+        - DipendentePD
+      summary: Delete
+      description: 'Deleting object of type '
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: If object has been deleted
+        '400':
+          description: >-
+            if object has not been deleted: the content response contains the
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been deleted due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    patch:
+      tags:
+        - DipendentePD
+      summary: Update partial
+      description: Patching an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: Set 'reload', if you want the DTO updated in the response request
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to patch
+        content:
+          application/json:
+            schema: {}
+          application/xml:
+            schema: {}
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+        '400':
+          description: >-
+            If the object has not been patched: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been patched due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/DipendentePD:
+    get:
+      tags:
+        - DipendentePD
+      summary: Get new
+      description: Get an empty object of type corresponding
+      parameters:
+        - name: _op
+          in: query
+          description: The value must be 'new'
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The empty object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+    post:
+      tags:
+        - DipendentePD
+      summary: Create
+      description: Creating new object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DipendentePDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DipendentePDDTO'
+        required: true
+      responses:
+        '201':
+          description: If object has been created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+        '400':
+          description: >-
+            If the object has not been created: the content response contains
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object has not been created due to business rules violation: the
+            content response contains validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/DipendentePD/validate:
+    post:
+      tags:
+        - DipendentePD
+      summary: Validate
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to validate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DipendentePDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DipendentePDDTO'
+        required: true
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/DipendentePD/validateProperties:
+    post:
+      tags:
+        - DipendentePD
+      summary: Validation of one on more properties of Type
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: ' - One or more key-value pairs where the key is the DTO property name and the value is value to validate * REQUIRED<br> - The id of an existing object to validate properties, or '''' if the object does not exist yet <br>'
+        content:
+          application/json:
+            schema:
+              type: string
+              properties:
+                propertyName=Value&id=Value:
+                  type: string
+                  format: string
+              example: propertyName=Value&id=Value
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/DipendentePD/search:
+    post:
+      tags:
+        - DipendentePD
+      summary: Search
+      description: Search among object of type
+      parameters:
+        - name: loadEntireDomain
+          in: query
+          description: Specify 'loadEntireDomain=true' if you want all the aggregate
+          style: form
+          schema:
+            type: string
+        - name: gettotalcount
+          in: query
+          description: >-
+            Specify 'gettotalcount=true' if you want the total number of
+            elements
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+        required: true
+      responses:
+        '200':
+          description: The list of object of type as result of search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+        '400':
+          description: If the search criteria is not supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+  /api/v1/{environment}/PD/DipendentePD/read:
+    post:
+      tags:
+        - DipendentePD
+      summary: Read
+      description: Read among object of type
+      parameters:
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+        required: true
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DipendentePDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
   /api/v1/{environment}/PD/ItemPD/search:
     post:
       tags:
@@ -942,6 +2634,852 @@ paths:
           description: Unauthorized access
         '403':
           description: Forbidden access
+  /api/v1/{environment}/PD/MachinePD/{id}:
+    get:
+      tags:
+        - MachinePD
+      summary: Get by ID
+      description: Get an object of type corresponding the requested id
+      parameters:
+        - name: id
+          in: path
+          description: Id to get the object
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+    put:
+      tags:
+        - MachinePD
+      summary: Update
+      description: Updating an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: >-
+            Set 'reload', if you want the DTO updated in the response request,
+            otherwise will be returned null value
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MachinePDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/MachinePDDTO'
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+        '400':
+          description: >-
+            If the object has not been updated: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been updated due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    delete:
+      tags:
+        - MachinePD
+      summary: Delete
+      description: 'Deleting object of type '
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: If object has been deleted
+        '400':
+          description: >-
+            if object has not been deleted: the content response contains the
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been deleted due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    patch:
+      tags:
+        - MachinePD
+      summary: Update partial
+      description: Patching an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: Set 'reload', if you want the DTO updated in the response request
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to patch
+        content:
+          application/json:
+            schema: {}
+          application/xml:
+            schema: {}
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+        '400':
+          description: >-
+            If the object has not been patched: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been patched due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/MachinePD:
+    get:
+      tags:
+        - MachinePD
+      summary: Get new
+      description: Get an empty object of type corresponding
+      parameters:
+        - name: _op
+          in: query
+          description: The value must be 'new'
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The empty object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+    post:
+      tags:
+        - MachinePD
+      summary: Create
+      description: Creating new object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MachinePDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/MachinePDDTO'
+        required: true
+      responses:
+        '201':
+          description: If object has been created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+        '400':
+          description: >-
+            If the object has not been created: the content response contains
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object has not been created due to business rules violation: the
+            content response contains validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/MachinePD/validate:
+    post:
+      tags:
+        - MachinePD
+      summary: Validate
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to validate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MachinePDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/MachinePDDTO'
+        required: true
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/MachinePD/validateProperties:
+    post:
+      tags:
+        - MachinePD
+      summary: Validation of one on more properties of Type
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: ' - One or more key-value pairs where the key is the DTO property name and the value is value to validate * REQUIRED<br> - The id of an existing object to validate properties, or '''' if the object does not exist yet <br>'
+        content:
+          application/json:
+            schema:
+              type: string
+              properties:
+                propertyName=Value&id=Value:
+                  type: string
+                  format: string
+              example: propertyName=Value&id=Value
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/MachinePD/search:
+    post:
+      tags:
+        - MachinePD
+      summary: Search
+      description: Search among object of type
+      parameters:
+        - name: loadEntireDomain
+          in: query
+          description: Specify 'loadEntireDomain=true' if you want all the aggregate
+          style: form
+          schema:
+            type: string
+        - name: gettotalcount
+          in: query
+          description: >-
+            Specify 'gettotalcount=true' if you want the total number of
+            elements
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+        required: true
+      responses:
+        '200':
+          description: The list of object of type as result of search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+        '400':
+          description: If the search criteria is not supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+  /api/v1/{environment}/PD/MachinePD/read:
+    post:
+      tags:
+        - MachinePD
+      summary: Read
+      description: Read among object of type
+      parameters:
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+        required: true
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MachinePDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
   /api/v1/{environment}/PD/OrderBomPD/search:
     post:
       tags:
@@ -2046,6 +4584,852 @@ paths:
           description: Forbidden access
         '404':
           description: If object not found
+  /api/v1/{environment}/PD/RepartoPD/{id}:
+    get:
+      tags:
+        - RepartoPD
+      summary: Get by ID
+      description: Get an object of type corresponding the requested id
+      parameters:
+        - name: id
+          in: path
+          description: Id to get the object
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+    put:
+      tags:
+        - RepartoPD
+      summary: Update
+      description: Updating an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: >-
+            Set 'reload', if you want the DTO updated in the response request,
+            otherwise will be returned null value
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RepartoPDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/RepartoPDDTO'
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+        '400':
+          description: >-
+            If the object has not been updated: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been updated due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    delete:
+      tags:
+        - RepartoPD
+      summary: Delete
+      description: 'Deleting object of type '
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: If object has been deleted
+        '400':
+          description: >-
+            if object has not been deleted: the content response contains the
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been deleted due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    patch:
+      tags:
+        - RepartoPD
+      summary: Update partial
+      description: Patching an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: Set 'reload', if you want the DTO updated in the response request
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to patch
+        content:
+          application/json:
+            schema: {}
+          application/xml:
+            schema: {}
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+        '400':
+          description: >-
+            If the object has not been patched: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been patched due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/RepartoPD:
+    get:
+      tags:
+        - RepartoPD
+      summary: Get new
+      description: Get an empty object of type corresponding
+      parameters:
+        - name: _op
+          in: query
+          description: The value must be 'new'
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The empty object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+    post:
+      tags:
+        - RepartoPD
+      summary: Create
+      description: Creating new object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RepartoPDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/RepartoPDDTO'
+        required: true
+      responses:
+        '201':
+          description: If object has been created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+        '400':
+          description: >-
+            If the object has not been created: the content response contains
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object has not been created due to business rules violation: the
+            content response contains validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/RepartoPD/validate:
+    post:
+      tags:
+        - RepartoPD
+      summary: Validate
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to validate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RepartoPDDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/RepartoPDDTO'
+        required: true
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/RepartoPD/validateProperties:
+    post:
+      tags:
+        - RepartoPD
+      summary: Validation of one on more properties of Type
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: ' - One or more key-value pairs where the key is the DTO property name and the value is value to validate * REQUIRED<br> - The id of an existing object to validate properties, or '''' if the object does not exist yet <br>'
+        content:
+          application/json:
+            schema:
+              type: string
+              properties:
+                propertyName=Value&id=Value:
+                  type: string
+                  format: string
+              example: propertyName=Value&id=Value
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/PD/RepartoPD/search:
+    post:
+      tags:
+        - RepartoPD
+      summary: Search
+      description: Search among object of type
+      parameters:
+        - name: loadEntireDomain
+          in: query
+          description: Specify 'loadEntireDomain=true' if you want all the aggregate
+          style: form
+          schema:
+            type: string
+        - name: gettotalcount
+          in: query
+          description: >-
+            Specify 'gettotalcount=true' if you want the total number of
+            elements
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+        required: true
+      responses:
+        '200':
+          description: The list of object of type as result of search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+        '400':
+          description: If the search criteria is not supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+  /api/v1/{environment}/PD/RepartoPD/read:
+    post:
+      tags:
+        - RepartoPD
+      summary: Read
+      description: Read among object of type
+      parameters:
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+        required: true
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/RepartoPDDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
   /api/v1/{environment}/PD/WorkOrderServicePD/WorkOrderProgress:
     post:
       tags:
@@ -2118,6 +5502,54 @@ paths:
           description: Forbidden access
 components:
   schemas:
+    AnagraficaTurnoPDDTO:
+      required:
+        - turno
+      type: object
+      properties:
+        descr:
+          type: string
+          description: PD09_DESCR - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: PD09_DITTA_CG18 - Azienda
+          format: double
+          default: '0'
+          nullable: true
+        fraturno:
+          type: number
+          description: PD09_FRATURNO - Frazionamento turno
+          format: double
+          nullable: true
+        idprov:
+          type: integer
+          description: PD09_IDPROV - IdProv (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        oregg:
+          type: number
+          description: PD09_OREGG - Ore giornaliere
+          format: double
+          default: '8'
+          nullable: true
+        turno:
+          type: number
+          description: PD09_TURNO - Turno
+          format: double
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        PD09_ORETURNI - Anagrafica turni<br>Proprietà
+        chiave:<ul><li><b>DittaCg18</b></li><li><b>Turno</b></li></ul>
     BomLinkPDDTO:
       required:
         - codComponentMg66
@@ -2677,6 +6109,122 @@ components:
       description: >-
         PD95_DISBA - Distinta base<br>Proprietà
         chiave:<ul><li><b>IdBom</b></li></ul>
+    DipendentePDDTO:
+      required:
+        - codDip
+        - codQualPd04
+        - cognome
+      type: object
+      properties:
+        codCausCi03:
+          type: string
+          description: Deprecated
+          nullable: true
+          deprecated: true
+        cap:
+          type: string
+          description: PD06_CAP - Codice avviamento postale dipendente
+          nullable: true
+        citta:
+          type: string
+          description: PD06_CITTA - Città dipendente
+          nullable: true
+        codCostPd05:
+          type: string
+          description: PD06_CODCOST_PD05 - Codice costo
+          nullable: true
+        codDip:
+          minLength: 1
+          type: string
+          description: PD06_CODDIP - Codice dipendente
+        codFiscale:
+          type: string
+          description: PD06_CODFISCALE - Codice fiscale
+          nullable: true
+        codQualPd04:
+          minLength: 1
+          type: string
+          description: PD06_CODQUAL_PD04 - Codice qualifica dipendente
+        codRepPd07:
+          type: string
+          description: PD06_CODREP_PD07 - Codice reparto dipendente
+          nullable: true
+        codSqadPd10:
+          type: number
+          description: PD06_CODSQAD_PD10 - Codice squadra dipendente
+          format: double
+          nullable: true
+        cognome:
+          minLength: 1
+          type: string
+          description: PD06_COGNOME - Cognome dipendente
+        dittaCg18:
+          type: number
+          description: PD06_DITTA_CG18 - Ditta
+          format: double
+          default: '0'
+          nullable: true
+        flgRisorsacritica:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            PD06_FLGRISORSACRITICA - Risorsa critica<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        indDismess:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            PD06_INDDISMESS - Stato dip.<br><ul><li><i>0</i> -
+            Attivo</li><li><i>1</i> - Dismesso</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        indIrizzo:
+          type: string
+          description: PD06_INDIRIZZO - Indirizzo dipendente
+          nullable: true
+        nome:
+          type: string
+          description: PD06_NOME - Nome dipendente
+          nullable: true
+        nota:
+          type: string
+          description: PD06_NOTA - Nota dipendenti
+          nullable: true
+        provincia:
+          type: string
+          description: PD06_PROVINCIA - Provincia dipendente
+          nullable: true
+        stato:
+          type: string
+          description: PD06_STATO - Stato
+          nullable: true
+        valenza:
+          type: integer
+          description: PD06_VALENZA - Valenza dipendente
+          format: int32
+          default: '1'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        PD06_DIPENDENTI - Dipendente<br>Proprietà
+        chiave:<ul><li><b>CodDip</b></li><li><b>DittaCg18</b></li></ul>
     ItemPDDTO:
       required:
         - codArt
@@ -2762,6 +6310,274 @@ components:
       description: >-
         VPDWA_ITEM - Articoli produzione<br>Proprietà
         chiave:<ul><li><b>CodArt</b></li><li><b>Opzionemg5e</b></li></ul>
+    LocationWHDTO:
+      required:
+        - codDepMg58
+        - descubicaz
+        - ubicaz
+      type: object
+      properties:
+        altezza:
+          type: number
+          description: MG97_ALTEZZA - Altezza
+          format: double
+          default: '0'
+          nullable: true
+        codClassestoc:
+          type: number
+          description: MG97_CODCLASSESTOC - Classe stoccaggio
+          format: double
+          nullable: true
+        codDepMg58:
+          minLength: 1
+          type: string
+          description: MG97_CODDEP_MG58 - Codice deposito
+        codPriorriemp:
+          type: number
+          description: MG97_CODPRIORRIEMP - Priorità di riempimento
+          format: double
+          nullable: true
+        coordin1:
+          type: string
+          description: MG97_COORDIN1 - Coordinata 1
+          nullable: true
+        coordin2:
+          type: string
+          description: MG97_COORDIN2 - Coordinata 2
+          nullable: true
+        coordin3:
+          type: string
+          description: MG97_COORDIN3 - Coordinata 3
+          nullable: true
+        descubicaz:
+          minLength: 1
+          type: string
+          description: MG97_DESCUBICAZ - Descrizione ubicazione
+        dittaCg18:
+          type: number
+          description: MG97_DITTA_CG18 - Codice ditta
+          format: double
+          default: '0'
+          nullable: true
+        indTipoubicaz:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG97_INDTIPOUBICAZ - Tipo ubicazione<br><ul><li><i>0</i> - Di
+            prelevamento</li><li><i>1</i> - Di scorta</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        larghezza:
+          type: number
+          description: MG97_LARGHEZZA - Larghezza
+          format: double
+          default: '0'
+          nullable: true
+        maxpeso:
+          type: number
+          description: MG97_MAXPESO - Massimo peso
+          format: double
+          default: '0'
+          nullable: true
+        profondita:
+          type: number
+          description: MG97_PROFONDITA - Profondità
+          format: double
+          default: '0'
+          nullable: true
+        ubicaz:
+          minLength: 1
+          type: string
+          description: MG97_UBICAZ - Codice ubicazione
+        umdimens:
+          type: string
+          description: MG97_UMDIMENS - UM dimensione
+          nullable: true
+        umpeso:
+          type: string
+          description: MG97_UMPESO - UM Peso
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG97_UBICAZ - Ubicazione<br>Proprietà
+        chiave:<ul><li><b>CodDepMg58</b></li><li><b>DittaCg18</b></li><li><b>Ubicaz</b></li></ul>
+    MachinePDDTO:
+      required:
+        - anagraficaTurnoPDDTO
+        - macchina
+        - repartoPDDTO
+      type: object
+      properties:
+        ammor:
+          type: number
+          description: Deprecated
+          format: double
+          default: '0'
+          nullable: true
+          deprecated: true
+        codCausCi03:
+          type: string
+          description: Deprecated
+          nullable: true
+          deprecated: true
+        codCostPd05:
+          type: string
+          description: PD08_CODCOST_PD05 - Codice costo
+          nullable: true
+        costoacquisto:
+          type: number
+          description: PD08_COSTOACQUISTO - Acquisto macchina
+          format: double
+          nullable: true
+        descr:
+          type: string
+          description: PD08_DESCR - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: PD08_DITTA_CG18 - Azienda
+          format: double
+          default: '0'
+          nullable: true
+        dtultman:
+          type: string
+          description: PD08_DTULTMAN - Data ultima manutenzione
+          format: date-time
+          nullable: true
+        ggfermi:
+          type: number
+          description: PD08_GGFERMI - Intervallo giorni fra manutenzioni
+          format: double
+          nullable: true
+        idmediaCg99:
+          type: number
+          description: PD08_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        idprov:
+          type: integer
+          description: PD08_IDPROV - IdProv (Required only in PUT/PATCH)
+          format: int32
+          default: '0'
+          nullable: true
+        indCapacita:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            PD08_INDCAPACITA - Capacità<br><ul><li><i>0</i> -
+            Infinita</li><li><i>1</i> - Finita</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        indDismess:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            PD08_INDDISMESS - Stato<br><ul><li><i>0</i> -
+            Attivo</li><li><i>1</i> - Dismesso</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        indPolitica:
+          enum:
+            - 0
+            - 1
+            - 2
+          type: integer
+          description: >-
+            PD08_INDPOLITICA - Politica di allocazione<br><ul><li><i>0</i> -
+            Valenza fissa / durata fissa</li><li><i>1</i> - Valenza fissa /
+            durata variabile</li><li><i>2</i> - Valenza variabile / durata
+            variabile</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        indRisorsa:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            PD08_INDRISORSA - Tipo risorsa<br><ul><li><i>0</i> -
+            Macchina</li><li><i>1</i> - Centro</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        macchina:
+          minLength: 1
+          type: string
+          description: PD08_MACCHINA - Risorsa
+        nota:
+          type: string
+          description: PD08_NOTA - Note
+          nullable: true
+        orefermo:
+          type: number
+          description: PD08_OREFERMO - Ore fermo per manutenzione
+          format: double
+          nullable: true
+        percinef:
+          type: number
+          description: PD08_PERCINEF - % inefficienza
+          format: double
+          nullable: true
+        prodoraria:
+          type: number
+          description: PD08_PRODORARIA - Produzione oraria
+          format: double
+          nullable: true
+        riscritica:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            PD08_RISCRITICA - Risorsa critica<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        valenza:
+          type: integer
+          description: PD08_VALENZA - Valenza
+          format: int32
+          default: '1'
+          nullable: true
+        anagraficaTurnoPDDTO:
+          $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+        centerPD:
+          $ref: '#/components/schemas/MachinePDDTO'
+        repartoPDDTO:
+          $ref: '#/components/schemas/RepartoPDDTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        PD08_MACCHINA - Macchine<br>Proprietà
+        chiave:<ul><li><b>DittaCg18</b></li><li><b>Macchina</b></li></ul>
     NodePDDTO:
       required:
         - alivaCg28
@@ -3635,6 +7451,116 @@ components:
       description: >-
         PD1D_TIPIPROGETTI - Tipo progetto<br>Proprietà
         chiave:<ul><li><b>Codice</b></li><li><b>DittaCg18</b></li></ul>
+    RepartoPDDTO:
+      required:
+        - anagraficaTurnoPD
+        - codRep
+      type: object
+      properties:
+        codRep:
+          minLength: 1
+          type: string
+          description: PD07_CODREP - Codice reparto
+        descr:
+          type: string
+          description: PD07_DESCR - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: PD07_DITTA_CG18 - Azienda
+          format: double
+          default: '0'
+          nullable: true
+        flgListavanz:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            PD07_FLGLISTAVANZ - Escludi controllo liste in
+            avanzamento<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        idmediaCg99:
+          type: number
+          description: PD07_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        idprov:
+          type: integer
+          description: PD07_IDPROV - IdProv (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        indCapacita:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            PD07_INDCAPACITA - Capacità<br><ul><li><i>0</i> -
+            Infinita</li><li><i>1</i> - Finita</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        indDismess:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            PD07_INDDISMESS - Stato<br><ul><li><i>0</i> -
+            Attivo</li><li><i>1</i> - Dismesso</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        indPolitica:
+          enum:
+            - 0
+            - 1
+            - 2
+          type: integer
+          description: >-
+            PD07_INDPOLITICA - Politica di allocazione<br><ul><li><i>0</i> -
+            Valenza fissa / durata fissa</li><li><i>1</i> - Valenza fissa /
+            durata variabile</li><li><i>2</i> - Valenza variabile / durata
+            variabile</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        pd07Guid:
+          type: string
+          description: PD07_GUID - Pd07Guid
+          format: uuid
+          nullable: true
+        turnoPd09:
+          type: number
+          description: PD07_TURNO_PD09 - Turno
+          format: double
+          nullable: true
+        valenza:
+          type: integer
+          description: PD07_VALENZA - Valenza
+          format: int32
+          default: '1'
+          nullable: true
+        anagraficaTurnoPD:
+          $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
+        storageWH:
+          $ref: '#/components/schemas/StorageWHDTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        PD07_REPARTO - Reparto<br>Proprietà
+        chiave:<ul><li><b>CodRep</b></li><li><b>DittaCg18</b></li></ul>
     SearchComparer:
       enum:
         - 0
@@ -3752,6 +7678,107 @@ components:
     SearchNodeValueDTO:
       type: object
       additionalProperties: false
+    StorageWHDTO:
+      required:
+        - codDep
+        - dataatt
+      type: object
+      properties:
+        capdep:
+          type: string
+          description: MG58_CAPDEP - Cap
+          nullable: true
+        codDep:
+          minLength: 1
+          type: string
+          description: MG58_CODDEP - Codice deposito
+        dataatt:
+          type: string
+          description: MG58_DATAATT - Data attivazione
+          format: date-time
+        datacess:
+          type: string
+          description: MG58_DATACESS - Data cessazione
+          format: date-time
+          nullable: true
+        descrdep:
+          type: string
+          description: MG58_DESCRDEP - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG58_DITTA_CG18 - Ditta
+          format: double
+          default: '0'
+          nullable: true
+        faxnumdep:
+          type: string
+          description: MG58_FAXNUMDEP - Fax
+          nullable: true
+        flgDepprinc:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG58_FLGDEPPRINC - Deposito principale<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        indEmail:
+          type: string
+          description: MG58_INDEMAIL - Email
+          nullable: true
+        indIdep:
+          type: string
+          description: MG58_INDIDEP - Indirizzo deposito
+          nullable: true
+        indInterest:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG58_INDINTEREST - Tipo deposito<br><ul><li><i>0</i> -
+            Interno</li><li><i>1</i> - Esterno</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        locdep:
+          type: string
+          description: MG58_LOCDEP - Località
+          nullable: true
+        provdep:
+          type: string
+          description: MG58_PROVDEP - Prov.
+          nullable: true
+        respdep:
+          type: string
+          description: MG58_RESPDEP - Responsabile
+          nullable: true
+        telnumdep:
+          type: string
+          description: MG58_TELNUMDEP - Telefono
+          nullable: true
+        locationWH:
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationWHDTO'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG58_DEPOSITI - Deposito<br>Proprietà
+        chiave:<ul><li><b>CodDep</b></li><li><b>DittaCg18</b></li></ul>
     StringObjectKeyValuePair:
       type: object
       properties:
@@ -4266,10 +8293,16 @@ security:
   - Bearer:
       - Bearer
 tags:
+  - name: AnagraficaTurnoPD
+    description: Collection of services for Shift Master Data
   - name: BomPD
     description: Collection of services for Bill of Materials
+  - name: DipendentePD
+    description: Collection of services for Employees
   - name: ItemPD
     description: Service for search Production item
+  - name: MachinePD
+    description: Collection of services for production Machines and Centers
   - name: OrderBomPD
     description: Service for search WO-BOM
   - name: OrderProdPD
@@ -4278,6 +8311,8 @@ tags:
     description: Service for search Production order details
   - name: Progetto
     description: Collection of services for Projects
+  - name: RepartoPD
+    description: Collection of services for production Departments
   - name: WorkOrderServicePD
     description: Collection of services for work order operations
 servers:

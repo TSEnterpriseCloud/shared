@@ -13197,6 +13197,492 @@ paths:
           description: Forbidden access
         '404':
           description: If object not found
+  /api/v1/{environment}/MG/TransportReasonMG/{id}:
+    get:
+      tags:
+        - TransportReasonMG
+      summary: Get by ID
+      description: Get an object of type corresponding the requested id
+      parameters:
+        - name: id
+          in: path
+          description: Id to get the object
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransportReasonMGDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TransportReasonMGDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+  /api/v1/{environment}/MG/TransportReasonMG:
+    get:
+      tags:
+        - TransportReasonMG
+      summary: Get new
+      description: Get an empty object of type corresponding
+      parameters:
+        - name: _op
+          in: query
+          description: The value must be 'new'
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The empty object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransportReasonMGDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TransportReasonMGDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+  /api/v1/{environment}/MG/TransportReasonMG/validate:
+    post:
+      tags:
+        - TransportReasonMG
+      summary: Validate
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to validate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransportReasonMGDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/TransportReasonMGDTO'
+        required: true
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/MG/TransportReasonMG/validateProperties:
+    post:
+      tags:
+        - TransportReasonMG
+      summary: Validation of one on more properties of Type
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: ' - One or more key-value pairs where the key is the DTO property name and the value is value to validate * REQUIRED<br> - The id of an existing object to validate properties, or '''' if the object does not exist yet <br>'
+        content:
+          application/json:
+            schema:
+              type: string
+              properties:
+                propertyName=Value&id=Value:
+                  type: string
+                  format: string
+              example: propertyName=Value&id=Value
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/MG/TransportReasonMG/search:
+    post:
+      tags:
+        - TransportReasonMG
+      summary: Search
+      description: Search among object of type
+      parameters:
+        - name: loadEntireDomain
+          in: query
+          description: Specify 'loadEntireDomain=true' if you want all the aggregate
+          style: form
+          schema:
+            type: string
+        - name: gettotalcount
+          in: query
+          description: >-
+            Specify 'gettotalcount=true' if you want the total number of
+            elements
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+        required: true
+      responses:
+        '200':
+          description: The list of object of type as result of search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransportReasonMGDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TransportReasonMGDTO'
+        '400':
+          description: If the search criteria is not supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+  /api/v1/{environment}/MG/TransportReasonMG/read:
+    post:
+      tags:
+        - TransportReasonMG
+      summary: Read
+      description: Read among object of type
+      parameters:
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+        required: true
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransportReasonMGDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TransportReasonMGDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
 components:
   schemas:
     AddressCODTO:
@@ -24418,6 +24904,93 @@ components:
           nullable: true
       additionalProperties: false
       description: DO13_DOCTOTALI - Totali documento
+    TransportReasonMGDTO:
+      required:
+        - codice
+      type: object
+      properties:
+        codice:
+          minLength: 1
+          type: string
+          description: MG13_CODICE - Codice
+        descr:
+          type: string
+          description: MG13_DESCR - Descrizione
+          nullable: true
+        idmediaCg99:
+          type: number
+          description: MG13_IDMEDIA_CG99 - Hypermedia
+          format: double
+          nullable: true
+        idprov:
+          type: integer
+          description: MG13_IDPROV - IdProv (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        indNatura:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+            - 7
+            - 8
+            - 9
+            - 10
+            - 21
+            - 22
+            - 23
+            - 24
+            - 25
+            - 27
+            - 28
+            - 29
+            - 30
+          type: number
+          description: >-
+            MG13_INDNATURA - Natura transazione per Intra<br><ul><li><i>0</i> -
+            (nessuna)</li><li><i>1</i> -
+            Transazioni_con_trasf_proprieta_e_corrisp_finanziario</li><li><i>2</i>
+            - Restituzione_e_sostituzione_a_titolo_gratuito</li><li><i>3</i> -
+            Transazioni_con_trasf_proprieta_senza_corrisp_finanz</li><li><i>4</i>
+            - Transazioni_per_lavorazione_per_conto_terzi</li><li><i>5</i> -
+            Transazioni_successive_a_una_lavorazione_per_conto_terzi</li><li><i>7</i>
+            -
+            Sdoganamento_non_comportante_un_trasferimento_di_proprieta</li><li><i>8</i>
+            -
+            Transaz_fornitura_mat_con_contr_costruz_o_genio_civile</li><li><i>9</i>
+            - Altre_transazioni</li><li><i>10</i> -
+            Z_Prestazioni_di_servizi_esclusi_dal_modello</li><li><i>21</i> -
+            A_Transaz_con_trasf_proprieta_e_corrisp_finanziario</li><li><i>22</i>
+            - B_Restituzione_e_sostituzione_a_titolo_gratuito</li><li><i>23</i>
+            -
+            C_Transaz_con_trasf_proprieta_senza_corrisp_finanz</li><li><i>24</i>
+            - D_Transazioni_per_lavorazione_per_conto_terzi</li><li><i>25</i> -
+            E_Transazioni_successive_a_lavorazione_per_conto_terzi</li><li><i>27</i>
+            -
+            F_Sdoganamento_non_comportante_un_trasf_di_proprieta</li><li><i>28</i>
+            -
+            G_Transaz_forn_mat_con_contr_costruz_o_genio_civile</li><li><i>29</i>
+            - H_Altre_transazioni</li><li><i>30</i> - Triangolazioni non
+            imponibili art.58 DL 331/93</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG13_CAUTRASP - Causali trasporto<br>Proprietà
+        chiave:<ul><li><b>Codice</b></li></ul>
     VATTypeFIDTO:
       required:
         - agviaggio
@@ -25151,6 +25724,10 @@ components:
           description: CG15_ROWVERSION - Rowversion
           format: byte
           nullable: true
+        tiporapporto:
+          type: string
+          description: CG15_TIPORAPPPREV - Tipo rapporto
+          nullable: true
         extensionData:
           type: array
           items:
@@ -25259,6 +25836,8 @@ tags:
     description: Collection of services for Recipients
   - name: SpesaVariaMG
     description: Collection of services for Miscellaneous Expenses
+  - name: TransportReasonMG
+    description: Collection of reading services for Transport Reasons
 servers:
   - url: https://apicsdemo.teamsystem.io
     description: Ambiente demo
