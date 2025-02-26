@@ -5500,6 +5500,80 @@ paths:
           description: Unauthorized access
         '403':
           description: Forbidden access
+  /api/v1/{environment}/PD/WorkOrderServicePD/SubcontractingWorkOrderProgress:
+    post:
+      tags:
+        - WorkOrderServicePD
+      summary: Subcontracting work order progress quantity
+      description: Subcontracting work order quantity progress operations
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Parameters of the request
+        content:
+          application/json:
+            schema:
+              $ref: >-
+                #/components/schemas/SubcontractingWorkOrderProgressParameterPDDTO
+          application/xml:
+            schema:
+              $ref: >-
+                #/components/schemas/SubcontractingWorkOrderProgressParameterPDDTO
+        required: true
+      responses:
+        '200':
+          description: Response of the request
+          content:
+            application/json:
+              schema:
+                $ref: >-
+                  #/components/schemas/SubcontractingWorkOrderProgressResultPDDTO
+            application/xml:
+              schema:
+                $ref: >-
+                  #/components/schemas/SubcontractingWorkOrderProgressResultPDDTO
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
 components:
   schemas:
     AnagraficaTurnoPDDTO:
@@ -5522,6 +5596,11 @@ components:
           description: PD09_FRATURNO - Frazionamento turno
           format: double
           nullable: true
+        idmediaCg99:
+          type: number
+          description: PD09_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
         idprov:
           type: integer
           description: PD09_IDPROV - IdProv (Required only in PUT/PATCH)
@@ -5535,7 +5614,7 @@ components:
           nullable: true
         turno:
           type: number
-          description: PD09_TURNO - Turno
+          description: PD09_TURNO - Codice turno
           format: double
         extensionData:
           type: array
@@ -6227,45 +6306,62 @@ components:
         chiave:<ul><li><b>CodDip</b></li><li><b>DittaCg18</b></li></ul>
     ItemPDDTO:
       required:
-        - codArt
-        - opzionemg5e
+        - company
+        - itemCode
+        - itemVariantCode
       type: object
       properties:
-        batchManaged:
+        company:
           type: number
-          description: BatchManaged - Gestione Lotti
+          description: Company - Azienda
           format: double
-          nullable: true
-        codArt:
-          minLength: 1
+        familyCode:
           type: string
-          description: CodArt - Codice Articolo
-        descArt:
-          type: string
-          description: DescArt - Descrizione articolo
+          description: FamilyCode - Codice famiglia
           nullable: true
-        dittacg18:
+        flagBatchData:
+          enum:
+            - 0
+            - 1
           type: number
-          description: DittaCg18 - Ditta
+          description: >-
+            FlagBatchData - Gestione Lotti<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
           format: double
+          default: '0'
           nullable: true
-        fammg53:
+        flagSerialNumber:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            FlagSerialNumber - Gestione Serial Number<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        groupCode:
           type: string
-          description: FamMg53 - Codice famiglia
+          description: GroupCode - Gruppo
           nullable: true
-        gruppomg55:
-          type: string
-          description: GruppoMg55 - Gruppo
-          nullable: true
-        mainUmIndicator:
+        indMainUm:
           type: integer
-          description: MainUmIndicator - Indicatore UM principale
+          description: IndMainUm - Indicatore UM principale
           format: int32
           nullable: true
-        opzionemg5e:
+        itemCode:
           minLength: 1
           type: string
-          description: OpzioneMg5e - Codice variante
+          description: ItemCode - Codice Articolo
+        itemDescription:
+          type: string
+          description: ItemDescription - Descrizione articolo
+          nullable: true
+        itemVariantCode:
+          minLength: 1
+          type: string
+          description: ItemVariantCode - Codice variante
         productType:
           type: integer
           description: ProductType - Tipo prodotto
@@ -6276,22 +6372,17 @@ components:
           description: QtyHandled - Quantità movimentata
           format: double
           nullable: true
-        serialNumberManaged:
-          type: number
-          description: SerialNumberManaged - Gestione Serial Number
-          format: double
-          nullable: true
-        sfammg54:
-          type: string
-          description: SfamMg54 - S/famiglia
-          nullable: true
-        sgruppomg56:
-          type: string
-          description: SgruppoMg56 - S/gruppo
-          nullable: true
         storageCode:
           type: string
           description: StorageCode - Cod. deposito
+          nullable: true
+        subFamilyCode:
+          type: string
+          description: SubFamilyCode - S/famiglia
+          nullable: true
+        subGroupCode:
+          type: string
+          description: SubGroupCode - S/gruppo
           nullable: true
         unitOfMeasure:
           type: string
@@ -6309,7 +6400,7 @@ components:
       additionalProperties: false
       description: >-
         VPDWA_ITEM - Articoli produzione<br>Proprietà
-        chiave:<ul><li><b>CodArt</b></li><li><b>Opzionemg5e</b></li></ul>
+        chiave:<ul><li><b>Company</b></li><li><b>ItemCode</b></li><li><b>ItemVariantCode</b></li></ul>
     LocationWHDTO:
       required:
         - codDepMg58
@@ -6770,27 +6861,44 @@ components:
         chiave:<ul><li><b>CodNodo</b></li><li><b>CodProgPd68</b></li><li><b>DittaCg18</b></li></ul>
     OrderBomPDDTO:
       required:
-        - dittaCg18
-        - numReg
-        - progRriga
-        - sequenceComponent
+        - company
+        - componentSequence
+        - orderLine
+        - orderRegistrationNumber
       type: object
       properties:
         bomLinkStorageCode:
           type: string
           description: BomLinkStorageCode - Deposito legame distinta base
           nullable: true
-        codComponentMg66:
-          type: string
-          description: 'CodComponentMg66 - Codice componente distinta base '
-          nullable: true
-        dittaCg18:
+        company:
           type: number
-          description: DittaCg18 - Ditta
+          description: Company - Azienda
           format: double
-        documMg36:
+        componentCode:
           type: string
-          description: DocumMg36 - Codice documento
+          description: 'ComponentCode - Codice componente distinta base '
+          nullable: true
+        componentSequence:
+          type: number
+          description: ComponentSequence - Sequenza componente
+          format: double
+        componentVariantCode:
+          type: string
+          description: ComponentVariantCode - Variante componente distinta
+          nullable: true
+        documentCode:
+          type: string
+          description: DocumentCode - Codice documento
+          nullable: true
+        documentNumber:
+          type: number
+          description: DocumentNumber - Numero documento
+          format: double
+          nullable: true
+        documentSectional:
+          type: string
+          description: DocumentSectional - Sezionale documento
           nullable: true
         guid:
           type: string
@@ -6802,23 +6910,14 @@ components:
           description: IdBom - Id distinta base
           format: double
           nullable: true
-        numDoc:
+        orderLine:
           type: number
-          description: NumDoc - Numero documento
+          description: OrderLine - Progressivo riga interna
           format: double
-          nullable: true
-        numReg:
+        orderRegistrationNumber:
           minLength: 1
           type: string
-          description: NumReg - Numero registrazione
-        optionComponentMg5e:
-          type: string
-          description: OptionComponentMg5e - Variante componente distinta
-          nullable: true
-        progRriga:
-          type: number
-          description: ProgrRiga - Progressivo riga interna
-          format: double
+          description: OrderRegistrationNumber - Numero registrazione
         qtyExploded:
           type: number
           description: QtyExploded - Quantità esplosa
@@ -6827,14 +6926,6 @@ components:
         reservationStorageCode:
           type: string
           description: ReservationStorageCode - Deposito impegno
-          nullable: true
-        sequenceComponent:
-          type: number
-          description: SequenceComponent - Sequenza componente
-          format: double
-        sezDoc:
-          type: string
-          description: SezDoc - Sezionale documento
           nullable: true
         stepCode:
           type: number
@@ -6853,18 +6944,18 @@ components:
       additionalProperties: false
       description: >-
         VPDWA_ORDERBOM - Distinta base localizzata<br>Proprietà
-        chiave:<ul><li><b>DittaCg18</b></li><li><b>NumReg</b></li><li><b>ProgRriga</b></li><li><b>SequenceComponent</b></li></ul>
+        chiave:<ul><li><b>Company</b></li><li><b>ComponentSequence</b></li><li><b>OrderLine</b></li><li><b>OrderRegistrationNumber</b></li></ul>
     OrderProdPDDTO:
       required:
-        - dittaCg18
-        - numReg
-        - progrRiga
+        - company
+        - orderLine
+        - orderRegistrationNumber
       type: object
       properties:
-        codArtMg66:
-          type: string
-          description: CodArtMg66 - Codice Articolo
-          nullable: true
+        company:
+          type: number
+          description: Company - Azienda
+          format: double
         custSuppCode:
           type: number
           description: CustSuppCode - Codice Cliente / Fornitore
@@ -6874,7 +6965,29 @@ components:
           type: string
           description: CustSuppLegalName - Ragione sociale
           nullable: true
-        deliveredStatusIndicator:
+        deliveryDate:
+          type: string
+          description: DeliveryDate - Data consegna
+          format: date-time
+          nullable: true
+        documentCode:
+          type: string
+          description: DocumentCode - Codice documento
+          nullable: true
+        documentNotes:
+          type: string
+          description: DocumentNotes - Note documento
+          nullable: true
+        documentNumber:
+          type: number
+          description: DocumentNumber - Numero documento
+          format: double
+          nullable: true
+        documentSectional:
+          type: string
+          description: DocumentSectional - Sezionale documento
+          nullable: true
+        indDeliveredStatus:
           enum:
             - 0
             - 1
@@ -6886,31 +6999,25 @@ components:
             - 99
           type: number
           description: >-
-            DeliveredStatusIndicator - Indicatore stato
-            consegnato<br><ul><li><i>0</i> - Emesso</li><li><i>1</i> -
-            Confermato</li><li><i>2</i> - Lanciato</li><li><i>3</i> - In
-            produzione</li><li><i>4</i> - Parz. Evaso</li><li><i>5</i> - Non più
-            evadibile</li><li><i>9</i> - Chiuso</li><li><i>99</i> - Non
-            pianificabile</li></ul>
+            IndDeliveredStatus - Indicatore stato consegnato<br><ul><li><i>0</i>
+            - Emesso</li><li><i>1</i> - Confermato</li><li><i>2</i> -
+            Lanciato</li><li><i>3</i> - In produzione</li><li><i>4</i> - Parz.
+            Evaso</li><li><i>5</i> - Non più evadibile</li><li><i>9</i> -
+            Chiuso</li><li><i>99</i> - Non pianificabile</li></ul>
           format: double
           default: '0'
           nullable: true
-        deliveryDate:
+        itemCode:
           type: string
-          description: DeliveryDate - Data consegna
-          format: date-time
+          description: ItemCode - Codice Articolo
           nullable: true
-        descArt:
+        itemDescription:
           type: string
-          description: DescArt - Descrizione articolo
+          description: ItemDescription - Descrizione articolo
           nullable: true
-        dittaCg18:
-          type: number
-          description: DittaCg18 - Ditta
-          format: double
-        documMg36:
+        itemVariantCode:
           type: string
-          description: DocumMg36 - Codice documento
+          description: ItemVariantCode - Codice variante
           nullable: true
         lastChangeDate:
           type: string
@@ -6922,32 +7029,19 @@ components:
           description: ManufacturingStartDate - Data inizio lavorazione
           format: date-time
           nullable: true
-        noteDocum:
-          type: string
-          description: NoteDocum - Note documento
-          nullable: true
-        numDoc:
+        orderLine:
           type: number
-          description: NumDoc - Numero documento
+          description: OrderLine - Progressivo riga interna
           format: double
-          nullable: true
-        numReg:
+        orderRegistrationNumber:
           minLength: 1
           type: string
-          description: NumReg - Numero registrazione
-        opzioneMg5e:
-          type: string
-          description: OpzioneMg5e - Codice variante
-          nullable: true
+          description: OrderRegistrationNumber - Numero registrazione
         priority:
           type: number
           description: Priority - Priorità
           format: double
           nullable: true
-        progrRiga:
-          type: number
-          description: ProgrRiga - Progressivo riga interna
-          format: double
         qtyHandled:
           type: number
           description: QtyHandled - Quantità movimentata
@@ -6971,10 +7065,6 @@ components:
           type: number
           description: RoutingVersion - Versione ciclo
           format: double
-          nullable: true
-        sezDoc:
-          type: string
-          description: SezDoc - Sezionale documento
           nullable: true
         storageCode:
           type: string
@@ -7012,31 +7102,51 @@ components:
       additionalProperties: false
       description: >-
         VPDWA_ORDERPROD - Ordine lavorazione<br>Proprietà
-        chiave:<ul><li><b>DittaCg18</b></li><li><b>NumReg</b></li><li><b>ProgrRiga</b></li></ul>
+        chiave:<ul><li><b>Company</b></li><li><b>OrderLine</b></li><li><b>OrderRegistrationNumber</b></li></ul>
     OrderWorkingCyclePDDTO:
       required:
-        - dittaCg18
-        - documMg36
-        - numReg
-        - progrRiga
+        - company
+        - documentCode
+        - orderLine
+        - orderRegistrationNumber
       type: object
       properties:
         centerCode:
           type: string
           description: CenterCode - Codice centro
           nullable: true
-        codRepPd07:
-          type: string
-          description: CodRepPd07 - Codice reparto
-          nullable: true
-        dittaCg18:
+        company:
           type: number
-          description: DittaCg18 - Ditta
+          description: Company - Azienda
           format: double
-        documMg36:
+        departmentCode:
+          type: string
+          description: DepartmentCode - Codice reparto
+          nullable: true
+        documentCode:
           minLength: 1
           type: string
-          description: DocumMg36 - Codice documento
+          description: DocumentCode - Codice documento
+        documentNumber:
+          type: number
+          description: DocumentNumber - Numero documento
+          format: double
+          nullable: true
+        documentSectional:
+          type: string
+          description: DocumentSectional - Sezionale documento
+          nullable: true
+        flagGeneratedOrderWork:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            FlagGeneratedOrderWork - Generato ord. c\lavoro<br><ul><li><i>0</i>
+            - No</li><li><i>1</i> - Si</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
         machineCode:
           type: string
           description: MachineCode - Codice macchina
@@ -7061,19 +7171,14 @@ components:
           description: NumberPieces - Numero pezzi
           format: double
           nullable: true
-        numDoc:
+        orderLine:
           type: number
-          description: NumDoc - Numero documento
+          description: OrderLine - Progressivo riga interna
           format: double
-          nullable: true
-        numReg:
+        orderRegistrationNumber:
           minLength: 1
           type: string
-          description: NumReg - Numero registrazione
-        progrRiga:
-          type: number
-          description: ProgrRiga - Progressivo riga interna
-          format: double
+          description: OrderRegistrationNumber - Numero registrazione
         qty1:
           type: number
           description: Qty1 - Quantità
@@ -7119,10 +7224,6 @@ components:
           description: SetUpTime - Tempo setup
           format: double
           nullable: true
-        sezDoc:
-          type: string
-          description: SezDoc - Sezionale documento
-          nullable: true
         stepCode:
           type: number
           description: StepCode - Codice fase di lavorazione
@@ -7131,6 +7232,10 @@ components:
           type: string
           description: StepDescription - Descrizione fase
           nullable: true
+        stepProgressive:
+          type: number
+          description: StepProgressive - Progressivo fase
+          format: double
         stepSequence:
           type: number
           description: StepSequence - Sequenza fase
@@ -7197,7 +7302,7 @@ components:
       additionalProperties: false
       description: >-
         VPDWA_ORDERWORKINGCYCLE - Dettaglio ordine lavorazione<br>Proprietà
-        chiave:<ul><li><b>DittaCg18</b></li><li><b>NumReg</b></li><li><b>ProgrRiga</b></li><li><b>StepCode</b></li><li><b>SubStepProgressive</b></li></ul>
+        chiave:<ul><li><b>Company</b></li><li><b>OrderLine</b></li><li><b>OrderRegistrationNumber</b></li><li><b>StepCode</b></li><li><b>StepProgressive</b></li><li><b>SubStepProgressive</b></li></ul>
     ProjectPDDTO:
       required:
         - codProg
@@ -7530,12 +7635,12 @@ components:
           nullable: true
         pd07Guid:
           type: string
-          description: PD07_GUID - Pd07Guid
+          description: PD07_GUID - GUID
           format: uuid
           nullable: true
         turnoPd09:
           type: number
-          description: PD07_TURNO_PD09 - Turno
+          description: PD07_TURNO_PD09 - Codice turno
           format: double
           nullable: true
         valenza:
@@ -7847,6 +7952,297 @@ components:
       description: >-
         PD69_SOTTOPROGETTI - Sottoprogetto<br>Proprietà
         chiave:<ul><li><b>CodProgPd68</b></li><li><b>DittaCg18</b></li><li><b>Sotprog</b></li></ul>
+    SubcontractingWorkOrderProgStepComponentsDataPDDTO:
+      required:
+        - componentCode
+        - stepCode
+      type: object
+      properties:
+        stepCode:
+          type: integer
+          description: Step code
+          format: int32
+        componentCode:
+          minLength: 1
+          type: string
+          description: Component code
+        componentVariantCode:
+          type: string
+          description: Component variant code
+          nullable: true
+        componentQty:
+          type: number
+          description: Component quantity
+          format: double
+          nullable: true
+        componentQty2:
+          type: number
+          description: 2nd component quantity
+          format: double
+          nullable: true
+        additionalComponent:
+          type: boolean
+          description: Additional component
+          nullable: true
+        componentsTraceabilityData:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/SubcontractingWorkOrderProgStepTraceabilityDataPDDTO
+          description: Components traceability data
+          nullable: true
+      additionalProperties: false
+    SubcontractingWorkOrderProgStepDataPDDTO:
+      required:
+        - stepCode
+      type: object
+      properties:
+        stepCode:
+          type: integer
+          description: Step code
+          format: int32
+        qtyToProgress:
+          type: number
+          description: Quantity to progress
+          format: double
+          nullable: true
+        qty2ToProgress:
+          type: number
+          description: 2nd quantity to progress
+          format: double
+          nullable: true
+        qtyToScrap:
+          type: number
+          description: Quantity to scrap
+          format: double
+          nullable: true
+        qty2ToScrap:
+          type: number
+          description: 2nd quantity to scrap
+          format: double
+          nullable: true
+        closedStep:
+          type: boolean
+          description: Closed step
+          nullable: true
+        originWorkOrderClosedStep:
+          type: boolean
+          description: Origin work order closed step
+          nullable: true
+        progressRemainingQty:
+          type: boolean
+          description: Progress remaining quantity
+          nullable: true
+        traceabilityData:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/SubcontractingWorkOrderProgStepTraceabilityDataPDDTO
+          description: Product traceability data
+          nullable: true
+        stepComponentsData:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/SubcontractingWorkOrderProgStepComponentsDataPDDTO
+          description: Step components data
+          nullable: true
+      additionalProperties: false
+    SubcontractingWorkOrderProgStepTraceabilityDataPDDTO:
+      required:
+        - entriesCombination
+      type: object
+      properties:
+        entriesCombination:
+          type: integer
+          description: Entries combination
+          format: int32
+        itemCode:
+          type: string
+          description: Item code
+          nullable: true
+        itemVariantCode:
+          type: string
+          description: Item variant code
+          nullable: true
+        storageCode:
+          type: string
+          description: Storage code
+          nullable: true
+        lotCode:
+          type: string
+          description: Lot code
+          nullable: true
+        dueDate:
+          type: string
+          description: Due date
+          format: date-time
+          nullable: true
+        serialNumber:
+          type: string
+          description: Serial number
+          nullable: true
+        pallets:
+          type: string
+          description: Pallets
+          nullable: true
+        location:
+          type: string
+          description: Location
+          nullable: true
+        packagingCode:
+          type: string
+          description: Packaging code
+          nullable: true
+        dyingMaterial:
+          type: string
+          description: Dying material
+          nullable: true
+        quantity:
+          type: number
+          description: Quantity
+          format: double
+          nullable: true
+        quantity2:
+          type: number
+          description: 2nd quantity
+          format: double
+          nullable: true
+        customerVendorType:
+          type: integer
+          description: Customer/Vendor type
+          format: int32
+          nullable: true
+        customerVendorCode:
+          type: integer
+          description: Customer/Vendor code
+          format: int32
+        notes:
+          type: string
+          description: Notes
+          nullable: true
+        finishedProductItem:
+          type: string
+          description: Finished product item
+          nullable: true
+        finishedProductItemVariant:
+          type: string
+          description: Finished product item variant
+          nullable: true
+        finishedProductLot:
+          type: string
+          description: Finished product lot
+          nullable: true
+        referenceRegNumber:
+          type: string
+          description: Reference registration number
+          nullable: true
+        referenceLine:
+          type: integer
+          description: Reference line
+          format: int32
+          nullable: true
+        referenceTraceabilityLine:
+          type: integer
+          description: Reference traceability line
+          format: int32
+          nullable: true
+        ssccCode:
+          type: string
+          description: SSCC code
+          nullable: true
+        mediaID:
+          type: integer
+          description: Media ID
+          format: int32
+          nullable: true
+      additionalProperties: false
+    SubcontractingWorkOrderProgressParameterPDDTO:
+      required:
+        - orderLine
+        - orderRegistrationNumber
+        - orderType
+        - postingDate
+        - stepData
+        - subContractorCode
+        - subContractorDocument
+        - subContractorDocumentDate
+      type: object
+      properties:
+        postingDate:
+          type: string
+          description: Posting date
+          format: date-time
+        orderType:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            Order type<br><ul><li><i>0</i> - Subcontracting
+            order</li><li><i>1</i> - Work order </li></ul>
+          format: int32
+        orderRegistrationNumber:
+          minLength: 1
+          type: string
+          description: Order registration number
+        orderLine:
+          type: integer
+          description: Order line
+          format: int32
+        subContractorCode:
+          type: integer
+          description: Subcontractor code
+          format: int32
+        subContractorDocument:
+          minLength: 1
+          type: string
+          description: Subcontractor document
+        subContractorDocumentDate:
+          type: string
+          description: Subcontractor document date
+          format: date-time
+        documentDate:
+          type: string
+          description: Document date
+          format: date-time
+          nullable: true
+        documentSectional:
+          type: string
+          description: Document sectional
+          nullable: true
+        loadingStorage:
+          type: string
+          description: Loading storage
+          nullable: true
+        recipientSubContractorCode:
+          type: integer
+          description: Recipient subcontractor code
+          format: int32
+          nullable: true
+        neutralWarehouseReasonCode:
+          type: string
+          description: Neutral warehouse reason code
+          nullable: true
+        stepData:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubcontractingWorkOrderProgStepDataPDDTO'
+          description: Step data
+      additionalProperties: false
+    SubcontractingWorkOrderProgressResultPDDTO:
+      type: object
+      properties:
+        result:
+          type: boolean
+          description: Result
+        documentRegistrationNumbers:
+          type: array
+          items:
+            type: string
+          description: Generated document registration numbers
+          nullable: true
+      additionalProperties: false
     ValidateDTO:
       type: object
       properties:
@@ -8294,27 +8690,27 @@ security:
       - Bearer
 tags:
   - name: AnagraficaTurnoPD
-    description: Collection of services for Shift Master Data
+    description: Collection of services for Shifts Master Data
   - name: BomPD
     description: Collection of services for Bill of Materials
   - name: DipendentePD
     description: Collection of services for Employees
   - name: ItemPD
-    description: Service for search Production item
+    description: Reading service for Production Items
   - name: MachinePD
     description: Collection of services for production Machines and Centers
   - name: OrderBomPD
-    description: Service for search WO-BOM
+    description: Reading service for WO-BOM
   - name: OrderProdPD
-    description: Service for search Production orders
+    description: Reading service for Production Orders
   - name: OrderWorkingCyclePD
-    description: Service for search Production order details
+    description: Reading service for Production Order Steps
   - name: Progetto
     description: Collection of services for Projects
   - name: RepartoPD
     description: Collection of services for production Departments
   - name: WorkOrderServicePD
-    description: Collection of services for work order operations
+    description: Collection of services for Work Order Operations
 servers:
   - url: https://apicsdemo.teamsystem.io
     description: Ambiente demo

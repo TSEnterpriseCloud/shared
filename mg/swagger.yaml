@@ -6494,10 +6494,6 @@ paths:
                     dittaCg18: <CODICE DITTA>
                     codDocumMg36: <TRASF CODICE DOCUMENTO>
                     indStaperMg36: 0
-                  customerSupplierMG:
-                    dittaCg18: <CODICE DITTA>
-                    tipocfCg40: 0
-                    cliFor: 1
                   sezdoc: '00'
                   storageWH:
                     dittaCg18: <CODICE DITTA>
@@ -10295,10 +10291,6 @@ paths:
                     dittaCg18: <CODICE DITTA>
                     codDocumMg36: <TRASF CODICE DOCUMENTO>
                     indStaperMg36: 0
-                  customerSupplierMG:
-                    dittaCg18: <CODICE DITTA>
-                    tipocfCg40: 0
-                    cliFor: 1
                   sezdoc: '00'
                   storageWH:
                     dittaCg18: <CODICE DITTA>
@@ -25483,12 +25475,12 @@ components:
           description: CG15_CODICE - Codice
         codNonsog:
           type: number
-          description: CG15_CODNONSOG - Codice reddito non soggetto cu
+          description: CG15_CODNONSOG - Codice reddito non soggetto CU
           format: double
           nullable: true
         codPrev:
           type: string
-          description: CG15_CODPREV - Cod. ente previdenziale cu
+          description: CG15_CODPREV - Cod. ente previdenziale CU
           nullable: true
         codTribrp:
           type: string

@@ -85642,12 +85642,12 @@ components:
           description: CG15_CODICE - Codice
         codNonsog:
           type: number
-          description: CG15_CODNONSOG - Codice reddito non soggetto cu
+          description: CG15_CODNONSOG - Codice reddito non soggetto CU
           format: double
           nullable: true
         codPrev:
           type: string
-          description: CG15_CODPREV - Cod. ente previdenziale cu
+          description: CG15_CODPREV - Cod. ente previdenziale CU
           nullable: true
         codTribrp:
           type: string
