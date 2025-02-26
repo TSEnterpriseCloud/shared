@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: TSE Cloud - WH
+  title: TSE Cloud - IN
   description: >-
     This is a swagger docs for Infrastucture object Teamsystemn Enterprise
     Cloud,  more detail  at [https://swagger.io](https://swagger.io).
