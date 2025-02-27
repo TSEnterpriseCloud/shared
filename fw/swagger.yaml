@@ -1,0 +1,288 @@
+openapi: 3.0.1
+info:
+  title: TSE Cloud - FW
+  description: >-
+    This is a swagger docs for Framework object Teamsystemn Enterprise Cloud, 
+    more detail  at [https://swagger.io](https://swagger.io).
+  version: v2025.1000
+  termsOfService: https://www.teamsystem.com/terms-conditions/
+  contact:
+    name: Supporto TeamSystem
+    url: https://mysupport.teamsystem.com/
+paths:
+  /api/v1/{environment}/FW/PgmExec/pgmexecschedulerasync:
+    post:
+      tags:
+        - PgmExec
+      summary: Schedule and Execute program
+      description: Schedule and Execute program exe
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Arguments Array List
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PgmExecDTO'
+            examples:
+              Exec Task Scheduled Job for Cloud:
+                value:
+                  idTaskScheduled: '0000'
+              Exec Example TS Commerce Task Scheduled Job:
+                value:
+                  idTaskScheduled: '0000'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/PgmExecDTO'
+            examples:
+              Exec Task Scheduled Job for Cloud:
+                value:
+                  idTaskScheduled: '0000'
+              Exec Example TS Commerce Task Scheduled Job:
+                value:
+                  idTaskScheduled: '0000'
+        required: true
+      responses:
+        '200':
+          description: If execution is ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '409':
+          description: Request with conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/FW/PgmExec/getscheduledjobs:
+    get:
+      tags:
+        - PgmExec
+      summary: Get all scheduled jobs
+      description: Get all scheduled jobs
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: If execution is ok
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: Not found
+        '409':
+          description: Request with conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+components:
+  schemas:
+    ActionResult:
+      type: object
+      additionalProperties: false
+    PgmExecDTO:
+      type: object
+      properties:
+        idTaskScheduled:
+          type: string
+          description: Id for Scheduled Task
+          nullable: true
+        timeoutSeconds:
+          type: integer
+          description: Timeout in seconds for Scheduled Task
+          format: int32
+        skipIfRunning:
+          type: boolean
+          description: Skip if a task with same id is running
+      additionalProperties: false
+    StringObjectKeyValuePair:
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        value:
+          nullable: true
+      additionalProperties: false
+    ValidateDTO:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationResultDTO'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: DTO for data validation task
+    ValidationResultDTO:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Validation message
+          nullable: true
+        warningCode:
+          type: integer
+          format: int64
+          nullable: true
+        isWarning:
+          type: boolean
+          description: It means the message is a warning
+        isError:
+          type: boolean
+          description: It means the message is an error
+        dtoName:
+          type: string
+          description: the DTO name who the property belong
+          nullable: true
+        dtoPropertyName:
+          type: string
+          description: The DTO invalid property name
+          nullable: true
+        entityPropertyPath:
+          type: string
+          nullable: true
+      additionalProperties: false
+      description: DTO for property validation task
+  securitySchemes:
+    Basic:
+      type: http
+      description: Basic Authorization header.
+      scheme: Basic
+    Bearer:
+      type: http
+      description: "Bearer Authorization header.\r\n\r\nEnter your token in the text input below."
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - Basic:
+      - Basic
+  - Bearer:
+      - Bearer
+tags:
+  - name: PgmExec
+    description: Legacy Task Execution
+servers:
+  - url: https://apicsdemo.teamsystem.io
+    description: Ambiente demo
