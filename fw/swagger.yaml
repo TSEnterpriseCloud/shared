@@ -62,26 +62,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PgmExecDTO'
-            examples:
-              Exec Task Scheduled Job for Cloud:
-                value:
-                  idTaskScheduled: '0000'
-              Exec Example TS Commerce Task Scheduled Job:
-                value:
-                  idTaskScheduled: '0000'
           application/xml:
             schema:
               $ref: '#/components/schemas/PgmExecDTO'
-            examples:
-              Exec Task Scheduled Job for Cloud:
-                value:
-                  idTaskScheduled: '0000'
-              Exec Example TS Commerce Task Scheduled Job:
-                value:
-                  idTaskScheduled: '0000'
         required: true
       responses:
-        '200':
+        '201':
           description: If execution is ok
           content:
             application/json:
@@ -112,72 +98,6 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/ValidateDTO'
-        '409':
-          description: Request with conflict
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidateDTO'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/ValidateDTO'
-  /api/v1/{environment}/FW/PgmExec/getscheduledjobs:
-    get:
-      tags:
-        - PgmExec
-      summary: Get all scheduled jobs
-      description: Get all scheduled jobs
-      parameters:
-        - name: environment
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: authorization-scope
-          in: header
-          description: >-
-            The environment where this operation will be executed. This must
-            match with the environment in the url.
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: company
-          in: query
-          description: Company code
-          style: form
-          schema:
-            type: string
-        - name: user
-          in: query
-          description: >-
-            Application user (mandatory if the WebApi user does not have any
-            mapped application user)
-          style: form
-          schema:
-            type: string
-        - name: accept-language
-          in: header
-          description: Example for multilanguage
-          style: simple
-          schema:
-            enum:
-              - it-IT
-              - en-GB
-            type: string
-            default: it-IT
-      responses:
-        '200':
-          description: If execution is ok
-        '400':
-          description: Bad Request
-        '401':
-          description: Unauthorized access
-        '403':
-          description: Forbidden access
-        '404':
-          description: Not found
         '409':
           description: Request with conflict
           content:
@@ -193,19 +113,23 @@ components:
       type: object
       additionalProperties: false
     PgmExecDTO:
+      required:
+        - idTaskScheduled
       type: object
       properties:
         idTaskScheduled:
+          minLength: 1
           type: string
           description: Id for Scheduled Task
-          nullable: true
         timeoutSeconds:
           type: integer
           description: Timeout in seconds for Scheduled Task
           format: int32
+          default: 90
         skipIfRunning:
           type: boolean
           description: Skip if a task with same id is running
+          default: true
       additionalProperties: false
     StringObjectKeyValuePair:
       type: object

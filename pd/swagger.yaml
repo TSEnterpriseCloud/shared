@@ -5500,80 +5500,17 @@ paths:
           description: Unauthorized access
         '403':
           description: Forbidden access
-  /api/v1/{environment}/PD/WorkOrderServicePD/SubcontractingWorkOrderProgress:
-    post:
-      tags:
-        - WorkOrderServicePD
-      summary: Subcontracting work order progress quantity
-      description: Subcontracting work order quantity progress operations
-      parameters:
-        - name: environment
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: authorization-scope
-          in: header
+        '409':
           description: >-
-            The environment where this operation will be executed. This must
-            match with the environment in the url.
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: company
-          in: query
-          description: Company code
-          style: form
-          schema:
-            type: string
-        - name: user
-          in: query
-          description: >-
-            Application user (mandatory if the WebApi user does not have any
-            mapped application user)
-          style: form
-          schema:
-            type: string
-        - name: accept-language
-          in: header
-          description: Example for multilanguage
-          style: simple
-          schema:
-            enum:
-              - it-IT
-              - en-GB
-            type: string
-            default: it-IT
-      requestBody:
-        description: Parameters of the request
-        content:
-          application/json:
-            schema:
-              $ref: >-
-                #/components/schemas/SubcontractingWorkOrderProgressParameterPDDTO
-          application/xml:
-            schema:
-              $ref: >-
-                #/components/schemas/SubcontractingWorkOrderProgressParameterPDDTO
-        required: true
-      responses:
-        '200':
-          description: Response of the request
+            In case of errors in the business logic: the content of the response
+            contains the validation messages
           content:
             application/json:
               schema:
-                $ref: >-
-                  #/components/schemas/SubcontractingWorkOrderProgressResultPDDTO
+                $ref: '#/components/schemas/ValidateDTO'
             application/xml:
               schema:
-                $ref: >-
-                  #/components/schemas/SubcontractingWorkOrderProgressResultPDDTO
-        '401':
-          description: Unauthorized access
-        '403':
-          description: Forbidden access
+                $ref: '#/components/schemas/ValidateDTO'
 components:
   schemas:
     AnagraficaTurnoPDDTO:
@@ -7952,297 +7889,6 @@ components:
       description: >-
         PD69_SOTTOPROGETTI - Sottoprogetto<br>Proprietà
         chiave:<ul><li><b>CodProgPd68</b></li><li><b>DittaCg18</b></li><li><b>Sotprog</b></li></ul>
-    SubcontractingWorkOrderProgStepComponentsDataPDDTO:
-      required:
-        - componentCode
-        - stepCode
-      type: object
-      properties:
-        stepCode:
-          type: integer
-          description: Step code
-          format: int32
-        componentCode:
-          minLength: 1
-          type: string
-          description: Component code
-        componentVariantCode:
-          type: string
-          description: Component variant code
-          nullable: true
-        componentQty:
-          type: number
-          description: Component quantity
-          format: double
-          nullable: true
-        componentQty2:
-          type: number
-          description: 2nd component quantity
-          format: double
-          nullable: true
-        additionalComponent:
-          type: boolean
-          description: Additional component
-          nullable: true
-        componentsTraceabilityData:
-          type: array
-          items:
-            $ref: >-
-              #/components/schemas/SubcontractingWorkOrderProgStepTraceabilityDataPDDTO
-          description: Components traceability data
-          nullable: true
-      additionalProperties: false
-    SubcontractingWorkOrderProgStepDataPDDTO:
-      required:
-        - stepCode
-      type: object
-      properties:
-        stepCode:
-          type: integer
-          description: Step code
-          format: int32
-        qtyToProgress:
-          type: number
-          description: Quantity to progress
-          format: double
-          nullable: true
-        qty2ToProgress:
-          type: number
-          description: 2nd quantity to progress
-          format: double
-          nullable: true
-        qtyToScrap:
-          type: number
-          description: Quantity to scrap
-          format: double
-          nullable: true
-        qty2ToScrap:
-          type: number
-          description: 2nd quantity to scrap
-          format: double
-          nullable: true
-        closedStep:
-          type: boolean
-          description: Closed step
-          nullable: true
-        originWorkOrderClosedStep:
-          type: boolean
-          description: Origin work order closed step
-          nullable: true
-        progressRemainingQty:
-          type: boolean
-          description: Progress remaining quantity
-          nullable: true
-        traceabilityData:
-          type: array
-          items:
-            $ref: >-
-              #/components/schemas/SubcontractingWorkOrderProgStepTraceabilityDataPDDTO
-          description: Product traceability data
-          nullable: true
-        stepComponentsData:
-          type: array
-          items:
-            $ref: >-
-              #/components/schemas/SubcontractingWorkOrderProgStepComponentsDataPDDTO
-          description: Step components data
-          nullable: true
-      additionalProperties: false
-    SubcontractingWorkOrderProgStepTraceabilityDataPDDTO:
-      required:
-        - entriesCombination
-      type: object
-      properties:
-        entriesCombination:
-          type: integer
-          description: Entries combination
-          format: int32
-        itemCode:
-          type: string
-          description: Item code
-          nullable: true
-        itemVariantCode:
-          type: string
-          description: Item variant code
-          nullable: true
-        storageCode:
-          type: string
-          description: Storage code
-          nullable: true
-        lotCode:
-          type: string
-          description: Lot code
-          nullable: true
-        dueDate:
-          type: string
-          description: Due date
-          format: date-time
-          nullable: true
-        serialNumber:
-          type: string
-          description: Serial number
-          nullable: true
-        pallets:
-          type: string
-          description: Pallets
-          nullable: true
-        location:
-          type: string
-          description: Location
-          nullable: true
-        packagingCode:
-          type: string
-          description: Packaging code
-          nullable: true
-        dyingMaterial:
-          type: string
-          description: Dying material
-          nullable: true
-        quantity:
-          type: number
-          description: Quantity
-          format: double
-          nullable: true
-        quantity2:
-          type: number
-          description: 2nd quantity
-          format: double
-          nullable: true
-        customerVendorType:
-          type: integer
-          description: Customer/Vendor type
-          format: int32
-          nullable: true
-        customerVendorCode:
-          type: integer
-          description: Customer/Vendor code
-          format: int32
-        notes:
-          type: string
-          description: Notes
-          nullable: true
-        finishedProductItem:
-          type: string
-          description: Finished product item
-          nullable: true
-        finishedProductItemVariant:
-          type: string
-          description: Finished product item variant
-          nullable: true
-        finishedProductLot:
-          type: string
-          description: Finished product lot
-          nullable: true
-        referenceRegNumber:
-          type: string
-          description: Reference registration number
-          nullable: true
-        referenceLine:
-          type: integer
-          description: Reference line
-          format: int32
-          nullable: true
-        referenceTraceabilityLine:
-          type: integer
-          description: Reference traceability line
-          format: int32
-          nullable: true
-        ssccCode:
-          type: string
-          description: SSCC code
-          nullable: true
-        mediaID:
-          type: integer
-          description: Media ID
-          format: int32
-          nullable: true
-      additionalProperties: false
-    SubcontractingWorkOrderProgressParameterPDDTO:
-      required:
-        - orderLine
-        - orderRegistrationNumber
-        - orderType
-        - postingDate
-        - stepData
-        - subContractorCode
-        - subContractorDocument
-        - subContractorDocumentDate
-      type: object
-      properties:
-        postingDate:
-          type: string
-          description: Posting date
-          format: date-time
-        orderType:
-          enum:
-            - 0
-            - 1
-          type: integer
-          description: >-
-            Order type<br><ul><li><i>0</i> - Subcontracting
-            order</li><li><i>1</i> - Work order </li></ul>
-          format: int32
-        orderRegistrationNumber:
-          minLength: 1
-          type: string
-          description: Order registration number
-        orderLine:
-          type: integer
-          description: Order line
-          format: int32
-        subContractorCode:
-          type: integer
-          description: Subcontractor code
-          format: int32
-        subContractorDocument:
-          minLength: 1
-          type: string
-          description: Subcontractor document
-        subContractorDocumentDate:
-          type: string
-          description: Subcontractor document date
-          format: date-time
-        documentDate:
-          type: string
-          description: Document date
-          format: date-time
-          nullable: true
-        documentSectional:
-          type: string
-          description: Document sectional
-          nullable: true
-        loadingStorage:
-          type: string
-          description: Loading storage
-          nullable: true
-        recipientSubContractorCode:
-          type: integer
-          description: Recipient subcontractor code
-          format: int32
-          nullable: true
-        neutralWarehouseReasonCode:
-          type: string
-          description: Neutral warehouse reason code
-          nullable: true
-        stepData:
-          type: array
-          items:
-            $ref: '#/components/schemas/SubcontractingWorkOrderProgStepDataPDDTO'
-          description: Step data
-      additionalProperties: false
-    SubcontractingWorkOrderProgressResultPDDTO:
-      type: object
-      properties:
-        result:
-          type: boolean
-          description: Result
-        documentRegistrationNumbers:
-          type: array
-          items:
-            type: string
-          description: Generated document registration numbers
-          nullable: true
-      additionalProperties: false
     ValidateDTO:
       type: object
       properties:
@@ -8671,6 +8317,15 @@ components:
           items:
             type: string
           description: Generated document registration numbers
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
           nullable: true
       additionalProperties: false
   securitySchemes:
