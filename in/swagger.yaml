@@ -599,11 +599,20 @@ components:
           nullable: true
         rangeValue:
           $ref: '#/components/schemas/ResourceMetaRangeValueDTO'
+        description:
+          type: string
+          nullable: true
         shortDescription:
           type: string
           nullable: true
-        description:
-          type: string
+        maxLength:
+          type: integer
+          description: The max length value of the property
+          format: int32
+        scale:
+          type: integer
+          description: The scale of the property (used for 'decimal' type properties)
+          format: int32
           nullable: true
       additionalProperties: false
       description: Metadata relating to a property of the indicated resource

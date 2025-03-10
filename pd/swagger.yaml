@@ -5526,7 +5526,7 @@ components:
           type: number
           description: PD09_DITTA_CG18 - Azienda
           format: double
-          default: '0'
+          default: 0
           nullable: true
         fraturno:
           type: number
@@ -5547,7 +5547,7 @@ components:
           type: number
           description: PD09_OREGG - Ore giornaliere
           format: double
-          default: '8'
+          default: 8
           nullable: true
         turno:
           type: number
@@ -5585,7 +5585,7 @@ components:
             PD96_FLGALTER - Alternativo da distinta base<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         codComponentMg66:
           minLength: 1
@@ -5612,7 +5612,7 @@ components:
           type: number
           description: PD96_COSTODB - Costo distinta base
           format: double
-          default: '0'
+          default: 0
           nullable: true
         dateLastMod:
           type: string
@@ -5639,7 +5639,7 @@ components:
             aperta<br><ul><li><i>0</i> - Legame incluso</li><li><i>1</i> -
             Legame escluso</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         explosionLevel:
           type: number
@@ -5656,7 +5656,7 @@ components:
             PD96_COMPFISSO - Componente fisso<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         fixedQta:
           enum:
@@ -5667,7 +5667,7 @@ components:
             PD96_FLAGQTAFISSA - Quantità fissa<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         formulaPd24:
           type: string
@@ -5684,7 +5684,7 @@ components:
             articolo</li><li><i>1</i> - Non fantasma</li><li><i>2</i> -
             Fantasma</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         guid:
           type: string
@@ -5695,7 +5695,7 @@ components:
           type: number
           description: PD96_IDDISBA_PD95 - Id distinta base
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idBomLink:
           type: number
@@ -5751,7 +5751,7 @@ components:
           type: number
           description: PD96_SFRIDO - % sfrido
           format: double
-          default: '0'
+          default: 0
           nullable: true
         printLevel:
           type: number
@@ -5769,7 +5769,7 @@ components:
           type: number
           description: PD96_QUANT_2 - Quantità legame 2
           format: double
-          default: '0'
+          default: 0
           nullable: true
         qtyItemRecovery:
           type: number
@@ -5785,13 +5785,13 @@ components:
           type: number
           description: PD96_QTASCARTO_1 - Quantità sfrido 1
           format: double
-          default: '0'
+          default: 0
           nullable: true
         qtyWaste2:
           type: number
           description: PD96_QTASCARTO_2 - Quantità sfrido 2
           format: double
-          default: '0'
+          default: 0
           nullable: true
         revisionDate:
           type: string
@@ -5807,13 +5807,13 @@ components:
           type: number
           description: PD96_SEQCOMP - Sequenza componente
           format: double
-          default: '0'
+          default: 0
           nullable: true
         sequencePrint:
           type: number
           description: PD96_SEQSTA - Sequenza di stampa
           format: double
-          default: '0'
+          default: 0
           nullable: true
         startingDate:
           type: string
@@ -5835,7 +5835,7 @@ components:
             pianificati</li><li><i>9</i> - Tipo legame Fornitura
             esterna</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         typeOptionalLink:
           enum:
@@ -5846,7 +5846,7 @@ components:
             PD96_FLGOPZIONE - Legame opzionale<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         typeOrigin:
           enum:
@@ -5857,7 +5857,7 @@ components:
             PD96_INDPROV - Indicatore provenienza<br><ul><li><i>0</i> - Come da
             articolo</li><li><i>1</i> - Da legame</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         typeTraceLink:
           enum:
@@ -5885,7 +5885,7 @@ components:
             Solo lavorazioni interne</li><li><i>2</i> - Solo lavorazioni
             esterne</li><li><i>3</i> - Mai</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         typeVal:
           enum:
@@ -6025,7 +6025,7 @@ components:
           type: number
           description: PD95_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         guid:
           type: string
@@ -6074,7 +6074,7 @@ components:
             Cliente</li><li><i>3</i> - Progetto</li><li><i>10</i> -
             Manuale</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         typeExplosionMode:
           enum:
@@ -6105,7 +6105,7 @@ components:
             qtà</li><li><i>99</i> - Come da parametri generali
             documenti</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         bomLinkPD:
           type: array
@@ -6178,7 +6178,7 @@ components:
           type: number
           description: PD06_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgRisorsacritica:
           enum:
@@ -6189,7 +6189,7 @@ components:
             PD06_FLGRISORSACRITICA - Risorsa critica<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indDismess:
           enum:
@@ -6200,7 +6200,7 @@ components:
             PD06_INDDISMESS - Stato dip.<br><ul><li><i>0</i> -
             Attivo</li><li><i>1</i> - Dismesso</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indIrizzo:
           type: string
@@ -6226,7 +6226,7 @@ components:
           type: integer
           description: PD06_VALENZA - Valenza dipendente
           format: int32
-          default: '1'
+          default: 1
           nullable: true
         extensionData:
           type: array
@@ -6385,7 +6385,7 @@ components:
           type: number
           description: MG97_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indTipoubicaz:
           enum:
@@ -6396,7 +6396,7 @@ components:
             MG97_INDTIPOUBICAZ - Tipo ubicazione<br><ul><li><i>0</i> - Di
             prelevamento</li><li><i>1</i> - Di scorta</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         larghezza:
           type: number
@@ -6477,7 +6477,7 @@ components:
           type: number
           description: PD08_DITTA_CG18 - Azienda
           format: double
-          default: '0'
+          default: 0
           nullable: true
         dtultman:
           type: string
@@ -6520,7 +6520,7 @@ components:
             PD08_INDDISMESS - Stato<br><ul><li><i>0</i> -
             Attivo</li><li><i>1</i> - Dismesso</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indPolitica:
           enum:
@@ -6545,7 +6545,7 @@ components:
             PD08_INDRISORSA - Tipo risorsa<br><ul><li><i>0</i> -
             Macchina</li><li><i>1</i> - Centro</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         macchina:
           minLength: 1
@@ -6579,13 +6579,13 @@ components:
             PD08_RISCRITICA - Risorsa critica<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         valenza:
           type: integer
           description: PD08_VALENZA - Valenza
           format: int32
-          default: '1'
+          default: 1
           nullable: true
         anagraficaTurnoPDDTO:
           $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
@@ -6703,7 +6703,7 @@ components:
             PD0C_FLGCONTRIBINTEG - Contributo integrativo<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgContribprev:
           enum:
@@ -6714,7 +6714,7 @@ components:
             PD0C_FLGCONTRIBPREV - Contributo previdenziale<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgEsclscpiede:
           enum:
@@ -6741,7 +6741,7 @@ components:
             PD0C_FLGIVARID - Iva ridotta<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgRitacc:
           enum:
@@ -6752,13 +6752,13 @@ components:
             PD0C_FLGRITACC - Ritenuta d'acconto<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         importo:
           type: number
           description: PD0C_IMPORTO - Ricavo preventivo manuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         importoval:
           type: number
@@ -7354,7 +7354,7 @@ components:
             PD1E_FLGASSIST - In assistenza<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgBlocco:
           enum:
@@ -7365,7 +7365,7 @@ components:
             PD1E_FLGBLOCCO - Bloccato<br><ul><li><i>0</i> - No</li><li><i>1</i>
             - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgChiuso:
           enum:
@@ -7376,7 +7376,7 @@ components:
             PD1E_FLGCHIUSO - Chiuso<br><ul><li><i>0</i> - No</li><li><i>1</i> -
             Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgFattura:
           enum:
@@ -7387,7 +7387,7 @@ components:
             PD1E_FLGFATTURA - Fatturabile<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idprov:
           type: integer
@@ -7403,7 +7403,7 @@ components:
             PD1E_INDSTATO - Tipo Struttura<br><ul><li><i>0</i> -
             Progetto</li><li><i>1</i> - Nodo</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -7445,7 +7445,7 @@ components:
             PD1D_FLGCESPITE - Cespite<br><ul><li><i>0</i> - No</li><li><i>1</i>
             - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgModello:
           enum:
@@ -7456,7 +7456,7 @@ components:
             PD1D_FLGMODELLO - Modello<br><ul><li><i>0</i> - No</li><li><i>1</i>
             - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         idEntityWithDescriptions:
           type: integer
@@ -7478,7 +7478,7 @@ components:
             PD1D_INDTIPO - Tipo Struttura<br><ul><li><i>0</i> -
             Progetto</li><li><i>1</i> - Nodo</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -7511,7 +7511,7 @@ components:
           type: number
           description: PD07_DITTA_CG18 - Azienda
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgListavanz:
           enum:
@@ -7584,7 +7584,7 @@ components:
           type: integer
           description: PD07_VALENZA - Valenza
           format: int32
-          default: '1'
+          default: 1
           nullable: true
         anagraficaTurnoPD:
           $ref: '#/components/schemas/AnagraficaTurnoPDDTO'
@@ -7751,7 +7751,7 @@ components:
           type: number
           description: MG58_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         faxnumdep:
           type: string
@@ -7766,7 +7766,7 @@ components:
             MG58_FLGDEPPRINC - Deposito principale<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indEmail:
           type: string
@@ -7785,7 +7785,7 @@ components:
             MG58_INDINTEREST - Tipo deposito<br><ul><li><i>0</i> -
             Interno</li><li><i>1</i> - Esterno</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         locdep:
           type: string

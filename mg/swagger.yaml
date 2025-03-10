@@ -14001,7 +14001,7 @@ components:
           type: number
           description: MG4G_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idmediaCg99:
           type: number
@@ -14051,7 +14051,7 @@ components:
           type: number
           description: MG25_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idmediaCg99:
           type: number
@@ -14177,31 +14177,31 @@ components:
           type: integer
           description: CG24_COGEPROGE_ABIL - Abilitato alla correlazione progetti/commesse
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         cogeprogeAttivita:
           type: integer
           description: CG24_COGEPROGE_ATTIVITA - Correla attività
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         cogeprogeMateriali:
           type: integer
           description: CG24_COGEPROGE_MATERIALI - Correla materiali
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         cogeprogeNodo:
           type: integer
           description: CG24_COGEPROGE_NODO - Correla nodo
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         cogeprogeSpese:
           type: integer
           description: CG24_COGEPROGE_SPESE - Correla spese
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         conto:
           minLength: 1
@@ -14248,7 +14248,7 @@ components:
             CG24_FLGAGGFATT - Agg.fatt.<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgAnalit:
           enum:
@@ -14259,7 +14259,7 @@ components:
             CG24_FLGANALIT - Conto analitico<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '1'
+          default: 1
           nullable: true
         flgBilconsattpassdist:
           enum:
@@ -14270,7 +14270,7 @@ components:
             CG24_FLGBILCONSATTPASSDIST - Non utilizzato<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgContoimm:
           enum:
@@ -14281,7 +14281,7 @@ components:
             CG24_FLGCONTOIMM - Imm.<br><ul><li><i>0</i> - No</li><li><i>1</i> -
             Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgGesec:
           enum:
@@ -14292,7 +14292,7 @@ components:
             CG24_FLGGESEC - Gest.EC<br><ul><li><i>0</i> - No</li><li><i>1</i> -
             Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgGespor:
           enum:
@@ -14303,7 +14303,7 @@ components:
             CG24_FLGGESPOR - Gest.port.<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgIntercompany:
           enum:
@@ -14314,7 +14314,7 @@ components:
             CG24_FLGINTERCOMPANY - Gestione Intercompany<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgOpnonfin:
           enum:
@@ -14325,7 +14325,7 @@ components:
             CG24_FLGOPNONFIN - Cont.per cassa<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgRaganal:
           enum:
@@ -14336,7 +14336,7 @@ components:
             CG24_FLGRAGANAL - Raggr.anal.<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgRarp:
           enum:
@@ -14347,7 +14347,7 @@ components:
             CG24_FLGRARP - Base imp.rit.<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgSaldog:
           enum:
@@ -14358,7 +14358,7 @@ components:
             CG24_FLGSALDOG - Saldo data reg.<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgValutaest:
           enum:
@@ -14369,7 +14369,7 @@ components:
             CG24_FLGVALUTAEST - Valuta est.<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         gruppoCg10:
           type: number
@@ -14435,7 +14435,7 @@ components:
             Nessuno</li><li><i>1</i> - Attivo</li><li><i>2</i> -
             Passivo</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indContoricav:
           enum:
@@ -14447,7 +14447,7 @@ components:
             CG24_INDCONTORICAV - Tipo conto econ.<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Ricavo</li><li><i>2</i> - Costo</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indCosvend:
           enum:
@@ -14473,7 +14473,7 @@ components:
             consumi</li><li><i>98</i> - Rimanenze iniziali</li><li><i>99</i> -
             Rimanenze finali</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indDaav:
           enum:
@@ -14485,7 +14485,7 @@ components:
             CG24_INDDAAV - Segno esp.bilancio<br><ul><li><i>0</i> -
             Nessuno</li><li><i>1</i> - Dare</li><li><i>2</i> - Avere</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indDaavec:
           enum:
@@ -14497,13 +14497,13 @@ components:
             CG24_INDDAAVEC - Segno<br><ul><li><i>0</i> -
             Nessuno</li><li><i>1</i> - Dare</li><li><i>2</i> - Avere</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indLivchius:
           type: integer
           description: CG24_INDLIVCHIUS - Livello di chiusura
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indMastroCliFor:
           enum:
@@ -14516,7 +14516,7 @@ components:
             clienti/fornitori<br><ul><li><i>99</i> - No</li><li><i>0</i> -
             Mastro clienti</li><li><i>1</i> - Mastro fornitori</li></ul>
           format: double
-          default: '99'
+          default: 99
           nullable: true
         indTipoconto:
           enum:
@@ -14530,7 +14530,7 @@ components:
             d'ordine</li><li><i>1</i> - Patrimoniale</li><li><i>2</i> -
             Economico</li><li><i>3</i> - Da non stampare</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         percindeduc:
           type: number
@@ -14548,7 +14548,7 @@ components:
             CG24_SUDDCONTI - Informazioni riguardanti la compilazione quadro A
             modello IVA 11
           format: double
-          default: '0'
+          default: 0
           nullable: true
         coaAccountCustomizationFI:
           type: array
@@ -14866,7 +14866,7 @@ components:
           type: number
           description: MG14_FLGSCHETRA - Soggetto a stampa scheda di trasporto
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idmediaCg99:
           type: number
@@ -14931,7 +14931,7 @@ components:
           type: number
           description: MG11_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         macrocatMg10:
           minLength: 1
@@ -14946,7 +14946,7 @@ components:
             MG11_TIPOCF_MG10 - Tipo Cli/For<br><ul><li><i>0</i> - 
             Cliente</li><li><i>1</i> -  Fornitore</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -14979,7 +14979,7 @@ components:
           type: number
           description: MG27_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idmediaCg99:
           type: number
@@ -15040,7 +15040,7 @@ components:
           type: number
           description: MG3G_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indStaperMg36:
           enum:
@@ -15052,7 +15052,7 @@ components:
             standard/personalizzato<br><ul><li><i>0</i> -
             Standard</li><li><i>1</i> - Personalizzato</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         sezdefault:
           type: string
@@ -15108,7 +15108,7 @@ components:
           type: integer
           description: CG08_INDCERTOINCERTO - Cambio incerto per certo
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indSepmigl:
           enum:
@@ -15279,7 +15279,7 @@ components:
           type: number
           description: MG19_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         fidoaziendale:
           type: number
@@ -15345,7 +15345,7 @@ components:
             MG19_FLGESTRPAYLINE - Estrazione Payline<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgprzcamp:
           enum:
@@ -15403,7 +15403,7 @@ components:
             MG19_FLGSPBOL - Spese bolli<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgspeinc:
           enum:
@@ -15414,7 +15414,7 @@ components:
             MG19_FLGSPEINC - Spese incasso<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgTaxliable:
           enum:
@@ -15425,7 +15425,7 @@ components:
             MG19_FLGTAXLIABLE - Tax Liable<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         ggcons:
           type: number
@@ -15488,7 +15488,7 @@ components:
             sblocco</li><li><i>2</i> - Blocco senza possibilità di
             sblocco</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indclifat:
           enum:
@@ -15580,7 +15580,7 @@ components:
           type: number
           description: MG19_INDROTTCIG - Indrottcig
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indspesecum:
           enum:
@@ -15597,7 +15597,7 @@ components:
             quindicina</li><li><i>3</i> - decade</li><li><i>4</i> -
             settimana</li><li><i>5</i> - giorno</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indstscadest:
           type: number
@@ -15826,7 +15826,7 @@ components:
           type: number
           description: MG19_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgart62ctr:
           enum:
@@ -16189,7 +16189,7 @@ components:
           type: number
           description: CG44_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgart62:
           enum:
@@ -16200,7 +16200,7 @@ components:
             CG44_FLGART62 - Flag Art. 62<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgAttivo:
           enum:
@@ -16211,7 +16211,7 @@ components:
             CG44_FLGATTIVO - Attivo<br><ul><li><i>0</i> - No</li><li><i>1</i> -
             Si</li></ul>
           format: double
-          default: '1'
+          default: 1
           nullable: true
         flgCointestati:
           enum:
@@ -16222,7 +16222,7 @@ components:
             CG44_FLGCOINTESTATI - Cointestati<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgInterCompany:
           enum:
@@ -16233,7 +16233,7 @@ components:
             CG44_FLGINTERCOMPANY - Intercompany<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         ggScadFix:
           type: number
@@ -16270,7 +16270,7 @@ components:
             Si</li><li><i>2</i> - Contratto >= 3.000€</li><li><i>3</i> -
             Contratto corrisp. periodici</li></ul>
           format: int32
-          default: '99'
+          default: 99
           nullable: true
         lastchange:
           type: string
@@ -16627,7 +16627,7 @@ components:
           type: number
           description: CO99_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         gruppocre:
           type: string
@@ -16641,7 +16641,7 @@ components:
           type: number
           description: CO99_INDTIPOOP - Indicatore tipo operazione
           format: double
-          default: '0'
+          default: 0
           nullable: true
         numreg:
           minLength: 1
@@ -16913,7 +16913,7 @@ components:
           type: number
           description: DO14_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         numregCo99:
           minLength: 1
@@ -17075,7 +17075,7 @@ components:
           type: number
           description: DO53_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgEsclriga:
           enum:
@@ -17162,7 +17162,7 @@ components:
           type: number
           description: DO39_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         numregCo99:
           minLength: 1
@@ -17310,7 +17310,7 @@ components:
           type: number
           description: DO36_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgSt1:
           type: number
@@ -17415,7 +17415,7 @@ components:
           type: number
           description: DO36_PROG - Progressivo
           format: double
-          default: '1'
+          default: 1
           nullable: true
         progRiga:
           type: number
@@ -17496,13 +17496,13 @@ components:
           type: number
           description: DO52_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgNonpiuev:
           type: number
           description: DO52_FLGNONPIUEV - Flag non più evadibile
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idmediaCg99:
           type: number
@@ -17533,7 +17533,7 @@ components:
           type: number
           description: DO52_PROG - Progressivo
           format: double
-          default: '1'
+          default: 1
           nullable: true
         progMg4f:
           type: number
@@ -17628,6 +17628,10 @@ components:
         - statoAttualeCO
       type: object
       properties:
+        guid:
+          type: string
+          description: DO30_GUID - GUID for current states
+          format: uuid
         alivacompCg28:
           type: string
           description: DO30_ALIVACOMP_CG28 - Codice aliquota IVA di compensazione
@@ -17676,13 +17680,13 @@ components:
           type: number
           description: DO30_COLLI - Colli
           format: double
-          default: '0'
+          default: 0
           nullable: true
         costotot:
           type: number
           description: DO30_COSTOTOT - Costo riga
           format: double
-          default: '0'
+          default: 0
           nullable: true
         cpmerceCg24:
           type: string
@@ -17700,7 +17704,7 @@ components:
           type: number
           description: DO30_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         estdescart:
           type: string
@@ -17773,7 +17777,7 @@ components:
           type: integer
           description: DO30_INDLISACQVEN - Tipo listino
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indlisfisso:
           type: integer
@@ -17798,7 +17802,7 @@ components:
             senza rivalsa</li><li><i>3</i> - Omaggio con sconto in
             merce</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indtiporiga:
           enum:
@@ -17836,19 +17840,19 @@ components:
           type: number
           description: DO30_MAGIMP - Maggiorazione importo
           format: double
-          default: '0'
+          default: 0
           nullable: true
         magper1:
           type: number
           description: DO30_MAGPER1 - Maggiorazione 1 percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         magper2:
           type: number
           description: DO30_MAGPER2 - Maggiorazione 2 percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         numReg:
           minLength: 1
@@ -17872,25 +17876,25 @@ components:
           type: number
           description: DO30_PREZZO1 - Prezzo lordo 1
           format: double
-          default: '0'
+          default: 0
           nullable: true
         prezzo1iva:
           type: number
           description: DO30_PREZZO1IVA - Prezzo lordo 1 IVA compresa
           format: double
-          default: '0'
+          default: 0
           nullable: true
         prezzo2:
           type: number
           description: DO30_PREZZO2 - Prezzo lordo 2
           format: double
-          default: '0'
+          default: 0
           nullable: true
         prezzo2iva:
           type: number
           description: DO30_PREZZO2IVA - Prezzo lordo 2 IVA compresa
           format: double
-          default: '0'
+          default: 0
           nullable: true
         profondita:
           type: number
@@ -17929,43 +17933,43 @@ components:
           type: number
           description: DO30_SCIMP - Sconto importo
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scper1:
           type: number
           description: DO30_SCPER1 - Sconto 1 percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scper2:
           type: number
           description: DO30_SCPER2 - Sconto 2 percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scper3:
           type: number
           description: DO30_SCPER3 - Sconto 3 percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scper4:
           type: number
           description: DO30_SCPER4 - Sconto 4 percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scper5:
           type: number
           description: DO30_SCPER5 - Sconto 5 percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scper6:
           type: number
           description: DO30_SCPER6 - Sconto 6 percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         stagioneMg5t:
           type: integer
@@ -18075,7 +18079,7 @@ components:
           type: number
           description: DO31_COLLICONS - Colli consegnati
           format: double
-          default: '0'
+          default: 0
           nullable: true
         collitrasfddtcl:
           type: number
@@ -18136,7 +18140,7 @@ components:
           type: number
           description: DO31_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgConsconf:
           enum:
@@ -18213,19 +18217,19 @@ components:
           type: integer
           description: DO31_INDEVASDESCSP - Indicatore evasione descrizioni e spese
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indStatocons:
           type: integer
           description: DO31_INDSTATOCONS - Indicatore stato consegnato
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indStatodescsp:
           type: integer
           description: DO31_INDSTATODESCSP - Indicatore stato trasf. descrizioni e spese
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         numpiano:
           type: number
@@ -18254,19 +18258,19 @@ components:
           type: number
           description: DO31_QTA1CONS - Quantità consegnata
           format: double
-          default: '0'
+          default: 0
           nullable: true
         qta1lanc:
           type: number
           description: DO31_QTA1LANC - Quantità consegnata alla data lancio
           format: double
-          default: '0'
+          default: 0
           nullable: true
         qta1prel:
           type: number
           description: DO31_QTA1PREL - Quantità 1 prelevata
           format: double
-          default: '0'
+          default: 0
           nullable: true
         qta1trasfddtcl:
           type: number
@@ -18282,19 +18286,19 @@ components:
           type: number
           description: DO31_QTA2CONS - Quantità consegnata 2
           format: double
-          default: '0'
+          default: 0
           nullable: true
         qta2lanc:
           type: number
           description: DO31_QTA2LANC - Quantità consegnata alla data lancio
           format: double
-          default: '0'
+          default: 0
           nullable: true
         qta2prel:
           type: number
           description: DO31_QTA2PREL - Quantità 2 prelevata
           format: double
-          default: '0'
+          default: 0
           nullable: true
         qta2trasfddtcl:
           type: number
@@ -18310,7 +18314,7 @@ components:
           type: number
           description: DO31_VALORECONS - Valore cons.
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -18413,7 +18417,7 @@ components:
           type: number
           description: DO35_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgPers1:
           type: number
@@ -18518,7 +18522,7 @@ components:
           type: number
           description: DO35_PROG - Progressivo
           format: double
-          default: '1'
+          default: 1
           nullable: true
         progRiga:
           type: number
@@ -18579,7 +18583,7 @@ components:
           type: number
           description: DO41_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idartepuVc02:
           type: integer
@@ -18643,7 +18647,7 @@ components:
           type: number
           description: DO32_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgVarprov:
           enum:
@@ -18668,7 +18672,7 @@ components:
           type: number
           description: DO32_IMPONPROV_VAL - Imponibile provvigione in valuta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         imporprov:
           type: number
@@ -18678,7 +18682,7 @@ components:
           type: number
           description: DO32_IMPORPROV_VAL - Importo provvigione in valuta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indRegprov:
           enum:
@@ -18779,19 +18783,19 @@ components:
           type: number
           description: DO42_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgDaav:
           type: number
           description: DO42_FLGDAAV - Indicatore Dare/Avere
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgDisatcoge:
           type: number
           description: DO42_FLGDISATCOGE - FlgDisatcoge
           format: double
-          default: '0'
+          default: 0
           nullable: true
         importo:
           type: number
@@ -18812,13 +18816,13 @@ components:
           type: number
           description: DO42_INDTIPOCOMP - Importo
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indTipomovbu:
           type: number
           description: DO42_INDTIPOMOVBU - IndTipomovbu
           format: double
-          default: '0'
+          default: 0
           nullable: true
         percforf:
           type: number
@@ -18874,7 +18878,7 @@ components:
           type: number
           description: DO33_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         fasePd12:
           type: number
@@ -18938,7 +18942,7 @@ components:
             DO33_INDAGGDOCORIGINE - Modalità di aggiornamento documento di
             origine
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indQtaordres:
           type: integer
@@ -18949,13 +18953,13 @@ components:
           type: integer
           description: DO33_INDSTIPODOC - Indicatore sottotipo documento di riferimento
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         indTipodoc:
           type: integer
           description: DO33_INDTIPODOC - Indicatore tipo documento di riferimento
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         notensdoc:
           type: string
@@ -19276,7 +19280,7 @@ components:
           type: number
           description: DO29_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgAgerifer:
           enum:
@@ -19345,7 +19349,7 @@ components:
           type: number
           description: DO29_PERPROV - Percentuale provvigione
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -19447,7 +19451,7 @@ components:
           type: number
           description: DO20_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgSt1:
           type: number
@@ -19552,7 +19556,7 @@ components:
           type: number
           description: DO20_PROG - Progressivo
           format: double
-          default: '1'
+          default: 1
           nullable: true
         extensionData:
           type: array
@@ -19578,6 +19582,10 @@ components:
         - storageWH
       type: object
       properties:
+        guid:
+          type: string
+          description: DO11_GUID - GUID for current states and extended attributes
+          format: uuid
         esclusioneAgentiMultipli:
           type: integer
           description: 'Deprecated: use callOptions.EsclusioneAgentiMultipli'
@@ -19691,7 +19699,7 @@ components:
           type: number
           description: DO11_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgClifat:
           enum:
@@ -19758,7 +19766,7 @@ components:
           type: integer
           description: DO11_INDFATTPA - Tipo fatt. PA
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         lastchange:
           type: string
@@ -19944,7 +19952,7 @@ components:
           type: number
           description: DO18_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgConfrit:
           enum:
@@ -20025,19 +20033,19 @@ components:
           type: number
           description: DO18_PRIORITA - Priorità
           format: double
-          default: '0'
+          default: 0
           nullable: true
         tipoinoltro:
           type: number
           description: DO18_TIPOINOLTRO - Tipo inoltro
           format: double
-          default: '0'
+          default: 0
           nullable: true
         tipoordine:
           type: number
           description: DO18_TIPOORDINE - Tipo ordine
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -20149,7 +20157,7 @@ components:
           type: number
           description: DO17_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgPers1:
           type: number
@@ -20254,7 +20262,7 @@ components:
           type: number
           description: DO17_PROG - Progressivo
           format: double
-          default: '1'
+          default: 1
           nullable: true
         extensionData:
           type: array
@@ -20312,7 +20320,7 @@ components:
           type: number
           description: DO24_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         nodorifcolPd0c:
           type: string
@@ -20357,7 +20365,7 @@ components:
           type: number
           description: DO21_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgPers:
           type: number
@@ -20430,7 +20438,7 @@ components:
           type: number
           description: DO21_IMPONPROV_VAL - Imponibile provvigione in valuta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         imporprov:
           type: number
@@ -20440,7 +20448,7 @@ components:
           type: number
           description: DO21_IMPORPROV_VAL - Importo provvigione in valuta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indPers:
           type: number
@@ -20456,7 +20464,7 @@ components:
           type: number
           description: DO21_INDTIPOMOV - Movim.gen.da
           format: double
-          default: '0'
+          default: 0
           nullable: true
         noteprov:
           type: string
@@ -20525,25 +20533,25 @@ components:
           type: number
           description: DO23_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgDaav:
           type: number
           description: DO23_FLGDAAV - Indicatore Dare/Avere
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgDisatcoge:
           type: number
           description: DO23_FLGDISATCOGE - FlgDisatcoge
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indTipocomp:
           type: number
           description: DO23_INDTIPOCOMP - Indicatore tipo competenza
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -20882,7 +20890,7 @@ components:
             CG16_FLGANAGVAL - Anag. valida<br><ul><li><i>1</i> - Anagrafica
             valida</li><li><i>0</i> - Anagrafica non valida</li></ul>
           format: double
-          default: '1'
+          default: 1
           nullable: true
         flgFattpa:
           type: integer
@@ -20890,19 +20898,19 @@ components:
             CG16_FLGFATTPA - Attivazione modulo fatturazione elettronica verso
             la Pubblica Amministrazione
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgNoblacklist:
           type: number
           description: CG16_FLGNOBLACKLIST - Escludi anagrafica da elenco Black List
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgOmonimo:
           type: number
           description: CG16_FLGOMONIMO - Anagr. principale per fusione omonimi
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgPrsfis:
           enum:
@@ -20913,7 +20921,7 @@ components:
             CG16_FLGPRSFIS - Persona fisica<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idmediaCg99:
           type: number
@@ -20959,7 +20967,7 @@ components:
             Non soggetto</li><li><i>1</i> - Professionista</li><li><i>2</i> -
             Rappresentante</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indweb:
           type: string
@@ -21040,7 +21048,7 @@ components:
             CG16_SESSO - Sesso<br><ul><li><i>0</i> - Maschio</li><li><i>1</i> -
             Femmina</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         statofed:
           type: string
@@ -21986,7 +21994,7 @@ components:
           type: number
           description: MG31_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idmediaCg99:
           type: number
@@ -22007,7 +22015,7 @@ components:
             MG31_TIPOCF - Tipo Cli/For<br><ul><li><i>0</i> - 
             Cliente</li><li><i>1</i> -  Fornitore</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -22039,7 +22047,7 @@ components:
           type: number
           description: MG32_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idmediaCg99:
           type: number
@@ -22060,7 +22068,7 @@ components:
             MG32_TIPOCF - Tipo Cli/For<br><ul><li><i>0</i> - 
             Cliente</li><li><i>1</i> -  Fornitore</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -22092,7 +22100,7 @@ components:
           type: number
           description: MG33_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idmediaCg99:
           type: number
@@ -22113,7 +22121,7 @@ components:
             MG33_TIPOCF - Tipo Cli/For<br><ul><li><i>0</i> - 
             Cliente</li><li><i>1</i> -  Fornitore</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -22158,7 +22166,7 @@ components:
           type: number
           description: DO12_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         fedatadoc:
           type: string
@@ -22188,13 +22196,13 @@ components:
           type: number
           description: DO12_INDSTIPODOC - Indicatore sottotipo documento di riferimento
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indTipodoc:
           type: number
           description: DO12_INDTIPODOC - Indicatore tipo documento di riferimento
           format: double
-          default: '0'
+          default: 0
           nullable: true
         notensdoc:
           type: string
@@ -22368,7 +22376,7 @@ components:
           type: number
           description: MG97_DITTA_CG18 - Codice ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indTipoubicaz:
           enum:
@@ -22379,7 +22387,7 @@ components:
             MG97_INDTIPOUBICAZ - Tipo ubicazione<br><ul><li><i>0</i> - Di
             prelevamento</li><li><i>1</i> - Di scorta</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         larghezza:
           type: number
@@ -22433,19 +22441,19 @@ components:
           type: number
           description: MG4F_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgAggprogval:
           type: number
           description: MG4F_FLGAGGPROGVAL - Gestione progressivi di magazzino a valore
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgNote:
           type: number
           description: MG4F_FLGNOTE - Gestione note
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indGiacsca:
           enum:
@@ -22549,7 +22557,7 @@ components:
           type: number
           description: MG10_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         macrocat:
           minLength: 1
@@ -22564,7 +22572,7 @@ components:
             MG10_TIPOCF - Tipo Cli/For<br><ul><li><i>0</i> - 
             Cliente</li><li><i>1</i> -  Fornitore</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         categorie:
           type: array
@@ -22679,7 +22687,7 @@ components:
             Extracomunitario</li><li><i>1</i> -
             Intracomunitario</li><li><i>2</i> - Rep. San Marino</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         leniban:
           type: integer
@@ -22847,7 +22855,7 @@ components:
             commerciale</li><li><i>1</i> - Grande</li><li><i>2</i> -
             Media</li><li><i>3</i> - Piccola</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indIrizzo:
           type: string
@@ -22905,7 +22913,7 @@ components:
           type: number
           description: 'CG62_FLGDESC - Descriz. automatica '
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgDisgg:
           type: number
@@ -22913,25 +22921,25 @@ components:
             CG62_FLGDISGG - Non applicare giorni fissi cliente/fornitore -
             slittamento generale e cliente/fornitore
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgPrefatt:
           type: integer
           description: CG62_FLGPREFATT - Preferenziale ciclo attivo
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgPrefpass:
           type: integer
           description: CG62_FLGPREFPASS - Preferenziale ciclo passivo
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgStornoiva:
           type: number
           description: CG62_FLGSTORNOIVA - Storno IVA
           format: double
-          default: '0'
+          default: 0
           nullable: true
         id:
           type: integer
@@ -23245,7 +23253,7 @@ components:
           type: number
           description: LI26_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -23283,7 +23291,7 @@ components:
           type: number
           description: MG24_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idmediaCg99:
           type: number
@@ -23393,7 +23401,7 @@ components:
           type: number
           description: MG22_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgAppiva:
           type: integer
@@ -23414,7 +23422,7 @@ components:
           type: number
           description: MG22_FLGSTETIC - Stampa etichette
           format: double
-          default: '1'
+          default: 1
           nullable: true
         flgTaxliable:
           enum:
@@ -23704,7 +23712,7 @@ components:
           type: number
           description: MG2A_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgAttivo:
           enum:
@@ -23995,7 +24003,7 @@ components:
           type: number
           description: MG44_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgVenacq:
           enum:
@@ -24196,13 +24204,13 @@ components:
           type: number
           description: MG04_FLGVENTAMM - Incrementa ammontare delle operazioni
           format: double
-          default: '1'
+          default: 1
           nullable: true
         flgVentstat:
           type: number
           description: MG04_FLGVENTSTAT - Incrementa valore statistico
           format: double
-          default: '1'
+          default: 1
           nullable: true
         idmediaCg99:
           type: number
@@ -24441,7 +24449,7 @@ components:
           type: number
           description: MG58_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         faxnumdep:
           type: string
@@ -24456,7 +24464,7 @@ components:
             MG58_FLGDEPPRINC - Deposito principale<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indEmail:
           type: string
@@ -24475,7 +24483,7 @@ components:
             MG58_INDINTEREST - Tipo deposito<br><ul><li><i>0</i> -
             Interno</li><li><i>1</i> - Esterno</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         locdep:
           type: string
@@ -24539,7 +24547,7 @@ components:
           type: number
           description: MG12_DITTA_CG18 - Ditta
           format: double
-          default: '0'
+          default: 0
           nullable: true
         macrocatMg11:
           minLength: 1
@@ -24558,7 +24566,7 @@ components:
             MG12_TIPOCF_MG11 - Tipo Cli/For<br><ul><li><i>0</i> - 
             Cliente</li><li><i>1</i> -  Fornitore</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -24797,25 +24805,25 @@ components:
           type: number
           description: DO13_ABBUONO - Abbuono
           format: double
-          default: '0'
+          default: 0
           nullable: true
         acconto:
           type: number
           description: DO13_ACCONTO - Acconto
           format: double
-          default: '0'
+          default: 0
           nullable: true
         imponibomag:
           type: number
           description: DO13_IMPONIBOMAG - Imponibile omaggi
           format: double
-          default: '0'
+          default: 0
           nullable: true
         ivaomag:
           type: number
           description: DO13_IVAOMAG - Importo IVA omaggi
           format: double
-          default: '0'
+          default: 0
           nullable: true
         marginedocumento:
           type: number
@@ -24825,49 +24833,49 @@ components:
           type: number
           description: DO13_SCIMPCASSA - Sconto cassa ad importo
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scimpmerce:
           type: number
           description: DO13_SCIMPMERCE - Sconto merce ad importo
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scpercassa1:
           type: number
           description: DO13_SCPERCASSA1 - Sconto 1 cassa in percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scpercassa2:
           type: number
           description: DO13_SCPERCASSA2 - Sconto 2 cassa in percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scpermerce1:
           type: number
           description: DO13_SCPERMERCE1 - Sconto 1 merce in percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scpermerce2:
           type: number
           description: DO13_SCPERMERCE2 - Sconto 2 merce in percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         scpermerce3:
           type: number
           description: DO13_SCPERMERCE3 - Sconto 3 merce in percentuale
           format: double
-          default: '0'
+          default: 0
           nullable: true
         totaleCosto:
           type: number
           description: DO13_TOTCOSTO - Totale costo
           format: double
-          default: '0'
+          default: 0
           nullable: true
         totalePagare:
           type: number
@@ -24877,13 +24885,13 @@ components:
           type: number
           description: DO13_TOTSPBOLLI - Totale spese bolli
           format: double
-          default: '0'
+          default: 0
           nullable: true
         totspinc:
           type: number
           description: DO13_TOTSPINC - Totale spese incasso
           format: double
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -25041,7 +25049,7 @@ components:
             Uniti</li><li><i>3</i> - Spagna</li><li><i>4</i> - Regno
             Unito</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         extensionData:
           type: array
@@ -25154,7 +25162,7 @@ components:
             intracomunitarie art. 41 2°c.</li><li><i>6</i> - Cessioni art.8 bis,
             1°c. (no lettera intento)</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         descrizione:
           minLength: 1
@@ -25169,7 +25177,7 @@ components:
             CG28_FLGAGRI - Indicare se codice IVA utilizzato per
             agricoltura<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgAllclifor:
           enum:
@@ -25181,7 +25189,7 @@ components:
             clienti fornitori<br><ul><li><i>0</i> - No</li><li><i>1</i> -
             Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgAssport398:
           enum:
@@ -25192,7 +25200,7 @@ components:
             CG28_FLGASSPORT398 - Soc. sportiva dilettantistica
             (L.398/91)<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgAutoue:
           enum:
@@ -25203,7 +25211,7 @@ components:
             CG28_FLGAUTOUE - Vendita auto UE L. 286<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgCorrVent:
           enum:
@@ -25215,7 +25223,7 @@ components:
             corrispettivi da ventilare<br><ul><li><i>0</i> - No</li><li><i>1</i>
             - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgEscludiblacklist:
           enum:
@@ -25226,7 +25234,7 @@ components:
             CG28_FLGESCLUDIBLACKLIST - Escludi da black list<br><ul><li><i>0</i>
             - No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgImpostadibollo:
           enum:
@@ -25237,7 +25245,7 @@ components:
             CG28_FLGIMPOSTADIBOLLO - Imposta di bollo
             applicabile<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgIndet:
           enum:
@@ -25248,7 +25256,7 @@ components:
             CG28_FLGINDET - IVA indetraibile<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgIvaedit:
           enum:
@@ -25260,13 +25268,13 @@ components:
             editoria<br><ul><li><i>0</i> - Non movimentato</li><li><i>1</i> -
             Movimentato</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgMonofasersm:
           type: number
           description: CG28_FLGMONOFASERSM - Monofase Repubblica di San Marino
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgMossgest:
           enum:
@@ -25277,7 +25285,7 @@ components:
             CG28_FLGMOSSGEST - One Stop Shop (OSS)<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgMossrid:
           enum:
@@ -25288,7 +25296,7 @@ components:
             CG28_FLGMOSSRID - Aliquota ridotta<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgNotvar:
           enum:
@@ -25300,7 +25308,7 @@ components:
             variazioni IVA<br><ul><li><i>0</i> - No</li><li><i>1</i> -
             Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgSospimp:
           enum:
@@ -25315,7 +25323,7 @@ components:
             Pubblici</li><li><i>2</i> - Differita altre società</li><li><i>3</i>
             - Enti pubblici Art.17-ter (Split Payment)</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         idprov:
           type: number
@@ -25360,7 +25368,7 @@ components:
             fattura</li><li><i>2</i> - Operazioni imponibili (es.: reverse
             charge)</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         mosscodCg07:
           type: number
@@ -25419,7 +25427,7 @@ components:
             Esente</li><li><i>4</i> - Escluso</li><li><i>5</i> - Fuori campo
             IVA</li></ul>
           format: double
-          default: '1'
+          default: 1
           nullable: true
         verslynfa:
           type: string
@@ -25503,7 +25511,7 @@ components:
             CG15_FLGGLAD - GLA/D<br><ul><li><i>0</i> - No</li><li><i>1</i> -
             Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgMinimi:
           enum:
@@ -25514,7 +25522,7 @@ components:
             CG15_FLGMINIMI - FlgMinimi<br><ul><li><i>0</i> - No</li><li><i>1</i>
             - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         flgPignTerzi:
           type: number
@@ -25530,7 +25538,7 @@ components:
             CG15_FLGPROTEO360 - FlgProteo360<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgRegagevo:
           enum:
@@ -25541,7 +25549,7 @@ components:
             CG15_FLGREGAGEVO - R.Ag.<br><ul><li><i>0</i> - No</li><li><i>1</i> -
             Si</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         flgRitImposta:
           type: number
@@ -25557,7 +25565,7 @@ components:
             CG15_FLGSOSPRIT - FlgSosprit<br><ul><li><i>0</i> -
             No</li><li><i>1</i> - Si</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         gcprev:
           enum:
@@ -25568,7 +25576,7 @@ components:
             CG15_GCPREV - g/c contributi previdenziali<br><ul><li><i>0</i> -
             Data documento</li><li><i>1</i> - Data pagamento</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         idmediaCg99:
           type: number
@@ -25620,7 +25628,7 @@ components:
             intrattenimento</li><li><i>16</i> - Vendite a
             domicilio</li><li><i>17</i> - Altre</li></ul>
           format: double
-          default: '0'
+          default: 0
           nullable: true
         indTipocassa:
           enum:
@@ -25679,7 +25687,7 @@ components:
             (ENPAPI)</li><li><i>21</i> - Ente nazionale previdenza e assistenza
             psicologi (ENPAP)</li><li><i>22</i> - INPS</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         inpsivs:
           type: number
