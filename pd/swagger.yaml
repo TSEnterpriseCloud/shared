@@ -7966,10 +7966,12 @@ components:
         scrappedComponent:
           type: boolean
           description: Scrapped component
+          default: false
           nullable: true
         additionalComponent:
           type: boolean
           description: Additional component
+          default: false
           nullable: true
         additionalComponentStorage:
           type: string
@@ -8032,6 +8034,7 @@ components:
         closedStep:
           type: boolean
           description: Closed step
+          default: false
           nullable: true
         replacementMachineCode:
           type: string
@@ -8044,6 +8047,7 @@ components:
         resettingStepComponents:
           type: boolean
           description: Resetting step components
+          default: false
           nullable: true
         traceabilityData:
           type: array
@@ -8079,7 +8083,7 @@ components:
             Overtime</li><li><i>2</i> - Holiday ordinary</li><li><i>3</i> -
             Holiday overtime</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         timeType:
           enum:
@@ -8091,7 +8095,7 @@ components:
             Time type<br><ul><li><i>0</i> - Processing</li><li><i>1</i> -
             Setup</li><li><i>2</i> - Maintenance</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         productionType:
           enum:
@@ -8102,7 +8106,7 @@ components:
             Production type<br><ul><li><i>0</i> - Internal</li><li><i>1</i> -
             External</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         paymentType:
           enum:
@@ -8115,7 +8119,7 @@ components:
             Machine</li><li><i>2</i> - Employee / Qualification /
             Department</li></ul>
           format: int32
-          default: '0'
+          default: 0
           nullable: true
         timesPostingDate:
           type: string
@@ -8126,16 +8130,19 @@ components:
           type: integer
           description: Progress time hours
           format: int32
+          default: 0
           nullable: true
         timeMinutes:
           type: integer
           description: Progress time minutes
           format: int32
+          default: 0
           nullable: true
         timeSeconds:
           type: integer
           description: Progress time seconds
           format: int32
+          default: 0
           nullable: true
         toolCode:
           type: string
@@ -8278,6 +8285,11 @@ components:
           type: integer
           description: Component sequence
           format: int32
+          nullable: true
+        scrappedItem:
+          type: boolean
+          description: Scrapped item
+          default: false
           nullable: true
       additionalProperties: false
     WorkOrderProgressParameterPDDTO:

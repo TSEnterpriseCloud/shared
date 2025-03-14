@@ -25486,6 +25486,7 @@ components:
         - dittaCg18
         - dmsPublishedEntityFW
         - generalMasterDataCO
+        - statoAttualeCO
       type: object
       properties:
         gmdUpdateAdditionalParams:
@@ -25687,6 +25688,8 @@ components:
           nullable: true
         paymentTermCO:
           $ref: '#/components/schemas/PaymentTermCODTO'
+        statoAttualeCO:
+          $ref: '#/components/schemas/StatoAttualeDTO'
         vatCodeCO:
           $ref: '#/components/schemas/VatCodeCODTO'
         extensionData:
@@ -28718,6 +28721,62 @@ components:
           format: int32
           nullable: true
       additionalProperties: false
+    StatoAttualeDTO:
+      required:
+        - statiDisponibili
+        - statoCorrente
+      type: object
+      properties:
+        statoCorrente:
+          $ref: '#/components/schemas/StatoDTO'
+        statiDisponibili:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatoDTO'
+          description: Lista di stati disponibili raggiungibili dallo stato corrente.
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: Stato attuale di un'entità.
+    StatoDTO:
+      required:
+        - idStato
+        - indTipoStato
+        - seq
+      type: object
+      properties:
+        idStato:
+          type: integer
+          description: Codice stato
+          format: int32
+        seq:
+          type: integer
+          description: Numero sequenziale di stato
+          format: int32
+        indTipoStato:
+          type: integer
+          description: >-
+            Indicatore tipo stato: 0 - stato standard, 1 - stato decisionale, 2
+            - stato autorizzato, 3 -  stato non autorizzato
+          format: int32
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: Anagrafica stato
     StoreCODTO:
       required:
         - dittaCg18

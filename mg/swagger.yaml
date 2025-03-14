@@ -23315,7 +23315,6 @@ components:
       required:
         - cliforCg44
         - codDestin
-        - flgAppiva
         - tipocfCg44
       type: object
       properties:
@@ -23404,9 +23403,16 @@ components:
           default: 0
           nullable: true
         flgAppiva:
+          enum:
+            - 0
+            - 1
           type: integer
-          description: MG22_FLGAPPIVA - FlgAppiva
+          description: >-
+            MG22_FLGAPPIVA - FlgAppiva<br><ul><li><i>0</i> - No</li><li><i>1</i>
+            - Si</li></ul>
           format: int32
+          default: 0
+          nullable: true
         flgApptaxdata:
           enum:
             - 0
@@ -24297,7 +24303,7 @@ components:
             con conferma manuale</li><li><i>5</i> - Si trasformazione, se
             trasformata riga di riferimento</li></ul>
           format: double
-          default: '1'
+          default: 0
           nullable: true
         indTipospesa:
           enum:
@@ -24755,7 +24761,7 @@ components:
             con conferma manuale</li><li><i>5</i> - Si trasformazione, se
             trasformata riga di riferimento</li></ul>
           format: double
-          default: '1'
+          default: 1
           nullable: true
         testo:
           type: string
