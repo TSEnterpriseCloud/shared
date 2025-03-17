@@ -17660,6 +17660,14 @@ components:
           type: string
           description: DO30_CIG - Codice CIG riga
           nullable: true
+        codartcli:
+          type: string
+          description: DO30_CODARTCLI -  Codice articolo cliente
+          nullable: true
+        codartfor:
+          type: string
+          description: DO30_CODARTFOR -  Codice articolo fornitore
+          nullable: true
         codartMg66:
           type: string
           description: DO30_CODART_MG66 - Codice Articolo

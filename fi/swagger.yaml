@@ -66115,31 +66115,50 @@ components:
     CustSupplDataInvoicePACODTO:
       required:
         - codiceCg16
-        - flgAsw
-        - indTypeb2b
-        - tipocfCg44
       type: object
       properties:
         codiceCg16:
           type: integer
-          description: CG1O_CODICE_CG16 - CodiceCg16
+          description: CG1O_CODICE_CG16 - Codice anagrafica generale
           format: int32
         emailcortesia:
           type: string
-          description: CG1O_EMAILCORTESIA - Emailcortesia
+          description: CG1O_EMAILCORTESIA - E-mail
           nullable: true
         flgAsw:
+          enum:
+            - 0
+            - 1
           type: integer
-          description: CG1O_FLGASW - FlgAsw
+          description: >-
+            CG1O_FLGASW - FlgAsw<br><ul><li><i>0</i> - No</li><li><i>1</i> -
+            Si</li></ul>
           format: int32
+          default: 0
+          nullable: true
         indTypeb2b:
+          enum:
+            - 99
+            - 1
+            - 6
           type: integer
-          description: CG1O_INDTYPEB2B - IndTypeb2b
+          description: >-
+            CG1O_INDTYPEB2B - Instradamento<br><ul><li><i>99</i> - Non
+            attivo</li><li><i>1</i> - FEPA</li><li><i>6</i> - FEPR</li></ul>
           format: int32
+          default: 99
+          nullable: true
         tipocfCg44:
+          enum:
+            - 0
+            - 1
           type: number
-          description: CG1O_TIPOCF_CG44 - TipocfCg44
+          description: >-
+            CG1O_TIPOCF_CG44 - Tipo Cliente / Fornitore<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
           format: double
+          default: 0
+          nullable: true
         extensionData:
           type: array
           items:
@@ -66151,7 +66170,7 @@ components:
           nullable: true
       additionalProperties: false
       description: >-
-        CG1O_DATIGESTANAG - CustSupplDataInvoicePACO<br>Proprietà
+        CG1O_DATIGESTANAG - Uffici TS Digital Invoice<br>Proprietà
         chiave:<ul><li><b>CodiceCg16</b></li><li><b>TipocfCg44</b></li></ul>
     CustomerSupplierCIGCUPCO:
       type: object
@@ -81205,15 +81224,15 @@ components:
           nullable: true
         indTypeb2b:
           enum:
-            - 0
+            - 99
             - 1
             - 6
           type: integer
           description: >-
-            CG1M_INDTYPEB2B - Instradamento<br><ul><li><i>0</i> - Non
+            CG1M_INDTYPEB2B - Instradamento<br><ul><li><i>99</i> - Non
             attivo</li><li><i>1</i> - FEPA</li><li><i>6</i> - FEPR</li></ul>
           format: int32
-          default: 0
+          default: 99
           nullable: true
         lastupdateB2b:
           type: string

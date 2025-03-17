@@ -9658,6 +9658,950 @@ paths:
           description: Forbidden access
         '404':
           description: If object not found
+  /api/v1/{environment}/CO/CustSupplDataInvoicePACO/{id}:
+    get:
+      tags:
+        - CustSupplDataInvoicePACO
+      summary: Get by ID
+      description: Get an object of type corresponding the requested id
+      parameters:
+        - name: id
+          in: path
+          description: Id to get the object
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: CodiceCg16
+          in: query
+          description: CodiceCg16 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+    put:
+      tags:
+        - CustSupplDataInvoicePACO
+      summary: Update
+      description: Updating an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: >-
+            Set 'reload', if you want the DTO updated in the response request,
+            otherwise will be returned null value
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: CodiceCg16
+          in: query
+          description: CodiceCg16 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+        '400':
+          description: >-
+            If the object has not been updated: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been updated due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    delete:
+      tags:
+        - CustSupplDataInvoicePACO
+      summary: Delete
+      description: 'Deleting object of type '
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: CodiceCg16
+          in: query
+          description: CodiceCg16 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: If object has been deleted
+        '400':
+          description: >-
+            if object has not been deleted: the content response contains the
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been deleted due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    patch:
+      tags:
+        - CustSupplDataInvoicePACO
+      summary: Update partial
+      description: Patching an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: Set 'reload', if you want the DTO updated in the response request
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: CodiceCg16
+          in: query
+          description: CodiceCg16 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to patch
+        content:
+          application/json:
+            schema: {}
+          application/xml:
+            schema: {}
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+        '400':
+          description: >-
+            If the object has not been patched: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been patched due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/CO/CustSupplDataInvoicePACO:
+    get:
+      tags:
+        - CustSupplDataInvoicePACO
+      summary: Get new
+      description: Get an empty object of type corresponding
+      parameters:
+        - name: _op
+          in: query
+          description: The value must be 'new'
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The empty object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+    post:
+      tags:
+        - CustSupplDataInvoicePACO
+      summary: Create
+      description: Creating new object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+        required: true
+      responses:
+        '201':
+          description: If object has been created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+        '400':
+          description: >-
+            If the object has not been created: the content response contains
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object has not been created due to business rules violation: the
+            content response contains validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/CO/CustSupplDataInvoicePACO/validate:
+    post:
+      tags:
+        - CustSupplDataInvoicePACO
+      summary: Validate
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: CodiceCg16
+          in: query
+          description: CodiceCg16 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to validate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+        required: true
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/CO/CustSupplDataInvoicePACO/validateProperties:
+    post:
+      tags:
+        - CustSupplDataInvoicePACO
+      summary: Validation of one on more properties of Type
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: CodiceCg16
+          in: query
+          description: CodiceCg16 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: ' - One or more key-value pairs where the key is the DTO property name and the value is value to validate * REQUIRED<br> - The id of an existing object to validate properties, or '''' if the object does not exist yet <br>'
+        content:
+          application/json:
+            schema:
+              type: string
+              properties:
+                propertyName=Value&id=Value:
+                  type: string
+                  format: string
+              example: propertyName=Value&id=Value
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/CO/CustSupplDataInvoicePACO/search:
+    post:
+      tags:
+        - CustSupplDataInvoicePACO
+      summary: Search
+      description: Search among object of type
+      parameters:
+        - name: loadEntireDomain
+          in: query
+          description: Specify 'loadEntireDomain=true' if you want all the aggregate
+          style: form
+          schema:
+            type: string
+        - name: gettotalcount
+          in: query
+          description: >-
+            Specify 'gettotalcount=true' if you want the total number of
+            elements
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+        required: true
+      responses:
+        '200':
+          description: The list of object of type as result of search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+        '400':
+          description: If the search criteria is not supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+  /api/v1/{environment}/CO/CustSupplDataInvoicePACO/read:
+    post:
+      tags:
+        - CustSupplDataInvoicePACO
+      summary: Read
+      description: Read among object of type
+      parameters:
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: CodiceCg16
+          in: query
+          description: CodiceCg16 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+        required: true
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
   /api/v1/{environment}/CO/GeneralMasterDataCO/getfromcerved:
     post:
       tags:
@@ -25378,31 +26322,50 @@ components:
     CustSupplDataInvoicePACODTO:
       required:
         - codiceCg16
-        - flgAsw
-        - indTypeb2b
-        - tipocfCg44
       type: object
       properties:
         codiceCg16:
           type: integer
-          description: CG1O_CODICE_CG16 - CodiceCg16
+          description: CG1O_CODICE_CG16 - Codice anagrafica generale
           format: int32
         emailcortesia:
           type: string
-          description: CG1O_EMAILCORTESIA - Emailcortesia
+          description: CG1O_EMAILCORTESIA - E-mail
           nullable: true
         flgAsw:
+          enum:
+            - 0
+            - 1
           type: integer
-          description: CG1O_FLGASW - FlgAsw
+          description: >-
+            CG1O_FLGASW - FlgAsw<br><ul><li><i>0</i> - No</li><li><i>1</i> -
+            Si</li></ul>
           format: int32
+          default: 0
+          nullable: true
         indTypeb2b:
+          enum:
+            - 99
+            - 1
+            - 6
           type: integer
-          description: CG1O_INDTYPEB2B - IndTypeb2b
+          description: >-
+            CG1O_INDTYPEB2B - Instradamento<br><ul><li><i>99</i> - Non
+            attivo</li><li><i>1</i> - FEPA</li><li><i>6</i> - FEPR</li></ul>
           format: int32
+          default: 99
+          nullable: true
         tipocfCg44:
+          enum:
+            - 0
+            - 1
           type: number
-          description: CG1O_TIPOCF_CG44 - TipocfCg44
+          description: >-
+            CG1O_TIPOCF_CG44 - Tipo Cliente / Fornitore<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
           format: double
+          default: 0
+          nullable: true
         extensionData:
           type: array
           items:
@@ -25414,7 +26377,7 @@ components:
           nullable: true
       additionalProperties: false
       description: >-
-        CG1O_DATIGESTANAG - CustSupplDataInvoicePACO<br>Proprietà
+        CG1O_DATIGESTANAG - Uffici TS Digital Invoice<br>Proprietà
         chiave:<ul><li><b>CodiceCg16</b></li><li><b>TipocfCg44</b></li></ul>
     CustomerSupplierCIGCUPCODTO:
       required:
@@ -27748,15 +28711,15 @@ components:
           nullable: true
         indTypeb2b:
           enum:
-            - 0
+            - 99
             - 1
             - 6
           type: integer
           description: >-
-            CG1M_INDTYPEB2B - Instradamento<br><ul><li><i>0</i> - Non
+            CG1M_INDTYPEB2B - Instradamento<br><ul><li><i>99</i> - Non
             attivo</li><li><i>1</i> - FEPA</li><li><i>6</i> - FEPR</li></ul>
           format: int32
-          default: 0
+          default: 99
           nullable: true
         lastupdateB2b:
           type: string
@@ -29949,6 +30912,8 @@ tags:
     description: Collection of services for Currencies
   - name: CustomerSupplierCO
     description: Collection of services for Customers / Suppliers
+  - name: CustSupplDataInvoicePACO
+    description: Collection of services for Customer/Supplier Data for TS Digital Invoice
   - name: GeneralMasterDataCO
     description: Collection of services for General Master Data
   - name: IEExportCO
