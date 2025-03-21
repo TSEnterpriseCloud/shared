@@ -1433,6 +1433,936 @@ paths:
           description: Forbidden access
         '404':
           description: If object not found
+  /api/v1/{environment}/WH/CustomerSupplierItemWH/{id}:
+    get:
+      tags:
+        - CustomerSupplierItemWH
+      summary: Get by ID
+      description: Get an object of type corresponding the requested id
+      parameters:
+        - name: id
+          in: path
+          description: Id to get the object
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: CliforCg44
+          in: query
+          description: CliforCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+    put:
+      tags:
+        - CustomerSupplierItemWH
+      summary: Update
+      description: Updating an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: >-
+            Set 'reload', if you want the DTO updated in the response request,
+            otherwise will be returned null value
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: CliforCg44
+          in: query
+          description: CliforCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+        '400':
+          description: >-
+            If the object has not been updated: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been updated due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    delete:
+      tags:
+        - CustomerSupplierItemWH
+      summary: Delete
+      description: 'Deleting object of type '
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: CliforCg44
+          in: query
+          description: CliforCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: If object has been deleted
+        '400':
+          description: >-
+            if object has not been deleted: the content response contains the
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been deleted due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    patch:
+      tags:
+        - CustomerSupplierItemWH
+      summary: Update partial
+      description: Patching an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: Set 'reload', if you want the DTO updated in the response request
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to patch
+        content:
+          application/json:
+            schema: {}
+          application/xml:
+            schema: {}
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+        '400':
+          description: >-
+            If the object has not been patched: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been patched due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/WH/CustomerSupplierItemWH:
+    get:
+      tags:
+        - CustomerSupplierItemWH
+      summary: Get new
+      description: Get an empty object of type corresponding
+      parameters:
+        - name: _op
+          in: query
+          description: The value must be 'new'
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The empty object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+    post:
+      tags:
+        - CustomerSupplierItemWH
+      summary: Create
+      description: Creating new object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+        required: true
+      responses:
+        '201':
+          description: If object has been created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+        '400':
+          description: >-
+            If the object has not been created: the content response contains
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object has not been created due to business rules violation: the
+            content response contains validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/WH/CustomerSupplierItemWH/validate:
+    post:
+      tags:
+        - CustomerSupplierItemWH
+      summary: Validate
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: CliforCg44
+          in: query
+          description: CliforCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to validate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+        required: true
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/WH/CustomerSupplierItemWH/validateProperties:
+    post:
+      tags:
+        - CustomerSupplierItemWH
+      summary: Validation of one on more properties of Type
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: CliforCg44
+          in: query
+          description: CliforCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: ' - One or more key-value pairs where the key is the DTO property name and the value is value to validate * REQUIRED<br> - The id of an existing object to validate properties, or '''' if the object does not exist yet <br>'
+        content:
+          application/json:
+            schema:
+              type: string
+              properties:
+                propertyName=Value&id=Value:
+                  type: string
+                  format: string
+              example: propertyName=Value&id=Value
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/WH/CustomerSupplierItemWH/search:
+    post:
+      tags:
+        - CustomerSupplierItemWH
+      summary: Search
+      description: Search among object of type
+      parameters:
+        - name: loadEntireDomain
+          in: query
+          description: Specify 'loadEntireDomain=true' if you want all the aggregate
+          style: form
+          schema:
+            type: string
+        - name: gettotalcount
+          in: query
+          description: >-
+            Specify 'gettotalcount=true' if you want the total number of
+            elements
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+        required: true
+      responses:
+        '200':
+          description: The list of object of type as result of search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+        '400':
+          description: If the search criteria is not supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+  /api/v1/{environment}/WH/CustomerSupplierItemWH/read:
+    post:
+      tags:
+        - CustomerSupplierItemWH
+      summary: Read
+      description: Read among object of type
+      parameters:
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: CliforCg44
+          in: query
+          description: CliforCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+        required: true
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CustomerSupplierItemWHDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
   /api/v1/{environment}/WH/FamilyWH/{id}:
     get:
       tags:
@@ -13231,6 +14161,47 @@ components:
       description: >-
         CG1K_INDANAG - AddressTypeCO<br>Proprietà
         chiave:<ul><li><b>Id</b></li></ul>
+    AgencyCODTO:
+      required:
+        - codBanca
+        - codice
+      type: object
+      properties:
+        codBanca:
+          type: number
+          description: CG13_BANCA_CG12 - ABI-Banca
+          format: double
+        codice:
+          type: number
+          description: CG13_CODCAB - CAB agenzia
+          format: double
+        descrizione:
+          type: string
+          description: CG13_DESCR - Descrizione
+          nullable: true
+        localita:
+          type: string
+          description: CG13_LOCALITA - Localita
+          nullable: true
+        prov:
+          type: string
+          description: CG13_PROV - Prov
+          nullable: true
+        bankCO:
+          $ref: '#/components/schemas/BankCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CG13_AGENZIE - Agenzia<br>Proprietà
+        chiave:<ul><li><b>CodBanca</b></li><li><b>Codice</b></li></ul>
     AgentCODTO:
       required:
         - agente
@@ -13527,6 +14498,93 @@ components:
       description: >-
         MG17_AGENTI - Agente<br>Proprietà
         chiave:<ul><li><b>Idagente</b></li></ul>
+    AreaCODTO:
+      required:
+        - codiceAreaMG
+        - dittaCg18
+        - macroareaMg07
+      type: object
+      properties:
+        codiceAreaMG:
+          minLength: 1
+          type: string
+          description: MG08_AREA - Area
+        descrarea:
+          type: string
+          description: MG08_DESCRAREA - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG08_DITTA_CG18 - Ditta
+          format: double
+        idprov:
+          type: integer
+          description: MG08_IDPROV - IdProv (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        macroareaMg07:
+          minLength: 1
+          type: string
+          description: MG08_MACROAREA_MG07 - Macroarea
+        tipocfMg07:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG08_TIPOCF_MG07 - Tipo Cliente / Fornitore<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        zone:
+          type: array
+          items:
+            $ref: '#/components/schemas/ZoneCODTO'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG08_AREE - Area cli/for<br>Proprietà
+        chiave:<ul><li><b>CodiceAreaMG</b></li><li><b>DittaCg18</b></li><li><b>MacroareaMg07</b></li><li><b>TipocfMg07</b></li></ul>
+    BankCODTO:
+      required:
+        - codiceBanca
+      type: object
+      properties:
+        codBicswift:
+          type: string
+          description: CG12_CODBICSWIFT - Codice BIC SWIFT
+          nullable: true
+        codiceBanca:
+          type: number
+          description: CG12_BANCA - ABI-Banca
+          format: double
+        descrizione:
+          type: string
+          description: CG12_DESCR - Descrizione
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CG12_BANCHE - Banca<br>Proprietà
+        chiave:<ul><li><b>CodiceBanca</b></li></ul>
     BatchDataWHDTO:
       required:
         - codArtMg66
@@ -13649,6 +14707,2122 @@ components:
       description: >-
         MG64_MARCHEART - Marca<br>Proprietà
         chiave:<ul><li><b>CodMarca</b></li><li><b>DittaCg18</b></li></ul>
+    CIGCUPMasterDataCODTO:
+      required:
+        - cig
+        - indTipodocrif
+      type: object
+      properties:
+        cig:
+          minLength: 1
+          type: string
+          description: CO1H_CIG - Cig
+        cup:
+          type: string
+          description: CO1H_CUP - Cup
+          nullable: true
+        descrizione:
+          type: string
+          description: CO1H_DESCRIZIONE - Descrizione
+          nullable: true
+        docrifData:
+          type: string
+          description: CO1H_DOCRIF_DATA - DocrifData
+          format: date-time
+          nullable: true
+        docrifId:
+          type: string
+          description: CO1H_DOCRIF_ID - DocrifId
+          nullable: true
+        flgAttivo:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            CO1H_FLGATTIVO - FlgAttivo<br><ul><li><i>0</i> - No</li><li><i>1</i>
+            - Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        id:
+          type: integer
+          description: CO1H_ID - ID (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        indTipocontr:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            CO1H_INDTIPOCONTR - IndTipocontr<br><ul><li><i>0</i> -
+            Appalto</li><li><i>1</i> - Subappalto</li></ul>
+          format: int32
+          default: 0
+          nullable: true
+        indTipodocrif:
+          type: integer
+          description: CO1H_INDTIPODOCRIF - IndTipodocrif
+          format: int32
+        rowversion:
+          type: string
+          description: CO1H_ROWVERSION - Rowversion
+          format: byte
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CO1H_CIGCUP - CIGCUPMasterDataCO<br>Proprietà
+        chiave:<ul><li><b>Id</b></li></ul>
+    CSAccountingIndexCODTO:
+      required:
+        - codCat
+        - dittaCg18
+        - tipocfCg44
+      type: object
+      properties:
+        codCat:
+          minLength: 1
+          type: string
+          description: MGA3_CODCAT -  Codice
+        descr:
+          type: string
+          description: MGA3_DESCR - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MGA3_DITTA_CG18 - Ditta
+          format: double
+        tipocfCg44:
+          type: number
+          description: MGA3_TIPOCF_CG44 - Tipo cliente fornitore
+          format: double
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MGA3_CATCPARCF - Indice contabile<br>Proprietà
+        chiave:<ul><li><b>CodCat</b></li><li><b>DittaCg18</b></li><li><b>TipocfCg44</b></li></ul>
+    CSBankCODTO:
+      required:
+        - cliforCg44
+        - dittaCg18
+        - progR
+        - tipocfCg44
+      type: object
+      properties:
+        bban:
+          type: string
+          description: MG35_BBAN - BBAN
+          nullable: true
+        bicbancaestera:
+          type: string
+          description: MG35_BICBANCAESTERA - BIC
+          nullable: true
+        ccaddetto:
+          type: string
+          description: MG35_CCADDETTO - Addetto
+          nullable: true
+        ccdesagenz:
+          type: string
+          description: MG35_CCDESAGENZ - Descrizione agenzia
+          nullable: true
+        ccforn:
+          type: string
+          description: MG35_CCFORN - Conto corrente
+          nullable: true
+        ccfornfactor:
+          type: number
+          description: MG35_CCFORNFACTOR - Fornitore per factoring
+          format: double
+          nullable: true
+        ccfornfactoridCg44:
+          type: integer
+          description: MG35_CCFORNFACTORID_CG44 - CcfornfactoridCg44
+          format: int32
+          nullable: true
+        ccggval:
+          type: number
+          description: MG35_CCGGVAL - Giorni di valuta
+          format: double
+          default: 0
+          nullable: true
+        cliforCg44:
+          type: number
+          description: MG35_CLIFOR_CG44 - Codice Cliente / Fornitore
+          format: double
+        codiceCg07:
+          type: number
+          description: MG35_CODICE_CG07 - Nazione
+          format: double
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG35_DITTA_CG18 - Ditta
+          format: double
+        flgPref:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG35_FLGPREF - Preferenziale pagamenti<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        flgPrefIncassi:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            MG35_FLGPREF_INCASSI - Preferenziale incassi<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: int32
+          default: 0
+          nullable: true
+        iban:
+          type: string
+          description: MG35_IBAN - IBAN
+          nullable: true
+        id:
+          type: integer
+          description: MG35_ID - ID (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        idbancaestera:
+          type: string
+          description: MG35_IDBANCAESTERA - ID Banca estera
+          nullable: true
+        idcontratto:
+          type: string
+          description: MG35_IDCONTRATTO - ID Contratto/Rapporto
+          nullable: true
+        idsuccursale:
+          type: number
+          description: MG35_IDSUCCURSALE - ID Succursale
+          format: double
+          nullable: true
+        indTipoop:
+          type: number
+          description: MG35_INDTIPOOP - Tipo operazione
+          format: double
+          default: 2
+          nullable: true
+        locbancaestera:
+          type: string
+          description: MG35_LOCBANCAESTERA - Località Banca estera
+          nullable: true
+        nomebancaestera:
+          type: string
+          description: MG35_NOMEBANCAESTERA - Nome banca
+          nullable: true
+        progR:
+          type: integer
+          description: MG35_PROGR - Progr.
+          format: int32
+        tipobanca:
+          enum:
+            - 0
+            - 1
+            - 2
+          type: number
+          description: >-
+            MG35_TIPOBANCA - Tipo banca<br><ul><li><i>0</i> -
+            Nessuno</li><li><i>1</i> - Internazionale</li><li><i>2</i> -
+            Domestico</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        tipocfCg44:
+          type: number
+          description: MG35_TIPOCF_CG44 - Tipo Cliente / Fornitore
+          format: double
+        agencyCO:
+          $ref: '#/components/schemas/AgencyCODTO'
+        customerSupplierCO:
+          $ref: '#/components/schemas/CustomerSupplierCODTO'
+        nationCO:
+          $ref: '#/components/schemas/NationCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG35_CLIFORCC - Banca cliente/fornitore<br>Proprietà
+        chiave:<ul><li><b>Id</b></li></ul>
+    CSCompanyBankCODTO:
+      required:
+        - cliforCg44
+        - companyBankCO
+        - dittaCg18
+        - flgPref
+        - progR
+        - progREf08
+        - tipocfCg44
+      type: object
+      properties:
+        cliforCg44:
+          type: number
+          description: MG2H_CLIFOR_CG44 - Codice Cliente / Fornitore
+          format: double
+        dittaCg18:
+          type: number
+          description: MG2H_DITTA_CG18 - Ditta
+          format: double
+        flgPref:
+          type: integer
+          description: MG2H_FLGPREF - Banca preferenziale
+          format: int32
+        id:
+          type: integer
+          description: MG2H_ID - ID (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        progR:
+          type: integer
+          description: MG2H_PROGR - PROGR
+          format: int32
+        progREf08:
+          type: number
+          description: MG2H_PROGR_EF08 - Codice banca aziendale
+          format: double
+        rowversion:
+          type: string
+          description: MG2H_ROWVERSION - Rowversion
+          format: byte
+          nullable: true
+        tipocfCg44:
+          type: number
+          description: MG2H_TIPOCF_CG44 - Tipo cliente fornitore
+          format: double
+        companyBankCO:
+          $ref: '#/components/schemas/CompanyBankCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG2H_CLIFORBANCHEAZ - CSCompanyBankCO<br>Proprietà
+        chiave:<ul><li><b>Id</b></li></ul>
+    CSHistorySddCODTO:
+      required:
+        - datavar
+        - id
+      type: object
+      properties:
+        codBicswift:
+          type: string
+          description: MG2E_CODBICSWIFT - BICSWIFT
+          nullable: true
+        codClideb:
+          type: string
+          description: MG2E_CODCLIDEB - Codice debitore
+          nullable: true
+        codIndiv:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+            - 6
+            - 9
+          type: number
+          description: >-
+            MG2E_CODINDIV - Codice individuale<br><ul><li><i>0</i> -
+            Nessuno</li><li><i>1</i> - Utenza</li><li><i>2</i> -
+            Matricola</li><li><i>3</i> - Codice fiscale</li><li><i>4</i> -
+            Codice cliente</li><li><i>5</i> - Codice fornitore</li><li><i>6</i>
+            - Portafoglio commerciale</li><li><i>9</i> - Altro</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        datavar:
+          type: string
+          description: MG2E_DATAVAR - Data
+          format: date-time
+        id:
+          type: integer
+          description: MG2E_ID - Id
+          format: int32
+        indStorno:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 8
+            - 9
+          type: number
+          description: >-
+            MG2E_INDSTORNO - Facoltà di storno<br><ul><li><i>0</i> -
+            Nessuno</li><li><i>1</i> - Facoltà di storno dopo la scadenza
+            (D+5)</li><li><i>2</i> - Facoltà di storno alla
+            scadenza</li><li><i>3</i> - Nessuna facoltà di storno per
+            contestazione</li><li><i>4</i> - Nessuna facoltà di storno per la
+            banca domiciliataria</li><li><i>8</i> - Esiste diritto al rimborso
+            (D+8 settimane)</li><li><i>9</i> - Nessuna facoltà di storno per le
+            caratteristiche del mandato</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        indTipoinc:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+          type: integer
+          description: >-
+            MG2E_INDTIPOINC - Tipo seq. incasso<br><ul><li><i>0</i> -
+            First</li><li><i>1</i> - Recurrent</li><li><i>2</i> -
+            Final</li><li><i>3</i> - One-Off</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        indTiposdd:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG2E_INDTIPOSDD - Tipo SDD<br><ul><li><i>0</i> -
+            Core</li><li><i>1</i> - B2B</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        ridiban:
+          type: string
+          description: MG2E_RIDIBAN - IBAN
+          nullable: true
+        soggtitibanCg16:
+          type: integer
+          description: MG2E_SOGGTITIBAN_CG16 - Sogg. titolare IBAN
+          format: int32
+          nullable: true
+        tipologia:
+          enum:
+            - 1
+            - 2
+            - 3
+          type: number
+          description: >-
+            MG2E_TIPOLOGIA - Tipologia<br><ul><li><i>1</i> -
+            Consumatore</li><li><i>2</i> - Non Consumatore</li><li><i>3</i> -
+            Microimpresa</li></ul>
+          format: double
+          default: '1'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG2E_STORICORID - CSHistorySddCO<br>Proprietà
+        chiave:<ul><li><b>Datavar</b></li><li><b>Id</b></li></ul>
+    CSInfoCODTO:
+      required:
+        - cliforCg44
+        - datacreaz
+        - dataultvar
+        - dittaCg18
+        - flgEstrpayline
+        - flgSpbol
+        - flgSpeinc
+        - flgTaxliable
+        - indSpesecum
+        - tipocfCg44
+      type: object
+      properties:
+        area:
+          type: string
+          description: MG19_AREA - Codice Area
+          nullable: true
+        areanielsenMg0e:
+          type: string
+          description: MG19_AREANIELSEN_MG0E - Area Nielsen
+          nullable: true
+        bacsaccountno:
+          type: integer
+          description: MG19_BACSACCOUNTNO - Codice BACS
+          format: int32
+          nullable: true
+        categ:
+          type: string
+          description: MG19_CATEG - Codice Categoria
+          nullable: true
+        cliforCg44:
+          type: number
+          description: MG19_CLIFOR_CG44 - Codice cliente
+          format: double
+        codIclfatt:
+          type: number
+          description: MG19_CODICLFATT - Cliente fatturazione
+          format: double
+          nullable: true
+        codLivbloc:
+          type: string
+          description: MG19_CODLIVBLOC - Codice Blocco
+          nullable: true
+        codRifalf:
+          type: string
+          description: MG19_CODRIFALF - Codice di riferimento alfanumerico
+          nullable: true
+        codRifnum:
+          type: number
+          description: MG19_CODRIFNUM - Codice di riferimento numerico
+          format: double
+          nullable: true
+        codRischioMg2a:
+          type: string
+          description: MG19_CODRISCHIO_MG2A - Codice rischio
+          nullable: true
+        datablocco:
+          type: string
+          description: MG19_DATABLOCCO - Data blocco
+          format: date-time
+          nullable: true
+        datacreaz:
+          type: string
+          description: MG19_DATACREAZ - Data creazione
+          format: date-time
+        datadismis:
+          type: string
+          description: MG19_DATADISMIS - Data dismissione
+          format: date-time
+          nullable: true
+        datarischio:
+          type: string
+          description: MG19_DATARISCHIO - Data dell'attivazione controllo rischio
+          format: date-time
+          nullable: true
+        dataultvar:
+          type: string
+          description: MG19_DATAULTVAR - Data ultima variazione
+          format: date-time
+        dittaCg18:
+          type: number
+          description: MG19_DITTA_CG18 - Ditta
+          format: double
+        fidoaziendale:
+          type: number
+          description: MG19_FIDOAZIENDALE - Fido aziendale
+          format: double
+          nullable: true
+        fidofactoring:
+          type: number
+          description: MG19_FIDOFACTORING - Importo fido assicurazione credito
+          format: double
+          nullable: true
+        fidolivello1:
+          type: number
+          description: MG19_FIDOLIVELLO1 - Fido liv. 1
+          format: double
+          nullable: true
+        fidolivello2:
+          type: number
+          description: MG19_FIDOLIVELLO2 - Fido liv.2
+          format: double
+          nullable: true
+        finchargerterms:
+          type: string
+          description: MG19_FINCHARGERTERMS - Termini di addebito
+          nullable: true
+        flgEstrpayline:
+          type: number
+          description: MG19_FLGESTRPAYLINE - Estrazione Payline
+          format: double
+        flgSpbol:
+          type: number
+          description: MG19_FLGSPBOL - Spese bolli
+          format: double
+        flgSpeinc:
+          type: number
+          description: MG19_FLGSPEINC - Spese incasso
+          format: double
+        flgTaxliable:
+          type: integer
+          description: MG19_FLGTAXLIABLE - Tax Liable
+          format: int32
+        idmediaCg99:
+          type: number
+          description: MG19_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        indClibloc:
+          enum:
+            - 0
+            - 2
+            - 1
+          type: number
+          description: >-
+            MG19_INDCLIBLOC - Tipo blocco<br><ul><li><i>0</i> -
+            Nessuno</li><li><i>2</i> - senza possibilità di
+            sblocco</li><li><i>1</i> - con possibilità di sblocco</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        indGesfido:
+          type: number
+          description: MG19_INDGESFIDO - Indicatore gestione fido
+          format: double
+          nullable: true
+        indrottcig:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG19_INDROTTCIG - Indrottcig<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        indSpesecum:
+          type: number
+          description: MG19_INDSPESECUM - Cumulo sp.bolli/incasso
+          format: double
+        irs1099:
+          type: string
+          description: MG19_IRS1099 - IRSS1099 Code
+          nullable: true
+        lastchange:
+          type: string
+          description: MG19_LASTCHANGE - Data ultima variazione
+          format: date-time
+          nullable: true
+        linguaMg52:
+          type: string
+          description: MG19_LINGUA_MG52 - Codice lingua
+          nullable: true
+        macroarea:
+          type: string
+          description: MG19_MACROAREA - Codice Macroarea
+          nullable: true
+        macrocat:
+          type: string
+          description: MG19_MACROCAT - Codice Macrocategoria
+          nullable: true
+        notebloc:
+          type: string
+          description: MG19_NOTEBLOC - Note blocco
+          nullable: true
+        raggcrf3:
+          type: string
+          description: MG19_RAGGCRF3 - Codice raggrupamento Clienti/Fornitori 3
+          nullable: true
+        raggrcf1:
+          type: string
+          description: MG19_RAGGRCF1 - Codice raggruppamento Clienti/Fornitori 1
+          nullable: true
+        raggrcf2:
+          type: string
+          description: MG19_RAGGRCF2 - Codice raggruppamento Clienti/Fornitori 2
+          nullable: true
+        regimeiva:
+          type: string
+          description: MG19_REGIMEIVA - Regime IVA
+          nullable: true
+        reminderterms:
+          type: string
+          description: MG19_REMINDERTERMS - Termini di sollecito
+          nullable: true
+        scaglspbanc:
+          type: number
+          description: MG19_SCAGLSPBANC - Codice della tabella bolli e spese incasso
+          format: double
+          nullable: true
+        sottocat:
+          type: string
+          description: MG19_SOTTOCAT - Codice Sottocategoria
+          nullable: true
+        taxareaNv01:
+          type: string
+          description: MG19_TAXAREA_NV01 - Tax area
+          nullable: true
+        taxexemptionno:
+          type: string
+          description: MG19_TAXEXEMPTIONNO - USA-numero esenzione sales tax
+          nullable: true
+        tipocfCg44:
+          type: number
+          description: MG19_TIPOCF_CG44 - Tipo Cliente/ Fornitore
+          format: double
+        typeofsupply:
+          type: string
+          description: MG19_TYPEOFSUPPLY - Tipo di fornitura
+          nullable: true
+        zona:
+          type: string
+          description: MG19_ZONA - Codice Zona
+          nullable: true
+        areaCO:
+          $ref: '#/components/schemas/AreaCODTO'
+        categoryCO:
+          $ref: '#/components/schemas/CategoryCODTO'
+        grouping1CO:
+          $ref: '#/components/schemas/Grouping1CODTO'
+        grouping2CO:
+          $ref: '#/components/schemas/Grouping2CODTO'
+        grouping3CO:
+          $ref: '#/components/schemas/Grouping3CODTO'
+        macroAreaCO:
+          $ref: '#/components/schemas/MacroAreaCODTO'
+        macroCategoryCO:
+          $ref: '#/components/schemas/MacroCategoryCODTO'
+        subCategoryCO:
+          $ref: '#/components/schemas/SubCategoryCODTO'
+        zoneCO:
+          $ref: '#/components/schemas/ZoneCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG19_CLIFORVA - Classificazione Cliente/Fornitore<br>Proprietà
+        chiave:<ul><li><b>CliforCg44</b></li><li><b>DittaCg18</b></li><li><b>TipocfCg44</b></li></ul>
+    CSJointlyHeldCODTO:
+      required:
+        - cliforCg44
+        - cliforcoCg44
+        - customerSupplierCO
+        - dittaCg18
+        - percentuale
+        - tipocfCg44
+      type: object
+      properties:
+        cliforCg44:
+          type: number
+          description: CG4E_CLIFOR_CG44 - CliforCg44
+          format: double
+        cliforcoCg44:
+          type: number
+          description: CG4E_CLIFORCO_CG44 - CliforcoCg44
+          format: double
+        dittaCg18:
+          type: number
+          description: CG4E_DITTA_CG18 - DittaCg18
+          format: double
+        idcliforcoCg44:
+          type: integer
+          description: CG4E_IDCLIFORCO_CG44 - IdcliforcoCg44
+          format: int32
+          nullable: true
+        percentuale:
+          type: number
+          description: CG4E_PERCENTUALE - Percentuale
+          format: double
+        tipocfCg44:
+          type: number
+          description: CG4E_TIPOCF_CG44 - TipocfCg44
+          format: double
+        customerSupplierCO:
+          $ref: '#/components/schemas/CustomerSupplierCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CG4E_CFCOINTESTATI - CSJointlyHeldCO<br>Proprietà
+        chiave:<ul><li><b>CliforCg44</b></li><li><b>CliforcoCg44</b></li><li><b>DittaCg18</b></li><li><b>TipocfCg44</b></li></ul>
+    CSPaymentRangeCODTO:
+      required:
+        - cliforCg44
+        - codScagl
+        - currencyCO
+        - dittaCg18
+        - tipocfCg44
+        - valutaCg08
+      type: object
+      properties:
+        aimpdoc:
+          type: number
+          description: MG20_AIMPDOC - Limite superiore
+          format: double
+          nullable: true
+        cliforCg44:
+          type: number
+          description: MG20_CLIFOR_CG44 - Codice Cliente / Fornitore
+          format: double
+        codPagCg62:
+          type: string
+          description: MG20_CODPAG_CG62 - Condizione pagamento
+          nullable: true
+        codScagl:
+          type: number
+          description: MG20_CODSCAGL - Scaglione
+          format: double
+        dittaCg18:
+          type: number
+          description: MG20_DITTA_CG18 - DittaCg18
+          format: double
+        id:
+          type: integer
+          description: MG20_ID - Id (Required only in PUT/PATCH)
+          format: int64
+          nullable: true
+        idCg62:
+          type: integer
+          description: MG20_ID_CG62 - IdCg62
+          format: int64
+          nullable: true
+        idmediaCg99:
+          type: number
+          description: MG20_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        indPagpart:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG20_INDPAGPART - Applica condizione di
+            pagamento<br><ul><li><i>0</i> - del documento</li><li><i>1</i> -
+            dello scaglione</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        tipocfCg44:
+          type: number
+          description: MG20_TIPOCF_CG44 - Tipo Cliente / Fornitore
+          format: double
+        valutaCg08:
+          minLength: 1
+          type: string
+          description: MG20_VALUTA_CG08 - Valuta
+        currencyCO:
+          $ref: '#/components/schemas/CurrencyCODTO'
+        paymentTermCO:
+          $ref: '#/components/schemas/PaymentTermCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG20_CLIFORSCPAG - CSPaymentRangeCO<br>Proprietà
+        chiave:<ul><li><b>Id</b></li></ul>
+    CSPostponementPeriodCODTO:
+      required:
+        - ammgg
+        - cliforCg44
+        - dammgg
+        - dittaCg18
+        - tipocfCg44
+      type: object
+      properties:
+        ammgg:
+          type: number
+          description: MG21_AMMGG - A gg/mm
+          format: double
+        cliforCg44:
+          type: number
+          description: MG21_CLIFOR_CG44 - Codice Cliente / Fornitore
+          format: double
+        dammgg:
+          type: number
+          description: MG21_DAMMGG - Da gg/mm
+          format: double
+        dittaCg18:
+          type: number
+          description: MG21_DITTA_CG18 - DittaCg18
+          format: double
+        ggmmfixslit:
+          type: number
+          description: MG21_GGMMFIXSLIT - gg/mm scad.
+          format: double
+          nullable: true
+        ggslsucc:
+          type: number
+          description: MG21_GGSLSUCC - gg slittamento scad. successiva
+          format: double
+          nullable: true
+        id:
+          type: integer
+          description: MG21_ID - Id (Required only in PUT/PATCH)
+          format: int64
+          nullable: true
+        idmediaCg99:
+          type: number
+          description: MG21_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        indAppggfix:
+          type: integer
+          description: MG21_INDAPPGGFIX - IndAppggfix
+          format: int32
+          nullable: true
+        indTiposlit:
+          enum:
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+          type: number
+          description: >-
+            MG21_INDTIPOSLIT - Tipo slittamento<br><ul><li><i>1</i> - 1° giorno
+            dopo limite superiore</li><li><i>2</i> - 1° giorno mese
+            successivo</li><li><i>3</i> - Stesso giorno scadenza al mese
+            successivo</li><li><i>4</i> - Giorno fisso</li><li><i>5</i> - Somma
+            alla rata del mese successivo</li></ul>
+          format: double
+          default: '1'
+          nullable: true
+        tipocfCg44:
+          type: number
+          description: MG21_TIPOCF_CG44 - Tipo Cliente / Fornitore
+          format: double
+        tipoeff:
+          enum:
+            - 9
+            - 12
+            - 10
+            - 16
+            - 2
+            - 11
+            - 13
+            - 3
+            - 4
+            - 8
+            - 14
+            - 6
+            - 7
+            - 15
+            - 5
+            - 1
+          type: number
+          description: >-
+            MG21_TIPOEFF - Tipo effetto<br><ul><li><i>9</i> -
+            Contrassegno</li><li><i>12</i> - Leasing</li><li><i>10</i> - Lettera
+            di credito</li><li><i>16</i> - MAV</li><li><i>2</i> - Ricevuta
+            bancaria</li><li><i>11</i> - SDD</li><li><i>13</i> - Rimessa
+            diretta</li><li><i>3</i> - Tratta</li><li><i>4</i> - Tratta
+            accettata</li><li><i>8</i> - Bancomat</li><li><i>14</i> - Bonifico
+            Bancario</li><li><i>6</i> - Cambiale</li><li><i>7</i> - Carta di
+            credito</li><li><i>15</i> - C/C postale</li><li><i>5</i> -
+            Cessione</li><li><i>1</i> - Contanti</li></ul>
+          format: double
+          default: '9'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG21_CLIFORSALPAG - CSPostponementPeriodCO<br>Proprietà
+        chiave:<ul><li><b>Id</b></li></ul>
+    CSSddCODTO:
+      required:
+        - cliforCg44
+        - dittaCg18
+        - flgVariato
+        - progR
+        - tipocfCg44
+      type: object
+      properties:
+        bancaallineam:
+          type: number
+          description: MG29_BANCAALLINEAM - Codice ABI Banca Allineamento
+          format: double
+          nullable: true
+        causrich:
+          type: number
+          description: MG29_CAUSRICH - Causale richiesta Azienda
+          format: double
+          nullable: true
+        causrisp:
+          type: number
+          description: MG29_CAUSRISP - Causale Banca Allineamento
+          format: double
+          nullable: true
+        cfiscsottoscr:
+          type: string
+          description: MG29_CFISCSOTTOSCR - Codice fiscale sottoscrittore
+          nullable: true
+        cliforCg44:
+          type: number
+          description: MG29_CLIFOR_CG44 - Codice Cliente / Fornitore
+          format: double
+        codAutoriz:
+          type: string
+          description: MG29_CODAUTORIZ - Codice autorizzazione (Acquisizione PagoBancomat)
+          nullable: true
+        codBicswift:
+          type: string
+          description: MG29_CODBICSWIFT - Codice BIC SWIFT
+          nullable: true
+        codClideb:
+          type: string
+          description: MG29_CODCLIDEB - Codice debitore
+          nullable: true
+        codClidebprec:
+          type: string
+          description: MG29_CODCLIDEBPREC - Codice debitore precedente
+          nullable: true
+        codIndiv:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+            - 6
+            - 9
+          type: number
+          description: >-
+            MG29_CODINDIV - Codice individuale<br><ul><li><i>0</i> -
+            Nessuno</li><li><i>1</i> - Utenza</li><li><i>2</i> -
+            Matricola</li><li><i>3</i> - Codice fiscale</li><li><i>4</i> -
+            Codice cliente</li><li><i>5</i> - Codice fornitore</li><li><i>6</i>
+            - Portafoglio commerciale</li><li><i>9</i> - Altro</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        codIndivprec:
+          type: number
+          description: MG29_CODINDIVPREC - Codice individuale precedente
+          format: double
+          nullable: true
+        codRif:
+          type: string
+          description: MG29_CODRIF - Codice riferimento
+          nullable: true
+        contocorr:
+          type: string
+          description: MG29_CONTOCORR - Conto corrente
+          nullable: true
+        contocorrprec:
+          type: string
+          description: MG29_CONTOCORRPREC - Conto corrente precedente
+          nullable: true
+        datamandato:
+          type: string
+          description: MG29_DATAMANDATO - Data mandato RID
+          format: date-time
+          nullable: true
+        dataprimascad:
+          type: string
+          description: MG29_DATAPRIMASCAD - Data prima scadenza
+          format: date-time
+          nullable: true
+        datarich:
+          type: string
+          description: MG29_DATARICH - Data richiesta
+          format: date-time
+          nullable: true
+        datarisp:
+          type: string
+          description: MG29_DATARISP - Data causale Banca Allineamento
+          format: date-time
+          nullable: true
+        dataultimascad:
+          type: string
+          description: MG29_DATAULTIMASCAD - Data ultima scadenza
+          format: date-time
+          nullable: true
+        descrizione:
+          type: string
+          description: MG29_DESCRIZIONE - Descrizione
+          nullable: true
+        diniego:
+          type: integer
+          description: MG29_DINIEGO - Diniego
+          format: int32
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG29_DITTA_CG18 - Ditta
+          format: double
+        flgAllineam:
+          type: number
+          description: MG29_FLGALLINEAM - FlgAllineam
+          format: double
+          nullable: true
+        flgDisattivato:
+          type: integer
+          description: MG29_FLGDISATTIVATO - Dati disattivati
+          format: int32
+          nullable: true
+        flgVariato:
+          type: number
+          description: MG29_FLGVARIATO - Variato
+          format: double
+        id:
+          type: integer
+          description: MG29_ID - ID (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        idmediaCg99:
+          type: number
+          description: MG29_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        impmaxrata:
+          type: number
+          description: MG29_IMPMAXRATA - Importo massimo/prefissato
+          format: double
+          nullable: true
+        indIrsottoscr:
+          type: string
+          description: MG29_INDIRSOTTOSCR - Indirizzo sottoscrittore
+          nullable: true
+        indStorno:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 8
+            - 9
+          type: number
+          description: >-
+            MG29_INDSTORNO - Facoltà di storno<br><ul><li><i>0</i> -
+            Nessuno</li><li><i>1</i> - Facoltà di storno dopo la scadenza
+            (D+5)</li><li><i>2</i> - Facoltà di storno alla
+            scadenza</li><li><i>3</i> - Nessuna facoltà di storno per
+            contestazione</li><li><i>4</i> - Nessuna facoltà di storno per la
+            banca domiciliataria</li><li><i>8</i> - Esiste diritto al rimborso
+            (D+8 settimane)</li><li><i>9</i> - Nessuna facoltà di storno per le
+            caratteristiche del mandato</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        indStornoprec:
+          type: number
+          description: MG29_INDSTORNOPREC - Facoltà di storno precedente
+          format: double
+          nullable: true
+        indTipoinc:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+          type: integer
+          description: >-
+            MG29_INDTIPOINC - Sequenza<br><ul><li><i>0</i> -
+            First</li><li><i>1</i> - Recurrent</li><li><i>2</i> -
+            Final</li><li><i>3</i> - One-Off</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        indTiposdd:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG29_INDTIPOSDD - Tipo SDD<br><ul><li><i>0</i> -
+            Core</li><li><i>1</i> - B2B</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        locsottoscr:
+          type: string
+          description: MG29_LOCSOTTOSCR - Località sottoscrittore
+          nullable: true
+        nrrate:
+          type: number
+          description: MG29_NRRATE - Numero rate
+          format: double
+          nullable: true
+        nuovabanca:
+          type: number
+          description: MG29_NUOVABANCA - Nuovabanca
+          format: double
+          nullable: true
+        progR:
+          type: integer
+          description: MG29_PROGR - Progr.
+          format: int32
+        ragsosottoscr:
+          type: string
+          description: MG29_RAGSOSOTTOSCR - Ragione sociale sottoscrittore
+          nullable: true
+        ridabi:
+          type: number
+          description: MG29_RIDABI - Codice ABI
+          format: double
+          nullable: true
+        ridabiprec:
+          type: number
+          description: MG29_RIDABIPREC - Codice ABI precedente
+          format: double
+          nullable: true
+        ridcab:
+          type: number
+          description: MG29_RIDCAB - Codice CAB
+          format: double
+          nullable: true
+        ridcabprec:
+          type: number
+          description: MG29_RIDCABPREC - Codice CAB precedente
+          format: double
+          nullable: true
+        ridiban:
+          type: string
+          description: MG29_RIDIBAN - IBAN
+          nullable: true
+        ridibanprec:
+          type: string
+          description: MG29_RIDIBANPREC - IBAN (International Bank Account Number)
+          nullable: true
+        soggtitibanCg16:
+          type: integer
+          description: MG29_SOGGTITIBAN_CG16 - Soggetto titolare IBAN
+          format: int32
+          nullable: true
+        tipocfCg44:
+          type: number
+          description: MG29_TIPOCF_CG44 - Tipo Cliente / Fornitore
+          format: double
+        tipoinclocked:
+          type: number
+          description: MG29_TIPOINCLOCKED - Tipo seq. incasso bloccato
+          format: double
+          nullable: true
+        tipologia:
+          enum:
+            - 1
+            - 2
+            - 3
+          type: number
+          description: >-
+            MG29_TIPOLOGIA - Tipologia<br><ul><li><i>1</i> -
+            Consumatore</li><li><i>2</i> - Non Consumatore</li><li><i>3</i> -
+            Microimpresa</li></ul>
+          format: double
+          default: '1'
+          nullable: true
+        tipologiaprec:
+          type: number
+          description: MG29_TIPOLOGIAPREC - Tipologiaprec
+          format: double
+          nullable: true
+        csHistorySddCO:
+          type: array
+          items:
+            $ref: '#/components/schemas/CSHistorySddCODTO'
+          nullable: true
+        nationCO:
+          $ref: '#/components/schemas/NationCODTO'
+        soggtitiban:
+          $ref: '#/components/schemas/GeneralMasterDataCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: MG29_CLIFORRID - CSSddCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>
+    CategoryCODTO:
+      required:
+        - categ
+        - macrocatMg10
+      type: object
+      properties:
+        categ:
+          minLength: 1
+          type: string
+          description: MG11_CATEG - Categoria
+        descrcat:
+          type: string
+          description: MG11_DESCRCAT - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG11_DITTA_CG18 - Ditta
+          format: double
+          default: 0
+          nullable: true
+        macrocatMg10:
+          minLength: 1
+          type: string
+          description: MG11_MACROCAT_MG10 - Macrocategoria
+        tipocfMg10:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG11_TIPOCF_MG10 - Tipo Cli/For<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG11_CATEG - Categoria<br>Proprietà
+        chiave:<ul><li><b>Categ</b></li><li><b>DittaCg18</b></li><li><b>MacrocatMg10</b></li><li><b>TipocfMg10</b></li></ul>
+    CompanyBankCODTO:
+      required:
+        - dittaCg18
+        - progR
+      type: object
+      properties:
+        aprogressmav:
+          type: number
+          description: EF08_APROGRESSMAV - A progressivo
+          format: double
+          nullable: true
+        bancaCg12:
+          type: number
+          description: EF08_BANCA_CG12 - Banca
+          format: double
+          nullable: true
+        bbananticipi:
+          type: string
+          description: EF08_BBANANTICIPI - Bbananticipi
+          nullable: true
+        bbanconto:
+          type: string
+          description: EF08_BBANCONTO - BBAN
+          nullable: true
+        bbaneffpresef:
+          type: string
+          description: EF08_BBANEFFPRESEF - Bbaneffpresef
+          nullable: true
+        bbanordpbonif:
+          type: string
+          description: EF08_BBANORDPBONIF - Bbanordpbonif
+          nullable: true
+        bicbanca:
+          type: string
+          description: EF08_BICBANCA - BIC
+          nullable: true
+        cabbonifCg13:
+          type: number
+          description: EF08_CABBONIF_CG13 - CabbonifCg13
+          format: double
+          nullable: true
+        cabcontoCg13:
+          type: number
+          description: EF08_CABCONTO_CG13 - CAB agenzia
+          format: double
+          nullable: true
+        cabmavCg13:
+          type: number
+          description: EF08_CABMAV_CG13 - CabmavCg13
+          format: double
+          nullable: true
+        cabribaCg13:
+          type: number
+          description: EF08_CABRIBA_CG13 - CabribaCg13
+          format: double
+          nullable: true
+        cabridCg13:
+          type: number
+          description: EF08_CABRID_CG13 - CabridCg13
+          format: double
+          nullable: true
+        ccanticipi:
+          type: string
+          description: EF08_CCANTICIPI - Ccanticipi
+          nullable: true
+        ccconto:
+          type: string
+          description: EF08_CCCONTO - C/C
+          nullable: true
+        cceffpresef:
+          type: string
+          description: EF08_CCEFFPRESEF - Cceffpresef
+          nullable: true
+        ccordpbonif:
+          type: string
+          description: EF08_CCORDPBONIF - Ccordpbonif
+          nullable: true
+        codAzienda:
+          type: string
+          description: EF08_CODAZIENDA - Codice azienda
+          nullable: true
+        codiceCg07:
+          type: number
+          description: EF08_CODICE_CG07 - Nazione
+          format: double
+          nullable: true
+        codicecuc:
+          type: string
+          description: EF08_CODICECUC - Codice univoco CBI
+          nullable: true
+        codRappopor:
+          type: string
+          description: EF08_CODRAPPOPOR - ID Rapporto di Portafoglio
+          nullable: true
+        codSia:
+          type: string
+          description: EF08_CODSIA - SIA/Mittente
+          nullable: true
+        creditidentifier:
+          type: string
+          description: EF08_CREDITIDENTIFIER - Creditor Identifier
+          nullable: true
+        daprogressmav:
+          type: number
+          description: EF08_DAPROGRESSMAV - Da progressivo
+          format: double
+          nullable: true
+        descr:
+          type: string
+          description: EF08_DESCR - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: EF08_DITTA_CG18 - Ditta
+          format: double
+        flgAutattribnrmav:
+          type: integer
+          description: EF08_FLGAUTATTRIBNRMAV - Gestione stampa bollettini MAV
+          format: int32
+          nullable: true
+        flgCambiali:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            EF08_FLGCAMBIALI - FlgCambiali<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        flgCessioni:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            EF08_FLGCESSIONI - FlgCessioni<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        flgMav:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            EF08_FLGMAV - MAV<br><ul><li><i>0</i> - No</li><li><i>1</i> -
+            Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        flgPref:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            EF08_FLGPREF - Preferenziale<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        flgRiba:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            EF08_FLGRIBA - Ri.Ba.<br><ul><li><i>0</i> - No</li><li><i>1</i> -
+            Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        flgRibacamb:
+          type: number
+          description: EF08_FLGRIBACAMB - FlgRibacamb
+          format: double
+          nullable: true
+        flgRibacess:
+          type: number
+          description: EF08_FLGRIBACESS - FlgRibacess
+          format: double
+          nullable: true
+        flgRibaricba:
+          type: number
+          description: EF08_FLGRIBARICBA - FlgRibaricba
+          format: double
+          nullable: true
+        flgRibatratac:
+          type: number
+          description: EF08_FLGRIBATRATAC - FlgRibatratac
+          format: double
+          nullable: true
+        flgRibatratte:
+          type: number
+          description: EF08_FLGRIBATRATTE - FlgRibatratte
+          format: double
+          nullable: true
+        flgRidsdd:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            EF08_FLGRIDSDD - RID SDD<br><ul><li><i>0</i> - No</li><li><i>1</i> -
+            Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        flgRidsddraggr:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            EF08_FLGRIDSDDRAGGR - Modalità creazione RID SDD<br><ul><li><i>0</i>
+            - Analitica</li><li><i>1</i> - Raggruppata</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        flgScfatt:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            EF08_FLGSCFATT - Sconto fattura<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        flgTratte:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            EF08_FLGTRATTE - FlgTratte<br><ul><li><i>0</i> - No</li><li><i>1</i>
+            - Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        ggvalcambalt:
+          type: number
+          description: >-
+            EF08_GGVALCAMBALT - Giorni di valuta cambiali e cessioni domiciliati
+            altre banche
+          format: double
+          nullable: true
+        ggvalcambfil:
+          type: number
+          description: >-
+            EF08_GGVALCAMBFIL - Giorni di valuta cambiali e cessioni domiciliati
+            su stesse filiali banca di presentazione
+          format: double
+          nullable: true
+        ggvalmavincalt:
+          type: number
+          description: >-
+            EF08_GGVALMAVINCALT - Giorni di valuta Mav assunti al dopo incasso
+            domiciliati su altre banche
+          format: double
+          nullable: true
+        ggvalmavincfil:
+          type: number
+          description: >-
+            EF08_GGVALMAVINCFIL - Giorni di valuta Mav assunti al dopo incasso
+            domiciliati su stesse filiali banca di presentazione
+          format: double
+          nullable: true
+        ggvalmavincpos:
+          type: number
+          description: >-
+            EF08_GGVALMAVINCPOS - Giorni di valuta Mav assunti al dopo incasso
+            domiciliati su uffici postali
+          format: double
+          nullable: true
+        ggvalmavsbf:
+          type: number
+          description: EF08_GGVALMAVSBF - Giorni di valuta Mav presentati a s.b.f.
+          format: double
+          nullable: true
+        ggvalribaalt:
+          type: number
+          description: EF08_GGVALRIBAALT - Giorni di valuta Ri.Ba. domiciliati altre banche
+          format: double
+          nullable: true
+        ggvalribafil:
+          type: number
+          description: >-
+            EF08_GGVALRIBAFIL - Giorni di valuta Ri.Ba. domiciliati su stesse
+            filiali banca di presentazione
+          format: double
+          nullable: true
+        ggvalridalt:
+          type: number
+          description: EF08_GGVALRIDALT - Giorni di valuta Rid domiciliati su altre banche
+          format: double
+          nullable: true
+        ggvalridfil:
+          type: number
+          description: >-
+            EF08_GGVALRIDFIL - Giorni di valuta Rid domiciliati su stesse
+            filiali banca di presentazione
+          format: double
+          nullable: true
+        ggvalscfattalt:
+          type: number
+          description: >-
+            EF08_GGVALSCFATTALT - Giorni di valuta Sconto fatture domiciliate
+            altre banche
+          format: double
+          nullable: true
+        ggvalscfattfil:
+          type: number
+          description: >-
+            EF08_GGVALSCFATTFIL - Giorni di valuta Sc. fatt. domiciliate su
+            stesse filiali banca di presentazione
+          format: double
+          nullable: true
+        ggvaltratalt:
+          type: number
+          description: >-
+            EF08_GGVALTRATALT - Giorni di valuta tratte e tratte accettate
+            domiciliati altre banche
+          format: double
+          nullable: true
+        ggvaltratfil:
+          type: number
+          description: >-
+            EF08_GGVALTRATFIL - Giorni di valuta tratte e tratte accettate
+            domiciliati su stesse filiali banca di presentazione
+          format: double
+          nullable: true
+        ibananticipi:
+          type: string
+          description: EF08_IBANANTICIPI - IBAN anticipi
+          nullable: true
+        ibanconto:
+          type: string
+          description: EF08_IBANCONTO - IBAN
+          nullable: true
+        ibaneffpresef:
+          type: string
+          description: EF08_IBANEFFPRESEF - Ibaneffpresef
+          nullable: true
+        ibanordpbonif:
+          type: string
+          description: EF08_IBANORDPBONIF - IBAN Bonifici e Ordini di Pagamento
+          nullable: true
+        id:
+          type: integer
+          description: EF08_ID - ID (Required only in PUT/PATCH)
+          format: int64
+          nullable: true
+        idbancaestera:
+          type: string
+          description: EF08_IDBANCAESTERA - Idbancaestera
+          nullable: true
+        idcontratto:
+          type: string
+          description: EF08_IDCONTRATTO - Id Contratto
+          nullable: true
+        idmediaCg99:
+          type: number
+          description: EF08_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        idsuccursale:
+          type: number
+          description: EF08_IDSUCCURSALE - ID Succursale
+          format: double
+          nullable: true
+        impcastel:
+          type: number
+          description: EF08_IMPCASTEL - Importo castelletto
+          format: double
+          nullable: true
+        impfido:
+          type: number
+          description: EF08_IMPFIDO - Importo fido
+          format: double
+          nullable: true
+        indCheckpivacf:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            EF08_INDCHECKPIVACF - Controllo presenza CF e
+            P.IVA<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>
+          format: int32
+          default: 0
+          nullable: true
+        indCompind:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            EF08_INDCOMPIND - IndCompind<br><ul><li><i>0</i> - Su unico tag
+            XML</li><li><i>1</i> - Tag XML strutturato</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        indContpmtinf:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            EF08_INDCONTPMTINF - Numerazione Rid SDD su file<br><ul><li><i>0</i>
+            - Progressiva per distinta</li><li><i>1</i> - Relativa per
+            raggruppo</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        indPresmav:
+          enum:
+            - 1
+            - 0
+            - 2
+            - 3
+            - 4
+          type: number
+          description: >-
+            EF08_INDPRESMAV - Tipo presentazione MAV<br><ul><li><i>1</i> - Sbf a
+            maturazione valuta</li><li><i>0</i> - Sbf ordinario</li><li><i>2</i>
+            - Sbf anticipato</li><li><i>3</i> - All'incasso</li><li><i>4</i> -
+            Allo sconto</li></ul>
+          format: double
+          default: '1'
+          nullable: true
+        indPresriba:
+          enum:
+            - 1
+            - 0
+            - 2
+            - 3
+            - 4
+          type: number
+          description: >-
+            EF08_INDPRESRIBA - Tipo presentazione Ri.Ba.<br><ul><li><i>1</i> -
+            Sbf a maturazione valuta</li><li><i>0</i> - Sbf
+            ordinario</li><li><i>2</i> - Sbf anticipato</li><li><i>3</i> -
+            All'incasso</li><li><i>4</i> - Allo sconto</li></ul>
+          format: double
+          default: '1'
+          nullable: true
+        indPresrid:
+          enum:
+            - 1
+            - 0
+            - 2
+            - 3
+            - 4
+          type: number
+          description: >-
+            EF08_INDPRESRID - Tipo presentazione Rid<br><ul><li><i>1</i> - Sbf a
+            maturazione valuta</li><li><i>0</i> - Sbf ordinario</li><li><i>2</i>
+            - Sbf anticipato</li><li><i>3</i> - All'incasso</li><li><i>4</i> -
+            Allo sconto</li></ul>
+          format: double
+          default: '1'
+          nullable: true
+        indTipolib:
+          enum:
+            - 1
+            - 0
+            - 2
+            - 3
+          type: number
+          description: >-
+            EF08_INDTIPOLIB - Tipo liberalizzazione del
+            castelletto<br><ul><li><i>1</i> - Data scadenza + gg. valuta
+            (calendario)</li><li><i>0</i> - 1°gg succ. decade scad.+gg.val
+            (calendario)</li><li><i>2</i> - 1°gg succ. decade scad.+gg.val
+            (lavorativi)</li><li><i>3</i> - Data scadenza + gg. valuta
+            (lavorativi)</li></ul>
+          format: double
+          default: '1'
+          nullable: true
+        indTipopres:
+          enum:
+            - 0
+            - 2
+            - 3
+            - 4
+            - 5
+            - 6
+          type: number
+          description: >-
+            EF08_INDTIPOPRES - Tipo presentazione<br><ul><li><i>0</i> -
+            Tutte</li><li><i>2</i> -  S.b.f. ordinario</li><li><i>3</i> - 
+            S.b.f. a maturazione valuta</li><li><i>4</i> -  S.b.f.
+            anticipato</li><li><i>5</i> - Incasso</li><li><i>6</i> -
+            Sconto</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        locbancaestera:
+          type: string
+          description: EF08_LOCBANCAESTERA - Locbancaestera
+          nullable: true
+        maxgginsoluti:
+          type: number
+          description: EF08_MAXGGINSOLUTI - Max gg. insoluti
+          format: double
+          nullable: true
+        prefissoattribmav:
+          type: number
+          description: EF08_PREFISSOATTRIBMAV - Prefisso banca
+          format: double
+          nullable: true
+        progR:
+          type: number
+          description: EF08_PROGR - Progr.
+          format: double
+        rowversion:
+          type: string
+          description: EF08_ROWVERSION - RowVersion
+          format: byte
+          nullable: true
+        scfindbasecalc:
+          enum:
+            - 1
+            - 0
+          type: number
+          description: >-
+            EF08_SCFINDBASECALC - Importo base calcolo<br><ul><li><i>1</i> -
+            Totale documento</li><li><i>0</i> - Totale imponibile</li></ul>
+          format: double
+          default: '1'
+          nullable: true
+        scfnsdocrif:
+          type: string
+          description: EF08_SCFNSDOCRIF - Estremi ns. doc. riferim.
+          nullable: true
+        scfpercpres:
+          type: number
+          description: EF08_SCFPERCPRES - % di presentazione
+          format: double
+          nullable: true
+        scfperctasso:
+          type: number
+          description: EF08_SCFPERCTASSO - % tasso interesse
+          format: double
+          nullable: true
+        scfvsdocrif:
+          type: string
+          description: EF08_SCFVSDOCRIF - Estremi vs. doc. riferim.
+          nullable: true
+        spcommbonalt:
+          type: number
+          description: >-
+            EF08_SPCOMMBONALT - Spese commissioni su bonifici bancari di altre
+            banche
+          format: double
+          nullable: true
+        spcommbonfil:
+          type: number
+          description: >-
+            EF08_SPCOMMBONFIL - Spese commissioni su bonifici bancari di filiali
+            della stessa banca di presentazione
+          format: double
+          nullable: true
+        spcommordpalt:
+          type: number
+          description: >-
+            EF08_SPCOMMORDPALT - Spese commissioni su ordini pagamento di altre
+            banche
+          format: double
+          nullable: true
+        spcommordpfil:
+          type: number
+          description: >-
+            EF08_SPCOMMORDPFIL - Spese commissioni su ordini pagamento di
+            filiali della stessa banca di presentazione
+          format: double
+          nullable: true
+        spinccambalt:
+          type: number
+          description: >-
+            EF08_SPINCCAMBALT - Spese incasso cambiali/cessioni domiciliati su
+            altre banche
+          format: double
+          nullable: true
+        spinccambfil:
+          type: number
+          description: >-
+            EF08_SPINCCAMBFIL - Spese incasso cambiali/cessioni domiciliati su
+            filiali della stessa banca di presentazione
+          format: double
+          nullable: true
+        spinccoralt:
+          type: number
+          description: >-
+            EF08_SPINCCORALT - Spese incasso conferme d'ordine domiciliati su
+            altre banche
+          format: double
+          nullable: true
+        spinccorfil:
+          type: number
+          description: >-
+            EF08_SPINCCORFIL - Spese incasso conferme d'ordine domiciliati su
+            filiali della stessa banca di presentazione
+          format: double
+          nullable: true
+        spincesitopag:
+          type: number
+          description: EF08_SPINCESITOPAG - Esito di pagamento
+          format: double
+          nullable: true
+        spincmavincalt:
+          type: number
+          description: >-
+            EF08_SPINCMAVINCALT - Spese incasso Mav assunti al dopo incasso
+            domiciliati su altre banche
+          format: double
+          nullable: true
+        spincmavincfil:
+          type: number
+          description: >-
+            EF08_SPINCMAVINCFIL - Spese incasso Mav assunti al dopo incasso
+            domiciliati su filiali della stessa banca di presentazione
+          format: double
+          nullable: true
+        spincmavincpos:
+          type: number
+          description: >-
+            EF08_SPINCMAVINCPOS - Spese incasso Mav assunti al dopo incasso
+            domiciliati su uffici postali
+          format: double
+          nullable: true
+        spincmavsbf:
+          type: number
+          description: EF08_SPINCMAVSBF - Spese incasso Mav assunti a s.b.f.
+          format: double
+          nullable: true
+        spincribaalt:
+          type: number
+          description: EF08_SPINCRIBAALT - Spese incasso Ri.Ba. domiciliati su altre banche
+          format: double
+          nullable: true
+        spincribafil:
+          type: number
+          description: >-
+            EF08_SPINCRIBAFIL - Spese incasso Ri.Ba. domiciliati su filiali
+            della stessa banca di presentazione
+          format: double
+          nullable: true
+        spincridalt:
+          type: number
+          description: EF08_SPINCRIDALT - Spese incasso Rid domiciliati su altre banche
+          format: double
+          nullable: true
+        spincridfil:
+          type: number
+          description: >-
+            EF08_SPINCRIDFIL - Spese incasso Rid domiciliati su filiali della
+            stessa banca di presentazione
+          format: double
+          nullable: true
+        spinctraalt:
+          type: number
+          description: EF08_SPINCTRAALT - Spese incasso tratte domiciliati su altre banche
+          format: double
+          nullable: true
+        spinctrafil:
+          type: number
+          description: >-
+            EF08_SPINCTRAFIL - Spese incasso tratte domiciliati su filiali della
+            stessa banca di presentazione
+          format: double
+          nullable: true
+        sppresdistinta:
+          type: number
+          description: EF08_SPPRESDISTINTA - Presentazione distinta
+          format: double
+          nullable: true
+        spritcamb:
+          type: number
+          description: EF08_SPRITCAMB - Spese di ritorno effettive per cambiali e cessioni
+          format: double
+          nullable: true
+        spritcambcl:
+          type: number
+          description: >-
+            EF08_SPRITCAMBCL - Spese di ritorno da addebitare al cliente per
+            cambiali e cessioni
+          format: double
+          nullable: true
+        spritmavincas:
+          type: number
+          description: EF08_SPRITMAVINCAS - Spese di ritorno effettive per MAV all'incasso
+          format: double
+          nullable: true
+        spritmavincascl:
+          type: number
+          description: >-
+            EF08_SPRITMAVINCASCL - Spese di ritorno da addebitare al cliente per
+            MAV all'incasso
+          format: double
+          nullable: true
+        spritmavsbf:
+          type: number
+          description: EF08_SPRITMAVSBF - Spese di ritorno effettive per MAV Sbf
+          format: double
+          nullable: true
+        spritmavsbfcl:
+          type: number
+          description: >-
+            EF08_SPRITMAVSBFCL - Spese di ritorno da addebitare al cliente per
+            MAV Sbf
+          format: double
+          nullable: true
+        spritriba:
+          type: number
+          description: >-
+            EF08_SPRITRIBA - Spese di ritorno effettive Ri.Ba. e conferme
+            d'ordine
+          format: double
+          nullable: true
+        spritribacl:
+          type: number
+          description: >-
+            EF08_SPRITRIBACL - Spese di ritorno da addebitare al cliente per
+            Ri.Ba. e conferme d'ordine
+          format: double
+          nullable: true
+        spritrid:
+          type: number
+          description: EF08_SPRITRID - Spese di ritorno effettive per Rid
+          format: double
+          nullable: true
+        spritridcl:
+          type: number
+          description: EF08_SPRITRIDCL - Spese di ritorno da addebitare al cliente per Rid
+          format: double
+          nullable: true
+        sprittratte:
+          type: number
+          description: >-
+            EF08_SPRITTRATTE - Spese di ritorno effettive tratte e tratte
+            accettate
+          format: double
+          nullable: true
+        sprittrattecl:
+          type: number
+          description: >-
+            EF08_SPRITTRATTECL - Spese di ritorno da addebitare al cliente per
+            tratte e tratte accettate
+          format: double
+          nullable: true
+        tipobanca:
+          enum:
+            - 0
+            - 1
+            - 2
+          type: number
+          description: >-
+            EF08_TIPOBANCA - Tipo banca<br><ul><li><i>0</i> -
+            Nessuno</li><li><i>1</i> - Internazionale</li><li><i>2</i> -
+            Domestico</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        ultprogressmav:
+          type: number
+          description: EF08_ULTPROGRESSMAV - Ultimo progressivo
+          format: double
+          nullable: true
+        bankCO:
+          $ref: '#/components/schemas/BankCODTO'
+        nationCO:
+          $ref: '#/components/schemas/NationCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        EF08_BANCHE - Banca aziendale<br>Proprietà
+        chiave:<ul><li><b>Id</b></li></ul>
     CurrencyCODTO:
       required:
         - codice
@@ -13765,6 +16939,623 @@ components:
       description: >-
         CG08_TABVALUTE - Valuta<br>Proprietà
         chiave:<ul><li><b>Codice</b></li></ul>
+    CustSupplDataInvoicePACODTO:
+      required:
+        - codiceCg16
+      type: object
+      properties:
+        codiceCg16:
+          type: integer
+          description: CG1O_CODICE_CG16 - Codice anagrafica generale
+          format: int32
+        emailcortesia:
+          type: string
+          description: CG1O_EMAILCORTESIA - E-mail
+          nullable: true
+        flgAsw:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            CG1O_FLGASW - FlgAsw<br><ul><li><i>0</i> - No</li><li><i>1</i> -
+            Si</li></ul>
+          format: int32
+          default: 0
+          nullable: true
+        indTypeb2b:
+          enum:
+            - 99
+            - 1
+            - 6
+          type: integer
+          description: >-
+            CG1O_INDTYPEB2B - Instradamento<br><ul><li><i>99</i> - Non
+            attivo</li><li><i>1</i> - FEPA</li><li><i>6</i> - FEPR</li></ul>
+          format: int32
+          default: 99
+          nullable: true
+        tipocfCg44:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            CG1O_TIPOCF_CG44 - Tipo Cliente / Fornitore<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CG1O_DATIGESTANAG - Uffici TS Digital Invoice<br>Proprietà
+        chiave:<ul><li><b>CodiceCg16</b></li><li><b>TipocfCg44</b></li></ul>
+    CustomerSupplierCIGCUPCODTO:
+      required:
+        - cigcuPcode
+        - cliforCg44
+        - dittaCg18
+        - idcigcupCo1h
+        - tipocfCg44
+      type: object
+      properties:
+        cliforCg44:
+          type: number
+          description: CO1I_CLIFOR_CG44 - CliforCg44
+          format: double
+        dittaCg18:
+          type: number
+          description: CO1I_DITTA_CG18 - Ditta
+          format: double
+        id:
+          type: integer
+          description: CO1I_ID - ID (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        idcigcupCo1h:
+          type: integer
+          description: CO1I_IDCIGCUP_CO1H - IdcigcupCo1h
+          format: int32
+        progREf08:
+          type: number
+          description: CO1I_PROGR_EF08 - ProgREf08
+          format: double
+          nullable: true
+        progRMg35:
+          type: integer
+          description: CO1I_PROGR_MG35 - ProgRMg35
+          format: int32
+          nullable: true
+        rowversion:
+          type: string
+          description: CO1I_ROWVERSION - Rowversion
+          format: byte
+          nullable: true
+        tipocfCg44:
+          type: number
+          description: CO1I_TIPOCF_CG44 - TipocfCg44
+          format: double
+        cigcuPcode:
+          $ref: '#/components/schemas/CIGCUPMasterDataCODTO'
+        companyBank:
+          $ref: '#/components/schemas/CompanyBankCODTO'
+        csBankCO:
+          $ref: '#/components/schemas/CSBankCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CO1I_CFCIGCUP - CustomerSupplierCIGCUPCO<br>Proprietà
+        chiave:<ul><li><b>Id</b></li></ul>
+    CustomerSupplierCODTO:
+      required:
+        - clifor
+        - dittaCg18
+        - dmsPublishedEntityFW
+        - generalMasterDataCO
+        - statoAttualeCO
+      type: object
+      properties:
+        gmdUpdateAdditionalParams:
+          $ref: '#/components/schemas/GMDUpdateAdditionalParametersDTO'
+        clifor:
+          type: number
+          description: CG44_CLIFOR - Codice cli/for
+          format: double
+        codAbiCg12:
+          type: number
+          description: CG44_CODABI_CG12 - Codice banca
+          format: double
+          nullable: true
+        codCabCg13:
+          type: number
+          description: CG44_CODCAB_CG13 - Codice agenzia
+          format: double
+          nullable: true
+        codiceCg28:
+          type: string
+          description: CG44_CODICE_CG28 - Codice aliquota IVA
+          nullable: true
+        contoCg24:
+          type: string
+          description: CG44_CONTO_CG24 - Conto merci
+          nullable: true
+        contorCg24:
+          type: string
+          description: CG44_CONTOR_CG24 - Conto merci reso
+          nullable: true
+        contratto:
+          type: string
+          description: CG44_CONTRATTO - Codice contratto
+          nullable: true
+        datavaliva:
+          type: string
+          description: CG44_DATAVALIVA - Fine validità codice IVA
+          format: date-time
+          nullable: true
+        dittaCg18:
+          type: number
+          description: CG44_DITTA_CG18 - Ditta
+          format: double
+        flgArt62:
+          type: integer
+          description: CG44_FLGART62 - Flag Art. 62
+          format: int32
+          default: 0
+          nullable: true
+        flgAttivo:
+          type: number
+          description: CG44_FLGATTIVO - Attivo
+          format: double
+          default: 1
+          nullable: true
+        flgCointestati:
+          type: number
+          description: CG44_FLGCOINTESTATI - Cointestati
+          format: double
+          default: 0
+          nullable: true
+        flgIntercompany:
+          type: number
+          description: CG44_FLGINTERCOMPANY - Gest. Intercompany
+          format: double
+          default: 0
+          nullable: true
+        ggscadfix:
+          type: number
+          description: CG44_GGSCADFIX - GG scad. fix
+          format: double
+          nullable: true
+        gruppoCg10:
+          type: number
+          description: CG44_GRUPPO_CG10 - Codice Pdc
+          format: double
+          nullable: true
+        guid:
+          type: string
+          description: CG44_GUID - GUID
+          format: uuid
+          nullable: true
+        idclifor:
+          type: integer
+          description: CG44_IDCLIFOR - ID cliente (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        idmediaCg99:
+          type: number
+          description: CG44_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        indElenchimov3000:
+          enum:
+            - 99
+            - 0
+            - 1
+            - 2
+            - 3
+          type: integer
+          description: >-
+            CG44_INDELENCHIMOV3000 - Ind. gestione elenchi mov.
+            3.000€<br><ul><li><i>99</i> - Come da anag.
+            generale</li><li><i>0</i> - No</li><li><i>1</i> -
+            Si</li><li><i>2</i> - Contratto >= 3.000€</li><li><i>3</i> -
+            Contratto corrisp. periodici</li></ul>
+          format: int32
+          default: 99
+          nullable: true
+        intermedioCg40:
+          type: number
+          description: CG44_INTERMEDIO_CG40 - Codice intermedio
+          format: double
+          nullable: true
+        lastchange:
+          type: string
+          description: CG44_LASTCHANGE - Data ultima variazione
+          format: date-time
+          nullable: true
+        progREf08:
+          type: number
+          description: CG44_PROGR_EF08 - Codice banca aziendale
+          format: double
+          nullable: true
+        tipocf:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            CG44_TIPOCF - Tipo Cliente / Fornitore<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        idExtendedAttributeEntity:
+          type: integer
+          format: int32
+        idExtendedAttributeSubEntity:
+          type: integer
+          format: int32
+        agentCO:
+          $ref: '#/components/schemas/AgentCODTO'
+        blackListGeneralMasterData:
+          $ref: '#/components/schemas/GeneralMasterDataCODTO'
+        csAccountingIndexCO:
+          $ref: '#/components/schemas/CSAccountingIndexCODTO'
+        csBankCO:
+          type: array
+          items:
+            $ref: '#/components/schemas/CSBankCODTO'
+          nullable: true
+        csCompanyBankCO:
+          type: array
+          items:
+            $ref: '#/components/schemas/CSCompanyBankCODTO'
+          nullable: true
+        csInfoCO:
+          $ref: '#/components/schemas/CSInfoCODTO'
+        csJointlyHeldCO:
+          type: array
+          items:
+            $ref: '#/components/schemas/CSJointlyHeldCODTO'
+          nullable: true
+        csPaymentRangeCO:
+          type: array
+          items:
+            $ref: '#/components/schemas/CSPaymentRangeCODTO'
+          nullable: true
+        csPostponementPeriodCO:
+          type: array
+          items:
+            $ref: '#/components/schemas/CSPostponementPeriodCODTO'
+          nullable: true
+        csSddCO:
+          type: array
+          items:
+            $ref: '#/components/schemas/CSSddCODTO'
+          nullable: true
+        currencyCO:
+          $ref: '#/components/schemas/CurrencyCODTO'
+        customerSupplierCIGCUPCO:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerSupplierCIGCUPCODTO'
+          nullable: true
+        custSupplDataInvoicePACO:
+          $ref: '#/components/schemas/CustSupplDataInvoicePACODTO'
+        dmsPublishedEntityFW:
+          $ref: '#/components/schemas/DMSPublishedEntityFWDTO'
+        generalMasterDataCO:
+          $ref: '#/components/schemas/GeneralMasterDataCODTO'
+        officeCO:
+          $ref: '#/components/schemas/OfficeCODTO'
+        officePACO:
+          type: array
+          items:
+            $ref: '#/components/schemas/OfficePACODTO'
+          nullable: true
+        paymentTermCO:
+          $ref: '#/components/schemas/PaymentTermCODTO'
+        statoAttualeCO:
+          $ref: '#/components/schemas/StatoAttualeDTO'
+        vatCodeCO:
+          $ref: '#/components/schemas/VatCodeCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CG44_CLIFOR - Cliente fornitore<br>Proprietà
+        chiave:<ul><li><b>Idclifor</b></li></ul>
+    CustomerSupplierItemWHDTO:
+      required:
+        - artclifor
+        - cliforCg44
+        - customerSupplierCO
+        - dtcreaz
+        - dtultagg
+        - ggcons
+        - impspese
+        - itemWH
+        - tipocfCg44
+      type: object
+      properties:
+        artclifor:
+          minLength: 1
+          type: string
+          description: MG73_ARTCLIFOR - Codice articolo cliente/fornitore
+        cliforCg44:
+          type: number
+          description: MG73_CLIFOR_CG44 - Codice Cliente / Fornitore
+          format: double
+        codAffidabil:
+          type: number
+          description: MG73_CODAFFIDABIL - Codice affidabilità
+          format: double
+          nullable: true
+        codArtMg66:
+          type: string
+          description: MG73_CODART_MG66 - Codice Articolo
+          nullable: true
+        codFlessibil:
+          type: number
+          description: MG73_CODFLESSIBIL - Codice flessibilità
+          format: double
+          nullable: true
+        colliulacqven:
+          type: number
+          description: MG73_COLLIULACQVEN - Ultimi colli acquisto/vendita
+          format: double
+          default: 0
+          nullable: true
+        confriferMg96:
+          type: string
+          description: MG73_CONFRIFER_MG96 - Confezione di riferimento
+          nullable: true
+        descartcf:
+          type: string
+          description: MG73_DESCARTCF - Descrizione Articolo Cliente/Fornitore
+          nullable: true
+        descartestcf:
+          type: string
+          description: MG73_DESCARTESTCF - Descrizione articolo estesa
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG73_DITTA_CG18 - Ditta
+          format: double
+          default: 0
+          nullable: true
+        dtcreaz:
+          type: string
+          description: MG73_DTCREAZ - Data creazione
+          format: date-time
+        dtdismissione:
+          type: string
+          description: MG73_DTDISMISSIONE - Data dismissione
+          format: date-time
+          nullable: true
+        dtultacqven:
+          type: string
+          description: MG73_DTULTACQVEN - Data ultimo acquisto/vendita
+          format: date-time
+          nullable: true
+        dtultagg:
+          type: string
+          description: MG73_DTULTAGG - Data ultimo agg.
+          format: date-time
+        fattconv:
+          type: number
+          description: MG73_FATTCONV - Fattore di conversione
+          format: double
+          nullable: true
+        flgDescpers:
+          type: number
+          description: MG73_FLGDESCPERS - Descrizione personalizzata
+          format: double
+          default: 0
+          nullable: true
+        flgForpref:
+          type: number
+          description: MG73_FLGFORPREF - Fornitore preferenziale
+          format: double
+          default: 0
+          nullable: true
+        flgLottifix:
+          type: number
+          description: MG73_FLGLOTTIFIX - Lotti fissi
+          format: double
+          default: 0
+          nullable: true
+        ggcons:
+          type: number
+          description: MG73_GGCONS - Giorni consegna
+          format: double
+        idmediaCg99:
+          type: number
+          description: MG73_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        impspese:
+          type: number
+          description: MG73_IMPSPESE - Importo spese di consegna
+          format: double
+        indArtstam:
+          enum:
+            - 0
+            - 1
+            - 2
+          type: number
+          description: >-
+            MG73_INDARTSTAM - articoli da stampare<br><ul><li><i>0</i> -  Codice
+            articolo cliente</li><li><i>1</i> -  Codice articolo
+            interno</li><li><i>2</i> -  Codice articolo produttore</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        indCalcprecf:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+          type: number
+          description: >-
+            MG73_INDCALCPRECF - Indicatore calcolo del
+            prezzo<br><ul><li><i>0</i> -  Non gestito</li><li><i>1</i> - Da
+            richied.</li><li><i>2</i> - Pre1 x F.Conv</li><li><i>3</i> - Pre1 :
+            F.Conv</li><li><i>4</i> - Pre2 x F.Conv</li><li><i>5</i> - Pre2 :
+            F.Conv</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        indCalcqtacf:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+            - 6
+          type: number
+          description: >-
+            MG73_INDCALCQTACF - Indicatore calcolo della
+            quantità<br><ul><li><i>0</i> -  Non gestita</li><li><i>1</i> - Da
+            richied.</li><li><i>2</i> - Colli x Pz.C</li><li><i>3</i> - Qta1 x
+            F.Conv</li><li><i>4</i> - Qta1 : F.Conv</li><li><i>5</i> - Qta2 x
+            F.Conv</li><li><i>6</i> - Qta2 : F.Conv</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        indDisprod:
+          enum:
+            - 0
+            - 1
+            - 2
+          type: number
+          description: >-
+            MG73_INDDISPROD - Tipo articolo<br><ul><li><i>0</i> -  Non
+            gestito</li><li><i>1</i> -  Distributore</li><li><i>2</i> -
+            Produttore</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        indGiorni:
+          enum:
+            - 0
+            - 1
+            - 2
+          type: number
+          description: >-
+            MG73_INDGIORNI - Modalità di gestione giorni di
+            consegna<br><ul><li><i>0</i> -  Dato informativo</li><li><i>1</i> - 
+            Sostituiscono i giorni dell'articolo</li><li><i>2</i> -  Sommano ai
+            giorni dell'articolo</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        lottomax:
+          type: number
+          description: MG73_LOTTOMAX - Lotto max
+          format: double
+          default: 0
+          nullable: true
+        lottomin:
+          type: number
+          description: MG73_LOTTOMIN - Lotto minimo
+          format: double
+          default: 0
+          nullable: true
+        lottomult:
+          type: number
+          description: MG73_LOTTOMULT - Lotto multiplo
+          format: double
+          default: 0
+          nullable: true
+        noteartcf:
+          type: string
+          description: MG73_NOTEARTCF - Note articolo
+          nullable: true
+        opzioneMg5e:
+          type: string
+          description: MG73_OPZIONE_MG5E - Codice variante
+          nullable: true
+        percripart:
+          type: number
+          description: MG73_PERCRIPART - Percentuale di ripartizione
+          format: double
+          nullable: true
+        percscarti:
+          type: number
+          description: MG73_PERCSCARTI - Percentuale scarti
+          format: double
+          nullable: true
+        priorita:
+          type: number
+          description: MG73_PRIORITA - Priorita
+          format: double
+          nullable: true
+        qta1ulacqven:
+          type: number
+          description: MG73_QTA1ULACQVEN - Ultima qtà 1 acquisto/vendita
+          format: double
+          default: 0
+          nullable: true
+        qta2ulacqven:
+          type: number
+          description: MG73_QTA2ULACQVEN - Ultima qtà 2 acquisto/vendita
+          format: double
+          default: 0
+          nullable: true
+        tipocfCg44:
+          type: number
+          description: MG73_TIPOCF_CG44 - Tipo cliente fornitore
+          format: double
+        umcf:
+          type: string
+          description: MG73_UMCF - U.M. Cli/For
+          nullable: true
+        customerSupplierCO:
+          $ref: '#/components/schemas/CustomerSupplierCODTO'
+        itemWH:
+          $ref: '#/components/schemas/ItemWHDTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG73_ARTCLIFOR - Articolo cliente/fornitore<br>Proprietà
+        chiave:<ul><li><b>Artclifor</b></li><li><b>CliforCg44</b></li><li><b>DittaCg18</b></li><li><b>TipocfCg44</b></li></ul>
     DMSPublishedEntityFWDTO:
       type: object
       properties:
@@ -14071,6 +17862,96 @@ components:
       description: >-
         MG61_GRUPPIFIS - Gruppo fiscale<br>Proprietà
         chiave:<ul><li><b>CodGrupfis</b></li><li><b>DittaCg18</b></li></ul>
+    ForeignPaymentCodeCODTO:
+      required:
+        - codice
+      type: object
+      properties:
+        codice:
+          minLength: 1
+          type: string
+          description: CG6D_CODICE - Codice
+        codIso:
+          type: string
+          description: CG6D_CODISO - Codice ISO
+          nullable: true
+        descrpag:
+          type: string
+          description: CG6D_DESCRPAG - Descrizione
+          nullable: true
+        flgIbanobbl:
+          type: integer
+          description: CG6D_FLGIBANOBBL - IBAN
+          format: int32
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CG6D_CODPAGEXPMAN - ForeignPaymentCodeCO<br>Proprietà
+        chiave:<ul><li><b>Codice</b></li></ul>
+    GMDUpdateAdditionalParametersDTO:
+      type: object
+      properties:
+        codice:
+          type: integer
+          format: int32
+          nullable: true
+        ragSoAnag:
+          type: string
+          nullable: true
+        indirizzo:
+          type: string
+          nullable: true
+        numCiv:
+          type: string
+          nullable: true
+        cap:
+          type: string
+          nullable: true
+        citta:
+          type: string
+          nullable: true
+        prov:
+          type: string
+          nullable: true
+        codiceCg07:
+          type: number
+          format: double
+          nullable: true
+        partiva:
+          type: string
+          nullable: true
+        codFiscale:
+          type: string
+          nullable: true
+        tel1Num:
+          type: string
+          nullable: true
+        fax:
+          type: string
+          nullable: true
+        tipologia:
+          type: string
+          nullable: true
+        codLegCg01:
+          type: string
+          nullable: true
+        descrCg07:
+          type: string
+          nullable: true
+        nationIso:
+          type: string
+          nullable: true
+      additionalProperties: false
+      description: Parametri per scrittura dati General Master Data
     GeneralMasterDataCODTO:
       required:
         - codice
@@ -14422,6 +18303,165 @@ components:
       description: >-
         CG16_ANAGGEN - Anagrafica generale<br>Proprietà
         chiave:<ul><li><b>Codice</b></li></ul>
+    Grouping1CODTO:
+      required:
+        - codRaggrcf1
+      type: object
+      properties:
+        codRaggrcf1:
+          minLength: 1
+          type: string
+          description: MG31_CODRAGGRCF1 - Raggruppamento 1
+        descraggrcf1:
+          type: string
+          description: MG31_DESCRAGGRCF1 - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG31_DITTA_CG18 - Ditta
+          format: double
+          default: 0
+          nullable: true
+        idmediaCg99:
+          type: number
+          description: MG31_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        idprov:
+          type: integer
+          description: MG31_IDPROV - IdProv (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        tipocf:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG31_TIPOCF - Tipo Cli/For<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG31_RAGGRCF1 -  Raggruppamento 1<br>Proprietà
+        chiave:<ul><li><b>CodRaggrcf1</b></li><li><b>DittaCg18</b></li><li><b>Tipocf</b></li></ul>
+    Grouping2CODTO:
+      required:
+        - codRaggrcf2
+      type: object
+      properties:
+        codRaggrcf2:
+          minLength: 1
+          type: string
+          description: MG32_CODRAGGRCF2 - Raggruppamento 2
+        descraggrcf2:
+          type: string
+          description: MG32_DESCRAGGRCF2 - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG32_DITTA_CG18 - Ditta
+          format: double
+          default: 0
+          nullable: true
+        idmediaCg99:
+          type: number
+          description: MG32_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        idprov:
+          type: integer
+          description: MG32_IDPROV - IdProv (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        tipocf:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG32_TIPOCF - Tipo Cli/For<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG32_RAGGRCF2 -  Raggruppamento 2<br>Proprietà
+        chiave:<ul><li><b>CodRaggrcf2</b></li><li><b>DittaCg18</b></li><li><b>Tipocf</b></li></ul>
+    Grouping3CODTO:
+      required:
+        - codRaggrcf3
+      type: object
+      properties:
+        codRaggrcf3:
+          minLength: 1
+          type: string
+          description: MG33_CODRAGGRCF3 - Raggruppamento 3
+        descraggrcf3:
+          type: string
+          description: MG33_DESCRAGGRCF3 - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG33_DITTA_CG18 - Ditta
+          format: double
+          default: 0
+          nullable: true
+        idmediaCg99:
+          type: number
+          description: MG33_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        idprov:
+          type: integer
+          description: MG33_IDPROV - IdProv (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        tipocf:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG33_TIPOCF - Tipo Cli/For<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG33_RAGGRCF3 -  Raggruppamento 3<br>Proprietà
+        chiave:<ul><li><b>CodRaggrcf3</b></li><li><b>DittaCg18</b></li><li><b>Tipocf</b></li></ul>
     ImportExportHeadResultDTO:
       type: object
       properties:
@@ -16474,6 +20514,107 @@ components:
       description: >-
         MG97_UBICAZ - Ubicazione<br>Proprietà
         chiave:<ul><li><b>CodDepMg58</b></li><li><b>DittaCg18</b></li><li><b>Ubicaz</b></li></ul>
+    MacroAreaCODTO:
+      required:
+        - codiceMacroarea
+        - descrmacroar
+        - dittaCg18
+      type: object
+      properties:
+        codiceMacroarea:
+          minLength: 1
+          type: string
+          description: MG07_MACROAREA - Macroarea
+        descrmacroar:
+          minLength: 1
+          type: string
+          description: MG07_DESCRMACROAR - Descrizione
+        dittaCg18:
+          type: number
+          description: MG07_DITTA_CG18 - Ditta
+          format: double
+        idprov:
+          type: integer
+          description: MG07_IDPROV - IdProv (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        tipocf:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG07_TIPOCF - Tipo Cli/For<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        areas:
+          type: array
+          items:
+            $ref: '#/components/schemas/AreaCODTO'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG07_MACROAREE - Macroarea<br>Proprietà
+        chiave:<ul><li><b>CodiceMacroarea</b></li><li><b>DittaCg18</b></li><li><b>Tipocf</b></li></ul>
+    MacroCategoryCODTO:
+      required:
+        - macrocat
+      type: object
+      properties:
+        descrmacrocat:
+          type: string
+          description: MG10_DESCRMACROCAT - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG10_DITTA_CG18 - Ditta
+          format: double
+          default: 0
+          nullable: true
+        macrocat:
+          minLength: 1
+          type: string
+          description: MG10_MACROCAT - Macrocategoria
+        tipocf:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG10_TIPOCF - Tipo Cli/For<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        categorie:
+          type: array
+          items:
+            $ref: '#/components/schemas/CategoryCODTO'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG10_MACROCAT - Macrocategoria cli/for<br>Proprietà
+        chiave:<ul><li><b>DittaCg18</b></li><li><b>Macrocat</b></li><li><b>Tipocf</b></li></ul>
     NationCODTO:
       required:
         - codice
@@ -16697,6 +20838,183 @@ components:
           nullable: true
       additionalProperties: false
       description: CG2M_NATURA - NatureEsCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>
+    OfficeCODTO:
+      required:
+        - codice
+        - dittaCg18
+      type: object
+      properties:
+        cap:
+          type: string
+          description: CG31_CAP - Cap
+          nullable: true
+        citta:
+          type: string
+          description: CG31_CITTA - Citta
+          nullable: true
+        codice:
+          type: number
+          description: CG31_CODICE - Sede
+          format: double
+        dittaCg18:
+          type: number
+          description: CG31_DITTA_CG18 - Ditta
+          format: double
+        idmediaCg99:
+          type: number
+          description: CG31_IDMEDIA_CG99 - ID HyperMedia
+          format: double
+          nullable: true
+        indDimcentrocomm:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+          type: number
+          description: >-
+            CG31_INDDIMCENTROCOMM - Dimensione centro
+            commerciale<br><ul><li><i>0</i> - Non centro
+            commerciale</li><li><i>1</i> - Grande</li><li><i>2</i> -
+            Media</li><li><i>3</i> - Piccola</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        indIrizzo:
+          type: string
+          description: CG31_INDIRIZZO - Indirizzo
+          nullable: true
+        numerorea:
+          type: string
+          description: CG31_NUMEROREA - Numero REA
+          nullable: true
+        progRea:
+          type: number
+          description: CG31_PROGREA -  Progressivo REA
+          format: double
+          nullable: true
+        prov:
+          type: string
+          description: CG31_PROV - Provincia
+          nullable: true
+        rowversion:
+          type: string
+          description: CG31_ROWVERSION - RowVersion
+          format: byte
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CG31_ANADITTASEDI - Sedi azienda<br>Proprietà
+        chiave:<ul><li><b>Codice</b></li><li><b>DittaCg18</b></li></ul>
+    OfficePACODTO:
+      required:
+        - codDestin
+        - codice
+        - codiceCg16
+        - nome
+      type: object
+      properties:
+        cap:
+          type: string
+          description: CG1M_CAP - Cap
+          nullable: true
+        codDestin:
+          minLength: 1
+          type: string
+          description: CG1M_CODDESTIN - Codice destinatario
+        codice:
+          minLength: 1
+          type: string
+          description: CG1M_CODICE - Codice
+        codiceCg16:
+          type: integer
+          description: CG1M_CODICE_CG16 - Codice anagrafica generale
+          format: int32
+        comune:
+          type: string
+          description: CG1M_COMUNE - Comune
+          nullable: true
+        flgPreferenziale:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            CG1M_FLGPREFERENZIALE - Preferenziale<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: int32
+          default: 0
+          nullable: true
+        idprovincia:
+          type: integer
+          description: CG1M_IDPROVINCIA - Cod. Provincia
+          format: int32
+          default: 0
+          nullable: true
+        idregione:
+          type: integer
+          description: CG1M_IDREGIONE - Cod. Regione
+          format: int32
+          default: 0
+          nullable: true
+        indIrizzo:
+          type: string
+          description: CG1M_INDIRIZZO - Indirizzo
+          nullable: true
+        indTypeb2b:
+          enum:
+            - 99
+            - 1
+            - 6
+          type: integer
+          description: >-
+            CG1M_INDTYPEB2B - Instradamento<br><ul><li><i>99</i> - Non
+            attivo</li><li><i>1</i> - FEPA</li><li><i>6</i> - FEPR</li></ul>
+          format: int32
+          default: 99
+          nullable: true
+        lastupdateB2b:
+          type: string
+          description: CG1M_LASTUPDATE_B2B - Data ultimo aggiornamento
+          format: date-time
+          nullable: true
+        nome:
+          minLength: 1
+          type: string
+          description: CG1M_NOME - Denominazione
+        tipocfCg44:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            CG1M_TIPOCF_CG44 - Tipo Cliente / Fornitore<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CG1M_UFFICIOPA - Uffici e riferimenti amministrativi<br>Proprietà
+        chiave:<ul><li><b>CodDestin</b></li><li><b>Codice</b></li><li><b>CodiceCg16</b></li><li><b>TipocfCg44</b></li></ul>
     PackagingWHDTO:
       required:
         - codConfez
@@ -16754,6 +21072,350 @@ components:
       description: >-
         MG96_CONFDESC - Confezione<br>Proprietà
         chiave:<ul><li><b>CodConfez</b></li><li><b>DittaCg18</b></li></ul>
+    PaymentTermCODTO:
+      required:
+        - codPag
+      type: object
+      properties:
+        codPag:
+          minLength: 1
+          type: string
+          description: CG62_CODPAG - Codice
+        descPag:
+          type: string
+          description: CG62_DESCPAG - Descrizione
+          nullable: true
+        desPagAnal:
+          type: string
+          description: CG62_DESPAGANAL - Descrizione analitica
+          nullable: true
+        flgDesc:
+          type: number
+          description: 'CG62_FLGDESC - Descriz. automatica '
+          format: double
+          default: 0
+          nullable: true
+        flgDisgg:
+          type: number
+          description: >-
+            CG62_FLGDISGG - Non applicare giorni fissi cliente/fornitore -
+            slittamento generale e cliente/fornitore
+          format: double
+          default: 0
+          nullable: true
+        flgPrefatt:
+          type: integer
+          description: CG62_FLGPREFATT - Preferenziale ciclo attivo
+          format: int32
+          default: 0
+          nullable: true
+        flgPrefpass:
+          type: integer
+          description: CG62_FLGPREFPASS - Preferenziale ciclo passivo
+          format: int32
+          default: 0
+          nullable: true
+        flgStornoiva:
+          type: number
+          description: CG62_FLGSTORNOIVA - Storno IVA
+          format: double
+          default: 0
+          nullable: true
+        id:
+          type: integer
+          description: CG62_ID - ID (Required only in PUT/PATCH)
+          format: int64
+          nullable: true
+        rowversion:
+          type: string
+          description: CG62_ROWVERSION - RowVersion
+          format: byte
+          nullable: true
+        scart26:
+          type: number
+          description: CG62_SCART26 - Sconto Art.26 importo
+          format: double
+          nullable: true
+        scpercart26:
+          type: number
+          description: CG62_SCPERCART26 - Sconto Art.26 %
+          format: double
+          nullable: true
+        scpercas:
+          type: number
+          description: CG62_SCPERCAS - Sc. cassa
+          format: double
+          nullable: true
+        scpermer1:
+          type: number
+          description: CG62_SCPERMER1 - Sc. merce 1
+          format: double
+          nullable: true
+        scpermer2:
+          type: number
+          description: CG62_SCPERMER2 - Sc. merce 2
+          format: double
+          nullable: true
+        idExtendedAttributeEntity:
+          type: integer
+          format: int32
+        idExtendedAttributeSubEntity:
+          type: integer
+          format: int32
+        paymentTermDetailCO:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentTermDetailCODTO'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CG62_CONDPAGDES - Condizione di pagamento<br>Proprietà
+        chiave:<ul><li><b>Id</b></li></ul>
+    PaymentTermDetailCODTO:
+      required:
+        - codPagCg62
+        - idCg62
+        - prog
+      type: object
+      properties:
+        aggfix1:
+          type: number
+          description: CG63_AGGFIX1 - Aggfix1
+          format: double
+          nullable: true
+        aggfix2:
+          type: number
+          description: CG63_AGGFIX2 - Aggfix2
+          format: double
+          nullable: true
+        codPagCg62:
+          minLength: 1
+          type: string
+          description: CG63_CODPAG_CG62 - CodPagCg62
+        daggfix1:
+          type: number
+          description: CG63_DAGGFIX1 - Daggfix1
+          format: double
+          nullable: true
+        daggfix2:
+          type: number
+          description: CG63_DAGGFIX2 - Daggfix2
+          format: double
+          nullable: true
+        el1frimp:
+          type: number
+          description: CG63_EL1FRIMP -  Num.
+          format: double
+          nullable: true
+        el1friva:
+          type: number
+          description: CG63_EL1FRIVA -  Num.
+          format: double
+          nullable: true
+        el2frimp:
+          type: number
+          description: CG63_EL2FRIMP - Den.
+          format: double
+          nullable: true
+        el2friva:
+          type: number
+          description: CG63_EL2FRIVA - Den.
+          format: double
+          nullable: true
+        flgFrpercimp:
+          enum:
+            - 1
+            - 0
+          type: number
+          description: >-
+            CG63_FLGFRPERCIMP - Fr./% imp.<br><ul><li><i>1</i> -
+            Percentuale</li><li><i>0</i> - Frazione</li></ul>
+          format: double
+          default: '1'
+          nullable: true
+        flgFrperciva:
+          enum:
+            - 1
+            - 0
+          type: number
+          description: >-
+            CG63_FLGFRPERCIVA - Fr./% iva.<br><ul><li><i>1</i> -
+            Percentuale</li><li><i>0</i> - Frazione</li></ul>
+          format: double
+          default: '1'
+          nullable: true
+        ggdecor:
+          type: number
+          description: CG63_GGDECOR - gg dec.
+          format: double
+          nullable: true
+        ggmmfix:
+          type: number
+          description: CG63_GGMMFIX - Ggmmfix
+          format: double
+          nullable: true
+        ggscadfix1:
+          type: number
+          description: CG63_GGSCADFIX1 - Ggscadfix1
+          format: double
+          nullable: true
+        ggscadfix2:
+          type: number
+          description: CG63_GGSCADFIX2 - Ggscadfix2
+          format: double
+          nullable: true
+        id:
+          type: integer
+          description: CG63_ID - Id (Required only in PUT/PATCH)
+          format: int64
+          nullable: true
+        idCg62:
+          type: integer
+          description: CG63_ID_CG62 - IdCg62
+          format: int64
+        idCg64:
+          type: integer
+          description: CG63_ID_CG64 - IdCg64
+          format: int64
+          nullable: true
+        imporfix:
+          type: number
+          description: CG63_IMPORFIX - Imporfix
+          format: double
+          nullable: true
+        indDatarif:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+            - 6
+          type: number
+          description: >-
+            CG63_INDDATARIF - Rif. decorrenza<br><ul><li><i>0</i> - Data
+            fattura</li><li><i>1</i> - Data Bolla</li><li><i>2</i> - Data
+            consegna</li><li><i>3</i> - Data ordine</li><li><i>4</i> - Data a
+            richiesta</li><li><i>5</i> - Data fattura (+GG |-> fine
+            mese)</li><li><i>6</i> - Data fattura (|-> fine mese + GG)</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        indImpfix:
+          enum:
+            - 0
+            - 1
+            - 2
+          type: number
+          description: >-
+            CG63_INDIMPFIX - IndImpfix<br><ul><li><i>0</i> - Non
+            gestito</li><li><i>1</i> - Da condizione di
+            pagamento</li><li><i>2</i> - Rich . nel doc. d'origine</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        indTipocalend:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            CG63_INDTIPOCALEND - IndTipocalend<br><ul><li><i>0</i> -
+            Commerciale</li><li><i>1</i> - Civile</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        indTipodecor:
+          enum:
+            - 1
+            - 2
+            - 3
+            - 4
+          type: number
+          description: >-
+            CG63_INDTIPODECOR - Tipo decorrenza<br><ul><li><i>1</i> - Mese
+            commerciale / civile</li><li><i>2</i> - Giorno
+            fisso</li><li><i>3</i> - Data fissa</li><li><i>4</i> - Giorno fisso
+            per int. di gg</li></ul>
+          format: double
+          default: '1'
+          nullable: true
+        percimp:
+          type: number
+          description: CG63_PERCIMP - % Imp.
+          format: double
+          nullable: true
+        perciva:
+          type: number
+          description: CG63_PERCIVA - % IVA
+          format: double
+          nullable: true
+        prog:
+          type: number
+          description: CG63_PROG - Rata
+          format: double
+        rowversion:
+          type: string
+          description: CG63_ROWVERSION - RowVersion
+          format: byte
+          nullable: true
+        tipoeff:
+          enum:
+            - 9
+            - 12
+            - 10
+            - 16
+            - 2
+            - 11
+            - 13
+            - 3
+            - 4
+            - 8
+            - 14
+            - 6
+            - 7
+            - 15
+            - 5
+            - 1
+          type: number
+          description: >-
+            CG63_TIPOEFF - Tipo effetto<br><ul><li><i>9</i> -
+            Contrassegno</li><li><i>12</i> - Leasing</li><li><i>10</i> - Lettera
+            di credito</li><li><i>16</i> - MAV</li><li><i>2</i> - Ricevuta
+            bancaria</li><li><i>11</i> - SDD</li><li><i>13</i> - Rimessa
+            diretta</li><li><i>3</i> - Tratta</li><li><i>4</i> - Tratta
+            accettata</li><li><i>8</i> - Bancomat</li><li><i>14</i> - Bonifico
+            Bancario</li><li><i>6</i> - Cambiale</li><li><i>7</i> - Carta di
+            credito</li><li><i>15</i> - C/C postale</li><li><i>5</i> -
+            Cessione</li><li><i>1</i> - Contanti</li></ul>
+          format: double
+          default: '9'
+          nullable: true
+        subTypeCO:
+          $ref: '#/components/schemas/SubTypeCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CG63_CONDPAGDET - PaymentTermDetailCO<br>Proprietà
+        chiave:<ul><li><b>Id</b></li></ul>
     SearchComparer:
       enum:
         - 0
@@ -17522,6 +22184,59 @@ components:
         value:
           nullable: true
       additionalProperties: false
+    SubCategoryCODTO:
+      required:
+        - categMg11
+        - macrocatMg11
+        - sottcat
+      type: object
+      properties:
+        categMg11:
+          minLength: 1
+          type: string
+          description: MG12_CATEG_MG11 - Categoria
+        descrsottocat:
+          type: string
+          description: MG12_DESCRSOTTOCAT - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG12_DITTA_CG18 - Ditta
+          format: double
+          default: 0
+          nullable: true
+        macrocatMg11:
+          minLength: 1
+          type: string
+          description: MG12_MACROCAT_MG11 - Macrocategoria
+        sottcat:
+          minLength: 1
+          type: string
+          description: MG12_SOTTCAT - Sottocategoria
+        tipocfMg11:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG12_TIPOCF_MG11 - Tipo Cli/For<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG12_SOTTOCAT - Sottocategoria cli/for<br>Proprietà
+        chiave:<ul><li><b>CategMg11</b></li><li><b>DittaCg18</b></li><li><b>MacrocatMg11</b></li><li><b>Sottcat</b></li><li><b>TipocfMg11</b></li></ul>
     SubFamilyWHDTO:
       required:
         - codFamMg53
@@ -17572,6 +22287,129 @@ components:
       description: >-
         MG54_SOTTOFAM - Sottofamiglia<br>Proprietà
         chiave:<ul><li><b>CodFamMg53</b></li><li><b>CodSfam</b></li><li><b>DittaCg18</b></li></ul>
+    SubTypeCODTO:
+      required:
+        - codStipoeff
+        - flgAssegno
+      type: object
+      properties:
+        codiceCg07:
+          type: number
+          description: CG64_CODICE_CG07 - Nazione di incasso
+          format: double
+          nullable: true
+        codPaguc:
+          type: string
+          description: CG64_CODPAGUC - Codice pagamento estero
+          nullable: true
+        codStipoeff:
+          type: number
+          description: CG64_CODSTIPOEFF - Sottotipo effetto
+          format: double
+        descstipo:
+          type: string
+          description: CG64_DESCSTIPO - Descrizione sottotipo effetto
+          nullable: true
+        flgAssegno:
+          type: integer
+          description: CG64_FLGASSEGNO - Assegno
+          format: int32
+        ggoffset:
+          type: number
+          description: CG64_GGOFFSET - Giorni spostamento scadenza
+          format: double
+          nullable: true
+        id:
+          type: integer
+          description: CG64_ID - ID (Required only in PUT/PATCH)
+          format: int64
+          nullable: true
+        indModfatturapa:
+          enum:
+            - 0
+            - 10
+            - 2
+            - 3
+            - 1
+            - 4
+            - 5
+            - 6
+            - 7
+            - 8
+            - 9
+            - 11
+            - 12
+          type: integer
+          description: >-
+            CG64_INDMODFATTURAPA - Modalità fattura
+            elettronica<br><ul><li><i>0</i> - Nessuna</li><li><i>10</i> -
+            Contanti</li><li><i>2</i> - Assegno</li><li><i>3</i> - Assegno
+            circolare</li><li><i>1</i> - Contanti presso
+            tesoreria</li><li><i>4</i> - Vaglia cambiario</li><li><i>5</i> -
+            Bollettino bancario</li><li><i>6</i> - Quietanza
+            erario</li><li><i>7</i> - Giroconto su conti di contabilità
+            speciale</li><li><i>8</i> - Domiciliazione bancaria</li><li><i>9</i>
+            - Domiciliazione postale</li><li><i>11</i> - Trattenuta su somme già
+            riscosse</li><li><i>12</i> - PagoPa</li></ul>
+          format: int32
+          default: '0'
+          nullable: true
+        rowversion:
+          type: string
+          description: CG64_ROWVERSION - RowVersion
+          format: byte
+          nullable: true
+        tipoeff:
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+            - 6
+            - 7
+            - 8
+            - 9
+            - 10
+            - 11
+            - 12
+            - 13
+            - 14
+            - 15
+            - 16
+          type: number
+          description: >-
+            CG64_TIPOEFF - Tipo scadenza<br><ul><li><i>0</i> -
+            Tutti</li><li><i>1</i> - Contanti</li><li><i>2</i> - Ricevuta
+            bancaria</li><li><i>3</i> - Tratta</li><li><i>4</i> - Tratta
+            accettata</li><li><i>5</i> - Cessione</li><li><i>6</i> -
+            Cambiale</li><li><i>7</i> - Carta di credito</li><li><i>8</i> -
+            Bancomat</li><li><i>9</i> - Contrassegno</li><li><i>10</i> - Lettera
+            di credito</li><li><i>11</i> - RID</li><li><i>12</i> -
+            Leasing</li><li><i>13</i> - Rimessa diretta</li><li><i>14</i> -
+            Bonifico</li><li><i>15</i> - C/C postale</li><li><i>16</i> -
+            MAV</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        foreignPaymentCodeCO:
+          $ref: '#/components/schemas/ForeignPaymentCodeCODTO'
+        nationCO:
+          $ref: '#/components/schemas/NationCODTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        CG64_SOTTOTIPO - SubTypeCO<br>Proprietà
+        chiave:<ul><li><b>Id</b></li></ul>
     ValidateDTO:
       type: object
       properties:
@@ -18249,6 +23087,63 @@ components:
       description: >-
         CG15_TABCAUPREST - Causale prestazione per soggetti con ritenuta
         d'acconto<br>Proprietà chiave:<ul><li><b>Codice</b></li></ul>
+    ZoneCODTO:
+      required:
+        - areaMg08
+        - codiceZona
+        - dittaCg18
+        - macroareaMg08
+      type: object
+      properties:
+        areaMg08:
+          minLength: 1
+          type: string
+          description: MG09_AREA_MG08 - Area
+        codiceZona:
+          minLength: 1
+          type: string
+          description: MG09_ZONA - Zona
+        descrzona:
+          type: string
+          description: MG09_DESCRZONA - Descrizione
+          nullable: true
+        dittaCg18:
+          type: number
+          description: MG09_DITTA_CG18 - Ditta
+          format: double
+        idprov:
+          type: integer
+          description: MG09_IDPROV - IdProv (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        macroareaMg08:
+          minLength: 1
+          type: string
+          description: MG09_MACROAREA_MG08 - Macroarea
+        tipocfMg08:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            MG09_TIPOCF_MG08 - Tipo Cli/For<br><ul><li><i>0</i> - 
+            Cliente</li><li><i>1</i> -  Fornitore</li></ul>
+          format: double
+          default: '0'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        MG09_ZONE - Zona cli/for<br>Proprietà
+        chiave:<ul><li><b>AreaMg08</b></li><li><b>CodiceZona</b></li><li><b>DittaCg18</b></li><li><b>MacroareaMg08</b></li><li><b>TipocfMg08</b></li></ul>
   securitySchemes:
     Basic:
       type: http
@@ -18269,6 +23164,8 @@ tags:
     description: Collection of services for Batch Data
   - name: BrandWH
     description: Collection of services for product Brands
+  - name: CustomerSupplierItemWH
+    description: Collection of services for Customers/Suppliers Items
   - name: FamilyWH
     description: Collection of services for Families
   - name: FiscalGroupWH

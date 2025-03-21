@@ -57689,6 +57689,7 @@ components:
             - 17
             - 18
             - 19
+            - 20
           type: integer
           description: >-
             CG96_INDREGIMEFISCALE - Regime fiscale (per Fatture
@@ -57716,7 +57717,8 @@ components:
             (art.6, c.5, DPR 633/72)</li><li><i>17</i> - RF17 - IVA per cassa
             soggetti con vol. d’affari inferiore ad euro 200.000 (art.7, DL
             185/2008)</li><li><i>18</i> - RF18 - Altro</li><li><i>19</i> - RF19
-            - Regime forfettario</li></ul>
+            - Regime forfettario</li><li><i>20</i> - RF20 - Regime
+            transfrontaliero di Franchigia IVA (Direttiva UE 2020/285)</li></ul>
           format: int32
           default: '1'
           nullable: true

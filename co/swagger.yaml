@@ -18136,6 +18136,103 @@ paths:
           description: Forbidden access
         '404':
           description: If object not found
+  /api/v1/{environment}/CO/PgmExec/pgmexecschedulerasync:
+    post:
+      tags:
+        - PgmExec
+      summary: Schedule and Execute program
+      description: Schedule and Execute program exe
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Arguments Array List
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PgmExecDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/PgmExecDTO'
+        required: true
+      responses:
+        '201':
+          description: If execution is ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ActionResult'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '409':
+          description: Request with conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
   /api/v1/{environment}/CO/ProvinceCO/{id}:
     get:
       tags:
@@ -19613,6 +19710,244 @@ paths:
           description: Forbidden access
         '404':
           description: If object not found
+  /api/v1/{environment}/CO/StateManagementCO/{guid}:
+    get:
+      tags:
+        - StateManagementServiceCO
+      summary: Get the current state of an object with the list of available states.
+      description: Get the current state of an object with the list of available states.
+      parameters:
+        - name: guid
+          in: path
+          description: >-
+            Guid to get the current state of an object with the list of
+            available states.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: Current state result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrentStateCODTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CurrentStateCODTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            In case of errors in the business logic: the content of the response
+            contains the validation messages produced
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/CO/StateManagementCO/history/{guid}:
+    get:
+      tags:
+        - StateManagementServiceCO
+      summary: >-
+        Get the current state of an object and the list of operations performed
+        on the state.
+      description: >-
+        Get the current state of an object and the list of operations performed
+        on the state.
+      parameters:
+        - name: guid
+          in: path
+          description: >-
+            Guid to get the current state of an object and the list of
+            operations performed on the state.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: Result of the current state history
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrentStateHistoryCODTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CurrentStateHistoryCODTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            In case of errors in the business logic: the content of the response
+            contains the validation messages produced
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/CO/StateManagementCO/setstate:
+    post:
+      tags:
+        - StateManagementServiceCO
+      summary: Set a new object state or create default state.
+      description: Set a new object state or create default state.
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: 'Parameters to set a new object state or create default state. '
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetStateParameterDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SetStateParameterDTO'
+        required: true
+      responses:
+        '200':
+          description: Current state result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrentStateCODTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CurrentStateCODTO'
+        '400':
+          description: >-
+            In case of errors in the business logic: the content of the response
+            contains the validation messages produced
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
   /api/v1/{environment}/CO/UMCodeCO/search:
     post:
       tags:
@@ -22904,6 +23239,9 @@ components:
       description: >-
         CGD1_TIPOCAUSALE - Classificazione causale<br>Proprietà
         chiave:<ul><li><b>Id</b></li></ul>
+    ActionResult:
+      type: object
+      additionalProperties: false
     AddressCODTO:
       type: object
       properties:
@@ -26319,6 +26657,50 @@ components:
       description: >-
         CG08_TABVALUTE - Valuta<br>Proprietà
         chiave:<ul><li><b>Codice</b></li></ul>
+    CurrentStateCODTO:
+      type: object
+      properties:
+        currentState:
+          $ref: '#/components/schemas/StateCODTO'
+        availableStates:
+          type: array
+          items:
+            $ref: '#/components/schemas/StateCODTO'
+          description: List of available states reachable from the current state.
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: Current status of an object.
+    CurrentStateHistoryCODTO:
+      type: object
+      properties:
+        currentState:
+          $ref: '#/components/schemas/StateCODTO'
+        statusOperationHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/HistoryStateCODTO'
+          description: List of state change operations performed.
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: Current state with the list of state change operations performed.
     CustSupplDataInvoicePACODTO:
       required:
         - codiceCg16
@@ -27549,6 +27931,47 @@ components:
       description: >-
         MG33_RAGGRCF3 -  Raggruppamento 3<br>Proprietà
         chiave:<ul><li><b>CodRaggrcf3</b></li><li><b>DittaCg18</b></li><li><b>Tipocf</b></li></ul>
+    HistoryStateCODTO:
+      type: object
+      properties:
+        idHistory:
+          type: integer
+          description: Id History
+          format: int64
+        idStatus:
+          type: integer
+          description: Id History Status
+          format: int32
+        validityDate:
+          type: string
+          description: History Validity Date
+          format: date-time
+        updateDate:
+          type: string
+          description: History Update Date
+          format: date-time
+        historyAuto:
+          type: integer
+          description: History Auto
+          format: int32
+        statusDescription:
+          type: string
+          description: History Status Description
+          nullable: true
+        flowDescription:
+          type: string
+          description: History Flow Description
+          nullable: true
+        userDescription:
+          type: string
+          description: History User Description
+          nullable: true
+        historyDelete:
+          type: integer
+          description: History Delete
+          format: int32
+      additionalProperties: false
+      description: Historical state
     IELayoutCODTO:
       required:
         - codLayout
@@ -29155,6 +29578,25 @@ components:
         isDuplExtendedAttribute:
           type: boolean
       additionalProperties: false
+    PgmExecDTO:
+      required:
+        - idTaskScheduled
+      type: object
+      properties:
+        idTaskScheduled:
+          minLength: 1
+          type: string
+          description: Id for Scheduled Task
+        timeoutSeconds:
+          type: integer
+          description: Timeout in seconds for Scheduled Task
+          format: int32
+          default: 90
+        skipIfRunning:
+          type: boolean
+          description: Skip if a task with same id is running
+          default: true
+      additionalProperties: false
     ProtocolCalculationResultDTO:
       type: object
       properties:
@@ -29684,6 +30126,60 @@ components:
           format: int32
           nullable: true
       additionalProperties: false
+    SetStateParameterDTO:
+      type: object
+      properties:
+        guidObject:
+          type: string
+          description: Guid of the object you want to change the state.
+          format: uuid
+          nullable: true
+        newState:
+          type: integer
+          description: New state to set if there is a current state
+          format: int32
+          nullable: true
+        entityCodeForDefault:
+          type: integer
+          description: >-
+            Entity code to find any default. Managed values: 1=Customers
+            2=Suppliers 6=Items 7=Document header 8=Document row
+          format: int32
+          nullable: true
+      additionalProperties: false
+      description: Parameter to set the new document status.
+    StateCODTO:
+      type: object
+      properties:
+        idStato:
+          type: integer
+          description: Stete code
+          format: int32
+        description:
+          type: string
+          description: Description state
+          nullable: true
+        seq:
+          type: integer
+          description: State sequence number
+          format: int32
+        indTipoStato:
+          type: integer
+          description: >-
+            Status type indicator: 0 - standard status, 1 - decision status, 2 -
+            authorized status, 3 - unauthorized status
+          format: int32
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: State registry
     StatoAttualeDTO:
       required:
         - statiDisponibili
@@ -30932,12 +31428,16 @@ tags:
     description: Collection of services for Master Administrative Offices
   - name: PaymentTermCO
     description: Collection of services for Payment Terms
+  - name: PgmExec
+    description: Legacy Task Execution
   - name: ProvinceCO
     description: Collection of reading services for Provinces
   - name: RegionCO
     description: Collection of reading services for Regions
   - name: SectionalMasterDataCO
     description: Collection of services for Company Sectional Data
+  - name: StateManagementServiceCO
+    description: Collection of services for the management of the Current State
   - name: UMCodeCO
     description: Lookup service for Master International Standard Units of Measure
   - name: UnitOfMeasureCO
