@@ -82609,6 +82609,9 @@ components:
         language:
           type: string
           nullable: true
+        contactTypeCode:
+          type: string
+          nullable: true
         extensionData:
           type: array
           items:
