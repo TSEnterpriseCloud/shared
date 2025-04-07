@@ -1767,6 +1767,20 @@ paths:
           style: simple
           schema:
             type: string
+        - name: CliforCg44
+          in: query
+          description: CliforCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: TipocfCg44
+          in: query
+          description: TipocfCg44 Mandatory to execute current action
+          required: true
+          style: form
+          schema:
+            type: string
         - name: authorization-scope
           in: header
           description: >-
@@ -1996,20 +2010,6 @@ paths:
           style: simple
           schema:
             type: string
-        - name: CliforCg44
-          in: query
-          description: CliforCg44 Mandatory to execute current action
-          required: true
-          style: form
-          schema:
-            type: string
-        - name: TipocfCg44
-          in: query
-          description: TipocfCg44 Mandatory to execute current action
-          required: true
-          style: form
-          schema:
-            type: string
         - name: authorization-scope
           in: header
           description: >-
@@ -2086,20 +2086,6 @@ paths:
           in: path
           required: true
           style: simple
-          schema:
-            type: string
-        - name: CliforCg44
-          in: query
-          description: CliforCg44 Mandatory to execute current action
-          required: true
-          style: form
-          schema:
-            type: string
-        - name: TipocfCg44
-          in: query
-          description: TipocfCg44 Mandatory to execute current action
-          required: true
-          style: form
           schema:
             type: string
         - name: authorization-scope
@@ -17291,24 +17277,30 @@ components:
     CustomerSupplierItemWHDTO:
       required:
         - artclifor
-        - cliforCg44
         - customerSupplierCO
-        - dtcreaz
-        - dtultagg
-        - ggcons
-        - impspese
         - itemWH
-        - tipocfCg44
       type: object
       properties:
-        artclifor:
-          minLength: 1
+        dtcreaz:
           type: string
-          description: MG73_ARTCLIFOR - Codice articolo cliente/fornitore
+          description: MG73_DTCREAZ - Data creazione
+          format: date-time
+        dtultagg:
+          type: string
+          description: MG73_DTULTAGG - Data ultimo agg.
+          format: date-time
         cliforCg44:
           type: number
           description: MG73_CLIFOR_CG44 - Codice Cliente / Fornitore
           format: double
+        tipocfCg44:
+          type: number
+          description: MG73_TIPOCF_CG44 - Tipo cliente fornitore
+          format: double
+        artclifor:
+          minLength: 1
+          type: string
+          description: MG73_ARTCLIFOR - Codice articolo cliente/fornitore
         codAffidabil:
           type: number
           description: MG73_CODAFFIDABIL - Codice affidabilità
@@ -17347,10 +17339,6 @@ components:
           format: double
           default: 0
           nullable: true
-        dtcreaz:
-          type: string
-          description: MG73_DTCREAZ - Data creazione
-          format: date-time
         dtdismissione:
           type: string
           description: MG73_DTDISMISSIONE - Data dismissione
@@ -17361,10 +17349,6 @@ components:
           description: MG73_DTULTACQVEN - Data ultimo acquisto/vendita
           format: date-time
           nullable: true
-        dtultagg:
-          type: string
-          description: MG73_DTULTAGG - Data ultimo agg.
-          format: date-time
         fattconv:
           type: number
           description: MG73_FATTCONV - Fattore di conversione
@@ -17392,6 +17376,8 @@ components:
           type: number
           description: MG73_GGCONS - Giorni consegna
           format: double
+          default: 0
+          nullable: true
         idmediaCg99:
           type: number
           description: MG73_IDMEDIA_CG99 - ID HyperMedia
@@ -17401,6 +17387,8 @@ components:
           type: number
           description: MG73_IMPSPESE - Importo spese di consegna
           format: double
+          default: 0
+          nullable: true
         indArtstam:
           enum:
             - 0
@@ -17531,10 +17519,6 @@ components:
           format: double
           default: 0
           nullable: true
-        tipocfCg44:
-          type: number
-          description: MG73_TIPOCF_CG44 - Tipo cliente fornitore
-          format: double
         umcf:
           type: string
           description: MG73_UMCF - U.M. Cli/For
@@ -17555,7 +17539,7 @@ components:
       additionalProperties: false
       description: >-
         MG73_ARTCLIFOR - Articolo cliente/fornitore<br>Proprietà
-        chiave:<ul><li><b>Artclifor</b></li><li><b>CliforCg44</b></li><li><b>DittaCg18</b></li><li><b>TipocfCg44</b></li></ul>
+        chiave:<ul><li><b>Artclifor</b></li><li><b>DittaCg18</b></li></ul>
     DMSPublishedEntityFWDTO:
       type: object
       properties:
