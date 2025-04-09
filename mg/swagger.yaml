@@ -6179,7 +6179,7 @@ paths:
                     indStaperMg36: <INDICATORE STANDARD/PERSONALIZZATO>
                   customerSupplierMG:
                     dittaCg18: <CODICE DITTA>
-                    tipocfCg40: <TIPO CLI/FOR>
+                    tipoCf: <TIPO CLI/FOR>
                     cliFor: <CLI/FOR>
                   sezdoc: <SEZIONALE>
                   storageWH:
@@ -6199,7 +6199,7 @@ paths:
                     indStaperMg36: <INDICATORE STANDARD/PERSONALIZZATO>
                   customerSupplierMG:
                     dittaCg18: <CODICE DITTA>
-                    tipocfCg40: <TIPO CLI/FOR>
+                    tipoCf: <TIPO CLI/FOR>
                     cliFor: <CLI/FOR>
                   sezdoc: <SEZIONALE>
                   storageWH:
@@ -6332,7 +6332,7 @@ paths:
                     indStaperMg36: <INDICATORE STANDARD/PERSONALIZZATO>
                   customerSupplierMG:
                     dittaCg18: <CODICE DITTA>
-                    tipocfCg40: <TIPO CLI/FOR>
+                    tipoCf: <TIPO CLI/FOR>
                     cliFor: <CLI/FOR>
                   sezdoc: <SEZIONALE>
                   storageWH:
@@ -6411,7 +6411,7 @@ paths:
                     indStaperMg36: <INDICATORE STANDARD/PERSONALIZZATO>
                   customerSupplierMG:
                     dittaCg18: <CODICE DITTA>
-                    tipocfCg40: <TIPO CLI/FOR>
+                    tipoCf: <TIPO CLI/FOR>
                     cliFor: <CLI/FOR>
                   sezdoc: <SEZIONALE>
                   storageWH:
@@ -9976,7 +9976,7 @@ paths:
                     indStaperMg36: <INDICATORE STANDARD/PERSONALIZZATO>
                   customerSupplierMG:
                     dittaCg18: <CODICE DITTA>
-                    tipocfCg40: <TIPO CLI/FOR>
+                    tipoCf: <TIPO CLI/FOR>
                     cliFor: <CLI/FOR>
                   sezdoc: <SEZIONALE>
                   storageWH:
@@ -9996,7 +9996,7 @@ paths:
                     indStaperMg36: <INDICATORE STANDARD/PERSONALIZZATO>
                   customerSupplierMG:
                     dittaCg18: <CODICE DITTA>
-                    tipocfCg40: <TIPO CLI/FOR>
+                    tipoCf: <TIPO CLI/FOR>
                     cliFor: <CLI/FOR>
                   sezdoc: <SEZIONALE>
                   storageWH:
@@ -10129,7 +10129,7 @@ paths:
                     indStaperMg36: <INDICATORE STANDARD/PERSONALIZZATO>
                   customerSupplierMG:
                     dittaCg18: <CODICE DITTA>
-                    tipocfCg40: <TIPO CLI/FOR>
+                    tipoCf: <TIPO CLI/FOR>
                     cliFor: <CLI/FOR>
                   sezdoc: <SEZIONALE>
                   storageWH:
@@ -10208,7 +10208,7 @@ paths:
                     indStaperMg36: <INDICATORE STANDARD/PERSONALIZZATO>
                   customerSupplierMG:
                     dittaCg18: <CODICE DITTA>
-                    tipocfCg40: <TIPO CLI/FOR>
+                    tipoCf: <TIPO CLI/FOR>
                     cliFor: <CLI/FOR>
                   sezdoc: <SEZIONALE>
                   storageWH:

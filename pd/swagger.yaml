@@ -7240,6 +7240,204 @@ components:
       description: >-
         VPDWA_ORDERWORKINGCYCLE - Dettaglio ordine lavorazione<br>Proprietà
         chiave:<ul><li><b>Company</b></li><li><b>OrderLine</b></li><li><b>OrderRegistrationNumber</b></li><li><b>StepCode</b></li><li><b>StepProgressive</b></li><li><b>SubStepProgressive</b></li></ul>
+    ProjectActivityPDDTO:
+      required:
+        - alivaCg28
+        - codAttivita
+        - codProgPd68
+        - descr
+        - dittaCg18
+      type: object
+      properties:
+        alivaCg28:
+          minLength: 1
+          type: string
+          description: PD0D_ALIVA_CG28 - Codice aliquota IVA
+        codAttivita:
+          minLength: 1
+          type: string
+          description: PD0D_CODATTIVITA - Codice Attività
+        codProgPd68:
+          minLength: 1
+          type: string
+          description: PD0D_CODPROG_PD68 - Codice progetto
+        codRespPd06:
+          type: string
+          description: PD0D_CODRESP_PD06 - Responsabile
+          nullable: true
+        costoprevman:
+          type: number
+          description: PD0D_COSTOPREVMAN - Costo preventivo manuale
+          format: double
+          default: 0
+          nullable: true
+        costoprevmanVal:
+          type: number
+          description: PD0D_COSTOPREVMAN_VAL - Importo costo preventivo manuale in valuta
+          format: double
+          nullable: true
+        datafineff:
+          type: string
+          description: PD0D_DATAFINEFF - Data fine effettiva
+          format: date-time
+          nullable: true
+        datafinpian:
+          type: string
+          description: PD0D_DATAFINPIAN - Data fine pianificata
+          format: date-time
+          nullable: true
+        datafinprev:
+          type: string
+          description: PD0D_DATAFINPREV - Data fine prevista
+          format: date-time
+          nullable: true
+        datainizeff:
+          type: string
+          description: PD0D_DATAINIZEFF - Data inizio effettiva
+          format: date-time
+          nullable: true
+        datainizpian:
+          type: string
+          description: PD0D_DATAINIZPIAN - Data inizio pianificata
+          format: date-time
+          nullable: true
+        datainizprev:
+          type: string
+          description: PD0D_DATAINIZPREV - Data inizio prevista
+          format: date-time
+          nullable: true
+        descr:
+          minLength: 1
+          type: string
+          description: PD0D_DESCR - Descrizione
+        descrestesa:
+          type: string
+          description: PD0D_DESCRESTESA - Descrizione aggiuntiva
+          nullable: true
+        dittaCg18:
+          type: number
+          description: PD0D_DITTA_CG18 - Ditta
+          format: double
+        duratagg:
+          type: number
+          description: PD0D_DURATAGG - Durata in giorni
+          format: double
+          nullable: true
+        esclst1Mg82:
+          type: string
+          description: 'PD0D_ESCLST1_MG82 - Codice 1 esclusione stampa documenti '
+          nullable: true
+        esclst2Mg82:
+          type: string
+          description: PD0D_ESCLST2_MG82 - Codice 2 esclusione stampa documenti
+          nullable: true
+        esclst3Mg82:
+          type: string
+          description: PD0D_ESCLST3_MG82 - Codice 3 esclusione stampa documenti
+          nullable: true
+        esclst4Mg82:
+          type: string
+          description: PD0D_ESCLST4_MG82 - Codice 4 esclusione stampa documenti
+          nullable: true
+        flgContribinteg:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            PD0D_FLGCONTRIBINTEG - Contributo integrativo<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: int32
+          default: 0
+          nullable: true
+        flgContribprev:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            PD0D_FLGCONTRIBPREV - Contributo previdenziale<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: int32
+          default: 0
+          nullable: true
+        flgIvarid:
+          enum:
+            - 0
+            - 1
+          type: number
+          description: >-
+            PD0D_FLGIVARID - Flag gestione IVA ridotta<br><ul><li><i>0</i> -
+            No</li><li><i>1</i> - Si</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        flgRitacc:
+          enum:
+            - 0
+            - 1
+          type: integer
+          description: >-
+            PD0D_FLGRITACC - Flag soggetto a ritenuta
+            d'acconto<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>
+          format: int32
+          default: 0
+          nullable: true
+        importo:
+          type: number
+          description: PD0D_IMPORTO - Importo
+          format: double
+          default: 0
+          nullable: true
+        importoval:
+          type: number
+          description: PD0D_IMPORTOVAL - Importo in valuta
+          format: double
+          nullable: true
+        indCalcprezzo:
+          enum:
+            - 0
+            - 1
+            - 2
+          type: number
+          description: >-
+            PD0D_INDCALCPREZZO - Ind. calcolo prezzo<br><ul><li><i>0</i> -
+            Manuale</li><li><i>1</i> - Margine in percentuale sul
+            costo</li><li><i>2</i> - Per singola risorsa</li></ul>
+          format: double
+          default: 0
+          nullable: true
+        perccompl:
+          type: number
+          description: PD0D_PERCCOMPL - % S.A.L.
+          format: double
+          nullable: true
+        percmargine:
+          type: number
+          description: PD0D_PERCMARGINE - % margine calcolo prezzo
+          format: double
+          nullable: true
+        valutaCg08:
+          type: string
+          description: PD0D_VALUTA_CG08 - Codice valuta
+          nullable: true
+        valutacostoCg08:
+          type: string
+          description: PD0D_VALUTACOSTO_CG08 - Codice valuta
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        PD0D_ATTIVITA - Attività progetto<br>Proprietà
+        chiave:<ul><li><b>CodAttivita</b></li><li><b>CodProgPd68</b></li><li><b>DittaCg18</b></li></ul>
     ProjectPDDTO:
       required:
         - codProg
@@ -7300,6 +7498,11 @@ components:
         idExtendedAttributeSubEntity:
           type: integer
           format: int32
+        attivita:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProjectActivityPDDTO'
+          nullable: true
         nodi:
           type: array
           items:
