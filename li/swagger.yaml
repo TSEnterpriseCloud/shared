@@ -459,6 +459,10 @@ components:
         - scPer6
       type: object
       properties:
+        prezzoNetto:
+          type: number
+          format: double
+          nullable: true
         indDimeRif:
           type: integer
           description: IndDimeRif
@@ -537,11 +541,15 @@ components:
       description: PriceParametricLI
     PriceParametricParametersDTO:
       required:
+        - calcolaPrezzoNetto
         - codartMg66
         - codTabPriority
         - dataReg
       type: object
       properties:
+        calcolaPrezzoNetto:
+          type: boolean
+          description: Calcola anche il prezzo netto
         resultElab:
           type: boolean
           description: Attivazione Esito elaborazione listini parametrici
