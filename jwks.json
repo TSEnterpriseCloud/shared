@@ -1,0 +1,31 @@
+{
+  "additionalData": {
+
+  },
+  "keys": [
+    {
+      "additionalData": {
+
+      },
+      "alg": "RS256",
+      "e": "AQAB",
+      "keyId": "IWBSqu_Ub67TMkCC2qznDGqoQZKZuH9tLFjDoMcOYmE",
+      "keyOps": [],
+      "kid": "IWBSqu_Ub67TMkCC2qznDGqoQZKZuH9tLFjDoMcOYmE",
+      "kty": "RSA",
+      "n": "viQmac7MFcYdExHuSMYHqTr8Nj1Qk9gQpjVzF_E_1_TdT3jdiUDiIMi6U0wH314IG5OHxwGvoM1RilfoGgyeGahHMD4r14fLuqWU67VFDR8ZRfDXaRVI_k55oXroRvEqikFTlU81_c_QP_ydLSjd7y54b5zuiFehoCsG_t4m4hLCb678F-92sREuYuTgomADr9nYToKuugtHe6KgYEesJBlZFuKG3G2bBpqOjxdE5-3FsFtJyAAlyCifZwrehXByIpk1xxpF5XV-fT49HAA_lRPACPtqeYhgRjwU5OCEo6rk--fIT4xNyGNowujkfWoSR7jpJXsQxzSPA1VxJHTBlw",
+      "oth": [],
+      "x5c": [],
+      "keySize": 2048,
+      "hasPrivateKey": false,
+      "cryptoProviderFactory": {
+        "cryptoProviderCache": {
+
+        },
+        "cacheSignatureProviders": true,
+        "signatureProviderObjectPoolCacheSize": 16
+      }
+    }
+  ],
+  "skipUnresolvedJsonWebKeys": true
+}
