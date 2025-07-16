@@ -1,0 +1,2386 @@
+openapi: 3.0.1
+info:
+  title: TSE Cloud - FW
+  description: >-
+    This is a swagger docs for Framework object Teamsystemn Enterprise Cloud, 
+    more detail  at [https://swagger.io](https://swagger.io).
+  version: v2025.1000
+  termsOfService: https://www.teamsystem.com/terms-conditions/
+  contact:
+    name: Supporto TeamSystem
+    url: https://mysupport.teamsystem.com/
+paths:
+  /api/v1/{environment}/FW/AsyncCatalogFW/{id}:
+    get:
+      tags:
+        - AsyncCatalogFW
+      summary: Get by ID
+      description: Get an object of type corresponding the requested id
+      parameters:
+        - name: id
+          in: path
+          description: Id to get the object
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+    put:
+      tags:
+        - AsyncCatalogFW
+      summary: Update
+      description: Updating an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: >-
+            Set 'reload', if you want the DTO updated in the response request,
+            otherwise will be returned null value
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AsyncCatalogFWDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AsyncCatalogFWDTO'
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+        '400':
+          description: >-
+            If the object has not been updated: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been updated due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    delete:
+      tags:
+        - AsyncCatalogFW
+      summary: Delete
+      description: 'Deleting object of type '
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: If object has been deleted
+        '400':
+          description: >-
+            if object has not been deleted: the content response contains the
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been deleted due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    patch:
+      tags:
+        - AsyncCatalogFW
+      summary: Update partial
+      description: Patching an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: Set 'reload', if you want the DTO updated in the response request
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to patch
+        content:
+          application/json:
+            schema: {}
+          application/xml:
+            schema: {}
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+        '400':
+          description: >-
+            If the object has not been patched: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been patched due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/FW/AsyncCatalogFW:
+    get:
+      tags:
+        - AsyncCatalogFW
+      summary: Get new
+      description: Get an empty object of type corresponding
+      parameters:
+        - name: _op
+          in: query
+          description: The value must be 'new'
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The empty object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+    post:
+      tags:
+        - AsyncCatalogFW
+      summary: Create
+      description: Creating new object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AsyncCatalogFWDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AsyncCatalogFWDTO'
+        required: true
+      responses:
+        '201':
+          description: If object has been created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+        '400':
+          description: >-
+            If the object has not been created: the content response contains
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object has not been created due to business rules violation: the
+            content response contains validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/FW/AsyncCatalogFW/validate:
+    post:
+      tags:
+        - AsyncCatalogFW
+      summary: Validate
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to validate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AsyncCatalogFWDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AsyncCatalogFWDTO'
+        required: true
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/FW/AsyncCatalogFW/validateProperties:
+    post:
+      tags:
+        - AsyncCatalogFW
+      summary: Validation of one on more properties of Type
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: ' - One or more key-value pairs where the key is the DTO property name and the value is value to validate * REQUIRED<br> - The id of an existing object to validate properties, or '''' if the object does not exist yet <br>'
+        content:
+          application/json:
+            schema:
+              type: string
+              properties:
+                propertyName=Value&id=Value:
+                  type: string
+                  format: string
+              example: propertyName=Value&id=Value
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/FW/AsyncCatalogFW/search:
+    post:
+      tags:
+        - AsyncCatalogFW
+      summary: Search
+      description: Search among object of type
+      parameters:
+        - name: loadEntireDomain
+          in: query
+          description: Specify 'loadEntireDomain=true' if you want all the aggregate
+          style: form
+          schema:
+            type: string
+        - name: gettotalcount
+          in: query
+          description: >-
+            Specify 'gettotalcount=true' if you want the total number of
+            elements
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+        required: true
+      responses:
+        '200':
+          description: The list of object of type as result of search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+        '400':
+          description: If the search criteria is not supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+  /api/v1/{environment}/FW/AsyncCatalogFW/read:
+    post:
+      tags:
+        - AsyncCatalogFW
+      summary: Read
+      description: Read among object of type
+      parameters:
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+        required: true
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncCatalogFWDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+  /api/v1/{environment}/FW/AsyncSchedulerFW/{id}:
+    get:
+      tags:
+        - AsyncSchedulerFW
+      summary: Get by ID
+      description: Get an object of type corresponding the requested id
+      parameters:
+        - name: id
+          in: path
+          description: Id to get the object
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+    put:
+      tags:
+        - AsyncSchedulerFW
+      summary: Update
+      description: Updating an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: >-
+            Set 'reload', if you want the DTO updated in the response request,
+            otherwise will be returned null value
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+        '400':
+          description: >-
+            If the object has not been updated: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been updated due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    delete:
+      tags:
+        - AsyncSchedulerFW
+      summary: Delete
+      description: 'Deleting object of type '
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: If object has been deleted
+        '400':
+          description: >-
+            if object has not been deleted: the content response contains the
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been deleted due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+    patch:
+      tags:
+        - AsyncSchedulerFW
+      summary: Update partial
+      description: Patching an object of type
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: force
+          in: query
+          description: The warning/s code to bypass (separated by ‘,’) during the execution
+          style: form
+          schema:
+            type: string
+        - name: _op
+          in: query
+          description: Set 'reload', if you want the DTO updated in the response request
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to patch
+        content:
+          application/json:
+            schema: {}
+          application/xml:
+            schema: {}
+        required: true
+      responses:
+        '200':
+          description: If object has been updated
+        '400':
+          description: >-
+            If the object has not been patched: the content response contains
+            the validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+        '409':
+          description: >-
+            If object has not been patched due to business rules violation: the
+            content response contains the validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/FW/AsyncSchedulerFW:
+    get:
+      tags:
+        - AsyncSchedulerFW
+      summary: Get new
+      description: Get an empty object of type corresponding
+      parameters:
+        - name: _op
+          in: query
+          description: The value must be 'new'
+          required: true
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      responses:
+        '200':
+          description: The empty object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+    post:
+      tags:
+        - AsyncSchedulerFW
+      summary: Create
+      description: Creating new object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+        required: true
+      responses:
+        '201':
+          description: If object has been created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+        '400':
+          description: >-
+            If the object has not been created: the content response contains
+            validation messages
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object has not been created due to business rules violation: the
+            content response contains validation messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/FW/AsyncSchedulerFW/validate:
+    post:
+      tags:
+        - AsyncSchedulerFW
+      summary: Validate
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Object of type to validate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+        required: true
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/FW/AsyncSchedulerFW/validateProperties:
+    post:
+      tags:
+        - AsyncSchedulerFW
+      summary: Validation of one on more properties of Type
+      description: Validation of object of type
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: ' - One or more key-value pairs where the key is the DTO property name and the value is value to validate * REQUIRED<br> - The id of an existing object to validate properties, or '''' if the object does not exist yet <br>'
+        content:
+          application/json:
+            schema:
+              type: string
+              properties:
+                propertyName=Value&id=Value:
+                  type: string
+                  format: string
+              example: propertyName=Value&id=Value
+      responses:
+        '200':
+          description: >-
+            If object is VALID: the content response does NOT contain validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+        '400':
+          description: If no object to validate was supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '409':
+          description: >-
+            If object is NOT VALID: the content response contains validation
+            messages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ValidateDTO'
+  /api/v1/{environment}/FW/AsyncSchedulerFW/search:
+    post:
+      tags:
+        - AsyncSchedulerFW
+      summary: Search
+      description: Search among object of type
+      parameters:
+        - name: loadEntireDomain
+          in: query
+          description: Specify 'loadEntireDomain=true' if you want all the aggregate
+          style: form
+          schema:
+            type: string
+        - name: gettotalcount
+          in: query
+          description: >-
+            Specify 'gettotalcount=true' if you want the total number of
+            elements
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SearchDTO'
+        required: true
+      responses:
+        '200':
+          description: The list of object of type as result of search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+        '400':
+          description: If the search criteria is not supplied
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+  /api/v1/{environment}/FW/AsyncSchedulerFW/read:
+    post:
+      tags:
+        - AsyncSchedulerFW
+      summary: Read
+      description: Read among object of type
+      parameters:
+        - name: dlevel
+          in: query
+          description: Serialization level
+          style: form
+          schema:
+            type: string
+        - name: dlevelkey
+          in: query
+          description: Serialization level key
+          style: form
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Search criteria to apply
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SearchElementDTO'
+        required: true
+      responses:
+        '200':
+          description: The object of type requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AsyncSchedulerFWDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: If object not found
+  /api/v1/{environment}/FW/EditPathFW/uploadfile:
+    post:
+      tags:
+        - EditPathFW
+      summary: Upload a file to Edit Path
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - File
+                - FixedPathType
+              type: object
+              properties:
+                File:
+                  type: string
+                  description: File to upload
+                  format: binary
+                FixedPathType:
+                  type: string
+                  description: Fixed path type (only UserFileTemp value managed)
+                  default: UserFileTemp
+                RelativePath:
+                  type: string
+                  description: Relative path
+            encoding:
+              File:
+                style: form
+              FixedPathType:
+                style: form
+              RelativePath:
+                style: form
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '415':
+          description: Client Error
+  /api/v1/{environment}/FW/EditPathFW/removefile:
+    post:
+      tags:
+        - EditPathFW
+      summary: Remove a file Edit Path for error
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        description: Input parameters
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FileEditPathParamsDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/FileEditPathParamsDTO'
+        required: true
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: Not Found
+  /api/v1/{environment}/FW/EditPathFW/getfile:
+    post:
+      tags:
+        - EditPathFW
+      summary: Get a file from Edit Path
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetEditPathParamsDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GetEditPathParamsDTO'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: Not Found
+  /api/v1/{environment}/FW/EditPathFW/getfilelist:
+    post:
+      tags:
+        - EditPathFW
+      summary: Get file list from Edit Path
+      parameters:
+        - name: environment
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: authorization-scope
+          in: header
+          description: >-
+            The environment where this operation will be executed. This must
+            match with the environment in the url.
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: company
+          in: query
+          description: Company code
+          style: form
+          schema:
+            type: string
+        - name: user
+          in: query
+          description: >-
+            Application user (mandatory if the WebApi user does not have any
+            mapped application user)
+          style: form
+          schema:
+            type: string
+        - name: accept-language
+          in: header
+          description: Example for multilanguage
+          style: simple
+          schema:
+            enum:
+              - it-IT
+              - en-GB
+            type: string
+            default: it-IT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FileListEditPathParamsDTO'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/FileListEditPathParamsDTO'
+      responses:
+        '200':
+          description: Response of the request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileListEditPathResultDTO'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FileListEditPathResultDTO'
+        '401':
+          description: Unauthorized access
+        '403':
+          description: Forbidden access
+        '404':
+          description: Not Found
+components:
+  schemas:
+    AsyncCatalogFWDTO:
+      required:
+        - assemblyname
+        - classname
+        - groupname
+        - idoperation
+        - isSchedulable
+      type: object
+      properties:
+        assemblyname:
+          minLength: 1
+          type: string
+          description: AssemblyName - Assemblyname
+        classname:
+          minLength: 1
+          type: string
+          description: ClassName - Classname
+        descriptionid:
+          type: integer
+          description: DescriptionId - Descriptionid
+          format: int64
+          nullable: true
+        detaillifehours:
+          type: integer
+          description: DetailLifeHours - Detaillifehours
+          format: int32
+          default: 0
+          nullable: true
+        groupname:
+          minLength: 1
+          type: string
+          description: GroupName - Groupname
+        idoperation:
+          minLength: 1
+          type: string
+          description: IdOperation - Id operazione
+        isSchedulable:
+          type: boolean
+          description: IsSchedulable - IsSchedulable
+        rowversion:
+          type: string
+          description: RowVersion - RowVersion
+          format: byte
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        FW_ASYNC_CATALOG - Operazioni (job) schedulabili<br>Proprietà
+        chiave:<ul><li><b>Idoperation</b></li></ul>
+    AsyncSchedulerFWDTO:
+      required:
+        - asyncCatalogFW
+        - cronexpr
+        - idoperation
+        - startdatetimeutc
+      type: object
+      properties:
+        additionalinfo:
+          type: string
+          description: AdditionalInfo - Informazioni aggiuntive
+          nullable: true
+        cronexpr:
+          minLength: 1
+          type: string
+          description: CronExpr - Frequenza
+        enddatetimeutc:
+          type: string
+          description: EndDateTimeUtc - Data fine
+          format: date-time
+          nullable: true
+        id:
+          type: integer
+          description: Id - Id processo (Required only in PUT/PATCH)
+          format: int32
+          nullable: true
+        idoperation:
+          minLength: 1
+          type: string
+          description: IdOperation - Id operazione
+        isDisabled:
+          enum:
+            - 0
+            - 1
+          type: boolean
+          description: >-
+            IsDisabled - Disabilitato<br><ul><li><i>0</i> - No</li><li><i>1</i>
+            - Si</li></ul>
+          default: '0'
+          nullable: true
+        lastexecutionutc:
+          type: string
+          description: LastExecutionUtc - Ultima esecuzione
+          format: date-time
+          nullable: true
+        nextexecutionutc:
+          type: string
+          description: NextExecutionUtc - Prossima esecuzione
+          format: date-time
+          nullable: true
+        serializedParameter:
+          type: string
+          description: SerializedParameter - Parametri di elaborazione
+          nullable: true
+        startdatetimeutc:
+          type: string
+          description: StartDateTimeUtc - Data inizio
+          format: date-time
+        withcompany:
+          type: boolean
+          description: WithCompany - per azienda
+          nullable: true
+        asyncCatalogFW:
+          $ref: '#/components/schemas/AsyncCatalogFWDTO'
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: >-
+        FW_ASYNC_SCHEDULER - Processi schedulati<br>Proprietà
+        chiave:<ul><li><b>Id</b></li></ul>
+    FileEditPathParamsDTO:
+      required:
+        - filename
+      type: object
+      properties:
+        filename:
+          minLength: 1
+          type: string
+          description: File name
+        fixedPathType:
+          minLength: 1
+          type: string
+          description: Fixed path type (only UserFileTemp value managed)
+          default: UserFileTemp
+          nullable: true
+        relativePath:
+          type: string
+          description: Relative path
+          nullable: true
+      additionalProperties: false
+    FileListEditPathParamsDTO:
+      type: object
+      properties:
+        fixedPathType:
+          minLength: 1
+          type: string
+          description: Fixed path type (only UserFileTemp value managed)
+          default: UserFileTemp
+          nullable: true
+        relativePath:
+          type: string
+          description: Relative path
+          nullable: true
+      additionalProperties: false
+    FileListEditPathResultDTO:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            type: string
+          description: List of files
+          nullable: true
+      additionalProperties: false
+    GetEditPathParamsDTO:
+      required:
+        - filename
+      type: object
+      properties:
+        asAttachment:
+          type: boolean
+          description: Download as attachment
+        deleteAfter:
+          type: boolean
+          description: Delete after download
+        filename:
+          minLength: 1
+          type: string
+          description: File name
+        fixedPathType:
+          minLength: 1
+          type: string
+          description: Fixed path type (only UserFileTemp value managed)
+          default: UserFileTemp
+          nullable: true
+        relativePath:
+          type: string
+          description: Relative path
+          nullable: true
+      additionalProperties: false
+    SearchComparer:
+      enum:
+        - 0
+        - 1
+        - 10
+        - 11
+        - 12
+        - 13
+        - 20
+        - 21
+        - 30
+        - 40
+        - 50
+        - 51
+        - 60
+        - 61
+        - 70
+        - 71
+      type: integer
+      description: >-
+        Comparer operator: Equal = 0, NotEqual = 1, GreaterThan = 10, LessThan =
+        11, GreaterOrEqualThan = 12, LessOrEqualThan = 13, Contains = 20,
+        NotContains = 21, StartsWith = 30, EndsWith = 40, In = 50, NotIn = 51,
+        Between = 60, NotBetween = 61Null = 70NotNull = 71
+      format: int32
+    SearchDTO:
+      type: object
+      properties:
+        filters:
+          $ref: '#/components/schemas/SearchGroupDTO'
+        parameters:
+          type: object
+          additionalProperties: {}
+          description: List of key value filters that will be applied to the query
+          nullable: true
+        orderingProperties:
+          type: object
+          additionalProperties: {}
+          description: '"Order by" properties list'
+          format: IDictionary<string, long>
+          nullable: true
+        pageSize:
+          type: integer
+          description: Page number to retun
+          format: int32
+        pageNumber:
+          type: integer
+          description: Number of elements per page to return
+          format: int32
+        selectList:
+          type: string
+          nullable: true
+        visibleColumns:
+          type: string
+          nullable: true
+        idRow:
+          type: string
+          nullable: true
+      additionalProperties: false
+      description: DTO that contains the filter criteria
+    SearchElementDTO:
+      required:
+        - comparer
+        - propertyName
+        - value
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/SearchNodeDTO'
+      properties:
+        propertyName:
+          minLength: 1
+          type: string
+          description: Property on witch apply the filter
+        comparer:
+          $ref: '#/components/schemas/SearchComparer'
+        value:
+          $ref: '#/components/schemas/SearchNodeValueDTO'
+      additionalProperties: false
+      description: DTO that identifies a search criteria
+    SearchGroupDTO:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/SearchNodeDTO'
+      properties:
+        items:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/SearchNodeDTO'
+              - $ref: '#/components/schemas/SearchElementDTO'
+              - $ref: '#/components/schemas/SearchGroupDTO'
+            description: DTO that identifies a search criteria node (abstract)
+          description: >-
+            Items list to apply: any element can be a 'SearchGroupDTO' or a
+            'SearchElementDTO'
+          nullable: true
+      additionalProperties: false
+      description: DTO that identifies a group of search criteria
+    SearchLogicalOperators:
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+      type: integer
+      description: 'Logical operator: And = 1, Or = 2, Not = 3'
+      format: int32
+    SearchNodeDTO:
+      type: object
+      properties:
+        operator:
+          $ref: '#/components/schemas/SearchLogicalOperators'
+      additionalProperties: false
+      description: DTO that identifies a search criteria node (abstract)
+    SearchNodeValueDTO:
+      type: object
+      additionalProperties: false
+    StringObjectKeyValuePair:
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        value:
+          nullable: true
+      additionalProperties: false
+    ValidateDTO:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationResultDTO'
+          nullable: true
+        extensionData:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringObjectKeyValuePair'
+          nullable: true
+        additionalData:
+          type: object
+          additionalProperties: {}
+          nullable: true
+      additionalProperties: false
+      description: DTO for data validation task
+    ValidationResultDTO:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Validation message
+          nullable: true
+        warningCode:
+          type: integer
+          format: int64
+          nullable: true
+        isWarning:
+          type: boolean
+          description: It means the message is a warning
+        isError:
+          type: boolean
+          description: It means the message is an error
+        dtoName:
+          type: string
+          description: the DTO name who the property belong
+          nullable: true
+        dtoPropertyName:
+          type: string
+          description: The DTO invalid property name
+          nullable: true
+        entityPropertyPath:
+          type: string
+          nullable: true
+      additionalProperties: false
+      description: DTO for property validation task
+  securitySchemes:
+    Basic:
+      type: http
+      description: Basic Authorization header.
+      scheme: Basic
+    Bearer:
+      type: http
+      description: "Bearer Authorization header.\r\n\r\nEnter your token in the text input below."
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - Basic:
+      - Basic
+  - Bearer:
+      - Bearer
+tags:
+  - name: AsyncCatalogFW
+    description: Collection of services for Schedulable Operations
+  - name: AsyncSchedulerFW
+    description: Collection of services for Scheduled Processes
+  - name: EditPathFW
+    description: Collection of services for Upload/Download Cloud Files
+servers:
+  - url: https://apicsdemo.teamsystem.io
+    description: Ambiente demo
