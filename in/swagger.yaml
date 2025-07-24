@@ -1,702 +1,1468 @@
-openapi: 3.0.1
-info:
-  title: TSE Cloud - IN
-  description: >-
-    This is a swagger docs for Infrastucture object Teamsystemn Enterprise
-    Cloud,  more detail  at [https://swagger.io](https://swagger.io).
-  version: v2025.1000
-  termsOfService: https://www.teamsystem.com/terms-conditions/
-  contact:
-    name: Supporto TeamSystem
-    url: https://mysupport.teamsystem.com/
-paths:
-  /api/v1/{environment}/FW/DlevelEntityName/{dtoname}:
-    get:
-      tags:
-        - DlevelLookup
-      summary: >-
-        List of internal and external entity names for deserialization (dlevel)
-        of the requested DTO entity
-      description: >-
-        Retrieve list of internal and external entity names for deserialization
-        (dlevel) of the requested DTO entity
-      parameters:
-        - name: dtoname
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: environment
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: authorization-scope
-          in: header
-          description: >-
-            The environment where this operation will be executed. This must
-            match with the environment in the url.
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: company
-          in: query
-          description: Company code
-          style: form
-          schema:
-            type: string
-        - name: user
-          in: query
-          description: >-
-            Application user (mandatory if the WebApi user does not have any
-            mapped application user)
-          style: form
-          schema:
-            type: string
-        - name: accept-language
-          in: header
-          description: Example for multilanguage
-          style: simple
-          schema:
-            enum:
-              - it-IT
-              - en-GB
-            type: string
-            default: it-IT
-      responses:
-        '200':
-          description: >-
-            Retrieve list of internal and external entity names for
-            deserialization (dlevel) of the requested DTO entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DlevelEntityNameDTO'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/DlevelEntityNameDTO'
-        '401':
-          description: Unauthorized access
-        '403':
-          description: Forbidden access
-  /api/v1/{environment}/FW/DlevelKey/{dtoname}:
-    get:
-      tags:
-        - DlevelLookup
-      summary: >-
-        List of standard dlevelkey names for deserialization of the requested
-        DTO entity
-      description: >-
-        Retrieve list of standard dlevelkey names for deserialization of the
-        requested DTO entity
-      parameters:
-        - name: dtoname
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: environment
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: authorization-scope
-          in: header
-          description: >-
-            The environment where this operation will be executed. This must
-            match with the environment in the url.
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: company
-          in: query
-          description: Company code
-          style: form
-          schema:
-            type: string
-        - name: user
-          in: query
-          description: >-
-            Application user (mandatory if the WebApi user does not have any
-            mapped application user)
-          style: form
-          schema:
-            type: string
-        - name: accept-language
-          in: header
-          description: Example for multilanguage
-          style: simple
-          schema:
-            enum:
-              - it-IT
-              - en-GB
-            type: string
-            default: it-IT
-      responses:
-        '200':
-          description: >-
-            Retrieve list of standard dlevelkey names for deserialization of the
-            requested DTO entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DlevelKeyDTO'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/DlevelKeyDTO'
-        '401':
-          description: Unauthorized access
-        '403':
-          description: Forbidden access
-  /api/v1/{environment}/FW/Lookup:
-    get:
-      tags:
-        - Lookup
-      summary: List of available Lookups
-      description: Retrieve list of available lookups
-      parameters:
-        - name: environment
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: authorization-scope
-          in: header
-          description: >-
-            The environment where this operation will be executed. This must
-            match with the environment in the url.
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: company
-          in: query
-          description: Company code
-          style: form
-          schema:
-            type: string
-        - name: user
-          in: query
-          description: >-
-            Application user (mandatory if the WebApi user does not have any
-            mapped application user)
-          style: form
-          schema:
-            type: string
-        - name: accept-language
-          in: header
-          description: Example for multilanguage
-          style: simple
-          schema:
-            enum:
-              - it-IT
-              - en-GB
-            type: string
-            default: it-IT
-      responses:
-        '200':
-          description: Retrieve list of available lookups
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LookupItemDTO'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/LookupItemDTO'
-        '401':
-          description: Unauthorized access
-        '403':
-          description: Forbidden access
-  /api/v1/{environment}/{moduleAcron}/Lookup/{lookupName}:
-    get:
-      tags:
-        - Lookup
-      summary: Get lookup data
-      description: >-
-        Retrieve details of the specified lookup. Use this endpoint to get
-        lookup data without a complex filter or filterless.
-      parameters:
-        - name: moduleAcron
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: lookupName
-          in: path
-          description: Lookup's name
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: environment
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: metadata
-          in: query
-          description: Allows you to get lookup's metadata structure.
-          style: form
-          schema:
-            type: string
-        - name: pageNumber
-          in: query
-          description: Page number to return.
-          style: form
-          schema:
-            type: string
-        - name: pageSize
-          in: query
-          description: Define the number of elements per page to return.
-          style: form
-          schema:
-            type: string
-        - name: filter
-          in: query
-          description: >-
-            (optional parameter) Text filter to apply. Will be applied to key
-            and description properties of DTO.
-          style: form
-          schema:
-            type: string
-        - name: authorization-scope
-          in: header
-          description: >-
-            The environment where this operation will be executed. This must
-            match with the environment in the url.
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: company
-          in: query
-          description: Company code
-          style: form
-          schema:
-            type: string
-        - name: user
-          in: query
-          description: >-
-            Application user (mandatory if the WebApi user does not have any
-            mapped application user)
-          style: form
-          schema:
-            type: string
-        - name: accept-language
-          in: header
-          description: Example for multilanguage
-          style: simple
-          schema:
-            enum:
-              - it-IT
-              - en-GB
-            type: string
-            default: it-IT
-      responses:
-        '200':
-          description: >-
-            Lookup data (optionally lookup metadata structure) of specified
-            lookup
-        '401':
-          description: Unauthorized access
-        '403':
-          description: Forbidden access
-    post:
-      tags:
-        - Lookup
-      summary: Post lookup data
-      description: >-
-        Retrieve details of the specified look up. Use this endpoint when you
-        want apply a complex filter
-      parameters:
-        - name: moduleAcron
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: lookupName
-          in: path
-          description: Lookup's name
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: environment
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: _op
-          in: query
-          description: >-
-            Set the value to 'search' or 'fulltextsearch' to enable advanced
-            features
-          style: form
-          schema:
-            type: string
-        - name: metadata
-          in: query
-          description: Allows you to get lookup's metadata structure.
-          style: form
-          schema:
-            type: string
-        - name: authorization-scope
-          in: header
-          description: >-
-            The environment where this operation will be executed. This must
-            match with the environment in the url.
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: company
-          in: query
-          description: Company code
-          style: form
-          schema:
-            type: string
-        - name: user
-          in: query
-          description: >-
-            Application user (mandatory if the WebApi user does not have any
-            mapped application user)
-          style: form
-          schema:
-            type: string
-        - name: accept-language
-          in: header
-          description: Example for multilanguage
-          style: simple
-          schema:
-            enum:
-              - it-IT
-              - en-GB
-            type: string
-            default: it-IT
-      requestBody:
-        description: Lookup filters
-        content:
-          application/json:
-            schema: {}
-          application/xml:
-            schema: {}
-        required: true
-      responses:
-        '200':
-          description: >-
-            Lookup data (optionally lookup metadata structure) of specified
-            lookup
-        '401':
-          description: Unauthorized access
-        '403':
-          description: Forbidden access
-  /api/v1/{environment}/FW/MetadataDTO/{dtoname}:
-    get:
-      tags:
-        - MetadataDTO
-      summary: Get application domain metadata
-      description: Retrieves the application domain metadata for the indicated DTOName
-      parameters:
-        - name: dtoname
-          in: path
-          description: Name of the dtoname for which to retrieve the metadata
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: environment
-          in: path
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: authorization-scope
-          in: header
-          description: >-
-            The environment where this operation will be executed. This must
-            match with the environment in the url.
-          required: true
-          style: simple
-          schema:
-            type: string
-        - name: company
-          in: query
-          description: Company code
-          style: form
-          schema:
-            type: string
-        - name: user
-          in: query
-          description: >-
-            Application user (mandatory if the WebApi user does not have any
-            mapped application user)
-          style: form
-          schema:
-            type: string
-        - name: accept-language
-          in: header
-          description: Example for multilanguage
-          style: simple
-          schema:
-            enum:
-              - it-IT
-              - en-GB
-            type: string
-            default: it-IT
-      responses:
-        '200':
-          description: application domain metadata for the specified resource
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceMetaDTO'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/ResourceMetaDTO'
-        '400':
-          description: If the mandatory 'dtoname' parameter was not specified
-        '401':
-          description: Unauthorized access
-        '403':
-          description: Forbidden access
-        '404':
-          description: If the indicated resource was not found
-components:
-  schemas:
-    DlevelEntityNameDTO:
-      type: object
-      properties:
-        internalNameDeserialization:
-          type: string
-          description: Internal relation name for entity deserialization ('dlevel')
-          nullable: true
-        externalNameDeserialization:
-          type: string
-          description: External relation name for entity deserialization ('dlevel')
-          nullable: true
-        relatedDTOEntityName:
-          type: string
-          description: Name of the related DTO
-          nullable: true
-        relatedDTOPropertyName:
-          type: string
-          description: Name of the related DTO property
-          nullable: true
-      additionalProperties: false
-    DlevelKeyDTO:
-      type: object
-      properties:
-        entityDTOName:
-          type: string
-          description: Name of DTO entity
-          nullable: true
-        dLevelKeyName:
-          type: string
-          description: Key name for 'dlevelKey'
-          nullable: true
-        deserializationLevel:
-          type: string
-          description: Deserialization Level
-          nullable: true
-      additionalProperties: false
-    LookupItemDTO:
-      type: object
-      properties:
-        lookupName:
-          type: string
-          description: Lookup name
-          nullable: true
-        description:
-          type: string
-          description: Lookup description
-          nullable: true
-        href:
-          type: string
-          description: Complete Url address for lookup execution
-          nullable: true
-        typeQuery:
-          type: string
-          description: Lookup type ('QueryDescriptor', 'Entity')
-          nullable: true
-      additionalProperties: false
-    ResourceMetaDTO:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Resource Name
-          nullable: true
-        type:
-          type: string
-          description: Name of the DTO associated with the resource
-          nullable: true
-        entityName:
-          type: string
-          description: Name of the entity associated with the resource
-          nullable: true
-        properties:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceMetaPropertyDTO'
-          description: List of defined properties
-          nullable: true
-        relations:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceMetaRelationDTO'
-          description: List of relations defined
-          nullable: true
-        extensionData:
-          type: array
-          items:
-            $ref: '#/components/schemas/StringObjectKeyValuePair'
-          nullable: true
-        additionalData:
-          type: object
-          additionalProperties: {}
-          nullable: true
-      additionalProperties: false
-      description: The application domain metadata for the indicated resource
-    ResourceMetaPropertyDTO:
-      type: object
-      properties:
-        propertyName:
-          type: string
-          description: Property name in the DTO
-          nullable: true
-        propertyType:
-          type: string
-          description: Property type in the DTO
-          nullable: true
-        isKey:
-          type: boolean
-          description: If 'true' the property represents a key
-        mandatory:
-          type: boolean
-          description: If 'true' the property is required
-        entityPropertyName:
-          type: string
-          description: >-
-            The property name of the entity associated with the property in the
-            DTO, if it exists
-          nullable: true
-        entityPropertyType:
-          type: string
-          description: >-
-            The property type of the entity associated with the property in the
-            DTO, if it exists
-          nullable: true
-        rangeValue:
-          $ref: '#/components/schemas/ResourceMetaRangeValueDTO'
-        description:
-          type: string
-          nullable: true
-        shortDescription:
-          type: string
-          nullable: true
-        maxLength:
-          type: integer
-          description: The max length value of the property
-          format: int32
-        scale:
-          type: integer
-          description: The scale of the property (used for 'decimal' type properties)
-          format: int32
-          nullable: true
-      additionalProperties: false
-      description: Metadata relating to a property of the indicated resource
-    ResourceMetaRangeValueDTO:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The identifying name of the range of values
-          nullable: true
-        allowedValues:
-          type: array
-          items:
-            type: string
-          description: The list of allowed values
-          nullable: true
-        allowedValuesDescription:
-          type: array
-          items:
-            type: string
-          description: The list of descriptions for each of the allowed values
-          nullable: true
-      additionalProperties: false
-      description: Metadata relating to an enumerated range of values
-    ResourceMetaRelationDTO:
-      type: object
-      properties:
-        relationName:
-          type: string
-          description: Name of the relationship in the DTO
-          nullable: true
-        relationType:
-          type: string
-          description: Type of relationship in the DTO
-          nullable: true
-        entityRelationName:
-          type: string
-          description: >-
-            Name of the relationship to the entity associated with the
-            relationship in the DTO, if any
-          nullable: true
-        entityRelationType:
-          type: string
-          description: >-
-            Type of relationship in the entity associated with the relationship
-            in the DTO, if it exists
-          nullable: true
-        multiplicity:
-          type: string
-          description: 'The multiplicity of the relationship: 1:1, 1:01, 1:*'
-          nullable: true
-        isExternal:
-          type: boolean
-          description: >-
-            If 'true' the relationship is of type 'external', if 'false' it is
-            of type 'internal'
-        meta:
-          $ref: '#/components/schemas/ResourceMetaDTO'
-      additionalProperties: false
-      description: Metadata relating to a relationship of the indicated resource
-    StringObjectKeyValuePair:
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        value:
-          nullable: true
-      additionalProperties: false
-  securitySchemes:
-    Basic:
-      type: http
-      description: Basic Authorization header.
-      scheme: Basic
-    Bearer:
-      type: http
-      description: "Bearer Authorization header.\r\n\r\nEnter your token in the text input below."
-      scheme: bearer
-      bearerFormat: JWT
-security:
-  - Basic:
-      - Basic
-  - Bearer:
-      - Bearer
-servers:
-  - url: https://apicsdemo.teamsystem.io
-    description: Ambiente demo
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "TSE Cloud - IN",
+    "description": "This is Swagger Docs for Integration WebApi Teamsystemn Enterprise Cloud, more detail at [https://swagger.io](https://swagger.io).",
+    "version": "v2025.1000",
+    "termsOfService": "https://www.teamsystem.com/terms-conditions/",
+    "contact": {
+      "name": "Supporto TeamSystem",
+      "url": "https://mysupport.teamsystem.com/"
+    }
+  },
+  "paths": {
+    "/api/v1/auth/token": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Get token",
+        "description": "Get authorization token",
+        "parameters": [
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "grant_type": {
+                    "type": "string"
+                  },
+                  "scope": {
+                    "type": "string"
+                  },
+                  "token": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "username": {
+                  "style": "form"
+                },
+                "password": {
+                  "style": "form"
+                },
+                "grant_type": {
+                  "style": "form"
+                },
+                "scope": {
+                  "style": "form"
+                },
+                "token": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "If user is authorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "If user is not authorized"
+          },
+          "404": {
+            "description": "If OAuth authentication is not enabled"
+          },
+          "409": {
+            "description": "If there is an error during the token storage",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/token/refresh": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Refresh token",
+        "description": "Return new OAuth token from an expired AccessToken and a NON expired RefreshToken",
+        "parameters": [
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "New Access token and a new Refresh token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If Access token or Refresh token are not valid"
+          },
+          "401": {
+            "description": "If user is not authorized"
+          },
+          "409": {
+            "description": "If there is an error during the refresh token operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/token/revoke": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Revoke token operation",
+        "description": "Revoke a token associated to a user",
+        "parameters": [
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeTokenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "If the token revoke was successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RevokeTokenResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "If user is not authorized"
+          },
+          "409": {
+            "description": "If there is an error during the revoke operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RevokeTokenResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/ad/token": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Get Active Directory token",
+        "description": "Get authorization token with Active Directory",
+        "parameters": [
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "grant_type": {
+                    "type": "string"
+                  },
+                  "scope": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "username": {
+                  "style": "form"
+                },
+                "password": {
+                  "style": "form"
+                },
+                "grant_type": {
+                  "style": "form"
+                },
+                "scope": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "If user is authorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "If user is not authorized"
+          },
+          "403": {
+            "description": "If user has no authorization for selected scope"
+          },
+          "404": {
+            "description": "If AD OAuth authentication is not enabled"
+          },
+          "409": {
+            "description": "If there is an error during the token storage",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/tsid/token": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Get TeamSystem ID token",
+        "description": "Get authorization token with TSID",
+        "parameters": [
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "uuid": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "grant_type": {
+                    "type": "string"
+                  },
+                  "scope": {
+                    "type": "string"
+                  },
+                  "access_token": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "username": {
+                  "style": "form"
+                },
+                "password": {
+                  "style": "form"
+                },
+                "uuid": {
+                  "style": "form"
+                },
+                "grant_type": {
+                  "style": "form"
+                },
+                "scope": {
+                  "style": "form"
+                },
+                "access_token": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "If user is authorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "If user is not authorized"
+          },
+          "403": {
+            "description": "If user has no authorization for selected scope"
+          },
+          "404": {
+            "description": "If TSID OAuth authentication is not enabled"
+          },
+          "409": {
+            "description": "If there is an error during the token storage",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/FW/DlevelEntityName/{dtoname}": {
+      "get": {
+        "tags": [
+          "DlevelLookup"
+        ],
+        "summary": "List of internal and external entity names for deserialization (dlevel) of the requested DTO entity",
+        "description": "Retrieve list of internal and external entity names for deserialization (dlevel) of the requested DTO entity",
+        "parameters": [
+          {
+            "name": "dtoname",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieve list of internal and external entity names for deserialization (dlevel) of the requested DTO entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DlevelEntityNameDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DlevelEntityNameDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/FW/DlevelKey/{dtoname}": {
+      "get": {
+        "tags": [
+          "DlevelLookup"
+        ],
+        "summary": "List of standard dlevelkey names for deserialization of the requested DTO entity",
+        "description": "Retrieve list of standard dlevelkey names for deserialization of the requested DTO entity",
+        "parameters": [
+          {
+            "name": "dtoname",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieve list of standard dlevelkey names for deserialization of the requested DTO entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DlevelKeyDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DlevelKeyDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/FW/Lookup": {
+      "get": {
+        "tags": [
+          "Lookup"
+        ],
+        "summary": "List of available Lookups",
+        "description": "Retrieve list of available lookups",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieve list of available lookups",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LookupItemDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/LookupItemDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/{moduleAcron}/Lookup/{lookupName}": {
+      "get": {
+        "tags": [
+          "Lookup"
+        ],
+        "summary": "Get lookup data",
+        "description": "Retrieve details of the specified lookup. Use this endpoint to get lookup data without a complex filter or filterless.",
+        "parameters": [
+          {
+            "name": "moduleAcron",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lookupName",
+            "in": "path",
+            "description": "Lookup's name",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "metadata",
+            "in": "query",
+            "description": "Allows you to get lookup's metadata structure.",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "description": "Page number to return.",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Define the number of elements per page to return.",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "(optional parameter) Text filter to apply. Will be applied to key and description properties of DTO.",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lookup data (optionally lookup metadata structure) of specified lookup"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Lookup"
+        ],
+        "summary": "Post lookup data",
+        "description": "Retrieve details of the specified look up. Use this endpoint when you want apply a complex filter",
+        "parameters": [
+          {
+            "name": "moduleAcron",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lookupName",
+            "in": "path",
+            "description": "Lookup's name",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set the value to 'search' or 'fulltextsearch' to enable advanced features",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "metadata",
+            "in": "query",
+            "description": "Allows you to get lookup's metadata structure.",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Lookup filters",
+          "content": {
+            "application/json": {
+              "schema": {}
+            },
+            "application/xml": {
+              "schema": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Lookup data (optionally lookup metadata structure) of specified lookup"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/FW/MetadataDTO/{dtoname}": {
+      "get": {
+        "tags": [
+          "MetadataDTO"
+        ],
+        "summary": "Get application domain metadata",
+        "description": "Retrieves the application domain metadata for the indicated DTOName",
+        "parameters": [
+          {
+            "name": "dtoname",
+            "in": "path",
+            "description": "Name of the dtoname for which to retrieve the metadata",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "application domain metadata for the specified resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceMetaDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceMetaDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the mandatory 'dtoname' parameter was not specified"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If the indicated resource was not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AuthResponse": {
+        "type": "object",
+        "properties": {
+          "succeeded": {
+            "type": "boolean"
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          },
+          "jwtResponse": {
+            "$ref": "#/components/schemas/JwtResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DlevelEntityNameDTO": {
+        "type": "object",
+        "properties": {
+          "internalNameDeserialization": {
+            "type": "string",
+            "description": "Internal relation name for entity deserialization ('dlevel')",
+            "nullable": true
+          },
+          "externalNameDeserialization": {
+            "type": "string",
+            "description": "External relation name for entity deserialization ('dlevel')",
+            "nullable": true
+          },
+          "relatedDTOEntityName": {
+            "type": "string",
+            "description": "Name of the related DTO",
+            "nullable": true
+          },
+          "relatedDTOPropertyName": {
+            "type": "string",
+            "description": "Name of the related DTO property",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DlevelKeyDTO": {
+        "type": "object",
+        "properties": {
+          "entityDTOName": {
+            "type": "string",
+            "description": "Name of DTO entity",
+            "nullable": true
+          },
+          "dLevelKeyName": {
+            "type": "string",
+            "description": "Key name for 'dlevelKey'",
+            "nullable": true
+          },
+          "deserializationLevel": {
+            "type": "string",
+            "description": "Deserialization Level",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "JwtResponse": {
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "nullable": true
+          },
+          "expires_int": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scope": {
+            "type": "string",
+            "nullable": true
+          },
+          "token_type": {
+            "type": "string",
+            "nullable": true
+          },
+          "refresh_token": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LookupItemDTO": {
+        "type": "object",
+        "properties": {
+          "lookupName": {
+            "type": "string",
+            "description": "Lookup name",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Lookup description",
+            "nullable": true
+          },
+          "href": {
+            "type": "string",
+            "description": "Complete Url address for lookup execution",
+            "nullable": true
+          },
+          "typeQuery": {
+            "type": "string",
+            "description": "Lookup type ('QueryDescriptor', 'Entity')",
+            "nullable": true
+          },
+          "parametersQueryDescriptor": {
+            "type": "string",
+            "description": "List of parameter QD might have",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefreshTokenRequest": {
+        "required": [
+          "access_token",
+          "refresh_token"
+        ],
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "refresh_token": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceMetaDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Resource Name",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "Name of the DTO associated with the resource",
+            "nullable": true
+          },
+          "entityName": {
+            "type": "string",
+            "description": "Name of the entity associated with the resource",
+            "nullable": true
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceMetaPropertyDTO"
+            },
+            "description": "List of defined properties",
+            "nullable": true
+          },
+          "relations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourceMetaRelationDTO"
+            },
+            "description": "List of relations defined",
+            "nullable": true
+          },
+          "extensionData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StringObjectKeyValuePair"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "The application domain metadata for the indicated resource"
+      },
+      "ResourceMetaPropertyDTO": {
+        "type": "object",
+        "properties": {
+          "propertyName": {
+            "type": "string",
+            "description": "Property name in the DTO",
+            "nullable": true
+          },
+          "propertyType": {
+            "type": "string",
+            "description": "Property type in the DTO",
+            "nullable": true
+          },
+          "isKey": {
+            "type": "boolean",
+            "description": "If 'true' the property represents a key"
+          },
+          "mandatory": {
+            "type": "boolean",
+            "description": "If 'true' the property is required"
+          },
+          "entityPropertyName": {
+            "type": "string",
+            "description": "The property name of the entity associated with the property in the DTO, if it exists",
+            "nullable": true
+          },
+          "entityPropertyType": {
+            "type": "string",
+            "description": "The property type of the entity associated with the property in the DTO, if it exists",
+            "nullable": true
+          },
+          "rangeValue": {
+            "$ref": "#/components/schemas/ResourceMetaRangeValueDTO"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "shortDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "maxLength": {
+            "type": "integer",
+            "description": "The max length value of the property",
+            "format": "int32"
+          },
+          "scale": {
+            "type": "integer",
+            "description": "The scale of the property (used for 'decimal' type properties)",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Metadata relating to a property of the indicated resource"
+      },
+      "ResourceMetaRangeValueDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The identifying name of the range of values",
+            "nullable": true
+          },
+          "allowedValues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The list of allowed values",
+            "nullable": true
+          },
+          "allowedValuesDescription": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The list of descriptions for each of the allowed values",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Metadata relating to an enumerated range of values"
+      },
+      "ResourceMetaRelationDTO": {
+        "type": "object",
+        "properties": {
+          "relationName": {
+            "type": "string",
+            "description": "Name of the relationship in the DTO",
+            "nullable": true
+          },
+          "relationType": {
+            "type": "string",
+            "description": "Type of relationship in the DTO",
+            "nullable": true
+          },
+          "entityRelationName": {
+            "type": "string",
+            "description": "Name of the relationship to the entity associated with the relationship in the DTO, if any",
+            "nullable": true
+          },
+          "entityRelationType": {
+            "type": "string",
+            "description": "Type of relationship in the entity associated with the relationship in the DTO, if it exists",
+            "nullable": true
+          },
+          "multiplicity": {
+            "type": "string",
+            "description": "The multiplicity of the relationship: 1:1, 1:01, 1:*",
+            "nullable": true
+          },
+          "isExternal": {
+            "type": "boolean",
+            "description": "If 'true' the relationship is of type 'external', if 'false' it is of type 'internal'"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ResourceMetaDTO"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Metadata relating to a relationship of the indicated resource"
+      },
+      "RevokeTokenRequest": {
+        "required": [
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "token": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RevokeTokenResponse": {
+        "type": "object",
+        "properties": {
+          "succeeded": {
+            "type": "boolean"
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringObjectKeyValuePair": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Basic": {
+        "type": "http",
+        "description": "Basic Authorization header.",
+        "scheme": "Basic"
+      },
+      "Bearer": {
+        "type": "http",
+        "description": "Bearer Authorization header.\r\n\r\nEnter your token in the text input below.",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Basic": [
+        "Basic"
+      ]
+    },
+    {
+      "Bearer": [
+        "Bearer"
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "Collection of services for Authentication"
+    },
+    {
+      "name": "DlevelLookup",
+      "description": "Collection of services for Dlevel and DlevelKey"
+    },
+    {
+      "name": "Lookup",
+      "description": "Collection of services for Lookups"
+    },
+    {
+      "name": "MetadataDTO",
+      "description": "Reading service for Metadata structures"
+    }
+  ],
+  "servers": [
+    {
+      "url": "https://apicsdemo.teamsystem.io",
+      "description": "Ambiente demo"
+    }
+  ]
+}

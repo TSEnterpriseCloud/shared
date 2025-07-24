@@ -3717,7 +3717,6 @@
                     "dataplafond": "2024-10-28T10:19:20.384Z",
                     "datareg": "2024-10-28T10:19:20.384Z",
                     "descraggcont": "string",
-                    "ditta": 0,
                     "flgClifat": 0,
                     "flgDocstamp": 0,
                     "flgSpbolli": 0,
@@ -3748,7 +3747,6 @@
                     "idExtendedAttributeSubEntity": 0,
                     "anagraficaDocumentoDitta": {
                       "codDocumMg36": "string",
-                      "dittaCg18": 0,
                       "indStaperMg36": 0,
                       "sezdefault": "string",
                       "extensionData": [
@@ -4390,7 +4388,6 @@
                         "dataultfat": "2024-10-28T10:19:20.385Z",
                         "dataultord": "2024-10-28T10:19:20.385Z",
                         "dataultvar": "2024-10-28T10:19:20.385Z",
-                        "dittaCg18": 0,
                         "fidoaziendale": 1000,
                         "fidofactoring": 0,
                         "fidolivello1": 0,
@@ -4442,7 +4439,6 @@
                         "areaCO": {
                           "codiceAreaMG": "string",
                           "descrarea": "string",
-                          "dittaCg18": 0,
                           "idprov": 0,
                           "macroareaMg07": "string",
                           "tipocfMg07": 0,
@@ -4451,7 +4447,6 @@
                               "areaMg08": "string",
                               "codiceZona": "string",
                               "descrzona": "string",
-                              "dittaCg18": 0,
                               "idprov": 0,
                               "macroareaMg08": "string",
                               "tipocfMg08": 0,
@@ -4483,7 +4478,6 @@
                         "blockLevelCO": {
                           "codBlocco": "string",
                           "descrblocco": "string",
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "indPayline": 0,
                           "extensionData": [
@@ -4501,7 +4495,6 @@
                         "categoryCO": {
                           "categ": "string",
                           "descrcat": "string",
-                          "dittaCg18": 0,
                           "macrocatMg10": "string",
                           "tipocfMg10": 0,
                           "extensionData": [
@@ -4520,7 +4513,6 @@
                         "datiAccompagnamento": {
                           "aspettoMg99": "string",
                           "cliforCg44": 0,
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "imballoMg95": "string",
                           "portoMg91": "string",
@@ -4644,7 +4636,6 @@
                         "grouping1CO": {
                           "codRaggrcf1": "string",
                           "descraggrcf1": "string",
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "idprov": 0,
                           "tipocf": 0,
@@ -4663,7 +4654,6 @@
                         "grouping2CO": {
                           "codRaggrcf2": "string",
                           "descraggrcf2": "string",
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "idprov": 0,
                           "tipocf": 0,
@@ -4682,7 +4672,6 @@
                         "grouping3CO": {
                           "codRaggrcf3": "string",
                           "descraggrcf3": "string",
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "idprov": 0,
                           "tipocf": 0,
@@ -4719,14 +4708,12 @@
                         "macAreaCO": {
                           "codiceMacroarea": "string",
                           "descrmacroar": "string",
-                          "dittaCg18": 0,
                           "idprov": 0,
                           "tipocf": 0,
                           "areas": [
                             {
                               "codiceAreaMG": "string",
                               "descrarea": "string",
-                              "dittaCg18": 0,
                               "idprov": 0,
                               "macroareaMg07": "string",
                               "tipocfMg07": 0,
@@ -4735,7 +4722,6 @@
                                   "areaMg08": "string",
                                   "codiceZona": "string",
                                   "descrzona": "string",
-                                  "dittaCg18": 0,
                                   "idprov": 0,
                                   "macroareaMg08": "string",
                                   "tipocfMg08": 0,
@@ -4779,14 +4765,12 @@
                         },
                         "macroCategoryCO": {
                           "descrmacrocat": "string",
-                          "dittaCg18": 0,
                           "macrocat": "string",
                           "tipocf": 0,
                           "categorie": [
                             {
                               "categ": "string",
                               "descrcat": "string",
-                              "dittaCg18": 0,
                               "macrocatMg10": "string",
                               "tipocfMg10": 0,
                               "extensionData": [
@@ -4816,7 +4800,6 @@
                         },
                         "priceListSalePurchase": {
                           "desclist": "string",
-                          "dittaCg18": 0,
                           "flgVenacq": 0,
                           "numlist": 0,
                           "valutaCg08": "string",
@@ -4835,7 +4818,6 @@
                         "priceListWithMultipleItems": {
                           "codice": "string",
                           "descr": "string",
-                          "dittaCg18": 0,
                           "extensionData": [
                             {
                               "key": "string",
@@ -4852,7 +4834,6 @@
                           "cliforCg44": 0,
                           "codRag": "string",
                           "descragg": "string",
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "extensionData": [
                             {
@@ -4869,7 +4850,6 @@
                         "rischio": {
                           "codice": "string",
                           "descrizione": "string",
-                          "dittaCg18": 0,
                           "flgAttivo": 0,
                           "flgCalceffcons": 0,
                           "flgCalceffdacons": 0,
@@ -4908,7 +4888,6 @@
                         "subCategoryCO": {
                           "categMg11": "string",
                           "descrsottocat": "string",
-                          "dittaCg18": 0,
                           "macrocatMg11": "string",
                           "sottcat": "string",
                           "tipocfMg11": 0,
@@ -4928,7 +4907,6 @@
                           "areaMg08": "string",
                           "codiceZona": "string",
                           "descrzona": "string",
-                          "dittaCg18": 0,
                           "idprov": 0,
                           "macroareaMg08": "string",
                           "tipocfMg08": 0,
@@ -5010,7 +4988,6 @@
                         "guid": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
                         "tipoarchHm30": 0,
                         "idknos": 0,
-                        "dittaCg18": 0,
                         "protocollo": "string",
                         "flgInvalid": 0,
                         "percorso": "string",
@@ -5478,7 +5455,6 @@
                           {
                             "contoCg24": "string",
                             "descr": "string",
-                            "dittaCg18": 0,
                             "gruppoCg10": 0,
                             "idCg24": 0,
                             "iddespcon": 0,
@@ -5507,7 +5483,6 @@
                         "coaAccountStateFI": [
                           {
                             "consosCg24": "string",
-                            "dittaCg18": 0,
                             "dtconsos": "2024-10-28T10:19:20.386Z",
                             "dtdisatt": "2024-10-28T10:19:20.386Z",
                             "flgDisatt": 0,
@@ -5663,7 +5638,6 @@
                         "cap": "string",
                         "citta": "string",
                         "codice": 0,
-                        "dittaCg18": 0,
                         "idmediaCg99": 0,
                         "indDimcentrocomm": 0,
                         "indIrizzo": "string",
@@ -5935,7 +5909,6 @@
                           {
                             "contoCg24": "string",
                             "descr": "string",
-                            "dittaCg18": 0,
                             "gruppoCg10": 0,
                             "idCg24": 0,
                             "iddespcon": 0,
@@ -5964,7 +5937,6 @@
                         "coaAccountStateFI": [
                           {
                             "consosCg24": "string",
-                            "dittaCg18": 0,
                             "dtconsos": "2024-10-28T10:19:20.386Z",
                             "dtdisatt": "2024-10-28T10:19:20.386Z",
                             "flgDisatt": 0,
@@ -6375,7 +6347,6 @@
                       "datacre": "2024-10-28T10:19:20.386Z",
                       "datavar": "2024-10-28T10:19:20.386Z",
                       "descnote1": "string",
-                      "dittaCg18": 0,
                       "gruppocre": "string",
                       "gruppovar": "string",
                       "indTipoop": 0,
@@ -6405,7 +6376,6 @@
                       "dataritvet2": "2024-10-28T10:19:20.387Z",
                       "descaspetto": "string",
                       "descrlettint": "string",
-                      "dittaCg18": 0,
                       "numregCo99": "string",
                       "orainiziotrasp": 0,
                       "oraritvet1": 0,
@@ -6438,7 +6408,6 @@
                     "documentoTestataAgentiMG": [
                       {
                         "codiceAgente": "string",
-                        "dittaCg18": 0,
                         "flgAgerifer": 0,
                         "idagenteMg17": 0,
                         "indModcalc": 0,
@@ -6467,7 +6436,6 @@
                       "codScommessa": 0,
                       "codSprogcol": 0,
                       "codSprogetto": 0,
-                      "dittaCg18": 0,
                       "nodorifcolPd0c": "string",
                       "nodorifPd0c": "string",
                       "extensionData": [
@@ -6486,7 +6454,6 @@
                       {
                         "annoPa23": 0,
                         "codiceAgente": "string",
-                        "dittaCg18": 0,
                         "flgPers": 0,
                         "flgProvsosp": 0,
                         "flgProvvar": 0,
@@ -6526,7 +6493,6 @@
                       "datacompivaman": "2024-10-28T10:19:20.387Z",
                       "dataregesinc": "2024-10-28T10:19:20.387Z",
                       "dataregesprec": "2024-10-28T10:19:20.387Z",
-                      "dittaCg18": 0,
                       "flgDaav": 0,
                       "flgDisatcoge": 0,
                       "indTipocomp": 0,
@@ -6548,7 +6514,6 @@
                         "datansdoc": "2024-10-28T10:19:20.387Z",
                         "datavsconf": "2024-10-28T10:19:20.387Z",
                         "datavsdoc": "2024-10-28T10:19:20.387Z",
-                        "dittaCg18": 0,
                         "fedatadoc": "2024-10-28T10:19:20.387Z",
                         "feiddoc": "string",
                         "feidsoggetto": "string",
@@ -6581,7 +6546,6 @@
                       "cap": "string",
                       "citta": "string",
                       "codice": 0,
-                      "dittaCg18": 0,
                       "idmediaCg99": 0,
                       "indDimcentrocomm": 0,
                       "indIrizzo": "string",
@@ -6618,7 +6582,6 @@
                         "cpmerceCg24": "string",
                         "cup": "string",
                         "descart": "string",
-                        "ditta": 0,
                         "estdescart": "string",
                         "fatconv": 0,
                         "fatconvcf": 0,
@@ -7060,7 +7023,6 @@
                         "documentoRigaCOINMG": {
                           "contodestPc03": "string",
                           "contoorigPc03": "string",
-                          "dittaCg18": 0,
                           "flgEsclriga": 0,
                           "idmediaCg99": 0,
                           "pdcdestPc01": 0,
@@ -7090,7 +7052,6 @@
                           "codScommessa": 0,
                           "codSprogcol": 0,
                           "codSprogetto": 0,
-                          "dittaCg18": 0,
                           "idartepuVc02": 0,
                           "idattrezzaturaVc02": 0,
                           "idmedia": 0,
@@ -7113,7 +7074,6 @@
                         "documentoRigaProvvigioniMG": [
                           {
                             "codiceAgente": "string",
-                            "dittaCg18": 0,
                             "flgVarprov": 0,
                             "idagenteMg17": 0,
                             "imponprov": 0,
@@ -7144,7 +7104,6 @@
                           "dadatacomp": "2024-10-28T10:19:20.387Z",
                           "dataregesinc": "2024-10-28T10:19:20.387Z",
                           "dataregesprec": "2024-10-28T10:19:20.387Z",
-                          "dittaCg18": 0,
                           "flgDaav": 0,
                           "flgDisatcoge": 0,
                           "importo": 0,
@@ -7169,7 +7128,6 @@
                           "cap": "string",
                           "citta": "string",
                           "codice": 0,
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "indDimcentrocomm": 0,
                           "indIrizzo": "string",
@@ -7193,7 +7151,6 @@
                           "capacita": 0,
                           "codConfezMg96": "string",
                           "colliConf": 0,
-                          "dittaCg18": 0,
                           "numregCo99": "string",
                           "pesoLordo": 0,
                           "pesoNetto": 0,
@@ -7237,7 +7194,6 @@
                             "datast4": "2024-10-28T10:19:20.387Z",
                             "datast5": "2024-10-28T10:19:20.387Z",
                             "datast6": "2024-10-28T10:19:20.387Z",
-                            "dittaCg18": 0,
                             "flgSt1": 0,
                             "flgSt2": 0,
                             "flgSt3": 0,
@@ -7287,7 +7243,6 @@
                             "codPallets": "string",
                             "codProgPd14": "string",
                             "codSscc": "string",
-                            "dittaCg18": 0,
                             "flgNonpiuev": 0,
                             "idmediaCg99": 0,
                             "note": "string",
@@ -7316,7 +7271,6 @@
                               "datacre": "2024-10-28T10:19:20.387Z",
                               "datascad": "2024-10-28T10:19:20.387Z",
                               "desclotto": "string",
-                              "dittaCg18": 0,
                               "idmediaCg99": 0,
                               "lib1": 0,
                               "note": "string",
@@ -7334,7 +7288,6 @@
                               }
                             },
                             "parametroMovimentazioneLotto": {
-                              "dittaCg18": 0,
                               "flgAggprogval": 0,
                               "flgNote": 0,
                               "indGiacsca": 0,
@@ -7381,7 +7334,6 @@
                           "datainizoap": "2024-10-28T10:19:20.387Z",
                           "datalancio": "2024-10-28T10:19:20.387Z",
                           "datapianif": "2024-10-28T10:19:20.387Z",
-                          "dittaCg18": 0,
                           "flgConsconf": 0,
                           "flgNoevasparz": 0,
                           "flgNonpiuev": 0,
@@ -7440,7 +7392,6 @@
                             "datapers4": "2024-10-28T10:19:20.387Z",
                             "datapers5": "2024-10-28T10:19:20.387Z",
                             "datapers6": "2024-10-28T10:19:20.387Z",
-                            "dittaCg18": 0,
                             "flgPers1": 0,
                             "flgPers2": 0,
                             "flgPers3": 0,
@@ -7483,7 +7434,6 @@
                             "datansdoc": "2024-10-28T10:19:20.387Z",
                             "datavsconf": "2024-10-28T10:19:20.387Z",
                             "datavsdoc": "2024-10-28T10:19:20.387Z",
-                            "dittaCg18": 0,
                             "fasePd12": 0,
                             "flgAggprescvar": 0,
                             "flgAggqtatrasf": 0,
@@ -7690,7 +7640,6 @@
                       "dataatt": "2024-10-28T10:19:20.388Z",
                       "datacess": "2024-10-28T10:19:20.388Z",
                       "descrdep": "string",
-                      "dittaCg18": 0,
                       "faxnumdep": "string",
                       "flgDepprinc": 0,
                       "indEmail": "string",
@@ -7710,7 +7659,6 @@
                           "coordin2": "string",
                           "coordin3": "string",
                           "descubicaz": "string",
-                          "dittaCg18": 0,
                           "indTipoubicaz": 0,
                           "larghezza": 0,
                           "maxpeso": 0,
@@ -7749,7 +7697,6 @@
                       "dataatt": "2024-10-28T10:19:20.388Z",
                       "datacess": "2024-10-28T10:19:20.388Z",
                       "descrdep": "string",
-                      "dittaCg18": 0,
                       "faxnumdep": "string",
                       "flgDepprinc": 0,
                       "indEmail": "string",
@@ -7769,7 +7716,6 @@
                           "coordin2": "string",
                           "coordin3": "string",
                           "descubicaz": "string",
-                          "dittaCg18": 0,
                           "indTipoubicaz": 0,
                           "larghezza": 0,
                           "maxpeso": 0,
@@ -7822,7 +7768,6 @@
                         "datast4": "2024-10-28T10:19:20.388Z",
                         "datast5": "2024-10-28T10:19:20.388Z",
                         "datast6": "2024-10-28T10:19:20.388Z",
-                        "dittaCg18": 0,
                         "flgSt1": 0,
                         "flgSt2": 0,
                         "flgSt3": 0,
@@ -7861,7 +7806,6 @@
                       "datacons": "2024-10-28T10:19:20.388Z",
                       "dataconsint": "2024-10-28T10:19:20.388Z",
                       "dataconsorig": "2024-10-28T10:19:20.388Z",
-                      "dittaCg18": 0,
                       "flgConfrit": 0,
                       "flgEvastot": 0,
                       "flgNoevasparz": 0,
@@ -7905,7 +7849,6 @@
                         "datapers4": "2024-10-28T10:19:20.388Z",
                         "datapers5": "2024-10-28T10:19:20.388Z",
                         "datapers6": "2024-10-28T10:19:20.388Z",
-                        "dittaCg18": 0,
                         "flgPers1": 0,
                         "flgPers2": 0,
                         "flgPers3": 0,
@@ -7987,25 +7930,20 @@
                 },
                 "Min required": {
                   "value": {
-                    "ditta": "<CODICE DITTA>",
                     "anagraficaDocumentoDitta": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDocumMg36": "<CODICE DOCUMENTO>",
                       "indStaperMg36": "<INDICATORE STANDARD/PERSONALIZZATO>"
                     },
                     "customerSupplierMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "tipoCf": "<TIPO CLI/FOR>",
                       "cliFor": "<CLI/FOR>"
                     },
                     "sezdoc": "<SEZIONALE>",
                     "storageWH": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDep": "<DEPOSITO>"
                     },
                     "righe": [
                       {
-                        "ditta": "<CODICE DITTA>",
                         "codartMg66": "<ARTICOLO1>",
                         "descart": "Descrizione articolo",
                         "qta1": 1
@@ -8015,50 +7953,40 @@
                 },
                 "Order": {
                   "value": {
-                    "ditta": "<CODICE DITTA>",
                     "anagraficaDocumentoDitta": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDocumMg36": "<ORDINI CODICE DOCUMENTO>",
                       "indStaperMg36": "<INDICATORE STANDARD/PERSONALIZZATO>"
                     },
                     "customerSupplierMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "tipoCf": "<TIPO CLI/FOR>",
                       "cliFor": "<CLI/FOR>"
                     },
                     "sezdoc": "<SEZIONALE>",
                     "storageWH": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDep": "<DEPOSITO>"
                     },
                     "TestataOrdine": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Datacons": "2024-12-31"
                     },
                     "DocumentoTestataProgettiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codProgetto": "<PROGETTO>",
                       "nodoRifPd0c": "<NODO>"
                     },
                     "DocumentoTestataRateiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Dadatacomp": "2024-12-01",
                       "Adatacomp": "2024-12-31"
                     },
                     "TestataPersonalizzata": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfPers1": "<COD TESTATA PERSONALIZZATA>"
                       }
                     ],
                     "TestataEstesa": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfSt1": "<COD TESTATA ESTESA>"
                       }
                     ],
                     "DocumentoDatiAccompagnamentoMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "CodAspettoMg99": "<ASPETTO DEI BENI>",
                       "CodCautraspMg13": "<CAUSALE DI TRASPORTO>",
                       "CodImballoMg95": "<IMBALLO>",
@@ -8078,43 +8006,36 @@
                     },
                     "righe": [
                       {
-                        "ditta": "<CODICE DITTA>",
                         "progrRiga": 1,
                         "codartMg66": "<ARTICOLO 1>",
                         "descart": "Descrizione articolo",
                         "qta1": 1,
                         "packaging": {
                           "codConfezMg96": "<CODICE CONFEZIONE>",
-                          "dittaCg18": "<CODICE DITTA>",
                           "progRiga": 1,
                           "numregCo99": "0"
                         },
                         "DocumentoRigaProgettiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "codProgetto": "<PROGETTO>",
                           "nodoRifPd0c": "<NODO>"
                         },
                         "DocumentoRigaRateiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "Dadatacomp": "2024-01-01",
                           "Adatacomp": "2024-01-31"
                         },
                         "RigaPersonalizzata": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfPers1": "<COD RIGA PERSONALIZZATA>"
                           }
                         ],
                         "RigaEstesa": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfSt1": "<COD RIGA ESTESA>"
                           }
                         ],
                         "documentoRigaCOINMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "pdcDestPC01": "<PDC CONTO DEST>",
                           "contoDestPC03": "<CONTO DEST>",
                           "pdcVdsDestPC01": "<PDC VDS DEST>",
@@ -8122,7 +8043,6 @@
                         }
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 1,
                         "progrRiga": 2,
                         "descart": "Articolo manuale",
@@ -8130,13 +8050,11 @@
                         "prezzo1": 100
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 2,
                         "progrRiga": 3,
                         "descart": "Riga descrittiva"
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 4,
                         "progrRiga": 4,
                         "qta1": 1,
@@ -8145,7 +8063,6 @@
                         }
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "progrRiga": 5,
                         "codartMg66": "<ARTICOLO LOTTI>",
                         "descart": "Articolo con gestione lotti",
@@ -8153,10 +8070,8 @@
                         "prezzo1": 100,
                         "RigaLotti": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "ParametroMovimentazioneLotto": {
-                              "dittaCg18": "<CODICE DITTA>",
                               "prog": "<PROGRESSIVO MOVIMENTAZIONE LOTTI>"
                             },
                             "codDepMg58": "<DEPOSITO>",
@@ -8164,17 +8079,14 @@
                             "opzioneMg5e": " ",
                             "qta1": 1,
                             "AnagraficaLotto": {
-                              "dittaCg18": "<CODICE DITTA>",
                               "codArtMg66": "<ARTICOLO LOTTI>",
                               "opzioneMg5e": "",
                               "codLotto": "<ARTICOLO LOTTI LOTTO1>"
                             }
                           },
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 2,
                             "ParametroMovimentazioneLotto": {
-                              "dittaCg18": "<CODICE DITTA>",
                               "prog": "<PROGRESSIVO MOVIMENTAZIONE LOTTI>"
                             },
                             "codDepMg58": "<DEPOSITO>",
@@ -8182,7 +8094,6 @@
                             "opzioneMg5e": " ",
                             "qta1": 1,
                             "AnagraficaLotto": {
-                              "dittaCg18": "<CODICE DITTA>",
                               "codArtMg66": "<ARTICOLO LOTTI>",
                               "opzioneMg5e": "",
                               "codLotto": "<ARTICOLO LOTTI LOTTO2>"
@@ -8195,50 +8106,40 @@
                 },
                 "Delivery Note": {
                   "value": {
-                    "ditta": "<CODICE DITTA>",
                     "anagraficaDocumentoDitta": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDocumMg36": "<DDT CODICE DOCUMENTO>",
                       "indStaperMg36": "<INDICATORE STANDARD/PERSONALIZZATO>"
                     },
                     "customerSupplierMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "tipoCf": "<TIPO CLI/FOR>",
                       "cliFor": "<CLI/FOR>"
                     },
                     "sezdoc": "<SEZIONALE>",
                     "storageWH": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDep": "<DEPOSITO>"
                     },
                     "TestataOrdine": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Datacons": "2022-12-31"
                     },
                     "DocumentoTestataProgettiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codProgetto": "<PROGETTO>",
                       "nodoRifPd0c": "<NODO>"
                     },
                     "DocumentoTestataRateiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Dadatacomp": "2024-12-01",
                       "Adatacomp": "2024-12-31"
                     },
                     "TestataPersonalizzata": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfPers1": "<COD TESTATA PERSONALIZZATA>"
                       }
                     ],
                     "TestataEstesa": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfSt1": "<COD TESTATA ESTESA>"
                       }
                     ],
                     "DocumentoDatiAccompagnamentoMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "CodAspettoMg99": "<ASPETTO DEI BENI>",
                       "CodCautraspMg13": "<CAUSALE DI TRASPORTO>",
                       "CodImballoMg95": "<IMBALLO>",
@@ -8249,38 +8150,32 @@
                     },
                     "righe": [
                       {
-                        "ditta": "<CODICE DITTA>",
                         "progrRiga": 1,
                         "codartMg66": "<ARTICOLO1>",
                         "descart": "Descrizione articolo",
                         "qta1": 1,
                         "DocumentoRigaProgettiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "codProgetto": "<PROGETTO>",
                           "nodoRifPd0c": "<NODO>"
                         },
                         "DocumentoRigaRateiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "Dadatacomp": "2023-01-01",
                           "Adatacomp": "2023-01-31"
                         },
                         "RigaPersonalizzata": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfPers1": "<COD RIGA PERSONALIZZATA>"
                           }
                         ],
                         "RigaEstesa": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfSt1": "<COD RIGA ESTESA>"
                           }
                         ]
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 1,
                         "progrRiga": 2,
                         "descart": "Articolo manuale",
@@ -8288,13 +8183,11 @@
                         "prezzo1": 100
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 2,
                         "progrRiga": 3,
                         "descart": "Riga descrittiva"
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 4,
                         "progrRiga": 4,
                         "qta1": 1,
@@ -8307,50 +8200,40 @@
                 },
                 "Invoice": {
                   "value": {
-                    "ditta": "<CODICE DITTA>",
                     "anagraficaDocumentoDitta": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDocumMg36": "<FATTURE CODICE DOCUMENTO>",
                       "indStaperMg36": "<INDICATORE STANDARD/PERSONALIZZATO>"
                     },
                     "customerSupplierMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "tipoCf": "<TIPO CLI/FOR>",
                       "cliFor": "<CLI/FOR>"
                     },
                     "sezdoc": "<SEZIONALE>",
                     "storageWH": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDep": "<DEPOSITO>"
                     },
                     "TestataOrdine": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Datacons": "2024-12-31"
                     },
                     "DocumentoTestataProgettiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codProgetto": "<PROGETTO>",
                       "nodoRifPd0c": "<NODO>"
                     },
                     "DocumentoTestataRateiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Dadatacomp": "2024-12-01",
                       "Adatacomp": "2024-12-31"
                     },
                     "TestataPersonalizzata": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfPers1": "<COD TESTATA PERSONALIZZATA>"
                       }
                     ],
                     "TestataEstesa": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfSt1": "<COD TESTATA ESTESA>"
                       }
                     ],
                     "DocumentoDatiAccompagnamentoMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "CodAspettoMg99": "<ASPETTO DEI BENI>",
                       "CodCautraspMg13": "<CAUSALE DI TRASPORTO>",
                       "CodImballoMg95": "<IMBALLO>",
@@ -8361,37 +8244,31 @@
                     },
                     "righe": [
                       {
-                        "ditta": "<CODICE DITTA>",
                         "progrRiga": 1,
                         "codartMg66": "<ARTICOLO1>",
                         "descart": "Descrizione articolo",
                         "qta1": 1,
                         "DocumentoRigaProgettiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "codProgetto": "<PROGETTO>",
                           "nodoRifPd0c": "<NODO>"
                         },
                         "DocumentoRigaRateiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "Dadatacomp": "2024-01-01",
                           "Adatacomp": "2024-01-31"
                         },
                         "RigaPersonalizzata": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfPers1": "<COD RIGA PERSONALIZZATA>"
                           }
                         ],
                         "RigaEstesa": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfSt1": "<COD RIGA ESTESA>"
                           }
                         ],
                         "documentoRigaCOINMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "pdcDestPC01": "<PDC CONTO DEST>",
                           "contoDestPC03": "<CONTO DEST>",
                           "pdcVdsDestPC01": "<PDC VDS DEST>",
@@ -8399,7 +8276,6 @@
                         }
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 1,
                         "progrRiga": 2,
                         "descart": "Articolo manuale",
@@ -8407,13 +8283,11 @@
                         "prezzo1": 100
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 2,
                         "progrRiga": 3,
                         "descart": "Riga descrittiva"
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 4,
                         "progrRiga": 4,
                         "qta1": 1,
@@ -8426,25 +8300,20 @@
                 },
                 "Transfer warehouses": {
                   "value": {
-                    "ditta": "<CODICE DITTA>",
                     "anagraficaDocumentoDitta": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDocumMg36": "<TRASF CODICE DOCUMENTO>",
                       "indStaperMg36": 0
                     },
                     "sezdoc": "00",
                     "storageWH": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDep": "00"
                     },
                     "storageWHCollegato": {
                       "codDep": "01",
-                      "descrdep": "Deposito secondario",
-                      "dittaCg18": "<CODICE DITTA>"
+                      "descrdep": "Deposito secondario"
                     },
                     "righe": [
                       {
-                        "ditta": "<CODICE DITTA>",
                         "progrRiga": 1,
                         "codartMg66": "<ARTICOLO1>",
                         "descart": "Descrizione articolo",
@@ -8493,7 +8362,6 @@
                     "dataplafond": "2024-10-28T10:19:20.384Z",
                     "datareg": "2024-10-28T10:19:20.384Z",
                     "descraggcont": "string",
-                    "ditta": 0,
                     "flgClifat": 0,
                     "flgDocstamp": 0,
                     "flgSpbolli": 0,
@@ -8524,7 +8392,6 @@
                     "idExtendedAttributeSubEntity": 0,
                     "anagraficaDocumentoDitta": {
                       "codDocumMg36": "string",
-                      "dittaCg18": 0,
                       "indStaperMg36": 0,
                       "sezdefault": "string",
                       "extensionData": [
@@ -9166,7 +9033,6 @@
                         "dataultfat": "2024-10-28T10:19:20.385Z",
                         "dataultord": "2024-10-28T10:19:20.385Z",
                         "dataultvar": "2024-10-28T10:19:20.385Z",
-                        "dittaCg18": 0,
                         "fidoaziendale": 1000,
                         "fidofactoring": 0,
                         "fidolivello1": 0,
@@ -9218,7 +9084,6 @@
                         "areaCO": {
                           "codiceAreaMG": "string",
                           "descrarea": "string",
-                          "dittaCg18": 0,
                           "idprov": 0,
                           "macroareaMg07": "string",
                           "tipocfMg07": 0,
@@ -9227,7 +9092,6 @@
                               "areaMg08": "string",
                               "codiceZona": "string",
                               "descrzona": "string",
-                              "dittaCg18": 0,
                               "idprov": 0,
                               "macroareaMg08": "string",
                               "tipocfMg08": 0,
@@ -9259,7 +9123,6 @@
                         "blockLevelCO": {
                           "codBlocco": "string",
                           "descrblocco": "string",
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "indPayline": 0,
                           "extensionData": [
@@ -9277,7 +9140,6 @@
                         "categoryCO": {
                           "categ": "string",
                           "descrcat": "string",
-                          "dittaCg18": 0,
                           "macrocatMg10": "string",
                           "tipocfMg10": 0,
                           "extensionData": [
@@ -9296,7 +9158,6 @@
                         "datiAccompagnamento": {
                           "aspettoMg99": "string",
                           "cliforCg44": 0,
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "imballoMg95": "string",
                           "portoMg91": "string",
@@ -9420,7 +9281,6 @@
                         "grouping1CO": {
                           "codRaggrcf1": "string",
                           "descraggrcf1": "string",
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "idprov": 0,
                           "tipocf": 0,
@@ -9439,7 +9299,6 @@
                         "grouping2CO": {
                           "codRaggrcf2": "string",
                           "descraggrcf2": "string",
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "idprov": 0,
                           "tipocf": 0,
@@ -9458,7 +9317,6 @@
                         "grouping3CO": {
                           "codRaggrcf3": "string",
                           "descraggrcf3": "string",
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "idprov": 0,
                           "tipocf": 0,
@@ -9495,14 +9353,12 @@
                         "macAreaCO": {
                           "codiceMacroarea": "string",
                           "descrmacroar": "string",
-                          "dittaCg18": 0,
                           "idprov": 0,
                           "tipocf": 0,
                           "areas": [
                             {
                               "codiceAreaMG": "string",
                               "descrarea": "string",
-                              "dittaCg18": 0,
                               "idprov": 0,
                               "macroareaMg07": "string",
                               "tipocfMg07": 0,
@@ -9511,7 +9367,6 @@
                                   "areaMg08": "string",
                                   "codiceZona": "string",
                                   "descrzona": "string",
-                                  "dittaCg18": 0,
                                   "idprov": 0,
                                   "macroareaMg08": "string",
                                   "tipocfMg08": 0,
@@ -9555,14 +9410,12 @@
                         },
                         "macroCategoryCO": {
                           "descrmacrocat": "string",
-                          "dittaCg18": 0,
                           "macrocat": "string",
                           "tipocf": 0,
                           "categorie": [
                             {
                               "categ": "string",
                               "descrcat": "string",
-                              "dittaCg18": 0,
                               "macrocatMg10": "string",
                               "tipocfMg10": 0,
                               "extensionData": [
@@ -9592,7 +9445,6 @@
                         },
                         "priceListSalePurchase": {
                           "desclist": "string",
-                          "dittaCg18": 0,
                           "flgVenacq": 0,
                           "numlist": 0,
                           "valutaCg08": "string",
@@ -9611,7 +9463,6 @@
                         "priceListWithMultipleItems": {
                           "codice": "string",
                           "descr": "string",
-                          "dittaCg18": 0,
                           "extensionData": [
                             {
                               "key": "string",
@@ -9628,7 +9479,6 @@
                           "cliforCg44": 0,
                           "codRag": "string",
                           "descragg": "string",
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "extensionData": [
                             {
@@ -9645,7 +9495,6 @@
                         "rischio": {
                           "codice": "string",
                           "descrizione": "string",
-                          "dittaCg18": 0,
                           "flgAttivo": 0,
                           "flgCalceffcons": 0,
                           "flgCalceffdacons": 0,
@@ -9684,7 +9533,6 @@
                         "subCategoryCO": {
                           "categMg11": "string",
                           "descrsottocat": "string",
-                          "dittaCg18": 0,
                           "macrocatMg11": "string",
                           "sottcat": "string",
                           "tipocfMg11": 0,
@@ -9704,7 +9552,6 @@
                           "areaMg08": "string",
                           "codiceZona": "string",
                           "descrzona": "string",
-                          "dittaCg18": 0,
                           "idprov": 0,
                           "macroareaMg08": "string",
                           "tipocfMg08": 0,
@@ -9786,7 +9633,6 @@
                         "guid": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
                         "tipoarchHm30": 0,
                         "idknos": 0,
-                        "dittaCg18": 0,
                         "protocollo": "string",
                         "flgInvalid": 0,
                         "percorso": "string",
@@ -10254,7 +10100,6 @@
                           {
                             "contoCg24": "string",
                             "descr": "string",
-                            "dittaCg18": 0,
                             "gruppoCg10": 0,
                             "idCg24": 0,
                             "iddespcon": 0,
@@ -10283,7 +10128,6 @@
                         "coaAccountStateFI": [
                           {
                             "consosCg24": "string",
-                            "dittaCg18": 0,
                             "dtconsos": "2024-10-28T10:19:20.386Z",
                             "dtdisatt": "2024-10-28T10:19:20.386Z",
                             "flgDisatt": 0,
@@ -10439,7 +10283,6 @@
                         "cap": "string",
                         "citta": "string",
                         "codice": 0,
-                        "dittaCg18": 0,
                         "idmediaCg99": 0,
                         "indDimcentrocomm": 0,
                         "indIrizzo": "string",
@@ -10711,7 +10554,6 @@
                           {
                             "contoCg24": "string",
                             "descr": "string",
-                            "dittaCg18": 0,
                             "gruppoCg10": 0,
                             "idCg24": 0,
                             "iddespcon": 0,
@@ -10740,7 +10582,6 @@
                         "coaAccountStateFI": [
                           {
                             "consosCg24": "string",
-                            "dittaCg18": 0,
                             "dtconsos": "2024-10-28T10:19:20.386Z",
                             "dtdisatt": "2024-10-28T10:19:20.386Z",
                             "flgDisatt": 0,
@@ -11151,7 +10992,6 @@
                       "datacre": "2024-10-28T10:19:20.386Z",
                       "datavar": "2024-10-28T10:19:20.386Z",
                       "descnote1": "string",
-                      "dittaCg18": 0,
                       "gruppocre": "string",
                       "gruppovar": "string",
                       "indTipoop": 0,
@@ -11181,7 +11021,6 @@
                       "dataritvet2": "2024-10-28T10:19:20.387Z",
                       "descaspetto": "string",
                       "descrlettint": "string",
-                      "dittaCg18": 0,
                       "numregCo99": "string",
                       "orainiziotrasp": 0,
                       "oraritvet1": 0,
@@ -11214,7 +11053,6 @@
                     "documentoTestataAgentiMG": [
                       {
                         "codiceAgente": "string",
-                        "dittaCg18": 0,
                         "flgAgerifer": 0,
                         "idagenteMg17": 0,
                         "indModcalc": 0,
@@ -11243,7 +11081,6 @@
                       "codScommessa": 0,
                       "codSprogcol": 0,
                       "codSprogetto": 0,
-                      "dittaCg18": 0,
                       "nodorifcolPd0c": "string",
                       "nodorifPd0c": "string",
                       "extensionData": [
@@ -11262,7 +11099,6 @@
                       {
                         "annoPa23": 0,
                         "codiceAgente": "string",
-                        "dittaCg18": 0,
                         "flgPers": 0,
                         "flgProvsosp": 0,
                         "flgProvvar": 0,
@@ -11302,7 +11138,6 @@
                       "datacompivaman": "2024-10-28T10:19:20.387Z",
                       "dataregesinc": "2024-10-28T10:19:20.387Z",
                       "dataregesprec": "2024-10-28T10:19:20.387Z",
-                      "dittaCg18": 0,
                       "flgDaav": 0,
                       "flgDisatcoge": 0,
                       "indTipocomp": 0,
@@ -11324,7 +11159,6 @@
                         "datansdoc": "2024-10-28T10:19:20.387Z",
                         "datavsconf": "2024-10-28T10:19:20.387Z",
                         "datavsdoc": "2024-10-28T10:19:20.387Z",
-                        "dittaCg18": 0,
                         "fedatadoc": "2024-10-28T10:19:20.387Z",
                         "feiddoc": "string",
                         "feidsoggetto": "string",
@@ -11357,7 +11191,6 @@
                       "cap": "string",
                       "citta": "string",
                       "codice": 0,
-                      "dittaCg18": 0,
                       "idmediaCg99": 0,
                       "indDimcentrocomm": 0,
                       "indIrizzo": "string",
@@ -11394,7 +11227,6 @@
                         "cpmerceCg24": "string",
                         "cup": "string",
                         "descart": "string",
-                        "ditta": 0,
                         "estdescart": "string",
                         "fatconv": 0,
                         "fatconvcf": 0,
@@ -11836,7 +11668,6 @@
                         "documentoRigaCOINMG": {
                           "contodestPc03": "string",
                           "contoorigPc03": "string",
-                          "dittaCg18": 0,
                           "flgEsclriga": 0,
                           "idmediaCg99": 0,
                           "pdcdestPc01": 0,
@@ -11866,7 +11697,6 @@
                           "codScommessa": 0,
                           "codSprogcol": 0,
                           "codSprogetto": 0,
-                          "dittaCg18": 0,
                           "idartepuVc02": 0,
                           "idattrezzaturaVc02": 0,
                           "idmedia": 0,
@@ -11889,7 +11719,6 @@
                         "documentoRigaProvvigioniMG": [
                           {
                             "codiceAgente": "string",
-                            "dittaCg18": 0,
                             "flgVarprov": 0,
                             "idagenteMg17": 0,
                             "imponprov": 0,
@@ -11920,7 +11749,6 @@
                           "dadatacomp": "2024-10-28T10:19:20.387Z",
                           "dataregesinc": "2024-10-28T10:19:20.387Z",
                           "dataregesprec": "2024-10-28T10:19:20.387Z",
-                          "dittaCg18": 0,
                           "flgDaav": 0,
                           "flgDisatcoge": 0,
                           "importo": 0,
@@ -11945,7 +11773,6 @@
                           "cap": "string",
                           "citta": "string",
                           "codice": 0,
-                          "dittaCg18": 0,
                           "idmediaCg99": 0,
                           "indDimcentrocomm": 0,
                           "indIrizzo": "string",
@@ -11969,7 +11796,6 @@
                           "capacita": 0,
                           "codConfezMg96": "string",
                           "colliConf": 0,
-                          "dittaCg18": 0,
                           "numregCo99": "string",
                           "pesoLordo": 0,
                           "pesoNetto": 0,
@@ -12013,7 +11839,6 @@
                             "datast4": "2024-10-28T10:19:20.387Z",
                             "datast5": "2024-10-28T10:19:20.387Z",
                             "datast6": "2024-10-28T10:19:20.387Z",
-                            "dittaCg18": 0,
                             "flgSt1": 0,
                             "flgSt2": 0,
                             "flgSt3": 0,
@@ -12063,7 +11888,6 @@
                             "codPallets": "string",
                             "codProgPd14": "string",
                             "codSscc": "string",
-                            "dittaCg18": 0,
                             "flgNonpiuev": 0,
                             "idmediaCg99": 0,
                             "note": "string",
@@ -12092,7 +11916,6 @@
                               "datacre": "2024-10-28T10:19:20.387Z",
                               "datascad": "2024-10-28T10:19:20.387Z",
                               "desclotto": "string",
-                              "dittaCg18": 0,
                               "idmediaCg99": 0,
                               "lib1": 0,
                               "note": "string",
@@ -12110,7 +11933,6 @@
                               }
                             },
                             "parametroMovimentazioneLotto": {
-                              "dittaCg18": 0,
                               "flgAggprogval": 0,
                               "flgNote": 0,
                               "indGiacsca": 0,
@@ -12157,7 +11979,6 @@
                           "datainizoap": "2024-10-28T10:19:20.387Z",
                           "datalancio": "2024-10-28T10:19:20.387Z",
                           "datapianif": "2024-10-28T10:19:20.387Z",
-                          "dittaCg18": 0,
                           "flgConsconf": 0,
                           "flgNoevasparz": 0,
                           "flgNonpiuev": 0,
@@ -12216,7 +12037,6 @@
                             "datapers4": "2024-10-28T10:19:20.387Z",
                             "datapers5": "2024-10-28T10:19:20.387Z",
                             "datapers6": "2024-10-28T10:19:20.387Z",
-                            "dittaCg18": 0,
                             "flgPers1": 0,
                             "flgPers2": 0,
                             "flgPers3": 0,
@@ -12259,7 +12079,6 @@
                             "datansdoc": "2024-10-28T10:19:20.387Z",
                             "datavsconf": "2024-10-28T10:19:20.387Z",
                             "datavsdoc": "2024-10-28T10:19:20.387Z",
-                            "dittaCg18": 0,
                             "fasePd12": 0,
                             "flgAggprescvar": 0,
                             "flgAggqtatrasf": 0,
@@ -12466,7 +12285,6 @@
                       "dataatt": "2024-10-28T10:19:20.388Z",
                       "datacess": "2024-10-28T10:19:20.388Z",
                       "descrdep": "string",
-                      "dittaCg18": 0,
                       "faxnumdep": "string",
                       "flgDepprinc": 0,
                       "indEmail": "string",
@@ -12486,7 +12304,6 @@
                           "coordin2": "string",
                           "coordin3": "string",
                           "descubicaz": "string",
-                          "dittaCg18": 0,
                           "indTipoubicaz": 0,
                           "larghezza": 0,
                           "maxpeso": 0,
@@ -12525,7 +12342,6 @@
                       "dataatt": "2024-10-28T10:19:20.388Z",
                       "datacess": "2024-10-28T10:19:20.388Z",
                       "descrdep": "string",
-                      "dittaCg18": 0,
                       "faxnumdep": "string",
                       "flgDepprinc": 0,
                       "indEmail": "string",
@@ -12545,7 +12361,6 @@
                           "coordin2": "string",
                           "coordin3": "string",
                           "descubicaz": "string",
-                          "dittaCg18": 0,
                           "indTipoubicaz": 0,
                           "larghezza": 0,
                           "maxpeso": 0,
@@ -12598,7 +12413,6 @@
                         "datast4": "2024-10-28T10:19:20.388Z",
                         "datast5": "2024-10-28T10:19:20.388Z",
                         "datast6": "2024-10-28T10:19:20.388Z",
-                        "dittaCg18": 0,
                         "flgSt1": 0,
                         "flgSt2": 0,
                         "flgSt3": 0,
@@ -12637,7 +12451,6 @@
                       "datacons": "2024-10-28T10:19:20.388Z",
                       "dataconsint": "2024-10-28T10:19:20.388Z",
                       "dataconsorig": "2024-10-28T10:19:20.388Z",
-                      "dittaCg18": 0,
                       "flgConfrit": 0,
                       "flgEvastot": 0,
                       "flgNoevasparz": 0,
@@ -12681,7 +12494,6 @@
                         "datapers4": "2024-10-28T10:19:20.388Z",
                         "datapers5": "2024-10-28T10:19:20.388Z",
                         "datapers6": "2024-10-28T10:19:20.388Z",
-                        "dittaCg18": 0,
                         "flgPers1": 0,
                         "flgPers2": 0,
                         "flgPers3": 0,
@@ -12763,25 +12575,20 @@
                 },
                 "Min required": {
                   "value": {
-                    "ditta": "<CODICE DITTA>",
                     "anagraficaDocumentoDitta": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDocumMg36": "<CODICE DOCUMENTO>",
                       "indStaperMg36": "<INDICATORE STANDARD/PERSONALIZZATO>"
                     },
                     "customerSupplierMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "tipoCf": "<TIPO CLI/FOR>",
                       "cliFor": "<CLI/FOR>"
                     },
                     "sezdoc": "<SEZIONALE>",
                     "storageWH": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDep": "<DEPOSITO>"
                     },
                     "righe": [
                       {
-                        "ditta": "<CODICE DITTA>",
                         "codartMg66": "<ARTICOLO1>",
                         "descart": "Descrizione articolo",
                         "qta1": 1
@@ -12791,50 +12598,40 @@
                 },
                 "Order": {
                   "value": {
-                    "ditta": "<CODICE DITTA>",
                     "anagraficaDocumentoDitta": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDocumMg36": "<ORDINI CODICE DOCUMENTO>",
                       "indStaperMg36": "<INDICATORE STANDARD/PERSONALIZZATO>"
                     },
                     "customerSupplierMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "tipoCf": "<TIPO CLI/FOR>",
                       "cliFor": "<CLI/FOR>"
                     },
                     "sezdoc": "<SEZIONALE>",
                     "storageWH": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDep": "<DEPOSITO>"
                     },
                     "TestataOrdine": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Datacons": "2024-12-31"
                     },
                     "DocumentoTestataProgettiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codProgetto": "<PROGETTO>",
                       "nodoRifPd0c": "<NODO>"
                     },
                     "DocumentoTestataRateiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Dadatacomp": "2024-12-01",
                       "Adatacomp": "2024-12-31"
                     },
                     "TestataPersonalizzata": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfPers1": "<COD TESTATA PERSONALIZZATA>"
                       }
                     ],
                     "TestataEstesa": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfSt1": "<COD TESTATA ESTESA>"
                       }
                     ],
                     "DocumentoDatiAccompagnamentoMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "CodAspettoMg99": "<ASPETTO DEI BENI>",
                       "CodCautraspMg13": "<CAUSALE DI TRASPORTO>",
                       "CodImballoMg95": "<IMBALLO>",
@@ -12854,43 +12651,36 @@
                     },
                     "righe": [
                       {
-                        "ditta": "<CODICE DITTA>",
                         "progrRiga": 1,
                         "codartMg66": "<ARTICOLO 1>",
                         "descart": "Descrizione articolo",
                         "qta1": 1,
                         "packaging": {
                           "codConfezMg96": "<CODICE CONFEZIONE>",
-                          "dittaCg18": "<CODICE DITTA>",
                           "progRiga": 1,
                           "numregCo99": "0"
                         },
                         "DocumentoRigaProgettiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "codProgetto": "<PROGETTO>",
                           "nodoRifPd0c": "<NODO>"
                         },
                         "DocumentoRigaRateiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "Dadatacomp": "2024-01-01",
                           "Adatacomp": "2024-01-31"
                         },
                         "RigaPersonalizzata": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfPers1": "<COD RIGA PERSONALIZZATA>"
                           }
                         ],
                         "RigaEstesa": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfSt1": "<COD RIGA ESTESA>"
                           }
                         ],
                         "documentoRigaCOINMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "pdcDestPC01": "<PDC CONTO DEST>",
                           "contoDestPC03": "<CONTO DEST>",
                           "pdcVdsDestPC01": "<PDC VDS DEST>",
@@ -12898,7 +12688,6 @@
                         }
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 1,
                         "progrRiga": 2,
                         "descart": "Articolo manuale",
@@ -12906,13 +12695,11 @@
                         "prezzo1": 100
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 2,
                         "progrRiga": 3,
                         "descart": "Riga descrittiva"
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 4,
                         "progrRiga": 4,
                         "qta1": 1,
@@ -12921,7 +12708,6 @@
                         }
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "progrRiga": 5,
                         "codartMg66": "<ARTICOLO LOTTI>",
                         "descart": "Articolo con gestione lotti",
@@ -12929,10 +12715,8 @@
                         "prezzo1": 100,
                         "RigaLotti": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "ParametroMovimentazioneLotto": {
-                              "dittaCg18": "<CODICE DITTA>",
                               "prog": "<PROGRESSIVO MOVIMENTAZIONE LOTTI>"
                             },
                             "codDepMg58": "<DEPOSITO>",
@@ -12940,17 +12724,14 @@
                             "opzioneMg5e": " ",
                             "qta1": 1,
                             "AnagraficaLotto": {
-                              "dittaCg18": "<CODICE DITTA>",
                               "codArtMg66": "<ARTICOLO LOTTI>",
                               "opzioneMg5e": "",
                               "codLotto": "<ARTICOLO LOTTI LOTTO1>"
                             }
                           },
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 2,
                             "ParametroMovimentazioneLotto": {
-                              "dittaCg18": "<CODICE DITTA>",
                               "prog": "<PROGRESSIVO MOVIMENTAZIONE LOTTI>"
                             },
                             "codDepMg58": "<DEPOSITO>",
@@ -12958,7 +12739,6 @@
                             "opzioneMg5e": " ",
                             "qta1": 1,
                             "AnagraficaLotto": {
-                              "dittaCg18": "<CODICE DITTA>",
                               "codArtMg66": "<ARTICOLO LOTTI>",
                               "opzioneMg5e": "",
                               "codLotto": "<ARTICOLO LOTTI LOTTO2>"
@@ -12971,50 +12751,40 @@
                 },
                 "Delivery Note": {
                   "value": {
-                    "ditta": "<CODICE DITTA>",
                     "anagraficaDocumentoDitta": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDocumMg36": "<DDT CODICE DOCUMENTO>",
                       "indStaperMg36": "<INDICATORE STANDARD/PERSONALIZZATO>"
                     },
                     "customerSupplierMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "tipoCf": "<TIPO CLI/FOR>",
                       "cliFor": "<CLI/FOR>"
                     },
                     "sezdoc": "<SEZIONALE>",
                     "storageWH": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDep": "<DEPOSITO>"
                     },
                     "TestataOrdine": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Datacons": "2022-12-31"
                     },
                     "DocumentoTestataProgettiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codProgetto": "<PROGETTO>",
                       "nodoRifPd0c": "<NODO>"
                     },
                     "DocumentoTestataRateiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Dadatacomp": "2024-12-01",
                       "Adatacomp": "2024-12-31"
                     },
                     "TestataPersonalizzata": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfPers1": "<COD TESTATA PERSONALIZZATA>"
                       }
                     ],
                     "TestataEstesa": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfSt1": "<COD TESTATA ESTESA>"
                       }
                     ],
                     "DocumentoDatiAccompagnamentoMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "CodAspettoMg99": "<ASPETTO DEI BENI>",
                       "CodCautraspMg13": "<CAUSALE DI TRASPORTO>",
                       "CodImballoMg95": "<IMBALLO>",
@@ -13025,38 +12795,32 @@
                     },
                     "righe": [
                       {
-                        "ditta": "<CODICE DITTA>",
                         "progrRiga": 1,
                         "codartMg66": "<ARTICOLO1>",
                         "descart": "Descrizione articolo",
                         "qta1": 1,
                         "DocumentoRigaProgettiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "codProgetto": "<PROGETTO>",
                           "nodoRifPd0c": "<NODO>"
                         },
                         "DocumentoRigaRateiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "Dadatacomp": "2023-01-01",
                           "Adatacomp": "2023-01-31"
                         },
                         "RigaPersonalizzata": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfPers1": "<COD RIGA PERSONALIZZATA>"
                           }
                         ],
                         "RigaEstesa": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfSt1": "<COD RIGA ESTESA>"
                           }
                         ]
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 1,
                         "progrRiga": 2,
                         "descart": "Articolo manuale",
@@ -13064,13 +12828,11 @@
                         "prezzo1": 100
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 2,
                         "progrRiga": 3,
                         "descart": "Riga descrittiva"
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 4,
                         "progrRiga": 4,
                         "qta1": 1,
@@ -13083,50 +12845,40 @@
                 },
                 "Invoice": {
                   "value": {
-                    "ditta": "<CODICE DITTA>",
                     "anagraficaDocumentoDitta": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDocumMg36": "<FATTURE CODICE DOCUMENTO>",
                       "indStaperMg36": "<INDICATORE STANDARD/PERSONALIZZATO>"
                     },
                     "customerSupplierMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "tipoCf": "<TIPO CLI/FOR>",
                       "cliFor": "<CLI/FOR>"
                     },
                     "sezdoc": "<SEZIONALE>",
                     "storageWH": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDep": "<DEPOSITO>"
                     },
                     "TestataOrdine": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Datacons": "2024-12-31"
                     },
                     "DocumentoTestataProgettiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codProgetto": "<PROGETTO>",
                       "nodoRifPd0c": "<NODO>"
                     },
                     "DocumentoTestataRateiMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "Dadatacomp": "2024-12-01",
                       "Adatacomp": "2024-12-31"
                     },
                     "TestataPersonalizzata": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfPers1": "<COD TESTATA PERSONALIZZATA>"
                       }
                     ],
                     "TestataEstesa": [
                       {
-                        "dittaCg18": "<CODICE DITTA>",
                         "alfSt1": "<COD TESTATA ESTESA>"
                       }
                     ],
                     "DocumentoDatiAccompagnamentoMG": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "CodAspettoMg99": "<ASPETTO DEI BENI>",
                       "CodCautraspMg13": "<CAUSALE DI TRASPORTO>",
                       "CodImballoMg95": "<IMBALLO>",
@@ -13137,37 +12889,31 @@
                     },
                     "righe": [
                       {
-                        "ditta": "<CODICE DITTA>",
                         "progrRiga": 1,
                         "codartMg66": "<ARTICOLO1>",
                         "descart": "Descrizione articolo",
                         "qta1": 1,
                         "DocumentoRigaProgettiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "codProgetto": "<PROGETTO>",
                           "nodoRifPd0c": "<NODO>"
                         },
                         "DocumentoRigaRateiMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "Dadatacomp": "2024-01-01",
                           "Adatacomp": "2024-01-31"
                         },
                         "RigaPersonalizzata": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfPers1": "<COD RIGA PERSONALIZZATA>"
                           }
                         ],
                         "RigaEstesa": [
                           {
-                            "dittaCg18": "<CODICE DITTA>",
                             "prog": 1,
                             "alfSt1": "<COD RIGA ESTESA>"
                           }
                         ],
                         "documentoRigaCOINMG": {
-                          "dittaCg18": "<CODICE DITTA>",
                           "pdcDestPC01": "<PDC CONTO DEST>",
                           "contoDestPC03": "<CONTO DEST>",
                           "pdcVdsDestPC01": "<PDC VDS DEST>",
@@ -13175,7 +12921,6 @@
                         }
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 1,
                         "progrRiga": 2,
                         "descart": "Articolo manuale",
@@ -13183,13 +12928,11 @@
                         "prezzo1": 100
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 2,
                         "progrRiga": 3,
                         "descart": "Riga descrittiva"
                       },
                       {
-                        "ditta": "<CODICE DITTA>",
                         "indtiporiga": 4,
                         "progrRiga": 4,
                         "qta1": 1,
@@ -13202,25 +12945,20 @@
                 },
                 "Transfer warehouses": {
                   "value": {
-                    "ditta": "<CODICE DITTA>",
                     "anagraficaDocumentoDitta": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDocumMg36": "<TRASF CODICE DOCUMENTO>",
                       "indStaperMg36": 0
                     },
                     "sezdoc": "00",
                     "storageWH": {
-                      "dittaCg18": "<CODICE DITTA>",
                       "codDep": "00"
                     },
                     "storageWHCollegato": {
                       "codDep": "01",
-                      "descrdep": "Deposito secondario",
-                      "dittaCg18": "<CODICE DITTA>"
+                      "descrdep": "Deposito secondario"
                     },
                     "righe": [
                       {
-                        "ditta": "<CODICE DITTA>",
                         "progrRiga": 1,
                         "codartMg66": "<ARTICOLO1>",
                         "descart": "Descrizione articolo",
