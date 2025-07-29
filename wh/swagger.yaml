@@ -21846,14 +21846,6 @@
       "CSInfoCODTO": {
         "required": [
           "cliforCg44",
-          "datacreaz",
-          "dataultvar",
-          "dittaCg18",
-          "flgEstrpayline",
-          "flgSpbol",
-          "flgSpeinc",
-          "flgTaxliable",
-          "indSpesecum",
           "tipocfCg44"
         ],
         "type": "object",
@@ -21920,7 +21912,8 @@
           "datacreaz": {
             "type": "string",
             "description": "MG19_DATACREAZ - Data creazione",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "datadismis": {
             "type": "string",
@@ -21937,12 +21930,15 @@
           "dataultvar": {
             "type": "string",
             "description": "MG19_DATAULTVAR - Data ultima variazione",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "dittaCg18": {
             "type": "number",
             "description": "MG19_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "fidoaziendale": {
             "type": "number",
@@ -21976,22 +21972,30 @@
           "flgEstrpayline": {
             "type": "number",
             "description": "MG19_FLGESTRPAYLINE - Estrazione Payline",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "flgSpbol": {
             "type": "number",
             "description": "MG19_FLGSPBOL - Spese bolli",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "flgSpeinc": {
             "type": "number",
             "description": "MG19_FLGSPEINC - Spese incasso",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "flgTaxliable": {
             "type": "integer",
             "description": "MG19_FLGTAXLIABLE - Tax Liable",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "idmediaCg99": {
             "type": "number",
@@ -22008,21 +22012,24 @@
           },
           "indGesfido": {
             "type": "number",
-            "description": "MG19_INDGESFIDO - Indicatore gestione fido",
+            "description": "MG19_INDGESFIDO - Indicatore gestione fido<br><ul><li><i>0</i> - Come pers. documenti</li><li><i>1</i> - No controllo fido</li><li><i>2</i> - Si controllo fido</li></ul>",
             "format": "double",
+            "default": 0,
             "nullable": true
           },
           "indrottcig": {
             "type": "number",
-            "description": "MG19_INDROTTCIG - Indrottcig<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "description": "MG19_INDROTTCIG - Tracciabilità flussi fin.<br><ul><li><i>0</i> -  No gestione CIG (CUP)</li><li><i>1</i> -  Genera un documento per ogni CIG (CUP)</li><li><i>2</i> -  Genera un documento riepilogativo a fronte di CIG (CUP) diversi</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
           },
           "indSpesecum": {
             "type": "number",
-            "description": "MG19_INDSPESECUM - Cumulo sp.bolli/incasso",
-            "format": "double"
+            "description": "MG19_INDSPESECUM - Cumulo sp.bolli/incasso<br><ul><li><i>0</i> - No</li><li><i>1</i> - Sì, mensili</li><li><i>2</i> - Sì, per quindicina</li><li><i>3</i> - Sì, per decade</li><li><i>4</i> - Sì, per settimana</li><li><i>5</i> - Sì, per giorno</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "irs1099": {
             "type": "string",
@@ -22084,6 +22091,7 @@
             "type": "number",
             "description": "MG19_SCAGLSPBANC - Codice della tabella bolli e spese incasso",
             "format": "double",
+            "default": 0,
             "nullable": true
           },
           "sottocat": {
