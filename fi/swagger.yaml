@@ -78608,7 +78608,7 @@
           },
           "flgAllineam": {
             "type": "number",
-            "description": "MG29_FLGALLINEAM - FlgAllineam",
+            "description": "MG29_FLGALLINEAM - Allineamento SEDA non gestito",
             "format": "double",
             "nullable": true
           },
