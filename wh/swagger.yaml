@@ -1276,6 +1276,9 @@
               }
             }
           },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
+          },
           "401": {
             "description": "Unauthorized access"
           },
@@ -1939,6 +1942,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
           },
           "401": {
             "description": "Unauthorized access"
@@ -3184,6 +3190,9 @@
               }
             }
           },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
+          },
           "401": {
             "description": "Unauthorized access"
           },
@@ -4327,6 +4336,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
           },
           "401": {
             "description": "Unauthorized access"
@@ -5472,6 +5484,9 @@
               }
             }
           },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
+          },
           "401": {
             "description": "Unauthorized access"
           },
@@ -6569,6 +6584,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
           },
           "401": {
             "description": "Unauthorized access"
@@ -7773,6 +7791,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
           },
           "401": {
             "description": "Unauthorized access"
@@ -9136,6 +9157,9 @@
               }
             }
           },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
+          },
           "401": {
             "description": "Unauthorized access"
           },
@@ -9799,6 +9823,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
           },
           "401": {
             "description": "Unauthorized access"
@@ -11093,6 +11120,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
           },
           "401": {
             "description": "Unauthorized access"
@@ -12449,6 +12479,9 @@
               }
             }
           },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
+          },
           "401": {
             "description": "Unauthorized access"
           },
@@ -13592,6 +13625,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
           },
           "401": {
             "description": "Unauthorized access"
@@ -14737,6 +14773,9 @@
               }
             }
           },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
+          },
           "401": {
             "description": "Unauthorized access"
           },
@@ -15880,6 +15919,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
           },
           "401": {
             "description": "Unauthorized access"
@@ -17025,6 +17067,9 @@
               }
             }
           },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
+          },
           "401": {
             "description": "Unauthorized access"
           },
@@ -18169,6 +18214,9 @@
               }
             }
           },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
+          },
           "401": {
             "description": "Unauthorized access"
           },
@@ -19312,6 +19360,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
           },
           "401": {
             "description": "Unauthorized access"
@@ -20506,6 +20557,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
           },
           "401": {
             "description": "Unauthorized access"
