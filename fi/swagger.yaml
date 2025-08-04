@@ -59297,6 +59297,103 @@
         }
       }
     },
+    "/api/v1/{environment}/FI/GLEntryFI/getcogefilter": {
+      "post": {
+        "tags": [
+          "GLEntryFI"
+        ],
+        "summary": "Returns the where string from enhanced query and its parameters",
+        "description": "Returns the where string from enhanced query and its parameters",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters filters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetCogeFilterParametersDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/GetCogeFilterParametersDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Select, From, Where",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCogeFilterResultDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCogeFilterResultDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/FI/GLEntryFI/{id}": {
       "get": {
         "tags": [
@@ -85124,6 +85221,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "identifier": {
+            "type": "string",
+            "nullable": true
+          },
           "idvocets": {
             "type": "integer",
             "format": "int32",
@@ -92599,6 +92700,78 @@
         },
         "additionalProperties": false,
         "description": "CG16_ANAGGEN - Anagrafica generale<br>Proprietà chiave:<ul><li><b>Codice</b></li></ul>"
+      },
+      "GetCogeFilterParametersDTO": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "$ref": "#/components/schemas/SearchGroupDTO"
+          },
+          "entityName": {
+            "type": "string",
+            "nullable": true
+          },
+          "extensionData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StringObjectKeyValuePair"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetCogeFilterResultDTO": {
+        "type": "object",
+        "properties": {
+          "select": {
+            "type": "string",
+            "nullable": true
+          },
+          "from": {
+            "type": "string",
+            "nullable": true
+          },
+          "where": {
+            "type": "string",
+            "nullable": true
+          },
+          "sqlParameters": {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "extensionData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StringObjectKeyValuePair"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "GetDocumentAccountParametersDTO": {
         "type": "object",
