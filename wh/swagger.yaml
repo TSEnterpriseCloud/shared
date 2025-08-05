@@ -28261,8 +28261,7 @@
       },
       "OfficeCODTO": {
         "required": [
-          "codice",
-          "dittaCg18"
+          "codice"
         ],
         "type": "object",
         "properties": {
@@ -28284,7 +28283,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "CG31_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "idmediaCg99": {
             "type": "number",

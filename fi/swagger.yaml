@@ -101053,36 +101053,7 @@
       },
       "MovementTypeCODTO": {
         "required": [
-          "codice",
-          "flgBilanci",
-          "flgBilancicons",
-          "flgCanrevoke",
-          "flgCoan",
-          "flgContrsaldi",
-          "flgDoc",
-          "flgEc",
-          "flgElabiva",
-          "flgHyperion",
-          "flgMovcont",
-          "flgMoviva",
-          "flgPartitari",
-          "flgPf",
-          "flgQuerypn",
-          "indAcconti",
-          "indCambiali",
-          "indChiuseff",
-          "indConsolidamento",
-          "indDatabilanci",
-          "indEcportaper",
-          "indEcportchius",
-          "indIncassobf",
-          "indInsoluti",
-          "indProforma",
-          "indRaggr",
-          "indRatrisc",
-          "indRettifica",
-          "indSimulbilanci",
-          "indTipoifrs"
+          "codice"
         ],
         "type": "object",
         "properties": {
@@ -101109,147 +101080,205 @@
           "flgBilanci": {
             "type": "integer",
             "description": "CGT0_FLGBILANCI - Bilanci",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgBilancicons": {
             "type": "integer",
             "description": "CGT0_FLGBILANCICONS - FlgBilancicons",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgCanrevoke": {
             "type": "integer",
             "description": "CGT0_FLGCANREVOKE - Revoke",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgCoan": {
             "type": "integer",
             "description": "CGT0_FLGCOAN - Movimenti CoAn",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgContrsaldi": {
             "type": "integer",
             "description": "CGT0_FLGCONTRSALDI - FlgContrsaldi",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgDoc": {
             "type": "integer",
             "description": "CGT0_FLGDOC - FlgDoc",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgEc": {
             "type": "integer",
             "description": "CGT0_FLGEC - FlgEc",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgElabiva": {
             "type": "integer",
             "description": "CGT0_FLGELABIVA - FlgElabiva",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgHyperion": {
             "type": "integer",
             "description": "CGT0_FLGHYPERION - Hyperion",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgMovcont": {
             "type": "integer",
             "description": "CGT0_FLGMOVCONT - Mov.cont.",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgMoviva": {
             "type": "integer",
             "description": "CGT0_FLGMOVIVA - Movimenti IVA",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgPartitari": {
             "type": "integer",
             "description": "CGT0_FLGPARTITARI - Partitari",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgPf": {
             "type": "integer",
             "description": "CGT0_FLGPF - FlgPf",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "flgQuerypn": {
             "type": "integer",
             "description": "CGT0_FLGQUERYPN - FlgQuerypn",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indAcconti": {
             "type": "integer",
             "description": "CGT0_INDACCONTI - Acconti",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indCambiali": {
             "type": "integer",
             "description": "CGT0_INDCAMBIALI - Cambiali",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indChiuseff": {
             "type": "integer",
             "description": "CGT0_INDCHIUSEFF - Chiusura effetti",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indConsolidamento": {
             "type": "integer",
             "description": "CGT0_INDCONSOLIDAMENTO - Consolidamento",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indDatabilanci": {
             "type": "integer",
             "description": "CGT0_INDDATABILANCI - IndDatabilanci",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indEcportaper": {
             "type": "integer",
             "description": "CGT0_INDECPORTAPER - IndEcportaper",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indEcportchius": {
             "type": "integer",
             "description": "CGT0_INDECPORTCHIUS - IndEcportchius",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indIncassobf": {
             "type": "integer",
             "description": "CGT0_INDINCASSOBF - Incasso b.f.",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indInsoluti": {
             "type": "integer",
             "description": "CGT0_INDINSOLUTI - IndInsoluti",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indProforma": {
             "type": "integer",
             "description": "CGT0_INDPROFORMA - Proforma",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indRaggr": {
             "type": "integer",
             "description": "CGT0_INDRAGGR - IndRaggr",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indRatrisc": {
             "type": "integer",
             "description": "CGT0_INDRATRISC - IndRatrisc",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indRettifica": {
             "type": "integer",
             "description": "CGT0_INDRETTIFICA - Rettifica",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indSimulbilanci": {
             "type": "integer",
             "description": "CGT0_INDSIMULBILANCI - Simulazione bilanci",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "indTipoifrs": {
             "type": "integer",
             "description": "CGT0_INDTIPOIFRS - IndTipoifrs",
-            "format": "int32"
+            "format": "int32",
+            "default": 0,
+            "nullable": true
           },
           "extensionData": {
             "type": "array",
@@ -101990,8 +102019,7 @@
       },
       "OfficeCODTO": {
         "required": [
-          "codice",
-          "dittaCg18"
+          "codice"
         ],
         "type": "object",
         "properties": {
@@ -102013,7 +102041,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "CG31_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "idmediaCg99": {
             "type": "number",
