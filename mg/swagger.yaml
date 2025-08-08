@@ -19693,8 +19693,6 @@
       "CustSuppClassificationMGDTO": {
         "required": [
           "cliforCg44",
-          "datacreaz",
-          "dataultvar",
           "tipocfCg44"
         ],
         "type": "object",
@@ -19749,7 +19747,8 @@
           "datacreaz": {
             "type": "string",
             "description": "MG19_DATACREAZ - Data creazione",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "datadismis": {
             "type": "string",
@@ -19790,7 +19789,8 @@
           "dataultvar": {
             "type": "string",
             "description": "MG19_DATAULTVAR - Data ultima variazione",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "dittaCg18": {
             "type": "number",
