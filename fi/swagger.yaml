@@ -72288,7 +72288,6 @@
       "AreaCODTO": {
         "required": [
           "codiceAreaMG",
-          "dittaCg18",
           "macroareaMg07"
         ],
         "type": "object",
@@ -72306,7 +72305,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "MG08_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "idprov": {
             "type": "integer",
@@ -100572,8 +100573,7 @@
       "MacroAreaCODTO": {
         "required": [
           "codiceMacroarea",
-          "descrmacroar",
-          "dittaCg18"
+          "descrmacroar"
         ],
         "type": "object",
         "properties": {
@@ -100590,7 +100590,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "MG07_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "idprov": {
             "type": "integer",
@@ -108421,7 +108423,6 @@
         "required": [
           "areaMg08",
           "codiceZona",
-          "dittaCg18",
           "macroareaMg08"
         ],
         "type": "object",
@@ -108444,7 +108445,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "MG09_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "idprov": {
             "type": "integer",
