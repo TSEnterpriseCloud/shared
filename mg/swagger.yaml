@@ -22457,6 +22457,26 @@
             "description": "DO30_CODDEP_MG58 - Codice deposito",
             "nullable": true
           },
+          "codescl1Mg82": {
+            "type": "string",
+            "description": "DO30_CODESCL1_MG82 - Codice 1 esclusione stampa documenti ",
+            "nullable": true
+          },
+          "codescl2Mg82": {
+            "type": "string",
+            "description": "DO30_CODESCL2_MG82 - Codice 2 esclusione stampa documenti",
+            "nullable": true
+          },
+          "codescl3Mg82": {
+            "type": "string",
+            "description": "DO30_CODESCL3_MG82 - Codice 3 esclusione stampa documenti",
+            "nullable": true
+          },
+          "codescl4Mg82": {
+            "type": "string",
+            "description": "DO30_CODESCL4_MG82 - Codice 4 esclusione stampa documenti",
+            "nullable": true
+          },
           "codschedaMg42": {
             "type": "string",
             "description": "DO30_CODSCHEDA_MG42 - Scheda multipla",
