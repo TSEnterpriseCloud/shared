@@ -1,0 +1,5633 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "TeamSystem Enterprise Cloud WebApi Smart - Documentation",
+    "version": "1.0.1",
+    "description": "This is Application Flow for interact with TeamSystem Enterprise with Smart WebApi.",
+    "contact": {
+      "email": "info@teamsystem.com",
+      "name": "Contact",
+      "url": "https://tsdesk.teamsystem.com/"
+    },
+    "license": {
+      "name": "License info",
+      "url": "https://tc.teamsystem.com/TeamSystemEnterpriseCloud.pdf?_gl=1*1k50zks*_ga*ODY2OTU4Nzg4LjE3NTQ3MjU3OTk.*_ga_D6CCKB75QV*czE3NTQ3MjU3OTgkbzEkZzEkdDE3NTQ3MjU4NzkkajQ2JGwwJGgxMDY0MzM1MjI0*_fplc*NnJpJTJCSk93WVd0VFByaHE0TW9GSzhuZWZ4SlZUaExUbnNZM3ZpVm14ZzdhNW54UzBQNkJaaGZ4VzVldVNVYUZiOVZDR3hkSEJFVUp2TlZSJTJGNzFOSE5jdXdqNFhjOXB4dENrV2dPUW1SNlQ5VzFIVkdSVWpyT3VaVDJPWDdwQSUzRCUzRA..*_ga_BMC73DK2CB*czE3NTQ3MjU3OTgkbzEkZzEkdDE3NTQ3MjU4NzkkajQ2JGwwJGgyMTk0OTMxMjM."
+    }
+  },
+  "externalDocs": {
+    "description": "Download OpenAPI specification",
+    "url": "https://tsec-smartwebapi-stage-app.azurewebsites.net/swagger.json"
+  },
+  "security": [
+    {
+      "Bearer": [
+        "Bearer"
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "url": "http://localhost:4000",
+      "description": "Debug local machine for TeamSystem Enterprise Smart WebApi"
+    },
+    {
+      "url": "https://tsec-smartwebapi-stage-app.azurewebsites.net",
+      "description": "Production environment for TeamSystem Enterprise Smart WebApi"
+    },
+    {
+      "url": "https://tsec-smartwebapi-dev-app.azurewebsites.net",
+      "description": "Stage environment for TeamSystem Enterprise Smart WebApi"
+    }
+  ],
+  "x-security-headers": {
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+    "X-Frame-Options": "DENY",
+    "X-Content-Type-Options": "nosniff",
+    "X-XSS-Protection": "1; mode=block",
+    "Content-Security-Policy": "default-src 'self'",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  },
+  "x-rate-limiting": {
+    "policy": "per-user",
+    "requests-per-minute": 60,
+    "burst-limit": 10
+  },
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "Operations related to authentication"
+    },
+    {
+      "name": "Customer",
+      "description": "Customer management"
+    },
+    {
+      "name": "Supplier",
+      "description": "Supplier management"
+    },
+    {
+      "name": "Warehouse",
+      "description": "Warehouse Items management"
+    },
+    {
+      "name": "Finance",
+      "description": "Finance management"
+    }
+  ],
+  "paths": {
+    "/api/auth/token": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Get token",
+        "description": "Get authorization token",
+        "x-ai-metadata": {
+          "intent": "authentication-token-generation",
+          "ai-features": [
+            "security-validation",
+            "anomaly-detection",
+            "token-optimization",
+            "access-pattern-analysis"
+          ],
+          "machine-learning": {
+            "models": [
+              "security-analyzer",
+              "fraud-detector",
+              "access-pattern-classifier"
+            ],
+            "confidence-threshold": 0.9
+          },
+          "automation": {
+            "security-checks": true,
+            "anomaly-alerts": true,
+            "token-optimization": true
+          }
+        },
+        "parameters": [
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "scope": {
+                    "type": "string"
+                  },
+                  "token": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "username": {
+                  "style": "form"
+                },
+                "scope": {
+                  "style": "form"
+                },
+                "token": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Authentication successful. JWT token provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Invalid request format or missing required parameters.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Invalid credentials or expired token.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "OAuth authentication service not available.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. Error during token storage or processing.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. Rate limit exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error. Authentication service unavailable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/customer": {
+      "post": {
+        "summary": "Create a new customer",
+        "tags": [
+          "Customer"
+        ],
+        "description": "Insert a new customer into the specified product and version environment.",
+        "operationId": "create-customer",
+        "x-ai-purpose": "customer_creation",
+        "x-ai-entity": "Customer",
+        "x-ai-intent": "create",
+        "x-ai-sample": {
+          "first-name": "Mario",
+          "last-name": "Rossi",
+          "email": "mario.rossi@example.com",
+          "vat-number": "IT12345678901"
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customer will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customer will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customer will be created",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the customer to be created.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/customer"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Customer created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/customers-response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "A business error occurred. The customer could not be created due to a conflict.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/customer/{customerId}": {
+      "description": "operations for customer by ID",
+      "get": {
+        "summary": "Get a customer by ID",
+        "tags": [
+          "Customer"
+        ],
+        "description": "Retrieve a customer by its unique identifier in the specified product and version environment.",
+        "operationId": "get-customer-by-id",
+        "x-ai-purpose": "customer_retrieval",
+        "x-ai-entity": "Customer",
+        "x-ai-intent": "get",
+        "x-ai-sample": {
+          "customer-id": "CUST001",
+          "first-name": "Mario",
+          "last-name": "Rossi",
+          "email": "mario.rossi@example.com"
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customer will be retrieved. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customer will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customer will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "The unique identifier of the customer to be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "A comma-separated list of fields to include in the response. If not specified, all fields will be returned.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "first-name,last-name,email,pec"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/customer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found. The specified customer ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a customer by ID",
+        "tags": [
+          "Customer"
+        ],
+        "description": "Update a customer by its unique identifier in the specified product and version environment.",
+        "operationId": "update-customer-by-id",
+        "x-ai-purpose": "customer_update",
+        "x-ai-entity": "Customer",
+        "x-ai-intent": "update",
+        "x-ai-sample": {
+          "customer-id": "CUST001",
+          "first-name": "Mario",
+          "last-name": "Rossi",
+          "email": "mario.rossi@example.com",
+          "vat-number": "IT12345678901"
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customer will be updated. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customer will be updated.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customer will be updated.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "The unique identifier of the customer to be updated.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the customer to be updated.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/customer"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Customer updated successfully."
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found. The specified customer ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a customer by ID",
+        "tags": [
+          "Customer"
+        ],
+        "description": "Delete a customer by its unique identifier in the specified product and version environment.",
+        "operationId": "delete-customer-by-id",
+        "x-ai-purpose": "customer_deletion",
+        "x-ai-entity": "Customer",
+        "x-ai-intent": "delete",
+        "x-ai-sample": {
+          "customer-id": "CUST001",
+          "confirmation": true
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customer will be deleted. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customer will be deleted.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customer will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "The unique identifier of the customer to be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Customer deleted successfully."
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found. The specified customer ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/customers": {
+      "description": "operations for list of customers",
+      "get": {
+        "summary": "Get a customers list",
+        "tags": [
+          "Customer"
+        ],
+        "description": "Retrieve a list of customers in the specified product and version environment.",
+        "operationId": "get-customers",
+        "x-ai-purpose": "customer_listing",
+        "x-ai-entity": "Customer",
+        "x-ai-intent": "list",
+        "x-ai-sample": {
+          "customers": [
+            {
+              "customer-id": "CUST001",
+              "first-name": "Mario",
+              "last-name": "Rossi"
+            }
+          ],
+          "total": 150,
+          "page": 1
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customer will be retrieved. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customer will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customer will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "A comma-separated list of fields to include in the response. If not specified, all fields will be returned.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "first-name,last-name,email,pec"
+            }
+          },
+          {
+            "name": "pagecount",
+            "in": "query",
+            "description": "Pagination. Record count per page. Default is 5",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "default": 5,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "pageposition",
+            "in": "query",
+            "description": "Pagination. Page position. Default is 0 (starting from 0).",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "default": 0,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/customer"
+                  },
+                  "maxItems": 1000
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found. The specified customer ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/customers/batch": {
+      "description": "batch operations for customers",
+      "post": {
+        "summary": "Create multiple customers",
+        "tags": [
+          "Customer"
+        ],
+        "description": "Insert multiple customers into the specified product and version environment.",
+        "operationId": "create-customers-batch",
+        "x-ai-purpose": "customer_batch_creation",
+        "x-ai-entity": "Customer",
+        "x-ai-intent": "batch_create",
+        "x-ai-sample": {
+          "customers": [
+            {
+              "first-name": "Mario",
+              "last-name": "Rossi",
+              "email": "mario.rossi@example.com",
+              "vat-number": "IT12345678901"
+            },
+            {
+              "first-name": "Luigi",
+              "last-name": "Verdi",
+              "email": "luigi.verdi@example.com",
+              "vat-number": "IT98765432109"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customers will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customers will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customers will be created.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Indicates that the client prefers an asynchronous response",
+            "required": false,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "response-async",
+              "enum": [
+                "",
+                "response-async"
+              ]
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the customers to be created.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/customer"
+                },
+                "maxItems": 1000
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Customers created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/customers-response"
+                  },
+                  "maxItems": 1000
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Accepted async request to create customer/s.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/async-guid-response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "A business error occurred. The customers could not be created due to a conflict.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/customers/batch/{id}": {
+      "description": "batch operations for customers with correlation ID",
+      "get": {
+        "summary": "Get multiple customers with correlation ID",
+        "tags": [
+          "Customer"
+        ],
+        "description": "Retrieve multiple customers from the specified product and version environment with a correlation ID.",
+        "operationId": "get-customers-batch-with-correlation-id",
+        "x-ai-purpose": "customer_batch_status",
+        "x-ai-entity": "Customer",
+        "x-ai-intent": "batch_status",
+        "x-ai-sample": {
+          "batch-id": "BATCH123",
+          "status": "completed",
+          "total-items": 100,
+          "processed": 100,
+          "errors": 0
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customers will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customers will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customers will be created.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the batch operation.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "56ec71f2-ae61-4075-b7c0-579d081c4a9b",
+              "minLength": 36,
+              "maxLength": 36,
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer batch retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/batch-response"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found. The specified resource could not be found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error. An unexpected error occurred while processing the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/suppliers": {
+      "description": "operations for list of suppliers",
+      "get": {
+        "summary": "Get a suppliers list",
+        "tags": [
+          "Supplier"
+        ],
+        "description": "Retrieve a list of suppliers in the specified product and version environment.",
+        "operationId": "get-suppliers",
+        "x-ai-purpose": "supplier_listing",
+        "x-ai-entity": "Supplier",
+        "x-ai-intent": "list",
+        "x-ai-sample": {
+          "suppliers": [
+            {
+              "supplier-id": "SUPP001",
+              "company-name": "Acme Corp",
+              "contact-email": "contact@acme.com"
+            }
+          ],
+          "total": 75,
+          "page": 1
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customer will be retrieved. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customer will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customer will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "A comma-separated list of fields to include in the response. If not specified, all fields will be returned.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "first-name,last-name,email,pec"
+            }
+          },
+          {
+            "name": "pagecount",
+            "in": "query",
+            "description": "Pagination. Record count per page. Default is 5",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "default": 5,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "pageposition",
+            "in": "query",
+            "description": "Pagination. Page position. Default is 0 (starting from 0).",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "default": 0,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/supplier"
+                  },
+                  "maxItems": 1000
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Supplier not found. The specified supplier ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/supplier": {
+      "description": "operations for list of suppliers",
+      "post": {
+        "summary": "Create a new supplier",
+        "tags": [
+          "Supplier"
+        ],
+        "description": "Insert a new supplier into the specified product and version environment.",
+        "operationId": "create-supplier",
+        "x-ai-purpose": "supplier_creation",
+        "x-ai-entity": "Supplier",
+        "x-ai-intent": "create",
+        "x-ai-sample": {
+          "company-name": "Acme Corp",
+          "contact-email": "contact@acme.com",
+          "vat-number": "IT11223344556",
+          "address": "Via Roma 123, Milano"
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the supplier will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the supplier will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customer will be created",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the customer to be created.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/supplier"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Customer created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/customers-response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "A business error occurred. The customer could not be created due to a conflict.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/supplier/{supplierId}": {
+      "description": "operations for suppliers by ID",
+      "get": {
+        "summary": "Get a supplier by ID",
+        "tags": [
+          "Supplier"
+        ],
+        "description": "Retrieve a supplier by its unique identifier in the specified product and version environment.",
+        "operationId": "get-supplier-by-id",
+        "x-ai-metadata": {
+          "intent": "supplier-retrieval-enhancement",
+          "ai-features": [
+            "smart-caching",
+            "usage-tracking",
+            "related-suggestions",
+            "performance-analytics",
+            "access-optimization"
+          ],
+          "machine-learning": {
+            "models": [
+              "usage-pattern-tracker",
+              "relevance-scorer",
+              "performance-optimizer"
+            ],
+            "confidence-threshold": 0.75
+          },
+          "automation": {
+            "intelligent-caching": true,
+            "usage-insights": true,
+            "access-optimization": true
+          }
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the supplier will be retrieved. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the supplier will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the supplier will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "path",
+            "description": "The unique identifier of the supplier to be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "A comma-separated list of fields to include in the response. If not specified, all fields will be returned.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "first-name,last-name,email,pec"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/supplier"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found. The specified customer ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a supplier by ID",
+        "tags": [
+          "Supplier"
+        ],
+        "description": "Update a supplier by its unique identifier in the specified product and version environment.",
+        "operationId": "update-supplier-by-id",
+        "x-ai-metadata": {
+          "intent": "supplier-update-optimization",
+          "ai-features": [
+            "change-intelligence",
+            "workflow-acceleration",
+            "data-consistency",
+            "update-tracking",
+            "validation-enhancement"
+          ],
+          "machine-learning": {
+            "models": [
+              "change-analyzer",
+              "workflow-optimizer",
+              "consistency-checker"
+            ],
+            "confidence-threshold": 0.8
+          },
+          "automation": {
+            "intelligent-updates": true,
+            "workflow-optimization": true,
+            "change-tracking": true
+          }
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the supplier will be updated. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the supplier will be updated.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the supplier will be updated.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "path",
+            "description": "The unique identifier of the supplier to be updated.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the supplier to be updated.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/supplier"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Supplier updated successfully."
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found. The specified customer ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a supplier by ID",
+        "tags": [
+          "Supplier"
+        ],
+        "description": "Delete a supplier by its unique identifier in the specified product and version environment.",
+        "operationId": "delete-supplier-by-id",
+        "x-ai-metadata": {
+          "intent": "supplier-deletion-workflow",
+          "ai-features": [
+            "dependency-analysis",
+            "impact-assessment",
+            "workflow-guidance",
+            "cleanup-automation",
+            "usage-validation"
+          ],
+          "machine-learning": {
+            "models": [
+              "dependency-analyzer",
+              "impact-predictor",
+              "workflow-optimizer"
+            ],
+            "confidence-threshold": 0.85
+          },
+          "automation": {
+            "dependency-check": true,
+            "impact-analysis": true,
+            "workflow-optimization": true
+          }
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the supplier will be deleted. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the supplier will be deleted.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the supplier will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "path",
+            "description": "The unique identifier of the supplier to be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Supplier deleted successfully."
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found. The specified customer ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/suppliers/batch": {
+      "description": "batch operations for suppliers",
+      "post": {
+        "summary": "Create multiple suppliers",
+        "tags": [
+          "Supplier"
+        ],
+        "description": "Insert multiple suppliers into the specified product and version environment.",
+        "operationId": "create-suppliers-batch",
+        "x-ai-metadata": {
+          "intent": "supplier-batch-processing",
+          "ai-features": [
+            "bulk-optimization",
+            "parallel-processing",
+            "workflow-acceleration",
+            "quality-assurance",
+            "batch-intelligence"
+          ],
+          "machine-learning": {
+            "models": [
+              "batch-optimizer",
+              "processing-scheduler",
+              "quality-validator"
+            ],
+            "confidence-threshold": 0.8
+          },
+          "automation": {
+            "batch-processing": true,
+            "parallel-execution": true,
+            "workflow-optimization": true
+          }
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the suppliers will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customers will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customers will be created.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Indicates that the client prefers an asynchronous response",
+            "required": false,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "response-async",
+              "enum": [
+                "",
+                "response-async"
+              ]
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the suppliers to be created.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/supplier"
+                },
+                "maxItems": 1000
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Suppliers created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/supplier-response"
+                  },
+                  "maxItems": 1000
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Accepted async request to create customer/s.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/async-guid-response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "A business error occurred. The customers could not be created due to a conflict.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/suppliers/batch/{id}": {
+      "description": "batch operations for suppliers with correlation ID",
+      "get": {
+        "summary": "Get multiple suppliers with correlation ID",
+        "tags": [
+          "Supplier"
+        ],
+        "description": "Retrieve multiple suppliers from the specified product and version environment with a correlation ID.",
+        "operationId": "get-suppliers-batch-with-correlation-id",
+        "x-ai-metadata": {
+          "intent": "supplier-batch-tracking",
+          "ai-features": [
+            "batch-monitoring",
+            "status-intelligence",
+            "progress-tracking",
+            "performance-analytics",
+            "correlation-insights"
+          ],
+          "machine-learning": {
+            "models": [
+              "batch-status-predictor",
+              "progress-analyzer",
+              "correlation-tracker"
+            ],
+            "confidence-threshold": 0.8
+          },
+          "automation": {
+            "status-monitoring": true,
+            "progress-tracking": true,
+            "correlation-analysis": true
+          }
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the suppliers will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customers will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customers will be created.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the batch operation.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "56ec71f2-ae61-4075-b7c0-579d081c4a9b",
+              "minLength": 36,
+              "maxLength": 36,
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "suppliers batch retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/batch-response"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found. The specified resource could not be found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error. An unexpected error occurred while processing the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/warehouse/item": {
+      "post": {
+        "summary": "Create a new product warehouse item",
+        "tags": [
+          "Warehouse"
+        ],
+        "description": "Insert a new product into the specified product and version environment.",
+        "operationId": "create-product",
+        "x-ai-metadata": {
+          "intent": "warehouse-item-creation",
+          "ai-features": [
+            "inventory-optimization",
+            "auto-categorization",
+            "stock-prediction",
+            "workflow-enhancement",
+            "quality-validation"
+          ],
+          "machine-learning": {
+            "models": [
+              "inventory-optimizer",
+              "category-classifier",
+              "stock-predictor"
+            ],
+            "confidence-threshold": 0.8
+          },
+          "automation": {
+            "auto-classification": true,
+            "inventory-management": true,
+            "workflow-optimization": true
+          }
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customer will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customer will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customer will be created",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the product to be created.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/warehouseitem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Storage product created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/warehouseitem-response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "A business error occurred. The customer could not be created due to a conflict.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/warehouse/item/{productId}": {
+      "description": "operations for warehouse item by ID",
+      "get": {
+        "summary": "Get a warehouse item by ID",
+        "tags": [
+          "Warehouse"
+        ],
+        "description": "Retrieve a warehouse item by its unique identifier in the specified product and version environment.",
+        "operationId": "get-product-by-id",
+        "x-ai-metadata": {
+          "intent": "warehouse-item-retrieval",
+          "ai-features": [
+            "intelligent-caching",
+            "usage-analytics",
+            "stock-insights",
+            "related-recommendations",
+            "performance-tracking"
+          ],
+          "machine-learning": {
+            "models": [
+              "usage-tracker",
+              "stock-analyzer",
+              "recommendation-engine"
+            ],
+            "confidence-threshold": 0.75
+          },
+          "automation": {
+            "smart-caching": true,
+            "usage-monitoring": true,
+            "recommendation-system": true
+          }
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the warehouse item will be retrieved. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the warehouse item will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the warehouse item will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "The warehouse item code to be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 25
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "A comma-separated list of fields to include in the response. If not specified, all fields will be returned.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "code,creation-date,vatcode"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Warehouse item retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/warehouseitem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Warehouse item not found. The specified warehouse item ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a warehouse item by ID",
+        "tags": [
+          "Warehouse"
+        ],
+        "description": "Update a warehouse item by its unique identifier in the specified product and version environment.",
+        "operationId": "update-storage-product-by-id",
+        "x-ai-metadata": {
+          "intent": "warehouse-item-update",
+          "ai-features": [
+            "inventory-intelligence",
+            "change-optimization",
+            "stock-adjustment",
+            "workflow-acceleration",
+            "update-validation"
+          ],
+          "machine-learning": {
+            "models": [
+              "inventory-manager",
+              "change-optimizer",
+              "stock-calculator"
+            ],
+            "confidence-threshold": 0.8
+          },
+          "automation": {
+            "inventory-management": true,
+            "change-optimization": true,
+            "workflow-enhancement": true
+          }
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the warehouse item will be updated. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the warehouse item will be updated.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the warehouse item will be updated.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "The warehouse item code to be updated.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 25
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the warehouse item to be updated.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/warehouseitem_put"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Warehouse item updated successfully."
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Warehouse item not found. The specified warehouse item ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a Warehouse item by Code",
+        "tags": [
+          "Warehouse"
+        ],
+        "description": "Delete a Warehouse item by the specified product and version environment.",
+        "operationId": "delete-warehouse-item-by-id",
+        "x-ai-metadata": {
+          "intent": "warehouse-item-deletion",
+          "ai-features": [
+            "inventory-impact-analysis",
+            "dependency-tracking",
+            "workflow-guidance",
+            "cleanup-automation",
+            "stock-adjustment"
+          ],
+          "machine-learning": {
+            "models": [
+              "inventory-impact-analyzer",
+              "dependency-tracker",
+              "workflow-optimizer"
+            ],
+            "confidence-threshold": 0.85
+          },
+          "automation": {
+            "inventory-management": true,
+            "dependency-analysis": true,
+            "workflow-optimization": true
+          }
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the Warehouse item will be deleted. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the Warehouse item will be deleted.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the Warehouse item will be deleted.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "The Warehouse item code of the product to be deleted.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 25
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Warehouse item deleted successfully."
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Warehouse item not found. The specified warehouse item ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/warehouse/items": {
+      "description": "operations for list of warehouse items",
+      "get": {
+        "summary": "Get a warehouse item list",
+        "tags": [
+          "Warehouse"
+        ],
+        "description": "Retrieve a list of warehouse items in the specified product and version environment.",
+        "operationId": "get-warehouse-items",
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the warehouse items will be retrieved. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the warehouse items will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the warehouse items will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "A comma-separated list of fields to include in the response. If not specified, all fields will be returned.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "code,creation-date,vatcode"
+            }
+          },
+          {
+            "name": "pagecount",
+            "in": "query",
+            "description": "Pagination. Record count per page. Default is 5",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "default": 5,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "pageposition",
+            "in": "query",
+            "description": "Pagination. Page position. Default is 0 (starting from 0).",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "default": 0,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Warehouse items retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/warehouseitem"
+                  },
+                  "maxItems": 1000
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Warehouse item not found. The specified warehouse item ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/warehouse/items/batch": {
+      "description": "batch operations for warehouse items",
+      "post": {
+        "summary": "Create multiple warehouse items",
+        "tags": [
+          "Warehouse"
+        ],
+        "description": "Insert multiple warehouse items into the specified product and version environment.",
+        "operationId": "create-storage-products-batch",
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the warehouse items will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the warehouse items will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the warehouse items will be created.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "Indicates that the client prefers an asynchronous response",
+            "required": false,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "response-async",
+              "enum": [
+                "",
+                "response-async"
+              ]
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the warehouse items to be created.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/warehouseitem"
+                },
+                "maxItems": 1000
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Warehouse items created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/warehouseitem-response"
+                  },
+                  "maxItems": 1000
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Accepted async request to create customer/s.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/async-guid-response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "A business error occurred. The warehouse items could not be created due to a conflict.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/warehouse/items/batch/{id}": {
+      "description": "batch operations for warehouse items with correlation ID",
+      "get": {
+        "summary": "Get multiple warehouse item items with correlation ID",
+        "tags": [
+          "Warehouse"
+        ],
+        "description": "Retrieve multiple suppliers from the specified product and version environment with a correlation ID.",
+        "operationId": "get-storage-products-batch-with-correlation-id",
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the warehouse items will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the warehouse items will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the warehouse items will be created.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the batch operation.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "56ec71f2-ae61-4075-b7c0-579d081c4a9b",
+              "minLength": 36,
+              "maxLength": 36,
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Warehouse items batch retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/batch-response"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Warehouse item batch creation has been accepted and is being processed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Batch creation accepted. Processing in progress."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "Warehouse items batch processing is still in progress. The response includes the status of the batch operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "processing",
+                        "completed",
+                        "partial failed",
+                        "failed"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "examples": [
+                        {
+                          "processing": "Batch processing is still in progress. Please check back later."
+                        },
+                        {
+                          "completed": "Batch processing has been completed successfully."
+                        },
+                        {
+                          "partial_failed": "Batch processing completed with some failures."
+                        },
+                        {
+                          "failed": "Batch processing has failed."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Warehouse items not found. The specified customer ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/finance/movements": {
+      "post": {
+        "summary": "Create a new single accounting movement",
+        "tags": [
+          "Finance"
+        ],
+        "description": "Insert single accounting movement into the specified product and version environment.",
+        "operationId": "createmovement",
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customer will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customer will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customer will be created",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Create a new accounting movements",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Movement"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MovementResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found. The specified customer ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/finance/movements/batch": {
+      "post": {
+        "summary": "Create a new multiple accounting movements",
+        "tags": [
+          "Finance"
+        ],
+        "description": "Insert multiple accounting movements into the specified product and version environment.",
+        "operationId": "createmovements",
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customer will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the customer will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the customer will be created",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int64",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Create a new accounting movements",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Movements"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MovementsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AuthResponse": {
+        "type": "object",
+        "properties": {
+          "succeeded": {
+            "type": "boolean"
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          },
+          "jwtResponse": {
+            "$ref": "#/components/schemas/JwtResponse"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "succeeded"
+        ]
+      },
+      "JwtResponse": {
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "nullable": true
+          },
+          "expires_int": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scope": {
+            "type": "string",
+            "nullable": true
+          },
+          "token_type": {
+            "type": "string",
+            "nullable": true
+          },
+          "refresh_token": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "customers-response": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Id Customer",
+            "example": 0
+          },
+          "links": {
+            "$ref": "#/components/schemas/links"
+          }
+        }
+      },
+      "batch-response": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "6880a6bfe313334780920039"
+          },
+          "guidforelabasync": {
+            "type": "string",
+            "format": "uuid",
+            "example": "d21a27e3-c71b-492b-811d-e6be781adadd"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2025-07-23 09:09:18"
+          },
+          "hateos": {
+            "$ref": "#/components/schemas/link"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorCO"
+          }
+        }
+      },
+      "ErrorCO": {
+        "type": "object",
+        "properties": {
+          "guid": {
+            "type": "string",
+            "format": "uuid",
+            "example": "79f8d9ca-5fc3-4536-8ea6-062fa28f4a98"
+          },
+          "type": {
+            "type": "string",
+            "example": "Error"
+          },
+          "code": {
+            "type": "integer",
+            "example": 409
+          },
+          "message": {
+            "type": "string",
+            "example": "Esiste già un Cliente/Fornitore associato all'anagrafica selezionata!"
+          },
+          "dto-name": {
+            "type": "string",
+            "example": "Customer/Supplier"
+          },
+          "dto-property-name": {
+            "type": "string",
+            "example": ""
+          },
+          "entity-property-path": {
+            "type": "string",
+            "example": ""
+          }
+        }
+      },
+      "customer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Id Customer"
+          },
+          "first-name": {
+            "type": "string",
+            "description": "First Name",
+            "example": "Mario",
+            "pattern": "^[A-Za-z0-9]{1,100}$",
+            "maxLength": 100
+          },
+          "last-name": {
+            "type": "string",
+            "description": "Last Name",
+            "example": "Rossi",
+            "pattern": "^[A-Za-z0-9]{1,100}$",
+            "maxLength": 100
+          },
+          "company-name": {
+            "type": "string",
+            "description": "Company Name",
+            "example": "Mario Rossi spa",
+            "pattern": "^[A-Za-z0-9 ]{1,100}$",
+            "maxLength": 100
+          },
+          "email": {
+            "type": "string",
+            "description": "email",
+            "example": "mario.rossi@home.eu",
+            "pattern": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}$",
+            "maxLength": 100
+          },
+          "pec": {
+            "type": "string",
+            "description": "pec address",
+            "example": "pec@home.eu",
+            "pattern": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}$",
+            "maxLength": 100
+          },
+          "phone-number": {
+            "type": "string",
+            "description": "phone number",
+            "example": "+39 4309456577",
+            "pattern": "^\\+?[0-9\\s\\-\\(\\)]+$",
+            "maxLength": 50
+          },
+          "address": {
+            "type": "string",
+            "description": "address",
+            "example": "Viale Mazzini 66",
+            "pattern": "^[A-Za-z0-9\\s\\-\\.,]{1,200}$",
+            "maxLength": 200
+          },
+          "city": {
+            "type": "string",
+            "description": "City",
+            "example": "Roma",
+            "pattern": "^[A-Za-z0-9\\s\\-]{1,100}$",
+            "maxLength": 100
+          },
+          "postal-code": {
+            "type": "string",
+            "description": "Postal Code",
+            "example": "00100",
+            "pattern": "^[0-9]{5}$",
+            "maxLength": 5
+          },
+          "country": {
+            "type": "string",
+            "description": "Country",
+            "example": "Italia",
+            "pattern": "^[A-Za-z0-9\\s\\-]{1,100}$",
+            "maxLength": 100
+          },
+          "payment": {
+            "type": "string",
+            "description": "Payment Code",
+            "example": "201",
+            "pattern": "^[A-Za-z0-9]{1,50}$",
+            "maxLength": 50
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency Code",
+            "example": "EUR",
+            "pattern": "^[A-Z]{3}$",
+            "maxLength": 3
+          },
+          "vat-number": {
+            "type": "string",
+            "description": "Vat Number",
+            "example": "00000000000",
+            "pattern": "^[A-Za-z0-9]{1,20}$",
+            "maxLength": 20
+          },
+          "fiscal-code": {
+            "type": "string",
+            "description": "Fiscal Code",
+            "example": "AAAAAAAAAAAAAAAA",
+            "pattern": "^[A-Za-z0-9]{1,50}$",
+            "maxLength": 50
+          },
+          "sdi": {
+            "type": "string",
+            "description": "SDI Code",
+            "example": "0000000",
+            "pattern": "^[A-Za-z0-9]{1,11}$",
+            "maxLength": 11
+          }
+        }
+      },
+      "supplier-response": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "$ref": "#/components/schemas/links"
+          }
+        }
+      },
+      "supplier": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Id Supplier"
+          },
+          "first-name": {
+            "type": "string",
+            "description": "First Name",
+            "example": "Mario"
+          },
+          "last-name": {
+            "type": "string",
+            "description": "Last Name",
+            "example": "Rossi"
+          },
+          "company-name": {
+            "type": "string",
+            "description": "Company Name",
+            "example": "Mario Rossi spa"
+          },
+          "e-mail": {
+            "type": "string",
+            "description": "email",
+            "example": "mario.rossi@home.eu"
+          },
+          "pec": {
+            "type": "string",
+            "description": "pec address",
+            "example": "pec@home.eu"
+          },
+          "phone-number": {
+            "type": "string",
+            "description": "phone number",
+            "example": "+39 4309456577"
+          },
+          "address": {
+            "type": "string",
+            "description": "address",
+            "example": "Viale Mazzini 66"
+          },
+          "city": {
+            "type": "string",
+            "description": "City",
+            "example": "Roma"
+          },
+          "postal-code": {
+            "type": "string",
+            "description": "Postal Code",
+            "example": "00100"
+          },
+          "country": {
+            "type": "string",
+            "description": "Country",
+            "example": "Italia"
+          },
+          "payment-code": {
+            "type": "string",
+            "description": "Payment Code",
+            "example": "201"
+          },
+          "currency-code": {
+            "type": "string",
+            "description": "Currency Code",
+            "example": "EUR"
+          },
+          "type-code": {
+            "type": "number",
+            "default": 0,
+            "description": "Ritenuta d'acconto /  0 - Non soggetto,  1 - Professionista,  2 - Rappresentante",
+            "enum": [
+              0,
+              1,
+              2
+            ]
+          },
+          "vat-number": {
+            "type": "string",
+            "description": "Vat Number",
+            "example": "00000000000"
+          },
+          "fiscal-code": {
+            "type": "string",
+            "description": "Fiscal Code",
+            "example": "AAAAAAAAAAAAAAAA"
+          },
+          "sdi": {
+            "type": "string",
+            "description": "SDI Code",
+            "example": "0000000"
+          }
+        }
+      },
+      "warehouseitem-response": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Warehouse Item Code",
+            "example": "Art01"
+          },
+          "links": {
+            "$ref": "#/components/schemas/links"
+          }
+        }
+      },
+      "warehouseitem": {
+        "type": "object",
+        "required": [
+          "code"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Item Code for Warehouse",
+            "example": "Art01",
+            "pattern": "^[A-Za-z0-9]{1,100}$",
+            "maxLength": 25
+          },
+          "creation-date": {
+            "type": "string",
+            "description": "Creation Date",
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
+            "maxLength": 24,
+            "example": "2024-06-01T12:34:56.789Z"
+          },
+          "update-date": {
+            "type": "string",
+            "description": "Last Date Update",
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
+            "maxLength": 24,
+            "example": "2024-06-01T12:34:56.789Z"
+          },
+          "description": {
+            "type": "string",
+            "description": "Item Warehouse Description",
+            "example": "Art 01",
+            "pattern": "^[A-Za-z0-9 ]{1,100}$",
+            "maxLength": 72
+          },
+          "vatcode": {
+            "type": "string",
+            "description": "Vat Code for Item Warehouse",
+            "example": "22",
+            "pattern": "^[A-Za-z0-9 ]{1,100}$",
+            "maxLength": 4
+          },
+          "um": {
+            "type": "string",
+            "description": "Item Warehouse First UM",
+            "example": "PZ",
+            "pattern": "^[A-Za-z0-9]{1,100}$",
+            "maxLength": 3
+          },
+          "barcode": {
+            "type": "string",
+            "description": "Item Barcode",
+            "example": "8542315245648",
+            "pattern": "^[A-Za-z0-9]{1,100}$",
+            "maxLength": 25
+          },
+          "stockstoragecode": {
+            "type": "string",
+            "description": "Storage Code for stock warehouse items",
+            "example": "00",
+            "pattern": "^[A-Za-z0-9]{1,100}$",
+            "maxLength": 2
+          }
+        }
+      },
+      "warehouseitem_put": {
+        "type": "object",
+        "required": [
+          "code"
+        ],
+        "properties": {
+          "creation-date": {
+            "type": "string",
+            "description": "Creation Date",
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
+            "maxLength": 24,
+            "example": "2024-06-01T12:34:56.789Z"
+          },
+          "update-date": {
+            "type": "string",
+            "description": "Last Date Update",
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
+            "maxLength": 24,
+            "example": "2024-06-01T12:34:56.789Z"
+          },
+          "description": {
+            "type": "string",
+            "description": "Item Warehouse Description",
+            "example": "Art 01",
+            "pattern": "^[A-Za-z0-9 ]{1,100}$",
+            "maxLength": 72
+          },
+          "vatcode": {
+            "type": "string",
+            "description": "Vat Code for Item Warehouse",
+            "example": "22",
+            "pattern": "^[A-Za-z0-9 ]{1,100}$",
+            "maxLength": 4
+          },
+          "um": {
+            "type": "string",
+            "description": "Item Warehouse First UM",
+            "example": "PZ",
+            "pattern": "^[A-Za-z0-9]{1,100}$",
+            "maxLength": 3
+          },
+          "barcode": {
+            "type": "string",
+            "description": "Item Barcode",
+            "example": "8542315245648",
+            "pattern": "^[A-Za-z0-9]{1,100}$",
+            "maxLength": 25
+          },
+          "stockstoragecode": {
+            "type": "string",
+            "description": "Storage Code for stock warehouse items",
+            "example": "00",
+            "pattern": "^[A-Za-z0-9]{1,100}$",
+            "maxLength": 2
+          }
+        }
+      },
+      "links": {
+        "type": "array",
+        "description": "hypermedia HATEOAS",
+        "items": {
+          "$ref": "#/components/schemas/link"
+        },
+        "maxItems": 1000
+      },
+      "link": {
+        "type": "object",
+        "description": "hypermedia HATEOAS",
+        "required": [
+          "href",
+          "rel",
+          "type"
+        ],
+        "properties": {
+          "href": {
+            "type": "string",
+            "description": "href path",
+            "examples": [
+              {
+                "link": "/resource/id"
+              }
+            ]
+          },
+          "rel": {
+            "type": "string",
+            "description": "link type \n * `self` - get data\n * `modify` - modify data\n * `delete` - delete data\n * `parent` - parent data\n"
+          },
+          "type": {
+            "type": "string",
+            "description": "verb \n * `get` - get \n * `put` - modify all data\n * `patch` - modify single data\n * `delete` - delete \n",
+            "examples": [
+              {
+                "method": "get"
+              }
+            ],
+            "default": "get"
+          },
+          "message": {
+            "type": "string",
+            "description": "link message",
+            "examples": [
+              {
+                "message": "All additional informations with relevant value"
+              }
+            ],
+            "default": ""
+          }
+        }
+      },
+      "logs": {
+        "type": "array",
+        "description": "lista dei log",
+        "items": {
+          "$ref": "#/components/schemas/log"
+        }
+      },
+      "log": {
+        "type": "object",
+        "required": [
+          "guid",
+          "code",
+          "type"
+        ],
+        "properties": {
+          "guid": {
+            "type": "string",
+            "format": "guid",
+            "description": "guid log"
+          },
+          "type": {
+            "type": "string",
+            "description": "Valore:\n  * `warning` - Log type for not critical message\n  * `Error` - Log type for critical message\n",
+            "enum": [
+              "warning",
+              "Error"
+            ],
+            "default": "warning"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int64",
+            "description": "code return"
+          },
+          "dto-name": {
+            "type": "string",
+            "description": "name of dto"
+          },
+          "dto-property-name": {
+            "type": "string",
+            "description": "name of property"
+          },
+          "entity-property-path": {
+            "type": "string",
+            "description": "name of property path"
+          },
+          "message": {
+            "type": "string",
+            "description": "log message return"
+          }
+        }
+      },
+      "async-guid-response": {
+        "type": "object",
+        "properties": {
+          "guidelab": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier (GUID) for accepted async create operation",
+            "example": "79f8d9ca-5fc3-4536-8ea6-062fa28f4a98"
+          }
+        },
+        "required": [
+          "guid"
+        ]
+      },
+      "Movement": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int3"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "invoice",
+              "generic",
+              "other"
+            ],
+            "default": "invoice"
+          },
+          "date": {
+            "type": "object",
+            "properties": {
+              "date-invoice": {
+                "type": "string",
+                "format": "date"
+              },
+              "date-registry": {
+                "type": "string",
+                "format": "date"
+              }
+            },
+            "format": "date"
+          },
+          "move-description": {
+            "type": "string",
+            "maxLength": 200,
+            "examples": [
+              "Invoice for services rendered",
+              "Purchase of goods"
+            ]
+          },
+          "invoice-number": {
+            "type": "string",
+            "maxLength": 200,
+            "examples": [
+              "INV-2023-001",
+              "PUR-2023-002"
+            ]
+          },
+          "custom-supplier-code": {
+            "type": "integer",
+            "format": "int32",
+            "examples": [
+              12345,
+              67890
+            ]
+          },
+          "registry-type": {
+            "type": "string",
+            "enum": [
+              "purchase",
+              "sale",
+              "other"
+            ],
+            "default": "purchase"
+          },
+          "currency-code": {
+            "type": "string",
+            "enum": [
+              "EUR",
+              "USD",
+              "GBP"
+            ],
+            "default": "EUR"
+          },
+          "sectional-code": {
+            "type": "string",
+            "default": "00"
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "row-number": {
+                  "type": "integer",
+                  "format": "int32",
+                  "examples": [
+                    1,
+                    2
+                  ]
+                },
+                "sign": {
+                  "type": "string",
+                  "enum": [
+                    "D",
+                    "A"
+                  ],
+                  "default": "D",
+                  "description": "sign of the row:\n * `D` - Dare\n * `A` - Avere\n",
+                  "examples": [
+                    "D",
+                    "A"
+                  ]
+                },
+                "coaaccount-code": {
+                  "type": "string",
+                  "default": "XXXX"
+                },
+                "account": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "taxable",
+                    "tax",
+                    "total"
+                  ],
+                  "examples": [
+                    "taxable",
+                    "tax",
+                    "total"
+                  ],
+                  "description": "row type for movements:\n * `taxable` - Taxable row\n * `tax` - Tax row\n * `total` - Total row\n"
+                },
+                "amount": {
+                  "type": "number",
+                  "format": "float",
+                  "description": "Amount of the row",
+                  "default": 0,
+                  "examples": [
+                    100,
+                    200.5
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Movements": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Movement"
+        },
+        "maxItems": 1000
+      },
+      "MovementResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "message": {
+            "type": "string"
+          },
+          "Links": {
+            "$ref": "#/components/schemas/links"
+          }
+        }
+      },
+      "MovementsResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/MovementResponse"
+        },
+        "maxItems": 1000
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Bearer Authorization header.\r\n\r\nEnter your token in the text input below.",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      },
+      "application": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "http://example.com/tse_webapi/auth/token",
+            "scopes": {
+              "read": "Read access to resources - allows GET operations",
+              "write": "Write access to resources - allows POST, PUT, DELETE operations",
+              "admin": "Administrative access - full API access"
+            }
+          }
+        }
+      }
+    }
+  }
+}
