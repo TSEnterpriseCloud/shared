@@ -14253,6 +14253,26 @@
             }
           },
           {
+            "name": "CliforCg44",
+            "in": "query",
+            "description": "CliforCg44 Mandatory to execute current action",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TipocfCg44",
+            "in": "query",
+            "description": "TipocfCg44 Mandatory to execute current action",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "authorization-scope",
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",

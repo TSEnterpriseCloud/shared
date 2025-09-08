@@ -36625,7 +36625,7 @@
     },
     {
       "name": "AgentCO",
-      "description": "Collection of services for Agents *** This API version is deprecated. Please use version 2.0."
+      "description": "Collection of services for Agents"
     },
     {
       "name": "AreaCO",
