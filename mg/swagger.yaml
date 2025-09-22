@@ -22005,6 +22005,7 @@
             "type": "number",
             "description": "DO33_FLGNSDOCBIS - Flag bis ns documento",
             "format": "double",
+            "default": "0",
             "nullable": true
           },
           "flgStornoqtaval": {
@@ -22025,6 +22026,7 @@
             "type": "integer",
             "description": "DO33_INDQTAORDRES - IndQtaordres",
             "format": "int32",
+            "default": "0",
             "nullable": true
           },
           "indStipodoc": {

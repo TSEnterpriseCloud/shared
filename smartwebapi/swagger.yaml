@@ -5200,7 +5200,9 @@
       "warehouseitem": {
         "type": "object",
         "required": [
-          "code"
+          "code",
+          "creation-date",
+          "update-date"
         ],
         "properties": {
           "code": {
@@ -5213,18 +5215,18 @@
           "creation-date": {
             "type": "string",
             "description": "Creation Date",
-            "format": "date-time",
+            "format": "date",
             "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
             "maxLength": 24,
-            "example": "2024-06-01T12:34:56.789Z"
+            "example": "2025-09-21"
           },
           "update-date": {
             "type": "string",
             "description": "Last Date Update",
-            "format": "date-time",
+            "format": "date",
             "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
             "maxLength": 24,
-            "example": "2024-06-01T12:34:56.789Z"
+            "example": "2025-09-21"
           },
           "description": {
             "type": "string",
@@ -5266,24 +5268,26 @@
       "warehouseitem_put": {
         "type": "object",
         "required": [
-          "code"
+          "code",
+          "creation-date",
+          "update-date"
         ],
         "properties": {
           "creation-date": {
             "type": "string",
             "description": "Creation Date",
-            "format": "date-time",
+            "format": "date",
             "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
             "maxLength": 24,
-            "example": "2024-06-01T12:34:56.789Z"
+            "example": "2025-09-21"
           },
           "update-date": {
             "type": "string",
             "description": "Last Date Update",
-            "format": "date-time",
+            "format": "date",
             "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
             "maxLength": 24,
-            "example": "2024-06-01T12:34:56.789Z"
+            "example": "2025-09-21"
           },
           "description": {
             "type": "string",
