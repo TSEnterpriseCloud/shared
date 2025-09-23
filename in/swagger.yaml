@@ -35,10 +35,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -141,10 +137,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -213,10 +205,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -318,10 +306,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -412,10 +396,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -497,10 +477,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -637,10 +613,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -745,10 +717,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -840,10 +808,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }

@@ -90,10 +90,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -203,10 +199,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -332,10 +324,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -451,10 +439,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -567,10 +551,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -650,10 +630,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -769,10 +745,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -876,10 +848,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1014,10 +982,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1136,10 +1100,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1277,10 +1237,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1390,10 +1346,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1519,10 +1471,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1638,10 +1586,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1754,10 +1698,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1837,10 +1777,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1956,10 +1892,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2063,10 +1995,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2201,10 +2129,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2323,10 +2247,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2435,10 +2355,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2550,10 +2466,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2641,10 +2553,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2730,10 +2638,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2860,10 +2764,6 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -3073,10 +2973,6 @@
             "description": "IdOperation - Id operazione"
           },
           "isDisabled": {
-            "enum": [
-              0,
-              1
-            ],
             "type": "boolean",
             "description": "IsDisabled - Disabilitato<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "default": "0",
@@ -3226,24 +3122,6 @@
         "additionalProperties": false
       },
       "SearchComparer": {
-        "enum": [
-          0,
-          1,
-          10,
-          11,
-          12,
-          13,
-          20,
-          21,
-          30,
-          40,
-          50,
-          51,
-          60,
-          61,
-          70,
-          71
-        ],
         "type": "integer",
         "description": "Comparer operator: Equal = 0, NotEqual = 1, GreaterThan = 10, LessThan = 11, GreaterOrEqualThan = 12, LessOrEqualThan = 13, Contains = 20, NotContains = 21, StartsWith = 30, EndsWith = 40, In = 50, NotIn = 51, Between = 60, NotBetween = 61Null = 70NotNull = 71",
         "format": "int32"
@@ -3353,12 +3231,6 @@
         "description": "DTO that identifies a group of search criteria"
       },
       "SearchLogicalOperators": {
-        "enum": [
-          0,
-          1,
-          2,
-          3
-        ],
         "type": "integer",
         "description": "Logical operator: And = 1, Or = 2, Not = 3",
         "format": "int32"
