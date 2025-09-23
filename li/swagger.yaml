@@ -62,6 +62,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -174,6 +178,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -274,6 +282,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -368,6 +380,12 @@
             "nullable": true
           },
           "idStateProcess": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
             "type": "integer",
             "description": "Id State Process<br><ul><li><i>0</i> - Inserted</li><li><i>1</i> - Processing</li><li><i>2</i> - Terminate</li><li><i>3</i> - Terminate with error</li></ul>",
             "format": "int64",
@@ -449,6 +467,10 @@
           },
           "typeSalePurchase": {
             "minLength": 1,
+            "enum": [
+              0,
+              1
+            ],
             "type": "string",
             "description": "Type Sales/Purchases<br><ul><li><i>0</i> - Sale</li><li><i>1</i> - Purchase</li></ul>",
             "default": "0",
@@ -476,6 +498,11 @@
         "type": "object",
         "properties": {
           "forceTypeInUseOrToExpect": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "string",
             "description": "Force indicator code In Use or Effective<br><ul><li><i>0</i> - From path</li><li><i>1</i> - In use</li><li><i>2</i> - As of</li></ul>",
             "default": "0",
@@ -521,6 +548,14 @@
             "nullable": true
           },
           "forceTypeUnitOfMeasure": {
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
             "type": "string",
             "description": "Force Type Unit of measurement<br><ul><li><i>1</i> - UM1 (All items)</li><li><i>2</i> - UM2 (All items)</li><li><i>3</i> - UM1 (new items only)</li><li><i>4</i> - UM2 (new items only)</li><li><i>5</i> - UMCF (All items) </li><li><i>6</i> - UMCF (new items only)</li></ul>",
             "default": "1",

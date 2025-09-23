@@ -90,6 +90,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -199,6 +203,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -324,6 +332,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -439,6 +451,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -551,6 +567,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -630,6 +650,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -745,6 +769,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -848,6 +876,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -982,6 +1014,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1100,6 +1136,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1237,6 +1277,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1346,6 +1390,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1471,6 +1519,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1586,6 +1638,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1698,6 +1754,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1777,6 +1837,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1892,6 +1956,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -1995,6 +2063,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2129,6 +2201,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2247,6 +2323,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2384,6 +2464,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2493,6 +2577,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2618,6 +2706,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2733,6 +2825,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2845,6 +2941,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -2924,6 +3024,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -3039,6 +3143,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -3142,6 +3250,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -3276,6 +3388,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -3394,6 +3510,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -3521,6 +3641,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -3649,6 +3773,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -3758,6 +3886,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -3883,6 +4015,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -3998,6 +4134,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -4110,6 +4250,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -4189,6 +4333,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -4304,6 +4452,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -4407,6 +4559,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -4541,6 +4697,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -4659,6 +4819,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -4786,6 +4950,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -4904,6 +5072,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -5022,6 +5194,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -5150,6 +5326,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -5259,6 +5439,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -5384,6 +5568,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -5499,6 +5687,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -5611,6 +5803,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -5690,6 +5886,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -5805,6 +6005,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -5908,6 +6112,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -6042,6 +6250,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -6160,6 +6372,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -6297,6 +6513,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -6406,6 +6626,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -6531,6 +6755,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -6646,6 +6874,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -6758,6 +6990,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -6837,6 +7073,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -6952,6 +7192,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -7055,6 +7299,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -7189,6 +7437,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -7307,6 +7559,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -7416,6 +7672,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -7528,6 +7788,10 @@
             "description": "Example for multilanguage",
             "style": "simple",
             "schema": {
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ],
               "type": "string",
               "default": "it-IT"
             }
@@ -7674,6 +7938,10 @@
             "format": "double"
           },
           "alternativeLink": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD96_FLGALTER - Alternativo da distinta base<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -7732,6 +8000,10 @@
             "nullable": true
           },
           "exclusionOpenBom": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD96_INDESCLDIBAAP - Esclusione legame in distinta aperta<br><ul><li><i>0</i> - Legame incluso</li><li><i>1</i> - Legame escluso</li></ul>",
             "format": "int32",
@@ -7746,6 +8018,10 @@
             "nullable": true
           },
           "fixedComponent": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD96_COMPFISSO - Componente fisso<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -7753,6 +8029,10 @@
             "nullable": true
           },
           "fixedQta": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD96_FLAGQTAFISSA - Quantità fissa<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -7765,6 +8045,11 @@
             "nullable": true
           },
           "ghost": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "integer",
             "description": "PD96_INDFANTASMA - Ind. fantasma<br><ul><li><i>0</i> - Come da articolo</li><li><i>1</i> - Non fantasma</li><li><i>2</i> - Fantasma</li></ul>",
             "format": "int32",
@@ -7932,6 +8217,13 @@
             "nullable": true
           },
           "typeBomLink": {
+            "enum": [
+              0,
+              2,
+              3,
+              4,
+              9
+            ],
             "type": "integer",
             "description": "PD96_TIPLEG - Tipo legame<br><ul><li><i>0</i> - Tipo legame Normale</li><li><i>2</i> - Tipo legame Collo</li><li><i>3</i> - Tipo legame Critico</li><li><i>4</i> - Tipo legame No in ordini pianificati</li><li><i>9</i> - Tipo legame Fornitura esterna</li></ul>",
             "format": "int32",
@@ -7939,6 +8231,10 @@
             "nullable": true
           },
           "typeOptionalLink": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD96_FLGOPZIONE - Legame opzionale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -7946,6 +8242,10 @@
             "nullable": true
           },
           "typeOrigin": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD96_INDPROV - Indicatore provenienza<br><ul><li><i>0</i> - Come da articolo</li><li><i>1</i> - Da legame</li></ul>",
             "format": "int32",
@@ -7953,6 +8253,11 @@
             "nullable": true
           },
           "typeTraceLink": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "integer",
             "description": "PD96_INDTRACLEG - Indicatore tipo tracciabilità<br><ul><li><i>0</i> - Come da anagrafica</li><li><i>1</i> - Non tracciabile</li><li><i>2</i> - Tracciabile automatico</li></ul>",
             "format": "int32",
@@ -7960,6 +8265,12 @@
             "nullable": true
           },
           "typeTrasferDepSuppl": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
             "type": "integer",
             "description": "PD96_INDTRASREPFORN - Trasferimento reparto/fornitore<br><ul><li><i>0</i> - Sempre</li><li><i>1</i> - Solo lavorazioni interne</li><li><i>2</i> - Solo lavorazioni esterne</li><li><i>3</i> - Mai</li></ul>",
             "format": "int32",
@@ -7967,6 +8278,28 @@
             "nullable": true
           },
           "typeVal": {
+            "enum": [
+              19,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18
+            ],
             "type": "integer",
             "description": "PD96_TIPOVAL - Tipo valorizzazione<br><ul><li><i>19</i> - A richiesta</li><li><i>0</i> - Costo ultimo tutti depositi</li><li><i>1</i> - Costo ultimo deposito</li><li><i>2</i> - Costo Standard tutti i dep.</li><li><i>3</i> - Costo standard deposito</li><li><i>4</i> - Costo maggiore ultimi 2 costi di acquisto di tutti i depositi</li><li><i>5</i> - Costo maggiore ultimi 2 costi di acquisto del deposito</li><li><i>6</i> - Costo medio di tutti dep.</li><li><i>7</i> - Costo medio deposito</li><li><i>8</i> - Costo fifo anno in corso di tutti i dep.</li><li><i>9</i> - Costo fifo anno in corso dep.</li><li><i>10</i> - Costo fifo storico di tutti i dep.</li><li><i>11</i> - Costo fifo storico deposito</li><li><i>12</i> - Costo LiFo storico di tutti i depositi</li><li><i>13</i> - Costo LiFo storico del deposito</li><li><i>14</i> - Costo medio fornitori</li><li><i>15</i> - Listino Acquisto</li><li><i>16</i> - Listino di vendita</li><li><i>17</i> - Costo al dettaglio</li><li><i>18</i> - Costo distinta base</li></ul>",
             "format": "int32",
@@ -8035,6 +8368,12 @@
           },
           "typeNote": {
             "minLength": 1,
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
             "type": "string",
             "description": "PD97_INDNOTA - Tipo note<br><ul><li><i>0</i> - Generale</li><li><i>1</i> - Tecnica</li><li><i>2</i> - Commerciale</li><li><i>3</i> - Cantiere</li></ul>",
             "default": "0",
@@ -8131,6 +8470,13 @@
             "nullable": true
           },
           "typeBom": {
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              10
+            ],
             "type": "integer",
             "description": "PD95_TIPO_DISTINTA - Tipo distinta base<br><ul><li><i>0</i> -  Standard</li><li><i>1</i> -  Fornitore</li><li><i>2</i> -  Cliente</li><li><i>3</i> - Progetto</li><li><i>10</i> - Manuale</li></ul>",
             "format": "int32",
@@ -8138,6 +8484,19 @@
             "nullable": true
           },
           "typeExplosionMode": {
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              99
+            ],
             "type": "integer",
             "description": "PD95_INDTIPOESPL - Modalità di esplosione<br><ul><li><i>0</i> - No esplosione</li><li><i>1</i> - Padre qtà+valore, Figli righe descrittive</li><li><i>2</i> - Padre riga descr., Figli qtà+val</li><li><i>3</i> - Padre qtà+valore, Figli solo qtà</li><li><i>4</i> - Padre riga descr., Figli qta+val e prop. prezzi</li><li><i>5</i> - Padre qtà+val, Figli qtà+val</li><li><i>6</i> - Padre qtà+valore, Figli qtà+valore e flag omaggio sconto merce</li><li><i>7</i> - Padre qtà+valore, Figli qtà+valore e flag omaggio con rivalsa</li><li><i>8</i> - Padre qtà+valore, Figli qtà+valore e flag omaggio senza rivalsa</li><li><i>9</i> - Padre qtà+valore, Figli solo qtà</li><li><i>99</i> - Come da parametri generali documenti</li></ul>",
             "format": "int32",
@@ -8240,6 +8599,10 @@
             "nullable": true
           },
           "flgRisorsacritica": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "PD06_FLGRISORSACRITICA - Risorsa critica<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
@@ -8247,6 +8610,10 @@
             "nullable": true
           },
           "indDismess": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD06_INDDISMESS - Stato dip.<br><ul><li><i>0</i> - Attivo</li><li><i>1</i> - Dismesso</li></ul>",
             "format": "int32",
@@ -8325,6 +8692,10 @@
             "nullable": true
           },
           "flagBatchData": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "FlagBatchData - Gestione Lotti<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
@@ -8332,6 +8703,10 @@
             "nullable": true
           },
           "flagSerialNumber": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "FlagSerialNumber - Gestione Serial Number<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
@@ -8477,6 +8852,10 @@
             "nullable": true
           },
           "indTipoubicaz": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "MG97_INDTIPOUBICAZ - Tipo ubicazione<br><ul><li><i>0</i> - Di prelevamento</li><li><i>1</i> - Di scorta</li></ul>",
             "format": "double",
@@ -8611,6 +8990,10 @@
             "nullable": true
           },
           "indCapacita": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD08_INDCAPACITA - Capacità<br><ul><li><i>0</i> - Infinita</li><li><i>1</i> - Finita</li></ul>",
             "format": "int32",
@@ -8618,6 +9001,10 @@
             "nullable": true
           },
           "indDismess": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD08_INDDISMESS - Stato<br><ul><li><i>0</i> - Attivo</li><li><i>1</i> - Dismesso</li></ul>",
             "format": "int32",
@@ -8625,6 +9012,11 @@
             "nullable": true
           },
           "indPolitica": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "integer",
             "description": "PD08_INDPOLITICA - Politica di allocazione<br><ul><li><i>0</i> - Valenza fissa / durata fissa</li><li><i>1</i> - Valenza fissa / durata variabile</li><li><i>2</i> - Valenza variabile / durata variabile</li></ul>",
             "format": "int32",
@@ -8632,6 +9024,10 @@
             "nullable": true
           },
           "indRisorsa": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "PD08_INDRISORSA - Tipo risorsa<br><ul><li><i>0</i> - Macchina</li><li><i>1</i> - Centro</li></ul>",
             "format": "double",
@@ -8667,6 +9063,10 @@
             "nullable": true
           },
           "riscritica": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "PD08_RISCRITICA - Risorsa critica<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
@@ -8843,6 +9243,10 @@
             "nullable": true
           },
           "flgContribinteg": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD0C_FLGCONTRIBINTEG - Contributo integrativo<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -8850,6 +9254,10 @@
             "nullable": true
           },
           "flgContribprev": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD0C_FLGCONTRIBPREV - Contributo previdenziale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -8857,6 +9265,10 @@
             "nullable": true
           },
           "flgEsclscpiede": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "PD0C_FLGESCLSCPIEDE - Escl. sc. piede<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
@@ -8870,6 +9282,10 @@
             "nullable": true
           },
           "flgIvarid": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "PD0C_FLGIVARID - Iva ridotta<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
@@ -8877,6 +9293,10 @@
             "nullable": true
           },
           "flgRitacc": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD0C_FLGRITACC - Ritenuta d'acconto<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -8903,6 +9323,11 @@
             "nullable": true
           },
           "indCalcprezzo": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "number",
             "description": "PD0C_INDCALCPREZZO - Modalità calcolo prezzo<br><ul><li><i>0</i> - Manuale</li><li><i>1</i> - Margine in percentuale sul costo</li><li><i>2</i> - Componenti del nodo</li></ul>",
             "format": "double",
@@ -8910,6 +9335,11 @@
             "nullable": true
           },
           "indCosmannodi": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "integer",
             "description": "PD0C_INDCOSMANNODI - Modalità calcolo costo<br><ul><li><i>0</i> - Componenti del nodo</li><li><i>1</i> - Manuale</li><li><i>2</i> - Manuale con spese perc.</li></ul>",
             "format": "int32",
@@ -8929,6 +9359,10 @@
             "nullable": true
           },
           "provccalcnodi": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD0C_PROVCCALCNODI - Nodo privo di costo prev.calcolato<br><ul><li><i>0</i> - Nessuna</li><li><i>1</i> - Da prev.manuale</li></ul>",
             "format": "int32",
@@ -8936,6 +9370,10 @@
             "nullable": true
           },
           "provrcalcnodi": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD0C_PROVRCALCNODI - Nodo privo di ricavo prev.calcolato<br><ul><li><i>0</i> - Nessuna</li><li><i>1</i> - Da prev.manuale</li></ul>",
             "format": "int32",
@@ -9036,6 +9474,10 @@
             "nullable": true
           },
           "documentType": {
+            "enum": [
+              24,
+              25
+            ],
             "type": "number",
             "description": "DocumentType - Tipo documento<br><ul><li><i>24</i> - Documenti di produzione interna</li><li><i>25</i> - Documenti c/lavoro passivo</li></ul>",
             "format": "double",
@@ -9166,6 +9608,10 @@
             "nullable": true
           },
           "documentType": {
+            "enum": [
+              24,
+              25
+            ],
             "type": "number",
             "description": "DocumentType - Tipo documento<br><ul><li><i>24</i> - Documenti di produzione interna</li><li><i>25</i> - Documenti c/lavoro passivo</li></ul>",
             "format": "double",
@@ -9173,6 +9619,16 @@
             "nullable": true
           },
           "indDeliveredStatus": {
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              9,
+              99
+            ],
             "type": "number",
             "description": "IndDeliveredStatus - Indicatore stato consegnato<br><ul><li><i>0</i> - Emesso</li><li><i>1</i> - Confermato</li><li><i>2</i> - Lanciato</li><li><i>3</i> - In produzione</li><li><i>4</i> - Parz. Evaso</li><li><i>5</i> - Non più evadibile</li><li><i>9</i> - Chiuso</li><li><i>99</i> - Non pianificabile</li></ul>",
             "format": "double",
@@ -9355,6 +9811,10 @@
             "nullable": true
           },
           "documentType": {
+            "enum": [
+              24,
+              25
+            ],
             "type": "number",
             "description": "DocumentType - Tipo documento<br><ul><li><i>24</i> - Documenti di produzione interna</li><li><i>25</i> - Documenti c/lavoro passivo</li></ul>",
             "format": "double",
@@ -9362,6 +9822,10 @@
             "nullable": true
           },
           "flagGeneratedOrderWork": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "FlagGeneratedOrderWork - Generato ord. c\\lavoro<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -9483,6 +9947,13 @@
             "nullable": true
           },
           "stepState": {
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
             "type": "integer",
             "description": "StepState - Stato fase<br><ul><li><i>0</i> - Generata</li><li><i>1</i> - Stampata</li><li><i>2</i> - Avanzata</li><li><i>3</i> - Saldata</li><li><i>4</i> - Lista/DDT</li></ul>",
             "format": "int32",
@@ -9511,6 +9982,10 @@
             "nullable": true
           },
           "typeProduction": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "TypeProduction - Tipo lavorazione<br><ul><li><i>0</i> - Fase interna</li><li><i>1</i> - Fase esterna</li></ul>",
             "format": "int32",
@@ -9589,6 +10064,12 @@
             "nullable": true
           },
           "costMode": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
             "type": "number",
             "description": "PD0S_MODCOSTO - Modalità costo<br><ul><li><i>0</i> - Da qualifica</li><li><i>1</i> - Codice costo</li><li><i>2</i> - Costo unitario</li><li><i>3</i> - Costo totale</li></ul>",
             "format": "double",
@@ -9621,6 +10102,11 @@
             "nullable": true
           },
           "indResource": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "number",
             "description": "PD0S_INDRISORSA - Tipo risorsa<br><ul><li><i>0</i> - Int - Qualifica</li><li><i>1</i> - Est - Fornitore</li><li><i>2</i> - Est - Cliente</li></ul>",
             "format": "double",
@@ -9628,6 +10114,11 @@
             "nullable": true
           },
           "indUmTime": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "number",
             "description": "PD0S_INDUMTEMPO - U.M. tempo<br><ul><li><i>0</i> - Secondi</li><li><i>1</i> - Minuti</li><li><i>2</i> - Ore</li></ul>",
             "format": "double",
@@ -9794,6 +10285,10 @@
             "nullable": true
           },
           "flgContribinteg": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD0D_FLGCONTRIBINTEG - Contributo integrativo<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -9801,6 +10296,10 @@
             "nullable": true
           },
           "flgContribprev": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD0D_FLGCONTRIBPREV - Contributo previdenziale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -9808,6 +10307,10 @@
             "nullable": true
           },
           "flgIvarid": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "PD0D_FLGIVARID - Flag gestione IVA ridotta<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
@@ -9815,6 +10318,10 @@
             "nullable": true
           },
           "flgRitacc": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD0D_FLGRITACC - Flag soggetto a ritenuta d'acconto<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -9835,6 +10342,11 @@
             "nullable": true
           },
           "indCalcprezzo": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "number",
             "description": "PD0D_INDCALCPREZZO - Ind. calcolo prezzo<br><ul><li><i>0</i> - Manuale</li><li><i>1</i> - Margine in percentuale sul costo</li><li><i>2</i> - Per singola risorsa</li></ul>",
             "format": "double",
@@ -10045,6 +10557,10 @@
             "format": "double"
           },
           "flgAssist": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD1E_FLGASSIST - In assistenza<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -10052,6 +10568,10 @@
             "nullable": true
           },
           "flgBlocco": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "PD1E_FLGBLOCCO - Bloccato<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
@@ -10059,6 +10579,10 @@
             "nullable": true
           },
           "flgChiuso": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD1E_FLGCHIUSO - Chiuso<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -10066,6 +10590,10 @@
             "nullable": true
           },
           "flgFattura": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "PD1E_FLGFATTURA - Fatturabile<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
@@ -10079,6 +10607,10 @@
             "nullable": true
           },
           "indStato": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "PD1E_INDSTATO - Tipo Struttura<br><ul><li><i>0</i> - Progetto</li><li><i>1</i> - Nodo</li></ul>",
             "format": "double",
@@ -10129,6 +10661,10 @@
             "format": "double"
           },
           "flgCespite": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "PD1D_FLGCESPITE - Cespite<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
@@ -10136,6 +10672,10 @@
             "nullable": true
           },
           "flgModello": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD1D_FLGMODELLO - Modello<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -10156,6 +10696,10 @@
             "nullable": true
           },
           "indTipo": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "PD1D_INDTIPO - Tipo Struttura<br><ul><li><i>0</i> - Progetto</li><li><i>1</i> - Nodo</li></ul>",
             "format": "double",
@@ -10208,6 +10752,10 @@
             "nullable": true
           },
           "flgListavanz": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD07_FLGLISTAVANZ - Escludi controllo liste in avanzamento<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
@@ -10227,6 +10775,10 @@
             "nullable": true
           },
           "indCapacita": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD07_INDCAPACITA - Capacità<br><ul><li><i>0</i> - Infinita</li><li><i>1</i> - Finita</li></ul>",
             "format": "int32",
@@ -10234,6 +10786,10 @@
             "nullable": true
           },
           "indDismess": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "PD07_INDDISMESS - Stato<br><ul><li><i>0</i> - Attivo</li><li><i>1</i> - Dismesso</li></ul>",
             "format": "int32",
@@ -10241,6 +10797,11 @@
             "nullable": true
           },
           "indPolitica": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "integer",
             "description": "PD07_INDPOLITICA - Politica di allocazione<br><ul><li><i>0</i> - Valenza fissa / durata fissa</li><li><i>1</i> - Valenza fissa / durata variabile</li><li><i>2</i> - Valenza variabile / durata variabile</li></ul>",
             "format": "int32",
@@ -10294,6 +10855,24 @@
         "description": "PD07_REPARTO - Reparto<br>Proprietà chiave:<ul><li><b>CodRep</b></li><li><b>DittaCg18</b></li></ul>"
       },
       "SearchComparer": {
+        "enum": [
+          0,
+          1,
+          10,
+          11,
+          12,
+          13,
+          20,
+          21,
+          30,
+          40,
+          50,
+          51,
+          60,
+          61,
+          70,
+          71
+        ],
         "type": "integer",
         "description": "Comparer operator: Equal = 0, NotEqual = 1, GreaterThan = 10, LessThan = 11, GreaterOrEqualThan = 12, LessOrEqualThan = 13, Contains = 20, NotContains = 21, StartsWith = 30, EndsWith = 40, In = 50, NotIn = 51, Between = 60, NotBetween = 61Null = 70NotNull = 71",
         "format": "int32"
@@ -10403,6 +10982,12 @@
         "description": "DTO that identifies a group of search criteria"
       },
       "SearchLogicalOperators": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
         "type": "integer",
         "description": "Logical operator: And = 1, Or = 2, Not = 3",
         "format": "int32"
@@ -10467,6 +11052,10 @@
             "nullable": true
           },
           "flgDepprinc": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "MG58_FLGDEPPRINC - Deposito principale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
@@ -10484,6 +11073,10 @@
             "nullable": true
           },
           "indInterest": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "number",
             "description": "MG58_INDINTEREST - Tipo deposito<br><ul><li><i>0</i> - Interno</li><li><i>1</i> - Esterno</li></ul>",
             "format": "double",
@@ -10906,6 +11499,10 @@
             "format": "date-time"
           },
           "orderType": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "Order type<br><ul><li><i>0</i> - Subcontracting order</li><li><i>1</i> - Work order </li></ul>",
             "format": "int32"
@@ -11244,6 +11841,12 @@
         "type": "object",
         "properties": {
           "timeTableType": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
             "type": "integer",
             "description": "Timetable type<br><ul><li><i>0</i> - Ordinary</li><li><i>1</i> - Overtime</li><li><i>2</i> - Holiday ordinary</li><li><i>3</i> - Holiday overtime</li></ul>",
             "format": "int32",
@@ -11251,6 +11854,11 @@
             "nullable": true
           },
           "timeType": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "integer",
             "description": "Time type<br><ul><li><i>0</i> - Processing</li><li><i>1</i> - Setup</li><li><i>2</i> - Maintenance</li></ul>",
             "format": "int32",
@@ -11258,6 +11866,10 @@
             "nullable": true
           },
           "productionType": {
+            "enum": [
+              0,
+              1
+            ],
             "type": "integer",
             "description": "Production type<br><ul><li><i>0</i> - Internal</li><li><i>1</i> - External</li></ul>",
             "format": "int32",
@@ -11265,6 +11877,11 @@
             "nullable": true
           },
           "paymentType": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
             "type": "integer",
             "description": "Payment type<br><ul><li><i>0</i> - Not defined</li><li><i>1</i> - Machine</li><li><i>2</i> - Employee / Qualification / Department</li></ul>",
             "format": "int32",
