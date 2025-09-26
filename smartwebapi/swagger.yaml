@@ -27,16 +27,8 @@
   ],
   "servers": [
     {
-      "url": "http://localhost:4000",
-      "description": "Debug local machine for TeamSystem Enterprise Smart WebApi"
-    },
-    {
-      "url": "https://tsec-smartwebapi-stage-app.azurewebsites.net",
-      "description": "Production environment for TeamSystem Enterprise Smart WebApi"
-    },
-    {
-      "url": "https://tsec-smartwebapi-dev-app.azurewebsites.net",
-      "description": "Stage environment for TeamSystem Enterprise Smart WebApi"
+      "url": "https://tsec-smartwebapi-app.azurewebsites.net",
+      "description": "TeamSystem Enterprise Smart WebApi"
     }
   ],
   "x-security-headers": {
@@ -3363,7 +3355,7 @@
             "explode": true,
             "schema": {
               "type": "string",
-              "example": "code,creation-date,vatcode"
+              "example": "code,description,vatcode,um,barcode,stockstoragecode"
             }
           },
           {
@@ -3949,7 +3941,7 @@
             "explode": true,
             "schema": {
               "type": "string",
-              "example": "code,creation-date,vatcode"
+              "example": "code,description,vatcode,um,barcode,stockstoragecode"
             }
           },
           {
@@ -5200,9 +5192,7 @@
       "warehouseitem": {
         "type": "object",
         "required": [
-          "code",
-          "creation-date",
-          "update-date"
+          "code"
         ],
         "properties": {
           "code": {
@@ -5211,22 +5201,6 @@
             "example": "Art01",
             "pattern": "^[A-Za-z0-9]{1,100}$",
             "maxLength": 25
-          },
-          "creation-date": {
-            "type": "string",
-            "description": "Creation Date",
-            "format": "date",
-            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
-            "maxLength": 24,
-            "example": "2025-09-21"
-          },
-          "update-date": {
-            "type": "string",
-            "description": "Last Date Update",
-            "format": "date",
-            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
-            "maxLength": 24,
-            "example": "2025-09-21"
           },
           "description": {
             "type": "string",
@@ -5268,27 +5242,9 @@
       "warehouseitem_put": {
         "type": "object",
         "required": [
-          "code",
-          "creation-date",
-          "update-date"
+          "code"
         ],
         "properties": {
-          "creation-date": {
-            "type": "string",
-            "description": "Creation Date",
-            "format": "date",
-            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
-            "maxLength": 24,
-            "example": "2025-09-21"
-          },
-          "update-date": {
-            "type": "string",
-            "description": "Last Date Update",
-            "format": "date",
-            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
-            "maxLength": 24,
-            "example": "2025-09-21"
-          },
           "description": {
             "type": "string",
             "description": "Item Warehouse Description",
