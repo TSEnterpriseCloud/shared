@@ -3,7 +3,7 @@
   "info": {
     "title": "TeamSystem Enterprise Cloud WebApi Smart - Documentation",
     "version": "1.0.1",
-    "description": "This is Application Flow for interact with TeamSystem Enterprise with Smart WebApi.",
+    "description": "This is Application Flow for interact with TeamSystem Enterprise's Smart WebApi.",
     "contact": {
       "email": "info@teamsystem.com",
       "name": "Contact",
@@ -27,7 +27,7 @@
   ],
   "servers": [
     {
-      "url": "https://tsec-smartwebapi-app.azurewebsites.net",
+      "url": "https://tse.smart-api.teamsystem.cloud",
       "description": "TeamSystem Enterprise Smart WebApi"
     }
   ],
