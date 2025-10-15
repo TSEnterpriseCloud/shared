@@ -12239,6 +12239,100 @@
         }
       }
     },
+    "/api/v1/{environment}/MG/Documento/{id}/print/reportname": {
+      "get": {
+        "tags": [
+          "Documento"
+        ],
+        "summary": "Get list of report names usable for the document",
+        "description": "Get list of report names usable for the document",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id to get the object",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get list of report names usable for the document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentReportListResultDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentReportListResultDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/MG/DocumentService/docprocessingstatus": {
       "post": {
         "tags": [
@@ -16425,12 +16519,12 @@
           },
           "idCG1J": {
             "type": "integer",
-            "description": "CG1K_ID_CG1J - IdCG1J",
+            "description": "CG1K_ID_CG1J - Riferimento indirizzo",
             "format": "int64"
           },
           "tipo": {
             "type": "integer",
-            "description": "CG1K_TIPO - Tipo<br><ul><li><i>1</i> - Sede attività</li><li><i>2</i> - Residenza</li><li><i>3</i> - Corrispondenza</li><li><i>4</i> - Indirizzo legale</li><li><i>5</i> - Residenza estera</li></ul>",
+            "description": "CG1K_TIPO - Tipo indirizzo<br><ul><li><i>1</i> - Sede attività</li><li><i>2</i> - Residenza</li><li><i>3</i> - Corrispondenza</li><li><i>4</i> - Indirizzo legale</li><li><i>5</i> - Residenza estera</li></ul>",
             "format": "int32",
             "default": "1",
             "nullable": true
@@ -17501,7 +17595,7 @@
           },
           "flgSchetra": {
             "type": "number",
-            "description": "MG14_FLGSCHETRA - Soggetto a stampa scheda di trasporto",
+            "description": "MG14_FLGSCHETRA - Soggetto a stampa scheda di trasporto<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
@@ -19245,6 +19339,51 @@
         "additionalProperties": false,
         "description": "CO99_MASTERDOC - Master documento<br>Proprietà chiave:<ul><li><b>DittaCg18</b></li><li><b>Numreg</b></li></ul>"
       },
+      "DocumentReportDTO": {
+        "type": "object",
+        "properties": {
+          "reportName": {
+            "type": "string",
+            "description": "Report name",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description",
+            "nullable": true
+          },
+          "path": {
+            "type": "string",
+            "description": "Report path",
+            "nullable": true
+          },
+          "default": {
+            "type": "integer",
+            "description": "Default",
+            "format": "int32"
+          },
+          "document": {
+            "type": "string",
+            "description": "Document",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DocumentReportListResultDTO": {
+        "type": "object",
+        "properties": {
+          "documentReports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DocumentReportDTO"
+            },
+            "description": "List of Report Names",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "DocumentTransfomationDocDestParamsDTO": {
         "type": "object",
         "properties": {
@@ -20033,7 +20172,7 @@
           },
           "idmediaCg99": {
             "type": "number",
-            "description": "DO36_IDMEDIA_CG99 - Hypermedia",
+            "description": "DO36_IDMEDIA_CG99 - ID HyperMedia",
             "format": "double",
             "nullable": true
           },
@@ -20191,7 +20330,7 @@
           },
           "flgEsclintra": {
             "type": "number",
-            "description": "DO68_FLGESCLINTRA - Escludi da operazioni Intra",
+            "description": "DO68_FLGESCLINTRA - Escludi da operazioni Intra<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
@@ -20382,14 +20521,14 @@
           },
           "flgNonpiuev": {
             "type": "number",
-            "description": "DO52_FLGNONPIUEV - Flag non più evadibile",
+            "description": "DO52_FLGNONPIUEV - Flag non più evadibile<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
           },
           "idmediaCg99": {
             "type": "number",
-            "description": "DO52_IDMEDIA_CG99 - Hypermedia",
+            "description": "DO52_IDMEDIA_CG99 - ID HyperMedia",
             "format": "double",
             "nullable": true
           },
@@ -20490,8 +20629,9 @@
           },
           "tipocfCg44": {
             "type": "number",
-            "description": "DO52_TIPOCF_CG44 - Tipologia cliente/fornitore",
+            "description": "DO52_TIPOCF_CG44 - Tipologia cliente/fornitore<br><ul><li><i>0</i> -  Cliente</li><li><i>1</i> -  Fornitore</li></ul>",
             "format": "double",
+            "default": "0",
             "nullable": true
           },
           "ubicazcollMg97": {
@@ -21040,7 +21180,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "DO30_DOCCORPO - Dati corpo documento<br>Proprietà chiave:<ul><li><b>Ditta</b></li><li><b>NumReg</b></li><li><b>ProgrRiga</b></li></ul>"
+        "description": "DO30_DOCCORPO - Corpo documento<br>Proprietà chiave:<ul><li><b>Ditta</b></li><li><b>NumReg</b></li><li><b>ProgrRiga</b></li></ul>"
       },
       "DocumentoRigaOrdineMGDTO": {
         "required": [
@@ -21471,7 +21611,7 @@
           },
           "idmediaCg99": {
             "type": "number",
-            "description": "DO35_IDMEDIA_CG99 - Hypermedia",
+            "description": "DO35_IDMEDIA_CG99 - ID HyperMedia",
             "format": "double",
             "nullable": true
           },
@@ -21858,14 +21998,14 @@
           },
           "flgDaav": {
             "type": "number",
-            "description": "DO42_FLGDAAV - Indicatore Dare/Avere",
+            "description": "DO42_FLGDAAV - Indicatore Dare/Avere<br><ul><li><i>0</i> - Nessuno</li><li><i>1</i> - Dare</li><li><i>2</i> - Avere</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
           },
           "flgDisatcoge": {
             "type": "number",
-            "description": "DO42_FLGDISATCOGE - FlgDisatcoge",
+            "description": "DO42_FLGDISATCOGE - Flag disattivazione contabilità<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
@@ -21878,33 +22018,33 @@
           },
           "imprettcostobu": {
             "type": "number",
-            "description": "DO42_IMPRETTCOSTOBU - Imprettcostobu",
+            "description": "DO42_IMPRETTCOSTOBU - Importo rettifica costo bene usato",
             "format": "double",
             "nullable": true
           },
           "imprettcostobuVal": {
             "type": "number",
-            "description": "DO42_IMPRETTCOSTOBU_VAL - ImprettcostobuVal",
+            "description": "DO42_IMPRETTCOSTOBU_VAL - Importo rettifica costo in valuta bene usato",
             "format": "double",
             "nullable": true
           },
           "indTipocomp": {
             "type": "number",
-            "description": "DO42_INDTIPOCOMP - Importo",
+            "description": "DO42_INDTIPOCOMP - Importo<br><ul><li><i>0</i> - Nessuna</li><li><i>1</i> - Rateo</li><li><i>2</i> - Risconto</li><li><i>3</i> - Rateo e risconto</li><li><i>4</i> - Competenza</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
           },
           "indTipomovbu": {
             "type": "number",
-            "description": "DO42_INDTIPOMOVBU - IndTipomovbu",
+            "description": "DO42_INDTIPOMOVBU - Tipo movimento bene usato<br><ul><li><i>0</i> - Vendita</li><li><i>1</i> - Acquisto</li><li><i>2</i> - Spese accessorie</li><li><i>3</i> - Vendita con rettifica di costo</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
           },
           "percforf": {
             "type": "number",
-            "description": "DO42_PERCFORF - Percforf",
+            "description": "DO42_PERCFORF - Percentuale forfettizzazione bene usato",
             "format": "double",
             "nullable": true
           },
@@ -22003,7 +22143,7 @@
           },
           "flgNsdocbis": {
             "type": "number",
-            "description": "DO33_FLGNSDOCBIS - Flag bis ns documento",
+            "description": "DO33_FLGNSDOCBIS - Flag bis ns documento<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
             "default": "0",
             "nullable": true
@@ -22024,7 +22164,7 @@
           },
           "indQtaordres": {
             "type": "integer",
-            "description": "DO33_INDQTAORDRES - IndQtaordres",
+            "description": "DO33_INDQTAORDRES - Indicatore quantità residua ordini<br><ul><li><i>0</i> - Non gestita</li><li><i>1</i> - Nessuna qta residua (evasa totalmente)</li><li><i>2</i> - Mancante seguirà evasione</li><li><i>3</i> - Mancante non riordinabile</li><li><i>4</i> - Mancante riordinare</li></ul>",
             "format": "int32",
             "default": "0",
             "nullable": true
@@ -22505,7 +22645,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "DO29_DOCTESAGENTI - DocumentoTestataAgentiMG<br>Proprietà chiave:<ul><li><b>DittaCg18</b></li><li><b>IdagenteMg17</b></li><li><b>NumregCo99</b></li></ul>"
+        "description": "DO29_DOCTESAGENTI - Agenti del documento<br>Proprietà chiave:<ul><li><b>DittaCg18</b></li><li><b>IdagenteMg17</b></li><li><b>NumregCo99</b></li></ul>"
       },
       "DocumentoTestataEstesaMGDTO": {
         "required": [
@@ -22642,7 +22782,7 @@
           },
           "idmediaCg99": {
             "type": "number",
-            "description": "DO20_IDMEDIA_CG99 - Hypermedia",
+            "description": "DO20_IDMEDIA_CG99 - ID HyperMedia",
             "format": "double",
             "nullable": true
           },
@@ -22983,7 +23123,7 @@
           },
           "listmag": {
             "type": "number",
-            "description": "DO11_LISTMAG - Listmag",
+            "description": "DO11_LISTMAG - Codice listino",
             "format": "double",
             "nullable": true
           },
@@ -23456,7 +23596,7 @@
           },
           "idmediaCg99": {
             "type": "number",
-            "description": "DO17_IDMEDIA_CG99 - Hypermedia",
+            "description": "DO17_IDMEDIA_CG99 - ID HyperMedia",
             "format": "double",
             "nullable": true
           },
@@ -23582,7 +23722,7 @@
         "properties": {
           "causmgoMgfo": {
             "type": "integer",
-            "description": "DO24_CAUSMGO_MGFO - CausmgoMgfo",
+            "description": "DO24_CAUSMGO_MGFO - Causale MGO",
             "format": "int32",
             "nullable": true
           },
@@ -23779,7 +23919,7 @@
           },
           "indTipomov": {
             "type": "number",
-            "description": "DO21_INDTIPOMOV - Movim.gen.da",
+            "description": "DO21_INDTIPOMOV - Movim.gen.da<br><ul><li><i>0</i> - Documento e provvigione generata da gestione documenti o altro</li><li><i>1</i> - Documento e provvigione generata da gestione stand alone</li><li><i>2</i> - Solo movimento provvigione generato in stand alone</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
@@ -23873,21 +24013,21 @@
           },
           "flgDaav": {
             "type": "number",
-            "description": "DO23_FLGDAAV - Indicatore Dare/Avere",
+            "description": "DO23_FLGDAAV - Indicatore Dare/Avere<br><ul><li><i>0</i> - Nessuno</li><li><i>1</i> - Dare</li><li><i>2</i> - Avere</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
           },
           "flgDisatcoge": {
             "type": "number",
-            "description": "DO23_FLGDISATCOGE - FlgDisatcoge",
+            "description": "DO23_FLGDISATCOGE - Flag disattivazione contabilità",
             "format": "double",
             "default": 0,
             "nullable": true
           },
           "indTipocomp": {
             "type": "number",
-            "description": "DO23_INDTIPOCOMP - Indicatore tipo competenza",
+            "description": "DO23_INDTIPOCOMP - Indicatore tipo competenza<br><ul><li><i>0</i> - Nessuna</li><li><i>1</i> - Rateo</li><li><i>2</i> - Risconto</li><li><i>3</i> - Rateo e risconto</li><li><i>4</i> - Competenza</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true

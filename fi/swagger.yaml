@@ -71451,12 +71451,12 @@
           },
           "idCG1J": {
             "type": "integer",
-            "description": "CG1K_ID_CG1J - IdCG1J",
+            "description": "CG1K_ID_CG1J - Riferimento indirizzo",
             "format": "int64"
           },
           "tipo": {
             "type": "integer",
-            "description": "CG1K_TIPO - Tipo<br><ul><li><i>1</i> - Sede attività</li><li><i>2</i> - Residenza</li><li><i>3</i> - Corrispondenza</li><li><i>4</i> - Indirizzo legale</li><li><i>5</i> - Residenza estera</li></ul>",
+            "description": "CG1K_TIPO - Tipo indirizzo<br><ul><li><i>1</i> - Sede attività</li><li><i>2</i> - Residenza</li><li><i>3</i> - Corrispondenza</li><li><i>4</i> - Indirizzo legale</li><li><i>5</i> - Residenza estera</li></ul>",
             "format": "int32",
             "default": "1",
             "nullable": true
@@ -76679,7 +76679,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "MG2H_CLIFORBANCHEAZ - CSCompanyBankCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "MG2H_CLIFORBANCHEAZ - Banche aziendali<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "CSHistorySddCO": {
         "type": "object",
@@ -76891,7 +76891,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "MG2E_STORICORID - CSHistorySddCO<br>Proprietà chiave:<ul><li><b>Datavar</b></li><li><b>Id</b></li></ul>"
+        "description": "MG2E_STORICORID - Dati precedenti<br>Proprietà chiave:<ul><li><b>Datavar</b></li><li><b>Id</b></li></ul>"
       },
       "CSInfoCO": {
         "type": "object",
@@ -77615,22 +77615,22 @@
         "properties": {
           "cliforCg44": {
             "type": "number",
-            "description": "CG4E_CLIFOR_CG44 - CliforCg44",
+            "description": "CG4E_CLIFOR_CG44 - Codice Cliente / Fornitore",
             "format": "double"
           },
           "cliforcoCg44": {
             "type": "number",
-            "description": "CG4E_CLIFORCO_CG44 - CliforcoCg44",
+            "description": "CG4E_CLIFORCO_CG44 -  Cliente/Fornitore cointestatario",
             "format": "double"
           },
           "dittaCg18": {
             "type": "number",
-            "description": "CG4E_DITTA_CG18 - DittaCg18",
+            "description": "CG4E_DITTA_CG18 - Ditta",
             "format": "double"
           },
           "idcliforcoCg44": {
             "type": "integer",
-            "description": "CG4E_IDCLIFORCO_CG44 - IdcliforcoCg44",
+            "description": "CG4E_IDCLIFORCO_CG44 - Tipo Cliente / Fornitore",
             "format": "int32",
             "nullable": true
           },
@@ -77641,7 +77641,7 @@
           },
           "tipocfCg44": {
             "type": "number",
-            "description": "CG4E_TIPOCF_CG44 - TipocfCg44",
+            "description": "CG4E_TIPOCF_CG44 - Tipo Cliente / Fornitore",
             "format": "double"
           },
           "customerSupplierCO": {
@@ -77666,7 +77666,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "CG4E_CFCOINTESTATI - CSJointlyHeldCO<br>Proprietà chiave:<ul><li><b>CliforCg44</b></li><li><b>CliforcoCg44</b></li><li><b>DittaCg18</b></li><li><b>TipocfCg44</b></li></ul>"
+        "description": "CG4E_CFCOINTESTATI - Cointestatari<br>Proprietà chiave:<ul><li><b>CliforCg44</b></li><li><b>CliforcoCg44</b></li><li><b>DittaCg18</b></li><li><b>TipocfCg44</b></li></ul>"
       },
       "CSLetterOfIntentCO": {
         "type": "object",
@@ -78009,12 +78009,12 @@
           },
           "dittaCg18": {
             "type": "number",
-            "description": "MG20_DITTA_CG18 - DittaCg18",
+            "description": "MG20_DITTA_CG18 - Ditta",
             "format": "double"
           },
           "id": {
             "type": "integer",
-            "description": "MG20_ID - Id (Required only in PUT/PATCH)",
+            "description": "MG20_ID - ID (Required only in PUT/PATCH)",
             "format": "int64",
             "nullable": true
           },
@@ -78072,7 +78072,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "MG20_CLIFORSCPAG - CSPaymentRangeCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "MG20_CLIFORSCPAG - Scaglioni di pagamento<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "CSPostponementPeriodCO": {
         "type": "object",
@@ -78216,7 +78216,7 @@
           },
           "dittaCg18": {
             "type": "number",
-            "description": "MG21_DITTA_CG18 - DittaCg18",
+            "description": "MG21_DITTA_CG18 - Ditta",
             "format": "double"
           },
           "ggmmfixslit": {
@@ -78233,7 +78233,7 @@
           },
           "id": {
             "type": "integer",
-            "description": "MG21_ID - Id (Required only in PUT/PATCH)",
+            "description": "MG21_ID - ID (Required only in PUT/PATCH)",
             "format": "int64",
             "nullable": true
           },
@@ -78287,7 +78287,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "MG21_CLIFORSALPAG - CSPostponementPeriodCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "MG21_CLIFORSALPAG - Giorni di slittamento<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "CSSddCO": {
         "type": "object",
@@ -78912,7 +78912,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "MG29_CLIFORRID - CSSddCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "MG29_CLIFORRID - Dati RID<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "CalculateCreditLineParamsDTO": {
         "type": "object",
@@ -84193,7 +84193,7 @@
           },
           "flgAsw": {
             "type": "integer",
-            "description": "CG1O_FLGASW - FlgAsw<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "description": "CG1O_FLGASW - Natura Assosoftware<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
             "default": 0,
             "nullable": true
@@ -84345,7 +84345,7 @@
         "properties": {
           "cliforCg44": {
             "type": "number",
-            "description": "CO1I_CLIFOR_CG44 - CliforCg44",
+            "description": "CO1I_CLIFOR_CG44 - Codice cli/for",
             "format": "double"
           },
           "dittaCg18": {
@@ -84361,30 +84361,30 @@
           },
           "idcigcupCo1h": {
             "type": "integer",
-            "description": "CO1I_IDCIGCUP_CO1H - IdcigcupCo1h",
+            "description": "CO1I_IDCIGCUP_CO1H - Ident. Cig/Cup testata",
             "format": "int32"
           },
           "progREf08": {
             "type": "number",
-            "description": "CO1I_PROGR_EF08 - ProgREf08",
+            "description": "CO1I_PROGR_EF08 - Codice banca aziendale",
             "format": "double",
             "nullable": true
           },
           "progRMg35": {
             "type": "integer",
-            "description": "CO1I_PROGR_MG35 - ProgRMg35",
+            "description": "CO1I_PROGR_MG35 - Banca cliente",
             "format": "int32",
             "nullable": true
           },
           "rowversion": {
             "type": "string",
-            "description": "CO1I_ROWVERSION - Rowversion",
+            "description": "CO1I_ROWVERSION - RowVersion",
             "format": "byte",
             "nullable": true
           },
           "tipocfCg44": {
             "type": "number",
-            "description": "CO1I_TIPOCF_CG44 - TipocfCg44",
+            "description": "CO1I_TIPOCF_CG44 - Tipo Cliente / Fornitore",
             "format": "double"
           },
           "cigcuPcode": {
@@ -84415,7 +84415,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "CO1I_CFCIGCUP - CustomerSupplierCIGCUPCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "CO1I_CFCIGCUP - Anagrafica CIG/CUP<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "CustomerSupplierCO": {
         "type": "object",
@@ -85055,6 +85055,10 @@
             "nullable": true
           },
           "protocollo": {
+            "type": "string",
+            "nullable": true
+          },
+          "publicationid": {
             "type": "string",
             "nullable": true
           },
@@ -100163,6 +100167,11 @@
           "flgAttivitaprinc": {
             "type": "number",
             "format": "double"
+          },
+          "flgGesbeniusati": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
           },
           "flgGesbenz": {
             "type": "number",

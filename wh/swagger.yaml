@@ -1027,6 +1027,118 @@
         }
       }
     },
+    "/api/v1/{environment}/WH/BatchInventoryService/batchinventory": {
+      "post": {
+        "tags": [
+          "BatchInventoryService"
+        ],
+        "summary": "Calculate batch inventory",
+        "description": "Calculate batch inventory based on the required parameters",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters of the request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchInventoryParametersWHDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchInventoryParametersWHDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Response of the request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchInventoryResultWHDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchInventoryResultWHDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "409": {
+            "description": "In case of errors in the business logic: the content of the response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/WH/BrandWH/{id}": {
       "get": {
         "tags": [
@@ -16179,12 +16291,12 @@
           },
           "idCG1J": {
             "type": "integer",
-            "description": "CG1K_ID_CG1J - IdCG1J",
+            "description": "CG1K_ID_CG1J - Riferimento indirizzo",
             "format": "int64"
           },
           "tipo": {
             "type": "integer",
-            "description": "CG1K_TIPO - Tipo<br><ul><li><i>1</i> - Sede attività</li><li><i>2</i> - Residenza</li><li><i>3</i> - Corrispondenza</li><li><i>4</i> - Indirizzo legale</li><li><i>5</i> - Residenza estera</li></ul>",
+            "description": "CG1K_TIPO - Tipo indirizzo<br><ul><li><i>1</i> - Sede attività</li><li><i>2</i> - Residenza</li><li><i>3</i> - Corrispondenza</li><li><i>4</i> - Indirizzo legale</li><li><i>5</i> - Residenza estera</li></ul>",
             "format": "int32",
             "default": "1",
             "nullable": true
@@ -16681,6 +16793,389 @@
         "additionalProperties": false,
         "description": "MG4G_ANAGRLOTTI - Anagrafica lotto<br>Proprietà chiave:<ul><li><b>CodArtMg66</b></li><li><b>CodLotto</b></li><li><b>DittaCg18</b></li><li><b>OpzioneMg5e</b></li></ul>"
       },
+      "BatchInventoryFilterWHDTO": {
+        "type": "object",
+        "properties": {
+          "propertyName": {
+            "type": "string",
+            "description": "Name of the property to filter",
+            "nullable": true
+          },
+          "fromValue": {
+            "type": "string",
+            "description": "Starting value of the property to filter",
+            "nullable": true
+          },
+          "toValue": {
+            "type": "string",
+            "description": "Ending value of the property to filter (leave empty for equal clause with FromValue property)",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Batch inventory search filter properties (between/equal clause)"
+      },
+      "BatchInventoryOrderingWHDTO": {
+        "type": "object",
+        "properties": {
+          "propertyName": {
+            "type": "string",
+            "description": "Name of the property for ordering clause",
+            "nullable": true
+          },
+          "orderDirection": {
+            "type": "integer",
+            "description": "Ordering direction<br><ul><li><i>0</i> - Ascending</li><li><i>1</i> - Descending</li></ul>",
+            "format": "int32",
+            "default": 0
+          }
+        },
+        "additionalProperties": false,
+        "description": "Batch inventory search ordering properties"
+      },
+      "BatchInventoryParametersWHDTO": {
+        "required": [
+          "entriesCombination"
+        ],
+        "type": "object",
+        "properties": {
+          "entriesCombination": {
+            "type": "integer",
+            "description": "Entries combination",
+            "format": "int32"
+          },
+          "progressiveType": {
+            "type": "integer",
+            "description": "Progressive type<br><ul><li><i>0</i> - Consolidated</li><li><i>1</i> - In real time</li><li><i>2</i> - Consolidated in current year</li><li><i>99</i> - Until movement date</li></ul>",
+            "format": "int32",
+            "default": 1,
+            "nullable": true
+          },
+          "processingDate": {
+            "type": "string",
+            "description": "Processing date (for processing with ProgressiveType = 99, default current date)",
+            "format": "date-time"
+          },
+          "year": {
+            "type": "integer",
+            "description": "Year (for processing with ProgressiveType = 2)",
+            "format": "int32",
+            "nullable": true
+          },
+          "stockType": {
+            "type": "integer",
+            "description": "Stock type<br><ul><li><i>1</i> - Current</li><li><i>2</i> - Actual</li><li><i>3</i> - Fiscal</li></ul>",
+            "format": "int32",
+            "default": 1,
+            "nullable": true
+          },
+          "qty1Positive": {
+            "type": "integer",
+            "description": "Include lots with positive stock for 1st quantity<br><ul><li><i>0</i> - No</li><li><i>1</i> - Yes</li></ul>",
+            "format": "int32",
+            "default": 1,
+            "nullable": true
+          },
+          "qty1EqualZero": {
+            "type": "integer",
+            "description": "Include lots with stock equal to 0 for 1st quantity<br><ul><li><i>0</i> - No</li><li><i>1</i> - Yes</li></ul>",
+            "format": "int32",
+            "default": 1,
+            "nullable": true
+          },
+          "qty1Negative": {
+            "type": "integer",
+            "description": "Include lots with negative stock for 1st quantity<br><ul><li><i>0</i> - No</li><li><i>1</i> - Yes</li></ul>",
+            "format": "int32",
+            "default": 1,
+            "nullable": true
+          },
+          "qty2Positive": {
+            "type": "integer",
+            "description": "Include lots with positive stock for 2nd quantity<br><ul><li><i>0</i> - No</li><li><i>1</i> - Yes</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "qty2EqualZero": {
+            "type": "integer",
+            "description": "Include lots with stock equal to 0 for 2nd quantity<br><ul><li><i>0</i> - No</li><li><i>1</i> - Yes</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "qty2Negative": {
+            "type": "integer",
+            "description": "Include lots with negative stock for 2nd quantity<br><ul><li><i>0</i> - No</li><li><i>1</i> - Yes</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "stockQty1Unbalanced": {
+            "type": "integer",
+            "description": "Exclude lots with unbalanced stock for 1st quantity<br><ul><li><i>0</i> - No</li><li><i>1</i> - Yes</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "stockQty2Unbalanced": {
+            "type": "integer",
+            "description": "Exclude lots with unbalanced stock for 2nd quantity<br><ul><li><i>0</i> - No</li><li><i>1</i> - Yes</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "searchParameters": {
+            "$ref": "#/components/schemas/BatchInventorySearchWHDTO"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Batch inventory parameters"
+      },
+      "BatchInventoryResultRowWHDTO": {
+        "type": "object",
+        "properties": {
+          "itemCode": {
+            "type": "string",
+            "description": "Item code",
+            "nullable": true
+          },
+          "itemVariantCode": {
+            "type": "string",
+            "description": "Item Variant code",
+            "nullable": true
+          },
+          "itemDescription": {
+            "type": "string",
+            "description": "Item description",
+            "nullable": true
+          },
+          "storageCode": {
+            "type": "string",
+            "description": "Storage code",
+            "nullable": true
+          },
+          "lotCode": {
+            "type": "string",
+            "description": "Lot code",
+            "nullable": true
+          },
+          "lotDescription": {
+            "type": "string",
+            "description": "Lot description",
+            "nullable": true
+          },
+          "dueDate": {
+            "type": "string",
+            "description": "Due date",
+            "format": "date-time",
+            "nullable": true
+          },
+          "serialNumber": {
+            "type": "string",
+            "description": "Serial number",
+            "nullable": true
+          },
+          "palletsCode": {
+            "type": "string",
+            "description": "Pallets code",
+            "nullable": true
+          },
+          "projectCode": {
+            "type": "string",
+            "description": "Project code",
+            "nullable": true
+          },
+          "locationCode": {
+            "type": "string",
+            "description": "Location code",
+            "nullable": true
+          },
+          "packagingCode": {
+            "type": "string",
+            "description": "Packaging code",
+            "nullable": true
+          },
+          "materialsDyeingCode": {
+            "type": "string",
+            "description": "Materials Dyeing code",
+            "nullable": true
+          },
+          "referenceNodeCode": {
+            "type": "string",
+            "description": "Reference Node code",
+            "nullable": true
+          },
+          "totalLoadQuantity1": {
+            "type": "number",
+            "description": "Total Loading 1st quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "totalUnloadQuantity1": {
+            "type": "number",
+            "description": "Total Unloading 1st quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "totalLoadQuantity2": {
+            "type": "number",
+            "description": "Total Loading 2nd quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "totalUnloadQuantity2": {
+            "type": "number",
+            "description": "Total Unloading 2nd quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "initialStockQuantity1": {
+            "type": "number",
+            "description": "Initial Stock 1st quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "currentStockQuantity1": {
+            "type": "number",
+            "description": "Current Stock 1st quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "actualStockQuantity1": {
+            "type": "number",
+            "description": "Actual Stock 1st quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "fiscalStockQuantity1": {
+            "type": "number",
+            "description": "Fiscal Stock 1st quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "prodCommQuantity1": {
+            "type": "number",
+            "description": "Production Commitment 1st quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "initialStockQuantity2": {
+            "type": "number",
+            "description": "Initial Stock 2nd quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "currentStockQuantity2": {
+            "type": "number",
+            "description": "Current Stock 2nd quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "actualStockQuantity2": {
+            "type": "number",
+            "description": "Actual Stock 2nd quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "fiscalStockQuantity2": {
+            "type": "number",
+            "description": "Fiscal Stock 2nd quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "prodCommQuantity2": {
+            "type": "number",
+            "description": "Production Commitment 2nd quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "freeUnload2Quantity2": {
+            "type": "number",
+            "description": "2nd Free Unloading 2nd quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "averageCostQuantity1": {
+            "type": "number",
+            "description": "Average cost 1st quantity",
+            "format": "double",
+            "nullable": true
+          },
+          "lastCost": {
+            "type": "number",
+            "description": "Last cost",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Batch inventory result rows"
+      },
+      "BatchInventoryResultWHDTO": {
+        "type": "object",
+        "properties": {
+          "totalRowsFound": {
+            "type": "integer",
+            "description": "Number of rows found",
+            "format": "int32"
+          },
+          "totalRowsShowed": {
+            "type": "integer",
+            "description": "Number of rows showed",
+            "format": "int32"
+          },
+          "pageNumber": {
+            "type": "integer",
+            "description": "Number of the page showed",
+            "format": "int32"
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BatchInventoryResultRowWHDTO"
+            },
+            "description": "Resultset rows",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Batch inventory result"
+      },
+      "BatchInventorySearchWHDTO": {
+        "type": "object",
+        "properties": {
+          "filterProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BatchInventoryFilterWHDTO"
+            },
+            "description": "Filter properties list",
+            "nullable": true
+          },
+          "orderingProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BatchInventoryOrderingWHDTO"
+            },
+            "description": "\"Order by\" properties list",
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Number of elements to return per page (0 = all rows in a page)",
+            "format": "int32",
+            "default": 0
+          },
+          "pageNumber": {
+            "type": "integer",
+            "description": "Page number to retun (0 = first page, 1= second page, ...)",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Batch inventory search parameters"
+      },
       "BooleanResultDTO": {
         "type": "object",
         "properties": {
@@ -17147,7 +17642,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "MG2H_CLIFORBANCHEAZ - CSCompanyBankCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "MG2H_CLIFORBANCHEAZ - Banche aziendali<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "CSHistorySddCODTO": {
         "required": [
@@ -17241,7 +17736,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "MG2E_STORICORID - CSHistorySddCO<br>Proprietà chiave:<ul><li><b>Datavar</b></li><li><b>Id</b></li></ul>"
+        "description": "MG2E_STORICORID - Dati precedenti<br>Proprietà chiave:<ul><li><b>Datavar</b></li><li><b>Id</b></li></ul>"
       },
       "CSInfoCODTO": {
         "required": [
@@ -17585,22 +18080,22 @@
         "properties": {
           "cliforCg44": {
             "type": "number",
-            "description": "CG4E_CLIFOR_CG44 - CliforCg44",
+            "description": "CG4E_CLIFOR_CG44 - Codice Cliente / Fornitore",
             "format": "double"
           },
           "cliforcoCg44": {
             "type": "number",
-            "description": "CG4E_CLIFORCO_CG44 - CliforcoCg44",
+            "description": "CG4E_CLIFORCO_CG44 -  Cliente/Fornitore cointestatario",
             "format": "double"
           },
           "dittaCg18": {
             "type": "number",
-            "description": "CG4E_DITTA_CG18 - DittaCg18",
+            "description": "CG4E_DITTA_CG18 - Ditta",
             "format": "double"
           },
           "idcliforcoCg44": {
             "type": "integer",
-            "description": "CG4E_IDCLIFORCO_CG44 - IdcliforcoCg44",
+            "description": "CG4E_IDCLIFORCO_CG44 - Tipo Cliente / Fornitore",
             "format": "int32",
             "nullable": true
           },
@@ -17611,7 +18106,7 @@
           },
           "tipocfCg44": {
             "type": "number",
-            "description": "CG4E_TIPOCF_CG44 - TipocfCg44",
+            "description": "CG4E_TIPOCF_CG44 - Tipo Cliente / Fornitore",
             "format": "double"
           },
           "customerSupplierCO": {
@@ -17636,7 +18131,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "CG4E_CFCOINTESTATI - CSJointlyHeldCO<br>Proprietà chiave:<ul><li><b>CliforCg44</b></li><li><b>CliforcoCg44</b></li><li><b>DittaCg18</b></li><li><b>TipocfCg44</b></li></ul>"
+        "description": "CG4E_CFCOINTESTATI - Cointestatari<br>Proprietà chiave:<ul><li><b>CliforCg44</b></li><li><b>CliforcoCg44</b></li><li><b>DittaCg18</b></li><li><b>TipocfCg44</b></li></ul>"
       },
       "CSPaymentRangeCODTO": {
         "required": [
@@ -17672,12 +18167,12 @@
           },
           "dittaCg18": {
             "type": "number",
-            "description": "MG20_DITTA_CG18 - DittaCg18",
+            "description": "MG20_DITTA_CG18 - Ditta",
             "format": "double"
           },
           "id": {
             "type": "integer",
-            "description": "MG20_ID - Id (Required only in PUT/PATCH)",
+            "description": "MG20_ID - ID (Required only in PUT/PATCH)",
             "format": "int64",
             "nullable": true
           },
@@ -17735,7 +18230,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "MG20_CLIFORSCPAG - CSPaymentRangeCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "MG20_CLIFORSCPAG - Scaglioni di pagamento<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "CSPostponementPeriodCODTO": {
         "required": [
@@ -17764,7 +18259,7 @@
           },
           "dittaCg18": {
             "type": "number",
-            "description": "MG21_DITTA_CG18 - DittaCg18",
+            "description": "MG21_DITTA_CG18 - Ditta",
             "format": "double"
           },
           "ggmmfixslit": {
@@ -17781,7 +18276,7 @@
           },
           "id": {
             "type": "integer",
-            "description": "MG21_ID - Id (Required only in PUT/PATCH)",
+            "description": "MG21_ID - ID (Required only in PUT/PATCH)",
             "format": "int64",
             "nullable": true
           },
@@ -17835,7 +18330,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "MG21_CLIFORSALPAG - CSPostponementPeriodCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "MG21_CLIFORSALPAG - Giorni di slittamento<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "CSSddCODTO": {
         "required": [
@@ -18159,7 +18654,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "MG29_CLIFORRID - CSSddCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "MG29_CLIFORRID - Dati RID<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "CategoryCODTO": {
         "required": [
@@ -19065,7 +19560,7 @@
           },
           "flgAsw": {
             "type": "integer",
-            "description": "CG1O_FLGASW - FlgAsw<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "description": "CG1O_FLGASW - Natura Assosoftware<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
             "default": 0,
             "nullable": true
@@ -19117,7 +19612,7 @@
         "properties": {
           "cliforCg44": {
             "type": "number",
-            "description": "CO1I_CLIFOR_CG44 - CliforCg44",
+            "description": "CO1I_CLIFOR_CG44 - Codice cli/for",
             "format": "double"
           },
           "dittaCg18": {
@@ -19133,30 +19628,30 @@
           },
           "idcigcupCo1h": {
             "type": "integer",
-            "description": "CO1I_IDCIGCUP_CO1H - IdcigcupCo1h",
+            "description": "CO1I_IDCIGCUP_CO1H - Ident. Cig/Cup testata",
             "format": "int32"
           },
           "progREf08": {
             "type": "number",
-            "description": "CO1I_PROGR_EF08 - ProgREf08",
+            "description": "CO1I_PROGR_EF08 - Codice banca aziendale",
             "format": "double",
             "nullable": true
           },
           "progRMg35": {
             "type": "integer",
-            "description": "CO1I_PROGR_MG35 - ProgRMg35",
+            "description": "CO1I_PROGR_MG35 - Banca cliente",
             "format": "int32",
             "nullable": true
           },
           "rowversion": {
             "type": "string",
-            "description": "CO1I_ROWVERSION - Rowversion",
+            "description": "CO1I_ROWVERSION - RowVersion",
             "format": "byte",
             "nullable": true
           },
           "tipocfCg44": {
             "type": "number",
-            "description": "CO1I_TIPOCF_CG44 - TipocfCg44",
+            "description": "CO1I_TIPOCF_CG44 - Tipo Cliente / Fornitore",
             "format": "double"
           },
           "cigcuPcode": {
@@ -19187,7 +19682,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "CO1I_CFCIGCUP - CustomerSupplierCIGCUPCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "CO1I_CFCIGCUP - Anagrafica CIG/CUP<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "CustomerSupplierCODTO": {
         "required": [
@@ -21349,7 +21844,7 @@
           },
           "calculateRoyalty": {
             "type": "integer",
-            "description": "MG6C_FLGAGENTEROYALTY - Calcola le royalty per l'agente<br><ul><li><i>0</i> - Si</li><li><i>1</i> - No</li></ul>",
+            "description": "MG6C_FLGAGENTEROYALTY - Calcola le royalty per l'agente<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
             "default": 0,
             "nullable": true
@@ -22086,6 +22581,7 @@
           "codiceArticoloMG",
           "dtcreaz",
           "dtultagganag",
+          "indfittizio",
           "indicatoreFittizio",
           "itemStatusWH",
           "vatCodeCO"
@@ -22094,6 +22590,7 @@
         "properties": {
           "guid": {
             "type": "string",
+            "description": "MG66_GUID - GUID",
             "format": "uuid"
           },
           "cmeacqesCg24": {
@@ -22535,15 +23032,13 @@
           "indfittizio": {
             "type": "integer",
             "description": "MG66_INDFITTIZIO - Articolo fittizio",
-            "format": "int32",
-            "default": 0,
-            "nullable": true
+            "format": "int32"
           },
           "indgenvardiba": {
             "type": "integer",
             "description": "MG66_INDGENVARDIBA - Modalità di generazione variante su DiBa<br><ul><li><i>0</i> - Automatica</li><li><i>1</i> - Manuale</li><li><i>2</i> - Automatica per singola subvariante</li></ul>",
             "format": "int32",
-            "default": "0",
+            "default": 0,
             "nullable": true
           },
           "indmerceart62": {
@@ -22592,7 +23087,7 @@
             "type": "integer",
             "description": "MG66_INDVARERIDIBA - Modalità di ereditarietà DiBa<br><ul><li><i>0</i> - Dall'alto in basso</li><li><i>1</i> - Dal basso in alto</li><li><i>2</i> - Non gestita</li></ul>",
             "format": "int32",
-            "default": "0",
+            "default": 0,
             "nullable": true
           },
           "lastchange": {
@@ -25945,6 +26440,10 @@
     {
       "name": "BatchDataWH",
       "description": "Collection of services for Batch Data"
+    },
+    {
+      "name": "BatchInventoryService",
+      "description": "Reading service for Batch Inventory"
     },
     {
       "name": "BrandWH",
