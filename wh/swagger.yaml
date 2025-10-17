@@ -23598,7 +23598,7 @@
             "type": "number",
             "description": "MG97_ALTEZZA - Altezza",
             "format": "double",
-            "default": "0",
+            "default": 0,
             "nullable": true
           },
           "codClassestoc": {
@@ -23656,21 +23656,21 @@
             "type": "number",
             "description": "MG97_LARGHEZZA - Larghezza",
             "format": "double",
-            "default": "0",
+            "default": 0,
             "nullable": true
           },
           "maxpeso": {
             "type": "number",
             "description": "MG97_MAXPESO - Massimo peso",
             "format": "double",
-            "default": "0",
+            "default": 0,
             "nullable": true
           },
           "profondita": {
             "type": "number",
             "description": "MG97_PROFONDITA - Profondità",
             "format": "double",
-            "default": "0",
+            "default": 0,
             "nullable": true
           },
           "ubicaz": {
