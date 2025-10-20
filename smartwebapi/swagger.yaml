@@ -67,7 +67,7 @@
     }
   ],
   "paths": {
-    "/api/auth/token": {
+    "/api/{product}/auth/token": {
       "post": {
         "tags": [
           "Auth"
@@ -97,6 +97,20 @@
           }
         },
         "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the customer will be created. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
           {
             "name": "accept-language",
             "in": "header",

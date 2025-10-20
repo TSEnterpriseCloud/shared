@@ -8926,7 +8926,6 @@
       "ActiveAccountCIDTO": {
         "required": [
           "contoCg24",
-          "dittaCg18",
           "gruppoCg10"
         ],
         "type": "object",
@@ -8939,7 +8938,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "CI35_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "gruppoCg10": {
             "type": "number",
@@ -11902,8 +11903,7 @@
           "accountingReasonCodeCI",
           "accountingReasonCodeCO",
           "codiceCg33",
-          "codiceCi03",
-          "dittaCg18"
+          "codiceCi03"
         ],
         "type": "object",
         "properties": {
@@ -11920,7 +11920,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "CI14_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "flgDefault": {
             "type": "number",
@@ -12859,7 +12861,7 @@
           },
           "protocollo": {
             "type": "string",
-            "description": "Prtocollo",
+            "description": "Protocollo",
             "nullable": true
           },
           "flgInvalid": {
@@ -12881,6 +12883,11 @@
             "type": "string",
             "description": "Data pubblicazione",
             "format": "date-time",
+            "nullable": true
+          },
+          "publicationid": {
+            "type": "string",
+            "description": "Id pubblicazione DMS",
             "nullable": true
           },
           "extensionData": {
@@ -15265,7 +15272,6 @@
         "required": [
           "causaleCi03",
           "correlationAccountingReasonCodeCI",
-          "dittaCg18",
           "sectionalMasterDataCO"
         ],
         "type": "object",
@@ -15284,7 +15290,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "CI05_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "correlationAccountingReasonCodeCI": {
             "$ref": "#/components/schemas/AccountingReasonCodeCIDTO"

@@ -31718,7 +31718,7 @@
           },
           "protocollo": {
             "type": "string",
-            "description": "Prtocollo",
+            "description": "Protocollo",
             "nullable": true
           },
           "flgInvalid": {
@@ -31740,6 +31740,11 @@
             "type": "string",
             "description": "Data pubblicazione",
             "format": "date-time",
+            "nullable": true
+          },
+          "publicationid": {
+            "type": "string",
+            "description": "Id pubblicazione DMS",
             "nullable": true
           },
           "extensionData": {
