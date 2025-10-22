@@ -70268,7 +70268,7 @@
           },
           "causalecolltype": {
             "type": "number",
-            "description": "CG33_CAUSALECOLLTYPE - Causalecolltype<br><ul><li><i>0</i> - Iva</li><li><i>1</i> - Contabile</li><li><i>2</i> - Scadenze</li></ul>",
+            "description": "CG33_CAUSALECOLLTYPE -  Tipo movimento<br><ul><li><i>0</i> - Iva</li><li><i>1</i> - Contabile</li><li><i>2</i> - Scadenze</li></ul>",
             "format": "double",
             "default": "0",
             "nullable": true
