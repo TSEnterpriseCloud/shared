@@ -8714,8 +8714,7 @@
         "required": [
           "alivaCg28",
           "codNodo",
-          "codProgPd68",
-          "dittaCg18"
+          "codProgPd68"
         ],
         "type": "object",
         "properties": {
@@ -8814,7 +8813,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "PD0C_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "duratagg": {
             "type": "number",
@@ -9547,8 +9548,7 @@
       "ProjectActResPDDTO": {
         "required": [
           "codActivity",
-          "codProject",
-          "company"
+          "codProject"
         ],
         "type": "object",
         "properties": {
@@ -9581,7 +9581,9 @@
           "company": {
             "type": "number",
             "description": "PD0S_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "costCode": {
             "type": "string",
@@ -9592,7 +9594,7 @@
             "type": "number",
             "description": "PD0S_MODCOSTO - Modalità costo<br><ul><li><i>0</i> - Da qualifica</li><li><i>1</i> - Codice costo</li><li><i>2</i> - Costo unitario</li><li><i>3</i> - Costo totale</li></ul>",
             "format": "double",
-            "default": "0",
+            "default": 0,
             "nullable": true
           },
           "costTotal": {
@@ -9678,8 +9680,7 @@
           "alivaCg28",
           "codAttivita",
           "codProgPd68",
-          "descr",
-          "dittaCg18"
+          "descr"
         ],
         "type": "object",
         "properties": {
@@ -9765,7 +9766,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "PD0D_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "duratagg": {
             "type": "number",
@@ -9823,14 +9826,14 @@
           },
           "importo": {
             "type": "number",
-            "description": "PD0D_IMPORTO - Importo",
+            "description": "PD0D_IMPORTO - Ricavo preventivo manuale",
             "format": "double",
             "default": 0,
             "nullable": true
           },
           "importoval": {
             "type": "number",
-            "description": "PD0D_IMPORTOVAL - Importo in valuta",
+            "description": "PD0D_IMPORTOVAL - Ricavo preventivo manuale in valuta",
             "format": "double",
             "nullable": true
           },
@@ -9893,8 +9896,7 @@
       },
       "ProjectPDDTO": {
         "required": [
-          "codProg",
-          "dittaCg18"
+          "codProg"
         ],
         "type": "object",
         "properties": {
@@ -9950,7 +9952,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "PD68_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "ragsocCg16": {
             "type": "string",
@@ -10554,7 +10558,6 @@
       "SubProjectPDDTO": {
         "required": [
           "codProgPd68",
-          "dittaCg18",
           "sotprog"
         ],
         "type": "object",
@@ -10589,7 +10592,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "PD69_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "idmediaCg99": {
             "type": "number",
