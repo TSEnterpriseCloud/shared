@@ -73846,7 +73846,15 @@
             "type": "string",
             "nullable": true
           },
+          "cigmaster": {
+            "type": "string",
+            "nullable": true
+          },
           "cup": {
+            "type": "string",
+            "nullable": true
+          },
+          "cupmaster": {
             "type": "string",
             "nullable": true
           },
@@ -91618,7 +91626,6 @@
           "flgTsescluso",
           "flgTsinviato",
           "idCg41",
-          "indDetriva",
           "indIvaacqagric",
           "indTipo",
           "indTstipoop",
@@ -91662,12 +91669,12 @@
           },
           "idCg41": {
             "type": "integer",
-            "description": "CG43_ID_CG41 - IdCg41",
+            "description": "CG43_ID_CG41 - Movimento di Prima Nota",
             "format": "int64"
           },
           "idcontoCg24": {
             "type": "integer",
-            "description": "CG43_IDCONTO_CG24 - IdcontoCg24",
+            "description": "CG43_IDCONTO_CG24 - ID Conto",
             "format": "int64",
             "nullable": true
           },
@@ -91709,8 +91716,10 @@
           },
           "indDetriva": {
             "type": "integer",
-            "description": "CG43_INDDETRIVA - Indicatore trattamento indetraibilità IVA",
-            "format": "int32"
+            "description": "CG43_INDDETRIVA - Indicatore trattamento indetraibilità IVA<br><ul><li><i>1</i> - Inglobata</li><li><i>2</i> - Distinta</li></ul>",
+            "format": "int32",
+            "default": "1",
+            "nullable": true
           },
           "indIvaacqagric": {
             "type": "number",
