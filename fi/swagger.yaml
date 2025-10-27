@@ -79711,6 +79711,10 @@
             "type": "string",
             "nullable": true
           },
+          "caupagritprevCg33": {
+            "type": "string",
+            "nullable": true
+          },
           "caupartcliCg33": {
             "type": "string",
             "nullable": true
@@ -91626,6 +91630,7 @@
           "flgTsescluso",
           "flgTsinviato",
           "idCg41",
+          "indDetriva",
           "indIvaacqagric",
           "indTipo",
           "indTstipoop",
@@ -91716,10 +91721,8 @@
           },
           "indDetriva": {
             "type": "integer",
-            "description": "CG43_INDDETRIVA - Indicatore trattamento indetraibilità IVA<br><ul><li><i>1</i> - Inglobata</li><li><i>2</i> - Distinta</li></ul>",
-            "format": "int32",
-            "default": "1",
-            "nullable": true
+            "description": "CG43_INDDETRIVA - Indicatore trattamento indetraibilità IVA",
+            "format": "int32"
           },
           "indIvaacqagric": {
             "type": "number",
