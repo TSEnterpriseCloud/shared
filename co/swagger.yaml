@@ -21543,7 +21543,7 @@
           "required": true
         },
         "responses": {
-          "201": {
+          "202": {
             "description": "If execution is ok",
             "content": {
               "application/json": {
