@@ -6108,6 +6108,16 @@
             }
           },
           {
+            "name": "CodArtMg66",
+            "in": "query",
+            "description": "CodArtMg66 Mandatory to execute current action",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "authorization-scope",
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",

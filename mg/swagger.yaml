@@ -913,6 +913,100 @@
         }
       }
     },
+    "/api/v1/{environment}/MG/CompanyDocumentMasterDataMG/{id}/enablementwizard": {
+      "get": {
+        "tags": [
+          "CompanyDocumentMasterDataMG"
+        ],
+        "summary": "Service to view the guided authorizations based on the Document Wizard.",
+        "description": "Service to view all active modules associated with a document based on its configuration with the Document Wizard.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id to get the object",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "Example for multilanguage",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Service to view all active modules associated with a document based on its configuration with the Document Wizard.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentEnablementWizardResultDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentEnablementWizardResultDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/MG/CompanyDocumentMasterDataMG/{id}": {
       "get": {
         "tags": [
@@ -19203,6 +19297,119 @@
             "description": "Importo merce residuo",
             "format": "double",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DocumentEnablementWizardResultDTO": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "type": "string",
+            "description": "Document",
+            "nullable": true
+          },
+          "documentCustom": {
+            "type": "number",
+            "description": "Standard/customized indicator",
+            "format": "double"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description",
+            "nullable": true
+          },
+          "isDocumentHeader": {
+            "type": "boolean",
+            "description": "If true, the document header is active because there is at least one DO11 type field."
+          },
+          "isDocumentHeaderReference": {
+            "type": "boolean",
+            "description": "If true, the document header reference is active because there is at least one DO12 type field."
+          },
+          "isDocumentTotal": {
+            "type": "boolean",
+            "description": "If true, the document total is active because there is at least one DO13 type field."
+          },
+          "isDocumentHeaderShipmentData": {
+            "type": "boolean",
+            "description": "If true, the Document Header Shipment Data is active because there is at least one DO14 type field."
+          },
+          "isDocumentHeaderCustomizedAttribute": {
+            "type": "boolean",
+            "description": "If true, the Document Header Custom Attribute is active because at least one DO17 type field is present."
+          },
+          "isDocumentHeaderOrder": {
+            "type": "boolean",
+            "description": "If true, the Document Header Order are active because at least one DO18 type field is present."
+          },
+          "isDocumentHeaderStandardAttribute": {
+            "type": "boolean",
+            "description": "If true, the Document Header Standard Attribute is active because at least one DO20 type field is present."
+          },
+          "isDocumentHeaderCommission": {
+            "type": "boolean",
+            "description": "If true, the Document Header Commission is active because at least one DO21 type field is present."
+          },
+          "isDocumentHeaderAccrual": {
+            "type": "boolean",
+            "description": "If true, the Document Header Accrual is active because at least one DO23 type field is present."
+          },
+          "isDocumentHeaderProject": {
+            "type": "boolean",
+            "description": "If true, the Document Header Project is active because at least one DO24 type field is present."
+          },
+          "isDocumentHeaderAgent": {
+            "type": "boolean",
+            "description": "If true, the Document Header Agent is active because at least one DO29 type field is present."
+          },
+          "isDocumentRow": {
+            "type": "boolean",
+            "description": "If true, the Document Row is active because at least one DO30 type field is present."
+          },
+          "isDocumentRowOrder": {
+            "type": "boolean",
+            "description": "If true, the Document Row Order is active because at least one DO31 type field is present."
+          },
+          "isDocumentRowCommission": {
+            "type": "boolean",
+            "description": "If true, the Document Row Commission is active because at least one DO32 type field is present."
+          },
+          "isDocumentRowReference": {
+            "type": "boolean",
+            "description": "If true, the Document Row Reference is active because at least one DO33 type field is present."
+          },
+          "isDocumentRowCustomizedAttribute": {
+            "type": "boolean",
+            "description": "If true, the Document Row Customization Attribute is active because at least one DO35 type field is present."
+          },
+          "isDocumentRowStandardAttribute": {
+            "type": "boolean",
+            "description": "If true, the Document Row Standard Attribute is  active because at least one DO36 type field is present."
+          },
+          "isDocumentRowPackaging": {
+            "type": "boolean",
+            "description": "If true, Document Row Packaging is active because at least one DO39 type field is present."
+          },
+          "isDocumentRowProject": {
+            "type": "boolean",
+            "description": "If true, Document Row Project is active because at least one DO41 type field is present."
+          },
+          "isDocumentRowAccrual": {
+            "type": "boolean",
+            "description": "If true, Document Row Accrual is active because at least one DO42 type field is present."
+          },
+          "isDocumentRowLot": {
+            "type": "boolean",
+            "description": "If true, Document Row Lot is active because at least one DO52 type field is present."
+          },
+          "isDocumentRowAnalyticalCorrelation": {
+            "type": "boolean",
+            "description": "If true, Document Row Analytical Correlationis active because at least one DO53 type field is present."
+          },
+          "isDocumentRowIntra": {
+            "type": "boolean",
+            "description": "If true, Document Row Intra active because at least one DO68 type field is present."
           }
         },
         "additionalProperties": false
