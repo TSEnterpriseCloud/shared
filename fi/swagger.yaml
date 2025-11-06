@@ -104553,6 +104553,14 @@
             "format": "int64",
             "nullable": true
           },
+          "impspesealt": {
+            "type": "number",
+            "format": "double"
+          },
+          "impspesefil": {
+            "type": "number",
+            "format": "double"
+          },
           "extensionData": {
             "type": "array",
             "items": {
