@@ -8096,7 +8096,7 @@
             }
           },
           {
-            "name": "model-id",
+            "name": "model-code",
             "in": "query",
             "description": "Document Type.",
             "required": false,
@@ -8245,7 +8245,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DocumentOrder"
+                    "$ref": "#/components/schemas/DocumentOrderR"
                   },
                   "maxItems": 1000
                 }
@@ -8294,268 +8294,6 @@
           },
           "406": {
             "description": "Not Acceptable. The requested language is not supported.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Logs"
-                }
-              }
-            }
-          },
-          "415": {
-            "description": "Unsupported Media Type. The request body format is not supported.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Logs"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too Many Requests. The request limit has been exceeded.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Logs"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Logs"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/{product}/{version}/company/{companyId}/document/order": {
-      "post": {
-        "summary": "Create a single sales or purchase order",
-        "tags": [
-          "Document"
-        ],
-        "description": "Creates a single sales or purchase order document in the specified product and version environment.",
-        "operationId": "create-document-order",
-        "x-ai-purpose": "document_order_creation",
-        "x-ai-entity": "DocumentOrder",
-        "x-ai-intent": "create",
-        "x-ai-sample": {
-          "model-id": "CLI-ORDINE",
-          "document-existing": false,
-          "document-date": "2025-11-28",
-          "registry-date": "2025-11-28",
-          "document-number": "0",
-          "sectional-code": "00",
-          "customer-supplier": 1,
-          "storage-code": "00",
-          "payment-term-code": "201",
-          "rows": [
-            {
-              "row-number": 1,
-              "row-type": 0,
-              "item-code": "ART001",
-              "description": "Product description",
-              "delivery-date": "2025-12-15",
-              "quantity": 10,
-              "price": 100.5,
-              "vat-code": "22"
-            }
-          ]
-        },
-        "parameters": [
-          {
-            "name": "product",
-            "in": "path",
-            "description": "The product name where the order will be created. Supported values are tse10 and tse12.",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "default": "tse10",
-              "enum": [
-                "tse10",
-                "tse12"
-              ]
-            }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The version of the product where the order will be created.",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "default": "v1",
-              "minLength": 1,
-              "maxLength": 10,
-              "pattern": "^[A-Za-z0-9]{1,10}$"
-            }
-          },
-          {
-            "name": "companyId",
-            "in": "path",
-            "description": "The unique identifier of the company where the order will be created.",
-            "required": true,
-            "schema": {
-              "type": "number",
-              "format": "int32",
-              "maxLength": 5
-            }
-          },
-          {
-            "name": "accept-language",
-            "in": "header",
-            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
-            "required": true,
-            "style": "simple",
-            "explode": true,
-            "schema": {
-              "type": "string",
-              "default": "it-IT",
-              "enum": [
-                "it-IT",
-                "en-GB"
-              ]
-            },
-            "example": "it-IT"
-          },
-          {
-            "name": "user",
-            "in": "query",
-            "description": "The username of the user performing the operation.",
-            "required": false,
-            "style": "form",
-            "schema": {
-              "type": "string",
-              "maxLength": 50,
-              "pattern": "^[A-Za-z0-9]{3,50}$"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "A single customer or supplier order document",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DocumentOrder"
-              },
-              "examples": {
-                "Default (complete)": {
-                  "summary": "Default (complete)",
-                  "value": {
-                    "model-id": "CLI-ORDINE",
-                    "document-existing": false,
-                    "document-date": "2026-01-13",
-                    "registry-date": "2026-01-13",
-                    "document-number": 0,
-                    "customer-supplier": 1,
-                    "sectional-code": "00",
-                    "storage-code": "00",
-                    "payment-term-code": "201",
-                    "document-total": 1220,
-                    "rows": [
-                      {
-                        "row-number": 1,
-                        "row-type": 0,
-                        "item-code": "ART001",
-                        "description": "Product description",
-                        "delivery-date": "2026-02-15",
-                        "quantity": 10,
-                        "enable-price-discount-flexibility": true,
-                        "price": 100,
-                        "vat-code": "22"
-                      },
-                      {
-                        "row-number": 2,
-                        "row-type": 2,
-                        "description": "Additional notes or description",
-                        "quantity": 0
-                      }
-                    ]
-                  }
-                },
-                "Simple request": {
-                  "summary": "Minimal order with required fields only",
-                  "value": {
-                    "model-id": "CLI-ORDINE",
-                    "document-date": "2026-01-13",
-                    "registry-date": "2026-01-13",
-                    "customer-supplier": 1,
-                    "sectional-code": "00",
-                    "storage-code": "00",
-                    "payment-term-code": "201",
-                    "rows": [
-                      {
-                        "row-number": 1,
-                        "row-type": 0
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "202": {
-            "description": "Order creation request accepted for asynchronous processing.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AsyncGuidResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "The request is invalid. Check the input parameters and try again.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Logs"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Logs"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden. The user does not have permission to perform this operation.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Logs"
-                }
-              }
-            }
-          },
-          "406": {
-            "description": "Not Acceptable. The requested language is not supported.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Logs"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "Conflict. The document already exists.",
             "content": {
               "application/json": {
                 "schema": {
@@ -8707,7 +8445,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DocumentOrder"
+                  "$ref": "#/components/schemas/DocumentOrderR"
                 }
               }
             }
@@ -8802,10 +8540,10 @@
         "description": "Updates a single sales or purchase order document in the specified product and version environment.",
         "operationId": "update-document-order",
         "x-ai-purpose": "document_order_update",
-        "x-ai-entity": "DocumentOrder",
+        "x-ai-entity": "DocumentOrderW",
         "x-ai-intent": "update",
         "x-ai-sample": {
-          "model-id": "CLI-ORDINE",
+          "model-code": "CLI-ORDINE",
           "document-date": "2025-11-28",
           "registry-date": "2025-11-28",
           "document-number": "0",
@@ -8925,13 +8663,13 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DocumentOrder"
+                "$ref": "#/components/schemas/DocumentOrderW"
               },
               "examples": {
                 "Default (complete)": {
                   "summary": "Default (complete)",
                   "value": {
-                    "model-id": "CLI-ORDINE",
+                    "model-code": "CLI-ORDINE",
                     "document-existing": false,
                     "document-date": "2026-01-13",
                     "registry-date": "2026-01-13",
@@ -8959,7 +8697,7 @@
                 "Simple request": {
                   "summary": "Minimal order update with required fields only",
                   "value": {
-                    "model-id": "CLI-ORDINE",
+                    "model-code": "CLI-ORDINE",
                     "document-date": "2026-01-13",
                     "registry-date": "2026-01-13",
                     "customer-supplier": 1,
@@ -9249,11 +8987,11 @@
         "description": "Creates multiple sales or purchase order documents in batch mode with asynchronous processing in the specified product and version environment.",
         "operationId": "create-document-orders-batch",
         "x-ai-purpose": "document_order_batch_creation",
-        "x-ai-entity": "DocumentOrder",
+        "x-ai-entity": "DocumentOrderW",
         "x-ai-intent": "create_batch",
         "x-ai-sample": [
           {
-            "model-id": "CLI-ORDINE",
+            "model-code": "CLI-ORDINE",
             "document-existing": false,
             "document-date": "2025-11-28",
             "registry-date": "2025-11-28",
@@ -9353,7 +9091,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/DocumentOrder"
+                  "$ref": "#/components/schemas/DocumentOrderW"
                 },
                 "minItems": 1,
                 "maxItems": 1000
@@ -10569,10 +10307,81 @@
           }
         }
       },
-      "DocumentOrder": {
+      "DocumentOrderW": {
         "type": "object",
         "required": [
-          "model-id",
+          "model-code",
+          "customer-supplier",
+          "sectional-code",
+          "storage-code",
+          "payment-term-code",
+          "document-date",
+          "registry-date",
+          "rows"
+        ],
+        "properties": {
+          "model-code": {
+            "type": "string",
+            "description": "Document model code (e.g., CLI-ORDINE for customer orders)",
+            "example": "CLI-ORDINE",
+            "maxLength": 14
+          },
+          "document-date": {
+            "type": "string",
+            "format": "date",
+            "description": "Order document date",
+            "example": "2025-11-25"
+          },
+          "registry-date": {
+            "type": "string",
+            "format": "date",
+            "description": "Registry date",
+            "example": "2025-11-25"
+          },
+          "document-number": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Document number. If specified, the system will check for duplicates and return an error if it already exists. If not specified, a new sequential number will be automatically assigned.",
+            "example": 0
+          },
+          "customer-supplier": {
+            "type": "string",
+            "description": "Customer or Supplier Code",
+            "maxLength": 20,
+            "example": "1"
+          },
+          "sectional-code": {
+            "type": "string",
+            "description": "Sectional code",
+            "maxLength": 2,
+            "example": "00"
+          },
+          "storage-code": {
+            "type": "string",
+            "description": "Storage/Warehouse code",
+            "maxLength": 2,
+            "example": "00"
+          },
+          "payment-term-code": {
+            "type": "string",
+            "description": "Payment term code",
+            "maxLength": 10,
+            "example": "301"
+          },
+          "rows": {
+            "type": "array",
+            "description": "Order line items (products or services)",
+            "items": {
+              "$ref": "#/components/schemas/DocumentOrderRow"
+            }
+          }
+        }
+      },
+      "DocumentOrderR": {
+        "type": "object",
+        "required": [
+          "document-id",
+          "model-code",
           "customer-supplier",
           "sectional-code",
           "storage-code",
@@ -10588,16 +10397,11 @@
             "example": "202100000128",
             "maxLength": 12
           },
-          "model-id": {
+          "model-code": {
             "type": "string",
-            "description": "Document model code / ID (e.g., CLI-ORDINE for customer orders)",
+            "description": "Document model code (e.g., CLI-ORDINE for customer orders)",
             "example": "CLI-ORDINE",
             "maxLength": 14
-          },
-          "document-existing": {
-            "type": "boolean",
-            "description": "Lock and notify if document already exists. Set to true to check if the document already exists when inserted.",
-            "default": false
           },
           "document-date": {
             "type": "string",
@@ -10618,10 +10422,10 @@
             "example": 0
           },
           "customer-supplier": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Customer or Supplier ID",
-            "example": 1
+            "type": "string",
+            "description": "Customer or Supplier Code",
+            "maxLength": 20,
+            "example": "1"
           },
           "sectional-code": {
             "type": "string",
@@ -10644,7 +10448,7 @@
           "document-total": {
             "type": "number",
             "format": "double",
-            "description": "Document total amount",
+            "description": "Document total amount (readonly)",
             "example": 1250.5
           },
           "rows": {
@@ -10720,13 +10524,8 @@
             "type": "number",
             "format": "double",
             "description": "Order quantity",
+            "default": 0,
             "example": 1
-          },
-          "enable-price-discount-flexibility": {
-            "type": "boolean",
-            "description": "Enable manual price/discount override. Set to true to allow custom pricing.",
-            "default": false,
-            "example": true
           },
           "price": {
             "type": [
@@ -10734,7 +10533,8 @@
               "null"
             ],
             "format": "double",
-            "description": "Unit price ",
+            "description": "Unit price. When specified (including 0), price forcing will be automatically enabled.",
+            "default": 0,
             "example": 10
           },
           "vat-code": {
