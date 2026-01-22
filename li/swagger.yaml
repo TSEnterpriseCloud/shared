@@ -57,9 +57,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -169,9 +179,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -269,9 +289,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -644,13 +674,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/PriceParametricRowLIDTO"
-            },
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
             },
             "nullable": true
           },
@@ -1204,13 +1227,6 @@
             "description": "A quantità",
             "format": "double"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -1442,13 +1458,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/PricePriorityRowLIDTO"
-            },
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
             },
             "nullable": true
           },
@@ -1738,13 +1747,6 @@
             "format": "int32",
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -1779,13 +1781,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ValidationResultDTO"
-            },
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
             },
             "nullable": true
           },

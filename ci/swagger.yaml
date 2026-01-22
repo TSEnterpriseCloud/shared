@@ -30,6 +30,15 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
@@ -95,9 +104,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -158,9 +177,18 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "_op",
             "in": "query",
-            "description": "Set 'reload', if you want the DTO updated in the response request, otherwise will be returned null value",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
             "style": "form",
             "schema": {
               "type": "string"
@@ -214,9 +242,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -302,6 +340,24 @@
             }
           },
           {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -349,9 +405,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -406,6 +472,15 @@
             "style": "simple",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
             }
           },
           {
@@ -474,9 +549,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -549,6 +634,16 @@
             }
           },
           {
+            "name": "param",
+            "in": "query",
+            "description": "Specify optional parameters that will be used during entity creation",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -586,9 +681,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -628,6 +733,33 @@
         "description": "Creating new object of type",
         "parameters": [
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -665,9 +797,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -790,9 +932,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -903,9 +1055,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -987,16 +1149,25 @@
             "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
-            "name": "gettotalcount",
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "getTotalCount",
             "in": "query",
             "description": "Specify 'gettotalcount=true' if you want the total number of elements",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
@@ -1037,9 +1208,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -1099,6 +1280,15 @@
         "summary": "Read",
         "description": "Read among object of type",
         "parameters": [
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
           {
             "name": "dlevel",
             "in": "query",
@@ -1165,9 +1355,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -1247,6 +1447,15 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
@@ -1302,9 +1511,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -1365,9 +1584,18 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "_op",
             "in": "query",
-            "description": "Set 'reload', if you want the DTO updated in the response request, otherwise will be returned null value",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
             "style": "form",
             "schema": {
               "type": "string"
@@ -1411,9 +1639,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -1499,6 +1737,24 @@
             }
           },
           {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -1536,9 +1792,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -1593,6 +1859,15 @@
             "style": "simple",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
             }
           },
           {
@@ -1651,9 +1926,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -1726,6 +2011,16 @@
             }
           },
           {
+            "name": "param",
+            "in": "query",
+            "description": "Specify optional parameters that will be used during entity creation",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -1763,9 +2058,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -1805,6 +2110,33 @@
         "description": "Creating new object of type",
         "parameters": [
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -1842,9 +2174,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -1957,9 +2299,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -2060,9 +2412,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -2144,16 +2506,25 @@
             "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
-            "name": "gettotalcount",
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "getTotalCount",
             "in": "query",
             "description": "Specify 'gettotalcount=true' if you want the total number of elements",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
@@ -2194,9 +2565,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -2257,6 +2638,15 @@
         "description": "Read among object of type",
         "parameters": [
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
@@ -2312,9 +2702,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -2394,6 +2794,15 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
@@ -2459,9 +2868,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -2522,9 +2941,18 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "_op",
             "in": "query",
-            "description": "Set 'reload', if you want the DTO updated in the response request, otherwise will be returned null value",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
             "style": "form",
             "schema": {
               "type": "string"
@@ -2578,9 +3006,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -2666,6 +3104,24 @@
             }
           },
           {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -2713,9 +3169,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -2770,6 +3236,15 @@
             "style": "simple",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
             }
           },
           {
@@ -2838,9 +3313,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -2913,6 +3398,16 @@
             }
           },
           {
+            "name": "param",
+            "in": "query",
+            "description": "Specify optional parameters that will be used during entity creation",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -2950,9 +3445,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -2992,6 +3497,33 @@
         "description": "Creating new object of type",
         "parameters": [
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -3029,9 +3561,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -3154,9 +3696,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -3267,9 +3819,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -3351,16 +3913,25 @@
             "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
-            "name": "gettotalcount",
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "getTotalCount",
             "in": "query",
             "description": "Specify 'gettotalcount=true' if you want the total number of elements",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
@@ -3401,9 +3972,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -3463,6 +4044,15 @@
         "summary": "Read",
         "description": "Read among object of type",
         "parameters": [
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
           {
             "name": "dlevel",
             "in": "query",
@@ -3529,9 +4119,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -3611,6 +4211,15 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
@@ -3676,9 +4285,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -3739,9 +4358,18 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "_op",
             "in": "query",
-            "description": "Set 'reload', if you want the DTO updated in the response request, otherwise will be returned null value",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
             "style": "form",
             "schema": {
               "type": "string"
@@ -3795,9 +4423,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -3883,6 +4521,24 @@
             }
           },
           {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -3930,9 +4586,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -3987,6 +4653,15 @@
             "style": "simple",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
             }
           },
           {
@@ -4055,9 +4730,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -4130,6 +4815,16 @@
             }
           },
           {
+            "name": "param",
+            "in": "query",
+            "description": "Specify optional parameters that will be used during entity creation",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -4167,9 +4862,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -4209,6 +4914,33 @@
         "description": "Creating new object of type",
         "parameters": [
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -4246,9 +4978,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -4371,9 +5113,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -4484,9 +5236,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -4568,16 +5330,25 @@
             "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
-            "name": "gettotalcount",
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "getTotalCount",
             "in": "query",
             "description": "Specify 'gettotalcount=true' if you want the total number of elements",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
@@ -4618,9 +5389,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -4680,6 +5461,15 @@
         "summary": "Read",
         "description": "Read among object of type",
         "parameters": [
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
           {
             "name": "dlevel",
             "in": "query",
@@ -4746,9 +5536,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -4828,6 +5628,15 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
@@ -4883,9 +5692,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -4946,9 +5765,18 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "_op",
             "in": "query",
-            "description": "Set 'reload', if you want the DTO updated in the response request, otherwise will be returned null value",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
             "style": "form",
             "schema": {
               "type": "string"
@@ -4992,9 +5820,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -5080,6 +5918,24 @@
             }
           },
           {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -5117,9 +5973,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -5174,6 +6040,15 @@
             "style": "simple",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
             }
           },
           {
@@ -5232,9 +6107,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -5307,6 +6192,16 @@
             }
           },
           {
+            "name": "param",
+            "in": "query",
+            "description": "Specify optional parameters that will be used during entity creation",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -5344,9 +6239,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -5386,6 +6291,33 @@
         "description": "Creating new object of type",
         "parameters": [
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -5423,9 +6355,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -5538,9 +6480,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -5641,9 +6593,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -5725,16 +6687,25 @@
             "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
-            "name": "gettotalcount",
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "getTotalCount",
             "in": "query",
             "description": "Specify 'gettotalcount=true' if you want the total number of elements",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
@@ -5775,9 +6746,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -5838,6 +6819,15 @@
         "description": "Read among object of type",
         "parameters": [
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
@@ -5893,9 +6883,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -5975,6 +6975,15 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
@@ -6030,9 +7039,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -6093,9 +7112,18 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "_op",
             "in": "query",
-            "description": "Set 'reload', if you want the DTO updated in the response request, otherwise will be returned null value",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
             "style": "form",
             "schema": {
               "type": "string"
@@ -6139,9 +7167,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -6227,6 +7265,24 @@
             }
           },
           {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -6264,9 +7320,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -6321,6 +7387,15 @@
             "style": "simple",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
             }
           },
           {
@@ -6379,9 +7454,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -6454,6 +7539,16 @@
             }
           },
           {
+            "name": "param",
+            "in": "query",
+            "description": "Specify optional parameters that will be used during entity creation",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -6491,9 +7586,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -6533,6 +7638,33 @@
         "description": "Creating new object of type",
         "parameters": [
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -6570,9 +7702,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -6685,9 +7827,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -6788,9 +7940,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -6872,16 +8034,25 @@
             "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
-            "name": "gettotalcount",
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "getTotalCount",
             "in": "query",
             "description": "Specify 'gettotalcount=true' if you want the total number of elements",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
@@ -6922,9 +8093,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -6985,6 +8166,15 @@
         "description": "Read among object of type",
         "parameters": [
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
@@ -7040,9 +8230,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -7122,6 +8322,15 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
@@ -7177,9 +8386,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -7240,9 +8459,18 @@
             }
           },
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "_op",
             "in": "query",
-            "description": "Set 'reload', if you want the DTO updated in the response request, otherwise will be returned null value",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
             "style": "form",
             "schema": {
               "type": "string"
@@ -7286,9 +8514,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -7374,6 +8612,24 @@
             }
           },
           {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -7411,9 +8667,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -7468,6 +8734,15 @@
             "style": "simple",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
             }
           },
           {
@@ -7526,9 +8801,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -7601,6 +8886,16 @@
             }
           },
           {
+            "name": "param",
+            "in": "query",
+            "description": "Specify optional parameters that will be used during entity creation",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -7638,9 +8933,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -7680,6 +8985,33 @@
         "description": "Creating new object of type",
         "parameters": [
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "path",
             "required": true,
@@ -7717,9 +9049,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -7832,9 +9174,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -7935,9 +9287,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -8019,16 +9381,25 @@
             "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
-            "name": "gettotalcount",
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "getTotalCount",
             "in": "query",
             "description": "Specify 'gettotalcount=true' if you want the total number of elements",
             "style": "form",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           },
           {
@@ -8069,9 +9440,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -8132,6 +9513,15 @@
         "description": "Read among object of type",
         "parameters": [
           {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
@@ -8187,9 +9577,19 @@
             }
           },
           {
-            "name": "accept-language",
+            "name": "Accept-Language",
             "in": "header",
-            "description": "Example for multilanguage",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
             "style": "simple",
             "schema": {
               "type": "string",
@@ -8293,13 +9693,6 @@
             "type": "number",
             "description": "PC03_IDMEDIA_CG99 - ID HyperMedia",
             "format": "double",
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -8581,13 +9974,6 @@
             "description": "CI03_SOTTOTIPOPS_BU01 - Codice sottotipo budget",
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -8853,13 +10239,6 @@
           "vatCodeReasonConnect": {
             "$ref": "#/components/schemas/AccountingReasonCodeCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -8902,13 +10281,6 @@
             "type": "string",
             "description": "CGD1_TIPOLOGIA - Codice classificazione"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -8949,13 +10321,6 @@
           },
           "coaAccountCI": {
             "$ref": "#/components/schemas/COAAccountCIDTO"
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
           },
           "additionalData": {
             "type": "object",
@@ -9194,13 +10559,6 @@
           "statoEst": {
             "$ref": "#/components/schemas/NationCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -9237,13 +10595,6 @@
             "description": "CG1K_TIPO - Tipo indirizzo<br><ul><li><i>1</i> - Sede attività</li><li><i>2</i> - Residenza</li><li><i>3</i> - Corrispondenza</li><li><i>4</i> - Indirizzo legale</li><li><i>5</i> - Residenza estera</li></ul>",
             "format": "int32",
             "default": "1",
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -9294,13 +10645,6 @@
           },
           "bankCO": {
             "$ref": "#/components/schemas/BankCODTO"
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
           },
           "additionalData": {
             "type": "object",
@@ -9584,13 +10928,6 @@
             },
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -9624,13 +10961,6 @@
           "descrizione": {
             "type": "string",
             "description": "CG12_DESCR - Descrizione",
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -9711,13 +11041,6 @@
             "format": "byte",
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -9778,13 +11101,6 @@
             "description": "ID Conto",
             "format": "int64"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -9826,13 +11142,6 @@
             "type": "number",
             "description": "MGA3_TIPOCF_CG44 - Tipo cliente fornitore",
             "format": "double"
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
           },
           "additionalData": {
             "type": "object",
@@ -10001,13 +11310,6 @@
           "nationCO": {
             "$ref": "#/components/schemas/NationCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -10078,13 +11380,6 @@
           },
           "companyBankCO": {
             "$ref": "#/components/schemas/CompanyBankCODTO"
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
           },
           "additionalData": {
             "type": "object",
@@ -10171,13 +11466,6 @@
             "description": "MG2E_TIPOLOGIA - Tipologia<br><ul><li><i>1</i> - Consumatore</li><li><i>2</i> - Non Consumatore</li><li><i>3</i> - Microimpresa</li></ul>",
             "format": "double",
             "default": "1",
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -10502,13 +11790,6 @@
           "zoneCO": {
             "$ref": "#/components/schemas/ZoneCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -10567,13 +11848,6 @@
           },
           "customerSupplierCO": {
             "$ref": "#/components/schemas/CustomerSupplierCODTO"
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
           },
           "additionalData": {
             "type": "object",
@@ -10667,13 +11941,6 @@
           "paymentTermCO": {
             "$ref": "#/components/schemas/PaymentTermCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -10765,13 +12032,6 @@
             "description": "MG21_TIPOEFF - Tipo effetto<br><ul><li><i>1</i> - Contanti</li><li><i>2</i> - Ricevuta bancaria</li><li><i>3</i> - Tratta</li><li><i>4</i> - Tratta accettata</li><li><i>5</i> - Cessione</li><li><i>6</i> - Cambiale</li><li><i>7</i> - Carta di credito</li><li><i>8</i> - Bancomat</li><li><i>9</i> - Contrassegno</li><li><i>10</i> - Lettera di credito</li><li><i>11</i> - SDD</li><li><i>12</i> - Leasing</li><li><i>13</i> - Rimessa diretta</li><li><i>14</i> - Bonifico Bancario</li><li><i>15</i> - C/C postale</li><li><i>16</i> - MAV</li><li><i>99</i> - Solo descrittivo</li></ul>",
             "format": "double",
             "default": "1",
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -11091,13 +12351,6 @@
           "soggtitiban": {
             "$ref": "#/components/schemas/GeneralMasterDataCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -11146,13 +12399,6 @@
             "description": "MG11_TIPOCF_MG10 - Tipo Cli/For<br><ul><li><i>0</i> -  Cliente</li><li><i>1</i> -  Fornitore</li></ul>",
             "format": "double",
             "default": 0,
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -11877,13 +13123,6 @@
           "nationCO": {
             "$ref": "#/components/schemas/NationCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -11936,13 +13175,6 @@
           },
           "accountingReasonCodeCO": {
             "$ref": "#/components/schemas/AccountingReasonCodeCODTO"
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
           },
           "additionalData": {
             "type": "object",
@@ -12085,13 +13317,6 @@
           },
           "officeCO": {
             "$ref": "#/components/schemas/OfficeCODTO"
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
           },
           "additionalData": {
             "type": "object",
@@ -12243,13 +13468,6 @@
           "officeCO": {
             "$ref": "#/components/schemas/OfficeCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -12299,13 +13517,6 @@
             "description": "PC04_ORDSTAMPA - Ordine di stampa",
             "format": "double",
             "default": 0,
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -12401,13 +13612,6 @@
             },
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -12457,13 +13661,6 @@
             "description": "CG1O_TIPOCF_CG44 - Tipo Cliente / Fornitore<br><ul><li><i>0</i> -  Cliente</li><li><i>1</i> -  Fornitore</li></ul>",
             "format": "double",
             "default": 0,
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -12542,13 +13739,6 @@
           },
           "csBankCO": {
             "$ref": "#/components/schemas/CSBankCODTO"
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
           },
           "additionalData": {
             "type": "object",
@@ -12890,13 +14080,6 @@
             "description": "Id pubblicazione DMS",
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -12980,13 +14163,6 @@
           "currencyCO": {
             "$ref": "#/components/schemas/CurrencyCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -13034,13 +14210,6 @@
             "type": "string",
             "description": "VCG1S_STATOFED - Stato federato"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -13080,13 +14249,6 @@
             "type": "integer",
             "description": "CG6D_FLGIBANOBBL - IBAN",
             "format": "int32",
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -13628,13 +14790,6 @@
             "default": 0,
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -13689,13 +14844,6 @@
             "description": "MG32_TIPOCF - Tipo Cli/For<br><ul><li><i>0</i> -  Cliente</li><li><i>1</i> -  Fornitore</li></ul>",
             "format": "double",
             "default": 0,
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -13754,13 +14902,6 @@
             "default": 0,
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -13796,13 +14937,6 @@
             "type": "integer",
             "description": "IF01_IDTIPO - ID (Required only in PUT/PATCH)",
             "format": "int32",
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -13845,13 +14979,6 @@
           "descr": {
             "type": "string",
             "description": "CGC0_DESCR - Descrizione",
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -13912,13 +15039,6 @@
             },
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -13967,13 +15087,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CategoryCODTO"
-            },
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
             },
             "nullable": true
           },
@@ -14220,13 +15333,6 @@
             "default": 0,
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -14352,13 +15458,6 @@
           "currencyCO": {
             "$ref": "#/components/schemas/CurrencyCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -14420,13 +15519,6 @@
             "format": "byte",
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -14486,13 +15578,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/NatureAssCODTO"
-            },
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
             },
             "nullable": true
           },
@@ -14576,13 +15661,6 @@
             "type": "string",
             "description": "CG31_ROWVERSION - RowVersion",
             "format": "byte",
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -14682,13 +15760,6 @@
             "description": "CG1M_TIPOCF_CG44 - Tipo Cliente / Fornitore<br><ul><li><i>0</i> -  Cliente</li><li><i>1</i> -  Fornitore</li></ul>",
             "format": "double",
             "default": 0,
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -15022,13 +16093,6 @@
           "subTypeCO": {
             "$ref": "#/components/schemas/SubTypeCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -15247,13 +16311,6 @@
           "storeCO": {
             "$ref": "#/components/schemas/StoreCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -15300,13 +16357,6 @@
           "sectionalMasterDataCO": {
             "$ref": "#/components/schemas/SectionalMasterDataCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -15337,13 +16387,6 @@
               "$ref": "#/components/schemas/StatoDTO"
             },
             "description": "Lista di stati disponibili raggiungibili dallo stato corrente."
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
           },
           "additionalData": {
             "type": "object",
@@ -15382,13 +16425,6 @@
             "description": "Indicatore tipo stato: 0 - stato standard, 1 - stato decisionale, 2 - stato autorizzato, 3 -  stato non autorizzato",
             "format": "int32"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -15424,13 +16460,6 @@
             "type": "number",
             "description": "CG7A_PUNTOVEN - Codice punto vendita",
             "format": "double"
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
           },
           "additionalData": {
             "type": "object",
@@ -15499,13 +16528,6 @@
             "description": "MG12_TIPOCF_MG11 - Tipo Cli/For<br><ul><li><i>0</i> -  Cliente</li><li><i>1</i> -  Fornitore</li></ul>",
             "format": "double",
             "default": 0,
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
@@ -15593,13 +16615,6 @@
           "nationCO": {
             "$ref": "#/components/schemas/NationCODTO"
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -15621,13 +16636,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ValidationResultDTO"
-            },
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
             },
             "nullable": true
           },
@@ -16150,13 +17158,6 @@
             "description": "CG15_TIPORAPPPREV - Tipo rapporto",
             "nullable": true
           },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
-            "nullable": true
-          },
           "additionalData": {
             "type": "object",
             "additionalProperties": {},
@@ -16217,13 +17218,6 @@
             "description": "MG09_TIPOCF_MG08 - Tipo Cli/For<br><ul><li><i>0</i> -  Cliente</li><li><i>1</i> -  Fornitore</li></ul>",
             "format": "double",
             "default": "0",
-            "nullable": true
-          },
-          "extensionData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/StringObjectKeyValuePair"
-            },
             "nullable": true
           },
           "additionalData": {
