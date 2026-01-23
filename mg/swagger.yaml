@@ -20649,6 +20649,66 @@
         "additionalProperties": false,
         "description": "MG27_CLIFORACC - Dati di accompagnamento<br>Proprietà chiave:<ul><li><b>CliforCg44</b></li><li><b>DittaCg18</b></li><li><b>TipocfCg44</b></li></ul>"
       },
+      "CliForNotaMGDTO": {
+        "required": [
+          "cliforCg44",
+          "destiponote",
+          "dittaCg18",
+          "prog",
+          "tipocfCg44"
+        ],
+        "type": "object",
+        "properties": {
+          "cliforCg44": {
+            "type": "number",
+            "description": "MG26_CLIFOR_CG44 - Codice Cliente / Fornitore",
+            "format": "double"
+          },
+          "destiponote": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG26_DESTIPONOTE - Tipo note"
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG26_DITTA_CG18 - Ditta",
+            "format": "double"
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG26_IDMEDIA_CG99 - ID HyperMedia",
+            "format": "double",
+            "nullable": true
+          },
+          "note": {
+            "type": "string",
+            "description": "MG26_NOTE - Note",
+            "nullable": true
+          },
+          "prog": {
+            "type": "number",
+            "description": "MG26_PROG - Progressivo",
+            "format": "double"
+          },
+          "tipocfCg44": {
+            "type": "number",
+            "description": "MG26_TIPOCF_CG44 - Tipo Cliente / Fornitore",
+            "format": "double"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG26_CLIFORNOTE - Nota<br>Proprietà chiave:<ul><li><b>CliforCg44</b></li><li><b>DittaCg18</b></li><li><b>Prog</b></li><li><b>TipocfCg44</b></li></ul>"
+      },
       "CompanyDocumentMasterDataMGDTO": {
         "required": [
           "codDocumMg36"
@@ -21256,6 +21316,13 @@
           },
           "macroCategoryCO": {
             "$ref": "#/components/schemas/MacroCategoryCODTO"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CliForNotaMGDTO"
+            },
+            "nullable": true
           },
           "priceListSalePurchase": {
             "$ref": "#/components/schemas/SalePurchasePriceListCodeMGDTO"
@@ -23633,6 +23700,11 @@
             "type": "number",
             "description": "DO30_ALTEZZA - Altezza",
             "format": "double",
+            "nullable": true
+          },
+          "barcode": {
+            "type": "string",
+            "description": "DO30_BARCODE - Codice a barre",
             "nullable": true
           },
           "base": {
@@ -29141,7 +29213,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "CGC0_STRUTINFRAGRUPPO - IntragroupStructureCO<br>Proprietà chiave:<ul><li><b>Codice</b></li></ul>"
+        "description": "CGC0_STRUTINFRAGRUPPO - Struttura intercompany<br>Proprietà chiave:<ul><li><b>Codice</b></li></ul>"
       },
       "KitDocumentResultDTO": {
         "type": "object",
@@ -29717,13 +29789,13 @@
           },
           "datafineval": {
             "type": "string",
-            "description": "CG2N_DATAFINEVAL - Datafineval",
+            "description": "CG2N_DATAFINEVAL - Data di fine validità",
             "format": "date-time",
             "nullable": true
           },
           "datainival": {
             "type": "string",
-            "description": "CG2N_DATAINIVAL - Datainival",
+            "description": "CG2N_DATAINIVAL - Data inizio validità",
             "format": "date-time",
             "nullable": true
           },
@@ -29734,17 +29806,17 @@
           },
           "idassosw": {
             "type": "integer",
-            "description": "CG2N_IDASSOSW - Idassosw",
+            "description": "CG2N_IDASSOSW - ID",
             "format": "int32"
           },
           "idCg2m": {
             "type": "integer",
-            "description": "CG2N_ID_CG2M - IdCg2m",
+            "description": "CG2N_ID_CG2M - Codice natura",
             "format": "int32"
           },
           "rowversion": {
             "type": "string",
-            "description": "CG2N_ROWVERSION - Rowversion",
+            "description": "CG2N_ROWVERSION - RowVersion",
             "format": "byte",
             "nullable": true
           },
@@ -29760,7 +29832,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "CG2N_NATURAASSOSW - NatureAssCO<br>Proprietà chiave:<ul><li><b>Idassosw</b></li></ul>"
+        "description": "CG2N_NATURAASSOSW - Natura Assosoftware<br>Proprietà chiave:<ul><li><b>Idassosw</b></li></ul>"
       },
       "NatureEsCODTO": {
         "required": [
@@ -29777,13 +29849,13 @@
           },
           "datafineval": {
             "type": "string",
-            "description": "CG2M_DATAFINEVAL - Datafineval",
+            "description": "CG2M_DATAFINEVAL - Data di fine validità",
             "format": "date-time",
             "nullable": true
           },
           "datainival": {
             "type": "string",
-            "description": "CG2M_DATAINIVAL - Datainival",
+            "description": "CG2M_DATAINIVAL - Data inizio validità",
             "format": "date-time",
             "nullable": true
           },
@@ -29799,7 +29871,7 @@
           },
           "rowversion": {
             "type": "string",
-            "description": "CG2M_ROWVERSION - Rowversion",
+            "description": "CG2M_ROWVERSION - RowVersion",
             "format": "byte",
             "nullable": true
           },
@@ -29822,7 +29894,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "CG2M_NATURA - NatureEsCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "CG2M_NATURA - Tipo Esenzione<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "OfficeCODTO": {
         "required": [
@@ -32419,7 +32491,7 @@
           },
           "flgMinimi": {
             "type": "integer",
-            "description": "CG15_FLGMINIMI - FlgMinimi<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "description": "CG15_FLGMINIMI - Minimi<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
             "default": 0,
             "nullable": true
@@ -32432,7 +32504,7 @@
           },
           "flgProteo360": {
             "type": "number",
-            "description": "CG15_FLGPROTEO360 - FlgProteo360<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "description": "CG15_FLGPROTEO360 - Aggancio alla procedura Proteo 360<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
@@ -32452,7 +32524,7 @@
           },
           "flgSosprit": {
             "type": "integer",
-            "description": "CG15_FLGSOSPRIT - FlgSosprit<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "description": "CG15_FLGSOSPRIT - Ritenute sospese<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
             "default": 0,
             "nullable": true
@@ -32528,7 +32600,7 @@
           },
           "rowversion": {
             "type": "string",
-            "description": "CG15_ROWVERSION - Rowversion",
+            "description": "CG15_ROWVERSION - RowVersion",
             "format": "byte",
             "nullable": true
           },
@@ -32666,10 +32738,6 @@
       "description": "Collection of services for creating documents for the Kit"
     },
     {
-      "name": "CarrierMG",
-      "description": "Collection of services for Carriers"
-    },
-    {
       "name": "CustomerSupplierExtensionMG",
       "description": "Collection of updating services for additional Customers/Suppliers Warehouse Data"
     },
@@ -32684,6 +32752,10 @@
     {
       "name": "RecipientMG",
       "description": "Collection of services for Recipients"
+    },
+    {
+      "name": "CarrierMG",
+      "description": "Collection of services for Carriers"
     },
     {
       "name": "SpesaVariaMG",

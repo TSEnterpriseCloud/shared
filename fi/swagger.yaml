@@ -21966,6 +21966,7 @@
                               "impeffnetprevS": 20.13,
                               "impeffiva": 3.63,
                               "datadoc": "<DATA>",
+                              "datareg": "<DATA>",
                               "sezdoc": "<SEZIONALE>",
                               "annopart": "<ANNO CORRENTE>",
                               "scadeorig": "<DATA>",
@@ -21991,6 +21992,7 @@
                               "impeffnetprevS": 20.13,
                               "impeffiva": 3.63,
                               "datadoc": "<DATA>",
+                              "datareg": "<DATA>",
                               "sezdoc": "<SEZIONALE>",
                               "annopart": "<ANNO CORRENTE>",
                               "scadeorig": "<DATA>",
@@ -22016,6 +22018,7 @@
                               "impeffnetprevS": 20.74,
                               "impeffiva": 3.74,
                               "datadoc": "<DATA>",
+                              "datareg": "<DATA>",
                               "sezdoc": "<SEZIONALE>",
                               "annopart": "<ANNO CORRENTE>",
                               "scadeorig": "<DATA>",
@@ -34963,6 +34966,7 @@
                               "impeffnetprevS": 20.13,
                               "impeffiva": 3.63,
                               "datadoc": "<DATA>",
+                              "datareg": "<DATA>",
                               "sezdoc": "<SEZIONALE>",
                               "annopart": "<ANNO CORRENTE>",
                               "scadeorig": "<DATA>",
@@ -34988,6 +34992,7 @@
                               "impeffnetprevS": 20.13,
                               "impeffiva": 3.63,
                               "datadoc": "<DATA>",
+                              "datareg": "<DATA>",
                               "sezdoc": "<SEZIONALE>",
                               "annopart": "<ANNO CORRENTE>",
                               "scadeorig": "<DATA>",
@@ -35013,6 +35018,7 @@
                               "impeffnetprevS": 20.74,
                               "impeffiva": 3.74,
                               "datadoc": "<DATA>",
+                              "datareg": "<DATA>",
                               "sezdoc": "<SEZIONALE>",
                               "annopart": "<ANNO CORRENTE>",
                               "scadeorig": "<DATA>",
@@ -48743,30 +48749,12 @@
                     },
                     "glEntryDetailFI": [
                       {
-                        "debitAmount": 110,
-                        "imptotale": 110,
+                        "debitAmount": 610,
+                        "imptotale": 610,
                         "indDaav": 1,
                         "indTipooper": 28,
                         "nrmovgruppo": 0,
                         "numrigacont": 1,
-                        "progEserCg19": 0,
-                        "coaAccountFI": {
-                          "idconto": "<ID CONTO>"
-                        },
-                        "currencyCO": {
-                          "codice": "EURO"
-                        },
-                        "customerSupplierCO": {
-                          "idclifor": "<ID CLIFOR>"
-                        }
-                      },
-                      {
-                        "debitAmount": 500,
-                        "imptotale": 500,
-                        "indDaav": 2,
-                        "indTipooper": 28,
-                        "nrmovgruppo": 0,
-                        "numrigacont": 2,
                         "progEserCg19": 0,
                         "coaAccountFI": {
                           "idconto": "<ID CONTO>"
@@ -48778,10 +48766,10 @@
                       {
                         "creditAmount": 610,
                         "imptotale": 610,
-                        "indDaav": 3,
+                        "indDaav": 2,
                         "indTipooper": 28,
                         "nrmovgruppo": 0,
-                        "numrigacont": 3,
+                        "numrigacont": 2,
                         "progEserCg19": 0,
                         "coaAccountFI": {
                           "idconto": "<ID CONTO>"
@@ -60250,30 +60238,12 @@
                     },
                     "glEntryDetailFI": [
                       {
-                        "debitAmount": 110,
-                        "imptotale": 110,
+                        "debitAmount": 610,
+                        "imptotale": 610,
                         "indDaav": 1,
                         "indTipooper": 28,
                         "nrmovgruppo": 0,
                         "numrigacont": 1,
-                        "progEserCg19": 0,
-                        "coaAccountFI": {
-                          "idconto": "<ID CONTO>"
-                        },
-                        "currencyCO": {
-                          "codice": "EURO"
-                        },
-                        "customerSupplierCO": {
-                          "idclifor": "<ID CLIFOR>"
-                        }
-                      },
-                      {
-                        "debitAmount": 500,
-                        "imptotale": 500,
-                        "indDaav": 2,
-                        "indTipooper": 28,
-                        "nrmovgruppo": 0,
-                        "numrigacont": 2,
                         "progEserCg19": 0,
                         "coaAccountFI": {
                           "idconto": "<ID CONTO>"
@@ -60285,10 +60255,10 @@
                       {
                         "creditAmount": 610,
                         "imptotale": 610,
-                        "indDaav": 3,
+                        "indDaav": 2,
                         "indTipooper": 28,
                         "nrmovgruppo": 0,
-                        "numrigacont": 3,
+                        "numrigacont": 2,
                         "progEserCg19": 0,
                         "coaAccountFI": {
                           "idconto": "<ID CONTO>"
@@ -75388,6 +75358,20 @@
             "format": "double",
             "nullable": true
           },
+          "isCodIvaCg28AI": {
+            "type": "integer",
+            "description": "IE87_IS_CODIVA_CG28_AI - AI cod. IVA<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "isContoCg24AI": {
+            "type": "integer",
+            "description": "IE87_IS_CONTO_CG24_AI - AI conto<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
           "naturaL": {
             "type": "string",
             "description": "IE87_NATURA_L - NaturaL",
@@ -78388,7 +78372,6 @@
       "CSAccountingIndexCODTO": {
         "required": [
           "codCat",
-          "dittaCg18",
           "tipocfCg44"
         ],
         "type": "object",
@@ -78406,7 +78389,9 @@
           "dittaCg18": {
             "type": "number",
             "description": "MGA3_DITTA_CG18 - Ditta",
-            "format": "double"
+            "format": "double",
+            "default": 0,
+            "nullable": true
           },
           "tipocfCg44": {
             "type": "number",
@@ -96147,7 +96132,7 @@
           },
           "id": {
             "type": "integer",
-            "description": "EF03_ID - ID (Required only in PUT/PATCH)",
+            "description": "EF03_ID - Id (Required only in PUT/PATCH)",
             "format": "int64",
             "nullable": true
           },
@@ -100887,7 +100872,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "CGC0_STRUTINFRAGRUPPO - IntragroupStructureCO<br>Proprietà chiave:<ul><li><b>Codice</b></li></ul>"
+        "description": "CGC0_STRUTINFRAGRUPPO - Struttura intercompany<br>Proprietà chiave:<ul><li><b>Codice</b></li></ul>"
       },
       "IsAccountDisabledResultDTO": {
         "type": "object",
@@ -102895,13 +102880,13 @@
           },
           "datafineval": {
             "type": "string",
-            "description": "CG2N_DATAFINEVAL - Datafineval",
+            "description": "CG2N_DATAFINEVAL - Data di fine validità",
             "format": "date-time",
             "nullable": true
           },
           "datainival": {
             "type": "string",
-            "description": "CG2N_DATAINIVAL - Datainival",
+            "description": "CG2N_DATAINIVAL - Data inizio validità",
             "format": "date-time",
             "nullable": true
           },
@@ -102912,17 +102897,17 @@
           },
           "idassosw": {
             "type": "integer",
-            "description": "CG2N_IDASSOSW - Idassosw",
+            "description": "CG2N_IDASSOSW - ID",
             "format": "int32"
           },
           "idCg2m": {
             "type": "integer",
-            "description": "CG2N_ID_CG2M - IdCg2m",
+            "description": "CG2N_ID_CG2M - Codice natura",
             "format": "int32"
           },
           "rowversion": {
             "type": "string",
-            "description": "CG2N_ROWVERSION - Rowversion",
+            "description": "CG2N_ROWVERSION - RowVersion",
             "format": "byte",
             "nullable": true
           },
@@ -102938,7 +102923,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "CG2N_NATURAASSOSW - NatureAssCO<br>Proprietà chiave:<ul><li><b>Idassosw</b></li></ul>"
+        "description": "CG2N_NATURAASSOSW - Natura Assosoftware<br>Proprietà chiave:<ul><li><b>Idassosw</b></li></ul>"
       },
       "NatureEsCO": {
         "type": "object",
@@ -103044,13 +103029,13 @@
           },
           "datafineval": {
             "type": "string",
-            "description": "CG2M_DATAFINEVAL - Datafineval",
+            "description": "CG2M_DATAFINEVAL - Data di fine validità",
             "format": "date-time",
             "nullable": true
           },
           "datainival": {
             "type": "string",
-            "description": "CG2M_DATAINIVAL - Datainival",
+            "description": "CG2M_DATAINIVAL - Data inizio validità",
             "format": "date-time",
             "nullable": true
           },
@@ -103066,7 +103051,7 @@
           },
           "rowversion": {
             "type": "string",
-            "description": "CG2M_ROWVERSION - Rowversion",
+            "description": "CG2M_ROWVERSION - RowVersion",
             "format": "byte",
             "nullable": true
           },
@@ -103089,7 +103074,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "CG2M_NATURA - NatureEsCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+        "description": "CG2M_NATURA - Tipo Esenzione<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
       "NumDocOrigProposalDTO": {
         "type": "object",
@@ -109058,7 +109043,7 @@
           },
           "flgMinimi": {
             "type": "integer",
-            "description": "CG15_FLGMINIMI - FlgMinimi<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "description": "CG15_FLGMINIMI - Minimi<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
             "default": 0,
             "nullable": true
@@ -109071,7 +109056,7 @@
           },
           "flgProteo360": {
             "type": "number",
-            "description": "CG15_FLGPROTEO360 - FlgProteo360<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "description": "CG15_FLGPROTEO360 - Aggancio alla procedura Proteo 360<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "double",
             "default": 0,
             "nullable": true
@@ -109091,7 +109076,7 @@
           },
           "flgSosprit": {
             "type": "integer",
-            "description": "CG15_FLGSOSPRIT - FlgSosprit<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "description": "CG15_FLGSOSPRIT - Ritenute sospese<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
             "format": "int32",
             "default": 0,
             "nullable": true
@@ -109167,7 +109152,7 @@
           },
           "rowversion": {
             "type": "string",
-            "description": "CG15_ROWVERSION - Rowversion",
+            "description": "CG15_ROWVERSION - RowVersion",
             "format": "byte",
             "nullable": true
           },

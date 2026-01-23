@@ -3792,20 +3792,20 @@
   ],
   "tags": [
     {
-      "name": "AsyncCatalogFW",
-      "description": "Collection of services for Schedulable Operations"
-    },
-    {
-      "name": "AsyncSchedulerFW",
-      "description": "Collection of services for Scheduled Processes"
-    },
-    {
       "name": "EditPathFW",
       "description": "Collection of services for Upload/Download Cloud Files"
     },
     {
       "name": "LicenseFW",
       "description": "Collection of services for license"
+    },
+    {
+      "name": "AsyncCatalogFW",
+      "description": "Collection of services for Schedulable Operations"
+    },
+    {
+      "name": "AsyncSchedulerFW",
+      "description": "Collection of services for Scheduled Processes"
     }
   ],
   "servers": [
