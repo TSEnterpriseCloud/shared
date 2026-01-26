@@ -29237,20 +29237,8 @@
       "description": "Reading service for Batch Inventory"
     },
     {
-      "name": "BrandWH",
-      "description": "Collection of services for product Brands"
-    },
-    {
       "name": "CustomerSupplierItemWH",
       "description": "Collection of services for Customers/Suppliers Items"
-    },
-    {
-      "name": "FamilyWH",
-      "description": "Collection of services for Families"
-    },
-    {
-      "name": "FiscalGroupWH",
-      "description": "Collection of services for Fiscal Groups"
     },
     {
       "name": "IEExportWH",
@@ -29261,24 +29249,12 @@
       "description": "Service for importing Warehouse Archives"
     },
     {
-      "name": "InventoryCountWH",
-      "description": "Collection of services for Inventory Counts"
-    },
-    {
       "name": "ItemAgentWH",
       "description": "Collection of services for Item Agents"
     },
     {
-      "name": "ItemBarCodeWH",
-      "description": "Reading service for Item Barcodes"
-    },
-    {
       "name": "ItemGroupWH",
       "description": "Collection of services for Item Groups"
-    },
-    {
-      "name": "ItemStatusWH",
-      "description": "Collection of reading services for Item Statuses"
     },
     {
       "name": "ItemSubGroupWH",
@@ -29287,6 +29263,34 @@
     {
       "name": "ItemWH",
       "description": "Collection of services for Items"
+    },
+    {
+      "name": "SubFamilyWH",
+      "description": "Collection of services for Subfamilies"
+    },
+    {
+      "name": "BrandWH",
+      "description": "Collection of services for product Brands"
+    },
+    {
+      "name": "FamilyWH",
+      "description": "Collection of services for Families"
+    },
+    {
+      "name": "FiscalGroupWH",
+      "description": "Collection of services for Fiscal Groups"
+    },
+    {
+      "name": "InventoryCountWH",
+      "description": "Collection of services for Inventory Counts"
+    },
+    {
+      "name": "ItemBarCodeWH",
+      "description": "Reading service for Item Barcodes"
+    },
+    {
+      "name": "ItemStatusWH",
+      "description": "Collection of reading services for Item Statuses"
     },
     {
       "name": "KitWH",
@@ -29311,10 +29315,6 @@
     {
       "name": "StorageWH",
       "description": "Collection of services for Storages"
-    },
-    {
-      "name": "SubFamilyWH",
-      "description": "Collection of services for Subfamilies"
     }
   ],
   "servers": [

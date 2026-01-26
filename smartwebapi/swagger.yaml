@@ -9721,7 +9721,9 @@
       "WarehouseItem": {
         "type": "object",
         "required": [
-          "code"
+          "code",
+          "description",
+          "vatcode"
         ],
         "properties": {
           "code": {
