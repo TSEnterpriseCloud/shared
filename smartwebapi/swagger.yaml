@@ -9773,7 +9773,9 @@
       "WarehouseItemPut": {
         "type": "object",
         "required": [
-          "code"
+          "code",
+          "description",
+          "vatcode"
         ],
         "properties": {
           "code": {
@@ -10079,17 +10081,10 @@
             }
           },
           "instalments": {
-            "oneOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/InvoiceInstalment"
-                }
-              },
-              {
-                "type": "null"
-              }
-            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvoiceInstalment"
+            },
             "description": "List of instalments of invoice movement"
           }
         }
@@ -10112,7 +10107,7 @@
             "description": "Instalment due date",
             "format": "date"
           },
-          "type": {
+          "type-instalment": {
             "type": "integer",
             "format": "int32",
             "description": "type of instalment: 1=Cash - 2=Bank receipt - 3=Draft - 4=Draft accepted - 5=Assignment - 6=Promissory note - 7=Credit card - 8=Debit card - 9=Cash on delivery - 10=Letter of credit - 11=SDD - 12=Leasing - 13=Direct remittance - 14=Bank transfer - 15=Postal account - 16=MAV",
