@@ -76689,6 +76689,10 @@
             "type": "string",
             "nullable": true
           },
+          "balanceSheetAccountCategory": {
+            "type": "integer",
+            "format": "int32"
+          },
           "cliFor": {
             "$ref": "#/components/schemas/ICustomerSupplierContract"
           },
@@ -77086,6 +77090,13 @@
           "alias": {
             "type": "string",
             "description": "CG24_ALIAS - Alias",
+            "nullable": true
+          },
+          "balanceSheetAccountCategory": {
+            "type": "integer",
+            "description": "CG24_BALANCESHEETACCOUNTCATEGORY - BalanceSheetAccountCategory<br><ul><li><i>0</i> - No</li><li><i>1</i> - Attivo</li><li><i>2</i> - Passivo</li></ul>",
+            "format": "int32",
+            "default": 0,
             "nullable": true
           },
           "codeformatted": {
