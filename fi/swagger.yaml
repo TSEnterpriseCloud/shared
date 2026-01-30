@@ -77094,7 +77094,7 @@
           },
           "balanceSheetAccountCategory": {
             "type": "integer",
-            "description": "CG24_BALANCESHEETACCOUNTCATEGORY - BalanceSheetAccountCategory<br><ul><li><i>0</i> - No</li><li><i>1</i> - Attivo</li><li><i>2</i> - Passivo</li></ul>",
+            "description": "CG24_BALANCESHEETACCOUNTCATEGORY - Tipo conto patrimoniale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Attivo</li><li><i>2</i> - Passivo</li></ul>",
             "format": "int32",
             "default": 0,
             "nullable": true
