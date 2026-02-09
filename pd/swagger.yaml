@@ -7294,6 +7294,3003 @@
         }
       }
     },
+    "/api/v1/{environment}/PD/ProjectClassAPD/{id}": {
+      "get": {
+        "tags": [
+          "ProjectClassAPD"
+        ],
+        "summary": "Get by ID",
+        "description": "Get an object of type corresponding the requested id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id to get the object",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "dlevel",
+            "in": "query",
+            "description": "Serialization level",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dlevelkey",
+            "in": "query",
+            "description": "Serialization level key",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The object of type requested",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassAPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassAPDDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ProjectClassAPD"
+        ],
+        "summary": "Update",
+        "description": "Updating an object of type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassAPDDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassAPDDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "If object has been updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassAPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassAPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the object has not been updated: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been updated due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ProjectClassAPD"
+        ],
+        "summary": "Delete",
+        "description": "Deleting object of type ",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "If object has been deleted"
+          },
+          "400": {
+            "description": "if object has not been deleted: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been deleted due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ProjectClassAPD"
+        ],
+        "summary": "Update partial",
+        "description": "Patching an object of type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to patch",
+          "content": {
+            "application/json": {
+              "schema": {}
+            },
+            "application/xml": {
+              "schema": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "If object has been updated"
+          },
+          "400": {
+            "description": "If the object has not been patched: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been patched due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/PD/ProjectClassAPD": {
+      "post": {
+        "tags": [
+          "ProjectClassAPD"
+        ],
+        "summary": "Create",
+        "description": "Creating new object of type",
+        "parameters": [
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to create",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassAPDDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassAPDDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "If object has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassAPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassAPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the object has not been created: the content response contains validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "409": {
+            "description": "If object has not been created due to business rules violation: the content response contains validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/PD/ProjectClassAPD/search": {
+      "post": {
+        "tags": [
+          "ProjectClassAPD"
+        ],
+        "summary": "Search",
+        "description": "Search among object of type",
+        "parameters": [
+          {
+            "name": "loadEntireDomain",
+            "in": "query",
+            "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "getTotalCount",
+            "in": "query",
+            "description": "Specify 'gettotalcount=true' if you want the total number of elements",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Search criteria to apply",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The list of object of type as result of search",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassAPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassAPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the search criteria is not supplied"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/PD/ProjectClassAPD/read": {
+      "post": {
+        "tags": [
+          "ProjectClassAPD"
+        ],
+        "summary": "Read",
+        "description": "Read among object of type",
+        "parameters": [
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "dlevel",
+            "in": "query",
+            "description": "Serialization level",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dlevelkey",
+            "in": "query",
+            "description": "Serialization level key",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Search criteria to apply",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SearchElementDTO"
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SearchElementDTO"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The object of type requested",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassAPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassAPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/PD/ProjectClassBPD/{id}": {
+      "get": {
+        "tags": [
+          "ProjectClassBPD"
+        ],
+        "summary": "Get by ID",
+        "description": "Get an object of type corresponding the requested id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id to get the object",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "dlevel",
+            "in": "query",
+            "description": "Serialization level",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dlevelkey",
+            "in": "query",
+            "description": "Serialization level key",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The object of type requested",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassBPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassBPDDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ProjectClassBPD"
+        ],
+        "summary": "Update",
+        "description": "Updating an object of type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassBPDDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassBPDDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "If object has been updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassBPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassBPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the object has not been updated: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been updated due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ProjectClassBPD"
+        ],
+        "summary": "Delete",
+        "description": "Deleting object of type ",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "If object has been deleted"
+          },
+          "400": {
+            "description": "if object has not been deleted: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been deleted due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ProjectClassBPD"
+        ],
+        "summary": "Update partial",
+        "description": "Patching an object of type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to patch",
+          "content": {
+            "application/json": {
+              "schema": {}
+            },
+            "application/xml": {
+              "schema": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "If object has been updated"
+          },
+          "400": {
+            "description": "If the object has not been patched: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been patched due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/PD/ProjectClassBPD": {
+      "post": {
+        "tags": [
+          "ProjectClassBPD"
+        ],
+        "summary": "Create",
+        "description": "Creating new object of type",
+        "parameters": [
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to create",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassBPDDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassBPDDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "If object has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassBPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassBPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the object has not been created: the content response contains validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "409": {
+            "description": "If object has not been created due to business rules violation: the content response contains validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/PD/ProjectClassBPD/search": {
+      "post": {
+        "tags": [
+          "ProjectClassBPD"
+        ],
+        "summary": "Search",
+        "description": "Search among object of type",
+        "parameters": [
+          {
+            "name": "loadEntireDomain",
+            "in": "query",
+            "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "getTotalCount",
+            "in": "query",
+            "description": "Specify 'gettotalcount=true' if you want the total number of elements",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Search criteria to apply",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The list of object of type as result of search",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassBPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassBPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the search criteria is not supplied"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/PD/ProjectClassBPD/read": {
+      "post": {
+        "tags": [
+          "ProjectClassBPD"
+        ],
+        "summary": "Read",
+        "description": "Read among object of type",
+        "parameters": [
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "dlevel",
+            "in": "query",
+            "description": "Serialization level",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dlevelkey",
+            "in": "query",
+            "description": "Serialization level key",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Search criteria to apply",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SearchElementDTO"
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SearchElementDTO"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The object of type requested",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassBPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassBPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/PD/ProjectClassCPD/{id}": {
+      "get": {
+        "tags": [
+          "ProjectClassCPD"
+        ],
+        "summary": "Get by ID",
+        "description": "Get an object of type corresponding the requested id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id to get the object",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "dlevel",
+            "in": "query",
+            "description": "Serialization level",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dlevelkey",
+            "in": "query",
+            "description": "Serialization level key",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The object of type requested",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassCPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassCPDDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ProjectClassCPD"
+        ],
+        "summary": "Update",
+        "description": "Updating an object of type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassCPDDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassCPDDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "If object has been updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassCPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassCPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the object has not been updated: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been updated due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ProjectClassCPD"
+        ],
+        "summary": "Delete",
+        "description": "Deleting object of type ",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "If object has been deleted"
+          },
+          "400": {
+            "description": "if object has not been deleted: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been deleted due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ProjectClassCPD"
+        ],
+        "summary": "Update partial",
+        "description": "Patching an object of type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to patch",
+          "content": {
+            "application/json": {
+              "schema": {}
+            },
+            "application/xml": {
+              "schema": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "If object has been updated"
+          },
+          "400": {
+            "description": "If the object has not been patched: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been patched due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/PD/ProjectClassCPD": {
+      "post": {
+        "tags": [
+          "ProjectClassCPD"
+        ],
+        "summary": "Create",
+        "description": "Creating new object of type",
+        "parameters": [
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to create",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassCPDDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/ProjectClassCPDDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "If object has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassCPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassCPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the object has not been created: the content response contains validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "409": {
+            "description": "If object has not been created due to business rules violation: the content response contains validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/PD/ProjectClassCPD/search": {
+      "post": {
+        "tags": [
+          "ProjectClassCPD"
+        ],
+        "summary": "Search",
+        "description": "Search among object of type",
+        "parameters": [
+          {
+            "name": "loadEntireDomain",
+            "in": "query",
+            "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "getTotalCount",
+            "in": "query",
+            "description": "Specify 'gettotalcount=true' if you want the total number of elements",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Search criteria to apply",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The list of object of type as result of search",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassCPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassCPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the search criteria is not supplied"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/PD/ProjectClassCPD/read": {
+      "post": {
+        "tags": [
+          "ProjectClassCPD"
+        ],
+        "summary": "Read",
+        "description": "Read among object of type",
+        "parameters": [
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "dlevel",
+            "in": "query",
+            "description": "Serialization level",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dlevelkey",
+            "in": "query",
+            "description": "Serialization level key",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Search criteria to apply",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SearchElementDTO"
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SearchElementDTO"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The object of type requested",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassCPDDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectClassCPDDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Returned when the search parameters are invalid or when the query returns more than one matching entity."
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/PD/RepartoPD/{id}": {
       "get": {
         "tags": [
@@ -11092,6 +14089,158 @@
         "additionalProperties": false,
         "description": "PD0D_ATTIVITA - Attività progetto<br>Proprietà chiave:<ul><li><b>CodAttivita</b></li><li><b>CodProgPd68</b></li><li><b>DittaCg18</b></li></ul>"
       },
+      "ProjectClassAPDDTO": {
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "minLength": 1,
+            "type": "string",
+            "description": "PD1F_CODICE - Codice classe A"
+          },
+          "companyCode": {
+            "type": "number",
+            "description": "PD1F_DITTA_CG18 - Codice ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "PD1F_DESCR - Descrizione Classe A",
+            "nullable": true
+          },
+          "isHierarchic": {
+            "type": "number",
+            "description": "PD1F_FLGGERARCHICO - Gerarchico",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "structureType": {
+            "type": "number",
+            "description": "PD1F_INDCLASSE - Tipo Struttura<br><ul><li><i>0</i> - Progetto</li><li><i>1</i> - Nodo</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "PD1F_CLASSEAPROG - Classificazioni progetti e nodi<br>Proprietà chiave:<ul><li><b>Code</b></li><li><b>CompanyCode</b></li></ul>"
+      },
+      "ProjectClassBPDDTO": {
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "minLength": 1,
+            "type": "string",
+            "description": "PD1G_CODICE - Codice classe B"
+          },
+          "companyCode": {
+            "type": "number",
+            "description": "PD1G_DITTA_CG18 - Codice ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "PD1G_DESCR - Descrizione Classe B",
+            "nullable": true
+          },
+          "isHierarchic": {
+            "type": "number",
+            "description": "PD1G_FLGGERARCHICO - Gerarchico",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "structureType": {
+            "type": "number",
+            "description": "PD1G_INDCLASSE - Tipo Struttura<br><ul><li><i>0</i> - Progetto</li><li><i>1</i> - Nodo</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "projectClassA": {
+            "$ref": "#/components/schemas/ProjectClassAPDDTO"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "PD1G_CLASSEBPROG - Classificazioni progetti e nodi<br>Proprietà chiave:<ul><li><b>Code</b></li><li><b>CompanyCode</b></li></ul>"
+      },
+      "ProjectClassCPDDTO": {
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "minLength": 1,
+            "type": "string",
+            "description": "PD1H_CODICE - Codice classe C"
+          },
+          "companyCode": {
+            "type": "number",
+            "description": "PD1H_DITTA_CG18 - Codice ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "PD1H_DESCR - Descrizione Classe C",
+            "nullable": true
+          },
+          "structureType": {
+            "type": "number",
+            "description": "PD1H_INDCLASSE - Tipo Struttura<br><ul><li><i>0</i> - Progetto</li><li><i>1</i> - Nodo</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "projectClassB": {
+            "$ref": "#/components/schemas/ProjectClassBPDDTO"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "PD1H_CLASSECPROG - Classificazioni progetti e nodi<br>Proprietà chiave:<ul><li><b>Code</b></li><li><b>CompanyCode</b></li></ul>"
+      },
       "ProjectPDDTO": {
         "required": [
           "codProg"
@@ -12729,6 +15878,14 @@
   ],
   "tags": [
     {
+      "name": "Progetto",
+      "description": "Collection of services for Projects"
+    },
+    {
+      "name": "WorkOrderService",
+      "description": "Collection of services for Work Order Operations"
+    },
+    {
       "name": "AnagraficaTurnoPD",
       "description": "Collection of services for Shifts Master Data"
     },
@@ -12761,16 +15918,20 @@
       "description": "Reading service for Production Order Steps"
     },
     {
-      "name": "Progetto",
-      "description": "Collection of services for Projects"
+      "name": "ProjectClassAPD",
+      "description": "Collection of services for Project Classes A"
+    },
+    {
+      "name": "ProjectClassBPD",
+      "description": "Collection of services for Project Classes B"
+    },
+    {
+      "name": "ProjectClassCPD",
+      "description": "Collection of services for Project Classes C"
     },
     {
       "name": "RepartoPD",
       "description": "Collection of services for production Departments"
-    },
-    {
-      "name": "WorkOrderService",
-      "description": "Collection of services for Work Order Operations"
     }
   ],
   "servers": [
