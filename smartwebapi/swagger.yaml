@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "TeamSystem Enterprise Cloud WebApi Smart - Documentation",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "This is Application Flow for interact with TeamSystem Enterprise's Smart WebApi.",
     "contact": {
       "email": "info@teamsystem.com",
@@ -26,6 +26,18 @@
     }
   ],
   "servers": [
+    {
+      "url": "http://localhost:4000",
+      "description": "Debug local machine for TeamSystem Enterprise Smart WebApi"
+    },
+    {
+      "url": "https://tsec-smartwebapi-stage-app.azurewebsites.net",
+      "description": "Stage environment for TeamSystem Enterprise Smart WebApi"
+    },
+    {
+      "url": "https://tsec-smartwebapi-test.azurewebsites.net",
+      "description": "Test environment for TeamSystem Enterprise Smart WebApi"
+    },
     {
       "url": "https://tse.smart-api.teamsystem.cloud",
       "description": "TeamSystem Enterprise Smart WebApi"
@@ -54,20 +66,20 @@
       "description": "Customer management"
     },
     {
-      "name": "Document",
-      "description": "Document management (orders, invoices, delivery notes)"
-    },
-    {
-      "name": "Finance",
-      "description": "Finance management"
-    },
-    {
       "name": "Supplier",
       "description": "Supplier management"
     },
     {
       "name": "Warehouse",
       "description": "Warehouse Items management"
+    },
+    {
+      "name": "Finance",
+      "description": "Finance management"
+    },
+    {
+      "name": "Document",
+      "description": "Document management (orders, invoices, delivery notes)"
     }
   ],
   "paths": {
@@ -269,7 +281,7 @@
           "first-name": "Mario",
           "last-name": "Rossi",
           "email": "mario.rossi@example.com",
-          "vat-number": "IT12345678901"
+          "vat-number": "12345678903"
         },
         "parameters": [
           {
@@ -363,8 +375,8 @@
                     "country": "Italia",
                     "payment": "201",
                     "currency": "EUR",
-                    "vat-number": "IT12345678901",
-                    "fiscal-code": "RSSMRA80A01H501X",
+                    "vat-number": "12345678903",
+                    "fiscal-code": "RSSMRA80A01H501U",
                     "sdi": "0000000"
                   }
                 }
@@ -685,7 +697,7 @@
           "first-name": "Mario",
           "last-name": "Rossi",
           "email": "mario.rossi@example.com",
-          "vat-number": "IT12345678901"
+          "vat-number": "12345678903"
         },
         "parameters": [
           {
@@ -790,8 +802,8 @@
                     "country": "Italia",
                     "payment": "201",
                     "currency": "EUR",
-                    "vat-number": "IT12345678901",
-                    "fiscal-code": "RSSMRA80A01H501X",
+                    "vat-number": "12345678903",
+                    "fiscal-code": "RSSMRA80A01H501U",
                     "sdi": "0000000"
                   }
                 }
@@ -1131,6 +1143,17 @@
             }
           },
           {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData query filters",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "A comma-separated list of fields to include in the response. If not specified, all fields will be returned.",
@@ -1316,13 +1339,13 @@
               "first-name": "Mario",
               "last-name": "Rossi",
               "email": "mario.rossi@example.com",
-              "vat-number": "IT12345678901"
+              "vat-number": "12345678903"
             },
             {
               "first-name": "Luigi",
               "last-name": "Verdi",
               "email": "luigi.verdi@example.com",
-              "vat-number": "IT98765432109"
+              "vat-number": "98765432103"
             }
           ]
         },
@@ -1439,8 +1462,8 @@
                       "country": "Italia",
                       "payment": "201",
                       "currency": "EUR",
-                      "vat-number": "IT12345678901",
-                      "fiscal-code": "RSSMRA80A01H501X",
+                      "vat-number": "12345678903",
+                      "fiscal-code": "RSSMRA80A01H501U",
                       "sdi": "0000000"
                     },
                     {
@@ -1456,8 +1479,8 @@
                       "country": "Italia",
                       "payment": "202",
                       "currency": "EUR",
-                      "vat-number": "IT98765432101",
-                      "fiscal-code": "VRDLGU75C10F205Y",
+                      "vat-number": "98765432103",
+                      "fiscal-code": "VRDLGU75C10F205C",
                       "sdi": "1111111"
                     }
                   ]
@@ -1790,6 +1813,17 @@
             }
           },
           {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData query filters",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "A comma-separated list of fields to include in the response. If not specified, all fields will be returned.",
@@ -1972,7 +2006,7 @@
         "x-ai-sample": {
           "company-name": "Acme Corp",
           "contact-email": "contact@acme.com",
-          "vat-number": "IT11223344556",
+          "vat-number": "11223344554",
           "address": "Via Roma 123, Milano"
         },
         "parameters": [
@@ -2068,8 +2102,8 @@
                     "payment-code": "202",
                     "currency-code": "EUR",
                     "type-code": 0,
-                    "vat-number": "IT11223344556",
-                    "fiscal-code": "RSSMRA70B15F205X",
+                    "vat-number": "11223344554",
+                    "fiscal-code": "RSSMRA70B15F205I",
                     "sdi": "1234567"
                   }
                 }
@@ -2523,8 +2557,8 @@
                     "payment-code": "202",
                     "currency-code": "EUR",
                     "type-code": 1,
-                    "vat-number": "IT11223344556",
-                    "fiscal-code": "RSSMRA70B15F205X",
+                    "vat-number": "11223344554",
+                    "fiscal-code": "RSSMRA70B15F205I",
                     "sdi": "1234567"
                   }
                 }
@@ -2962,8 +2996,8 @@
                       "payment-code": "202",
                       "currency-code": "EUR",
                       "type-code": 0,
-                      "vat-number": "IT11223344556",
-                      "fiscal-code": "RSSMRA70B15F205X",
+                      "vat-number": "11223344554",
+                      "fiscal-code": "RSSMRA70B15F205I",
                       "sdi": "1234567"
                     },
                     {
@@ -2980,8 +3014,8 @@
                       "payment-code": "203",
                       "currency-code": "EUR",
                       "type-code": 1,
-                      "vat-number": "IT55667788990",
-                      "fiscal-code": "BNCGPP65D20L219Z",
+                      "vat-number": "55667788990",
+                      "fiscal-code": "BNCGPP65D20L219G",
                       "sdi": "9876543"
                     }
                   ]
@@ -3385,7 +3419,9 @@
                 "Simple request": {
                   "summary": "Minimal warehouse item with required fields only",
                   "value": {
-                    "code": "ART001"
+                    "code": "ART001",
+                    "description": "Product Sample Description",
+                    "vatcode": "22"
                   }
                 }
               }
@@ -3823,7 +3859,6 @@
                 "Default (complete)": {
                   "summary": "Default (complete)",
                   "value": {
-                    "code": "ART001",
                     "description": "Updated Product Description",
                     "vatcode": "22",
                     "um": "KG",
@@ -4168,6 +4203,17 @@
             }
           },
           {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData query filters",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "fields",
             "in": "query",
             "description": "A comma-separated list of fields to include in the response. If not specified, all fields will be returned.",
@@ -4466,10 +4512,14 @@
                   "summary": "Multiple warehouse items with required fields only",
                   "value": [
                     {
-                      "code": "ART001"
+                      "code": "ART001",
+                      "description": "Product Sample Description",
+                      "vatcode": "22"
                     },
                     {
-                      "code": "ART002"
+                      "code": "ART002",
+                      "description": "Another Product Sample",
+                      "vatcode": "20"
                     }
                   ]
                 }
@@ -4762,6 +4812,244 @@
           },
           "404": {
             "description": "Warehouse items not found. The specified customer ID does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/finance/movements": {
+      "description": "operations for financial movements",
+      "get": {
+        "summary": "Get movements item list",
+        "tags": [
+          "Finance"
+        ],
+        "description": "Retrieve all filtered movements in the specified product and version environment.",
+        "operationId": "get-movements",
+        "x-ai-purpose": "movements_retrieval",
+        "x-ai-entity": "Movement",
+        "x-ai-intent": "get",
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the movement will be retrieved. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the warehouse items will be created.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the movement will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData query filters",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "A comma-separated list of fields to include in the response. If not specified, all fields will be returned.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "accounting-reason,date-registry,description,currency,sectional,rows"
+            }
+          },
+          {
+            "name": "pagecount",
+            "in": "query",
+            "description": "Pagination. Record count per page. Default is 200",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "default": 200,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "pageposition",
+            "in": "query",
+            "description": "Pagination. Page position. Default is 0 (starting from 0).",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "default": 0,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "Order by field.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "date-registry"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Order creation request accepted for asynchronous processing.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Movement"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Movements not found. Movements does not exists in the system.",
             "content": {
               "application/json": {
                 "schema": {
@@ -5217,6 +5505,244 @@
           },
           "409": {
             "description": "A business error occurred. The movement could not be updated due to a conflict.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type. The request body format is not supported.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{product}/{version}/company/{companyId}/finance/movements/invoice": {
+      "description": "operations for financial invoice movements",
+      "get": {
+        "summary": "Get movements invoice item list",
+        "tags": [
+          "Finance"
+        ],
+        "description": "Retrieve all filtered financial invoice movements in the specified product and version environment.",
+        "operationId": "get-invoice-movements-by-id",
+        "x-ai-purpose": "movement_invoices_retrieval",
+        "x-ai-entity": "MovementInvoice",
+        "x-ai-intent": "get",
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the movement will be retrieved. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company where the warehouse items will be created.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the movement will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "OData query filters",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "A comma-separated list of fields to include in the response. If not specified, all fields will be returned.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "accounting-reason,date-registry,description,customer-supplier,amount,currency,rows"
+            }
+          },
+          {
+            "name": "pagecount",
+            "in": "query",
+            "description": "Pagination. Record count per page. Default is 200",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "default": 200,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "pageposition",
+            "in": "query",
+            "description": "Pagination. Page position. Default is 0 (starting from 0).",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "default": 0,
+              "pattern": "^[0-9]{1,5}$"
+            }
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "Order by field.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "date-registry"
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Order creation request accepted for asynchronous processing.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MovementInvoice"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Financial Invoice Movements not found. Invoice movements does not exists in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "Not Acceptable. The requested language is not supported.",
             "content": {
               "application/json": {
                 "schema": {
@@ -6515,6 +7041,7 @@
                 "Default (complete)": {
                   "value": {
                     "accounting-reason": "1",
+                    "description": "Invoice Registration",
                     "date-registry": "2026-01-05",
                     "document-number": "1",
                     "progressive-number": "1",
@@ -6566,12 +7093,11 @@
                     ]
                   }
                 },
-                "Recording an invoice": {
+                "Recording an sale invoice": {
                   "value": {
                     "accounting-reason": "1",
-                    "document-number": "1",
-                    "progressive-number": "1",
                     "sectional": "00",
+                    "progressive-number": "1",
                     "currency": "EUR",
                     "customer-supplier": 1,
                     "amount": 1220,
@@ -6610,12 +7136,11 @@
                     ]
                   }
                 },
-                "Recording an invoice with manual instalments": {
+                "Recording an sale invoice with manual instalments": {
                   "value": {
                     "accounting-reason": "1",
-                    "document-number": "1",
-                    "progressive-number": "1",
                     "sectional": "00",
+                    "progressive-number": "1",
                     "currency": "EUR",
                     "customer-supplier": 1,
                     "amount": 1220,
@@ -6660,6 +7185,40 @@
                       {
                         "due-date": "2026-12-31",
                         "original-amount": 720
+                      }
+                    ]
+                  }
+                },
+                "Recording an purchase invoice": {
+                  "value": {
+                    "accounting-reason": "31",
+                    "sectional": "00",
+                    "progressive-number": "1",
+                    "document-number": "52X",
+                    "currency": "EUR",
+                    "customer-supplier": 1,
+                    "amount": 1220,
+                    "rows": [
+                      {
+                        "sign": "A",
+                        "operation-type": "total",
+                        "amount": 1220
+                      },
+                      {
+                        "sign": "D",
+                        "operation-type": "taxable",
+                        "amount": 1000,
+                        "account-code": "5500280005",
+                        "vat-row": {
+                          "tax-code": "22",
+                          "tax-base": 220
+                        }
+                      },
+                      {
+                        "sign": "D",
+                        "operation-type": "tax",
+                        "amount": 220,
+                        "account-code": "1800200005"
                       }
                     ]
                   }
@@ -6777,7 +7336,6 @@
         "x-ai-sample": {
           "accounting-reason": "1",
           "date-registry": "2026-01-05",
-          "document-number": "1",
           "progressive-number": "1",
           "sectional": "00",
           "document-date": "2026-01-05",
@@ -6919,10 +7477,10 @@
                   "value": [
                     {
                       "accounting-reason": "1",
+                      "description": "Invoice Registration",
                       "date-registry": "2026-01-05",
-                      "document-number": "1",
-                      "progressive-number": "1",
                       "sectional": "00",
+                      "progressive-number": "1",
                       "document-date": "2026-01-05",
                       "currency": "EUR",
                       "customer-supplier": 1,
@@ -6971,11 +7529,10 @@
                     }
                   ]
                 },
-                "Recording an invoice": {
+                "Recording an sale invoice": {
                   "value": [
                     {
                       "accounting-reason": "1",
-                      "document-number": "1",
                       "progressive-number": "1",
                       "sectional": "00",
                       "currency": "EUR",
@@ -7017,11 +7574,10 @@
                     }
                   ]
                 },
-                "Recording an invoice with manual instalments": {
+                "Recording an sale invoice with manual instalments": {
                   "value": [
                     {
                       "accounting-reason": "1",
-                      "document-number": "1",
                       "progressive-number": "1",
                       "sectional": "00",
                       "currency": "EUR",
@@ -7068,6 +7624,42 @@
                         {
                           "due-date": "2026-12-31",
                           "original-amount": 720
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "Recording an purchase invoice": {
+                  "value": [
+                    {
+                      "accounting-reason": "31",
+                      "sectional": "00",
+                      "progressive-number": "1",
+                      "document-number": "52X",
+                      "currency": "EUR",
+                      "customer-supplier": 1,
+                      "amount": 1220,
+                      "rows": [
+                        {
+                          "sign": "A",
+                          "operation-type": "total",
+                          "amount": 1220
+                        },
+                        {
+                          "sign": "D",
+                          "operation-type": "taxable",
+                          "amount": 1000,
+                          "account-code": "5500280005",
+                          "vat-row": {
+                            "tax-code": "22",
+                            "tax-base": 220
+                          }
+                        },
+                        {
+                          "sign": "D",
+                          "operation-type": "tax",
+                          "amount": 220,
+                          "account-code": "1800200005"
                         }
                       ]
                     }
@@ -7356,7 +7948,7 @@
         "tags": [
           "Finance"
         ],
-        "description": "Register a payment or receipt for a specific invoice. The system will automatically decode the invoice document, populate rows and instalments based on invoice data (REQ0005).",
+        "description": "Register a payment or receipt for a specific invoice. The system will automatically decode the invoice document, populate rows and instalments based on invoice data.",
         "operationId": "createinvoicepayment",
         "x-ai-purpose": "invoice_payment_creation",
         "x-ai-entity": "Movement",
@@ -7465,7 +8057,7 @@
                   "value": {
                     "accounting-reason": "109",
                     "date-registry": "2025-12-18",
-                    "document-number": "FAT-2025-001",
+                    "document-number": "ASS-2025-001",
                     "progressive-number": "200",
                     "sectional": "00",
                     "document-date": "2025-12-18",
@@ -7587,7 +8179,7 @@
         "tags": [
           "Finance"
         ],
-        "description": "Register payments or receipts for multiple invoices. The system will automatically decode instalments based on the provided instalment IDs (REQ0006).",
+        "description": "Register payments or receipts for multiple invoices. The system will automatically decode instalments based on the provided instalment IDs.",
         "operationId": "createinvoicepayments",
         "x-ai-purpose": "invoice_payments_creation",
         "x-ai-entity": "Movement",
@@ -7595,8 +8187,6 @@
         "x-ai-sample": {
           "accounting-reason": "109",
           "date-registry": "2025-12-18",
-          "document-number": "0",
-          "progressive-number": "0",
           "sectional": "00",
           "document-date": "2025-12-18",
           "description": "Incasso/Pagamento",
@@ -7715,8 +8305,8 @@
                     {
                       "accounting-reason": "109",
                       "date-registry": "2025-12-18",
-                      "document-number": "0",
-                      "progressive-number": "0",
+                      "document-number": "ASS-2025-001",
+                      "progressive-number": "1",
                       "sectional": "00",
                       "document-date": "2025-12-18",
                       "description": "Incasso/Pagamento",
@@ -8670,24 +9260,22 @@
                   "summary": "Default (complete)",
                   "value": {
                     "model-code": "CLI-ORDINE",
-                    "document-existing": false,
                     "document-date": "2026-01-13",
                     "registry-date": "2026-01-13",
                     "document-number": 0,
-                    "customer-supplier": 1,
+                    "customer-supplier": "1",
                     "sectional-code": "00",
                     "storage-code": "00",
                     "payment-term-code": "201",
-                    "document-total": 1500,
                     "rows": [
                       {
                         "row-number": 1,
                         "row-type": 0,
                         "item-code": "ART001",
+                        "item-variant-id": "",
                         "description": "Updated product description",
                         "delivery-date": "2026-02-20",
-                        "quantity": 15,
-                        "enable-price-discount-flexibility": true,
+                        "quantity": 10,
                         "price": 100,
                         "vat-code": "22"
                       }
@@ -8700,12 +9288,14 @@
                     "model-code": "CLI-ORDINE",
                     "document-date": "2026-01-13",
                     "registry-date": "2026-01-13",
-                    "customer-supplier": 1,
+                    "customer-supplier": "1",
                     "sectional-code": "00",
                     "storage-code": "00",
                     "payment-term-code": "201",
                     "rows": [
                       {
+                        "item-code": "ART001",
+                        "quantity": 1,
                         "row-number": 1,
                         "row-type": 0
                       }
@@ -8992,7 +9582,6 @@
         "x-ai-sample": [
           {
             "model-code": "CLI-ORDINE",
-            "document-existing": false,
             "document-date": "2025-11-28",
             "registry-date": "2025-11-28",
             "document-number": "0",
@@ -9095,6 +9684,58 @@
                 },
                 "minItems": 1,
                 "maxItems": 1000
+              },
+              "examples": {
+                "Default (complete)": {
+                  "summary": "Default (complete)",
+                  "value": [
+                    {
+                      "model-code": "CLI-ORDINE",
+                      "document-date": "2026-01-13",
+                      "registry-date": "2026-01-13",
+                      "document-number": 0,
+                      "customer-supplier": "1",
+                      "sectional-code": "00",
+                      "storage-code": "00",
+                      "payment-term-code": "201",
+                      "rows": [
+                        {
+                          "row-number": 1,
+                          "row-type": 0,
+                          "item-code": "ART001",
+                          "item-variant-id": "",
+                          "description": "Updated product description",
+                          "delivery-date": "2026-02-20",
+                          "quantity": 10,
+                          "price": 100,
+                          "vat-code": "22"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "Simple request": {
+                  "summary": "Minimal order update with required fields only",
+                  "value": [
+                    {
+                      "model-code": "CLI-ORDINE",
+                      "document-date": "2026-01-13",
+                      "registry-date": "2026-01-13",
+                      "customer-supplier": "1",
+                      "sectional-code": "00",
+                      "storage-code": "00",
+                      "payment-term-code": "201",
+                      "rows": [
+                        {
+                          "item-code": "ART001",
+                          "quantity": 1,
+                          "row-number": 1,
+                          "row-type": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
               }
             }
           }
@@ -9556,7 +10197,7 @@
             "type": "string",
             "description": "phone number",
             "example": "+39 4309456577",
-            "pattern": "^\\+?[0-9\\s\\-\\(\\)]+$",
+            "pattern": "^\\+?[0-9\\s\\-()]+$",
             "maxLength": 50
           },
           "address": {
@@ -9758,7 +10399,7 @@
             "type": "string",
             "description": "Item Barcode",
             "example": "8542315245648",
-            "pattern": "^[A-Za-z0-9]{1,100}$",
+            "pattern": "^(?=.{1,40}$)[A-Za-z0-9]+\\s*$",
             "maxLength": 40
           },
           "stockstoragecode": {
@@ -9778,13 +10419,6 @@
           "vatcode"
         ],
         "properties": {
-          "code": {
-            "type": "string",
-            "description": "Item Warehouse Code",
-            "example": "ART001",
-            "pattern": "^[A-Za-z0-9]{1,100}$",
-            "maxLength": 20
-          },
           "description": {
             "type": "string",
             "description": "Item Warehouse Description",
@@ -9810,8 +10444,8 @@
             "type": "string",
             "description": "Item Barcode",
             "example": "8542315245648",
-            "pattern": "^[A-Za-z0-9]{1,100}$",
-            "maxLength": 25
+            "pattern": "^(?=.{1,40}$)[A-Za-z0-9]+\\s*$",
+            "maxLength": 40
           },
           "stockstoragecode": {
             "type": "string",
@@ -9987,7 +10621,6 @@
         "required": [
           "accounting-reason",
           "currency",
-          "document-number",
           "progressive-number",
           "sectional",
           "rows"
@@ -10032,6 +10665,7 @@
           "progressive-number": {
             "type": "string",
             "maxLength": 200,
+            "pattern": "^(?!0+$)[0-9]{1,200}$",
             "examples": [
               "1"
             ]
@@ -10356,7 +10990,7 @@
           "storage-code": {
             "type": "string",
             "description": "Storage/Warehouse code",
-            "maxLength": 2,
+            "maxLength": 25,
             "example": "00"
           },
           "payment-term-code": {
@@ -10433,7 +11067,7 @@
           "storage-code": {
             "type": "string",
             "description": "Storage/Warehouse code",
-            "maxLength": 2,
+            "maxLength": 25,
             "example": "00"
           },
           "payment-term-code": {
