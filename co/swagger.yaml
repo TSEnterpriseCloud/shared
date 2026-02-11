@@ -18223,6 +18223,452 @@
         }
       }
     },
+    "/api/v1/{environment}/CO/Hypermedia/{IdMedia}/defaultpath": {
+      "post": {
+        "tags": [
+          "Hypermedia"
+        ],
+        "summary": "Default media path",
+        "description": "Given a media id, get the default media path.",
+        "parameters": [
+          {
+            "name": "idMedia",
+            "in": "path",
+            "description": "Media id whose path you want",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default media path for the given media id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If the specified id was not found"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/CO/Hypermedia/{IdMedia}/allpaths": {
+      "post": {
+        "tags": [
+          "Hypermedia"
+        ],
+        "summary": "Paths of all media",
+        "description": "Paths of all media (separated by the '$' character) related to the indicated media id",
+        "parameters": [
+          {
+            "name": "idMedia",
+            "in": "path",
+            "description": "Media id of which you want all paths",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paths of all media for the given media id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If the specified id was not found"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/CO/Hypermedia/{IdMedia}/defaultmedia": {
+      "post": {
+        "tags": [
+          "Hypermedia"
+        ],
+        "summary": "Default average",
+        "description": "Given a media id, it retrieves its data stream. In the event of a return with base 64 encoding, the relative DTO returns.",
+        "parameters": [
+          {
+            "name": "idMedia",
+            "in": "path",
+            "description": "Mandatory parameter",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default media stream for the given media id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileResourceDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileResourceDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "Default media stream for the given media id"
+          },
+          "409": {
+            "description": "TODO_DOCUMENTATION",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/CO/Hypermedia/{IdMedia}/allmedias": {
+      "post": {
+        "tags": [
+          "Hypermedia"
+        ],
+        "summary": "Retrieve all media related to a media id",
+        "description": "Return the data stream, if there is only one media associated with the id. Return a zip with all media if there are more than one. In the event of a return with base 64 encoding, the relative DTO returns.",
+        "parameters": [
+          {
+            "name": "IdMedia",
+            "in": "path",
+            "description": "Media id of which you want all paths",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return the data stream, if there is only one media associated with the id. Return a zip with all media if there are more than one",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileResourceDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileResourceDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If the specified id was not found"
+          },
+          "409": {
+            "description": "TODO_DOCUMENTATION",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/CO/IEExportCO/customersupplier": {
       "post": {
         "tags": [
@@ -42193,6 +42639,49 @@
         "additionalProperties": false,
         "description": "VCG1S_STATIFED - FederalStateViewCO<br>Proprietà chiave:<ul><li><b>CodiceCg07</b></li><li><b>Statofed</b></li></ul>"
       },
+      "FileResourceDTO": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "Media content in base 64",
+            "format": "byte",
+            "nullable": true
+          },
+          "contentType": {
+            "type": "string",
+            "description": "Original type of media",
+            "nullable": true
+          },
+          "contentLength": {
+            "type": "integer",
+            "description": "Number of characters of the media in base 64 encoding",
+            "format": "int64"
+          },
+          "eTag": {
+            "type": "string",
+            "description": "Identifier for a specific version of the resource",
+            "nullable": true
+          },
+          "lastModified": {
+            "type": "string",
+            "description": "Last modification date of the requested file, in RFC 2822 format",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Dto representing the requested media, used ONLY for base 64 encoding"
+      },
       "ForeignPaymentCodeCODTO": {
         "required": [
           "codice"
@@ -46657,6 +47146,10 @@
     {
       "name": "GeneralMasterDataCO",
       "description": "Collection of services for General Master Data"
+    },
+    {
+      "name": "Hypermedia",
+      "description": "Collection of services for media managment"
     },
     {
       "name": "IEExportCO",

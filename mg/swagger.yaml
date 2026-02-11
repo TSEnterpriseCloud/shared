@@ -22314,9 +22314,133 @@
             "description": "EnableAdditionalValidations (default false): Parameter to enable additional checks that may reduce performance",
             "default": "false",
             "nullable": true
+          },
+          "enableEditingInstalments": {
+            "type": "boolean",
+            "description": "EnableEditingInstalments (default false): Parameter to enable editing of document installments",
+            "default": "false",
+            "nullable": true
           }
         },
         "additionalProperties": false
+      },
+      "DocumentInstalmentMGDTO": {
+        "required": [
+          "companyCode",
+          "documentId",
+          "dueDate",
+          "instalmentProgressive"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "description": "DO79_IMPEFF_S - Importo residuo",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "billEffectType": {
+            "type": "number",
+            "description": "DO79_TIPOEFF - Tipo<br><ul><li><i>1</i> - Contanti</li><li><i>2</i> - Ricevuta bancaria</li><li><i>3</i> - Tratta</li><li><i>4</i> - Tratta accettata</li><li><i>5</i> - Cessione</li><li><i>6</i> - Cambiale</li><li><i>7</i> - Carta di credito</li><li><i>8</i> - Bancomat</li><li><i>9</i> - Contrassegno</li><li><i>10</i> - Lettera di credito</li><li><i>11</i> - SDD</li><li><i>12</i> - Leasing</li><li><i>13</i> - Rimessa diretta</li><li><i>14</i> - Bonifico Bancario</li><li><i>15</i> - C/C postale</li><li><i>16</i> - MAV</li></ul>",
+            "format": "double",
+            "default": 1,
+            "nullable": true
+          },
+          "billGroupingNotes": {
+            "type": "string",
+            "description": "DO79_NOTERAGGR - Note raggruppamento effetti",
+            "nullable": true
+          },
+          "companyCode": {
+            "type": "number",
+            "description": "DO79_DITTA_CG18 - Codice ditta",
+            "format": "double"
+          },
+          "currencyAmount": {
+            "type": "number",
+            "description": "DO79_IMPEFFVAL_S - Importo residuo",
+            "format": "double",
+            "nullable": true
+          },
+          "currencyVatAmount": {
+            "type": "number",
+            "description": "DO79_IMPEFFIVA_VAL - Importo IVA originario in valuta",
+            "format": "double",
+            "nullable": true
+          },
+          "currencyWithholdingsAmount": {
+            "type": "number",
+            "description": "DO79_IMPRITACCVAL - Importo ritenute",
+            "format": "double",
+            "nullable": true
+          },
+          "documentId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "DO79_NUMREG_CO99 - Numero di registrazione"
+          },
+          "dueDate": {
+            "type": "string",
+            "description": "DO79_SCADE_S - Data scadenza",
+            "format": "date-time"
+          },
+          "instalmentNumber": {
+            "type": "number",
+            "description": "DO79_NUMRATA - Numero rata",
+            "format": "double",
+            "nullable": true
+          },
+          "instalmentProgressive": {
+            "type": "number",
+            "description": "DO79_PROGEFF - Progressivo effetti",
+            "format": "double"
+          },
+          "stampDutyAmount": {
+            "type": "number",
+            "description": "DO79_BOLLI - Importo bolli in EURO",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "stampDutyCurrencyAmount": {
+            "type": "number",
+            "description": "DO79_BOLLIVAL - Importo bolli in valuta",
+            "format": "double",
+            "nullable": true
+          },
+          "subtype": {
+            "type": "number",
+            "description": "DO79_STIPOEFF - Sottotipo",
+            "format": "double",
+            "nullable": true
+          },
+          "vatAmount": {
+            "type": "number",
+            "description": "DO79_IMPEFFIVA - Importo IVA originario in EURO",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "withholdingsAmount": {
+            "type": "number",
+            "description": "DO79_IMPRITACC - Importo ritenute",
+            "format": "double",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "DO79_DOCSCADENZE - DocumentInstalmentMG<br>Proprietà chiave:<ul><li><b>CompanyCode</b></li><li><b>DocumentId</b></li><li><b>InstalmentProgressive</b></li></ul>"
       },
       "DocumentMasterCODTO": {
         "required": [
@@ -25849,6 +25973,7 @@
           "anagraficaDocumentoDitta",
           "datadoc",
           "datareg",
+          "isManuallyChangedInstalments",
           "numdoc",
           "sezdoc",
           "storageWH"
@@ -26051,6 +26176,11 @@
             "default": 0,
             "nullable": true
           },
+          "isManuallyChangedInstalments": {
+            "type": "integer",
+            "description": "DO11_FLGSCADVAR - Scadenze variate manualmente",
+            "format": "int32"
+          },
           "lastchange": {
             "type": "string",
             "description": "DO11_LASTCHANGE - Data ultima modifica",
@@ -26168,6 +26298,13 @@
           },
           "customerSupplierMG": {
             "$ref": "#/components/schemas/CustomerSupplierMGDTO"
+          },
+          "documentInstalments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DocumentInstalmentMGDTO"
+            },
+            "nullable": true
           },
           "documentMaster": {
             "$ref": "#/components/schemas/DocumentMasterCODTO"

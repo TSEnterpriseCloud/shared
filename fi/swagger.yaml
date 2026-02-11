@@ -66456,6 +66456,128 @@
         }
       }
     },
+    "/api/v1/{environment}/FI/InstalmentFI/createsavedisposition": {
+      "post": {
+        "tags": [
+          "InstalmentFI"
+        ],
+        "summary": "Create and save payment disposition",
+        "description": "Create and save payment disposition",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object containing the parameters to create the payment disposition",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAndSavePaymentDispositionParametersDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAndSavePaymentDispositionParametersDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Payment disposition created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavePaymentDispositionResultDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavePaymentDispositionResultDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "409": {
+            "description": "In case of errors in the business logic: the content of the response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/FI/InstalmentFI/{id}": {
       "get": {
         "tags": [
@@ -85804,6 +85926,141 @@
           },
           "isInMapping": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateAndSavePaymentDispositionParametersDTO": {
+        "type": "object",
+        "properties": {
+          "transferType": {
+            "$ref": "#/components/schemas/ETransferType"
+          },
+          "transferModeType": {
+            "$ref": "#/components/schemas/ETransferModeType"
+          },
+          "presentationBankId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "presentationBankName": {
+            "type": "string",
+            "nullable": true
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "registrationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "executionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "movementType": {
+            "type": "string",
+            "nullable": true
+          },
+          "instalmentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "sendingRecipientAddress": {
+            "type": "boolean"
+          },
+          "recipientType": {
+            "$ref": "#/components/schemas/ERecipientType"
+          },
+          "indPresentation": {
+            "$ref": "#/components/schemas/EPresentationBank"
+          },
+          "indBankFilter": {
+            "$ref": "#/components/schemas/EFilterBank"
+          },
+          "accountingReasonForRegistration": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankAccount": {
+            "type": "string",
+            "nullable": true
+          },
+          "expenseRegistration": {
+            "type": "number",
+            "format": "double"
+          },
+          "expenseAccount": {
+            "type": "string",
+            "nullable": true
+          },
+          "chkConsolidated": {
+            "type": "boolean"
+          },
+          "withReputed": {
+            "type": "boolean"
+          },
+          "outcomeNotification": {
+            "type": "boolean"
+          },
+          "presentation": {
+            "type": "boolean"
+          },
+          "flgPriorbon": {
+            "$ref": "#/components/schemas/EFlgPriorbon"
+          },
+          "seat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codeSeat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "indTiporegban": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "groupingType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cg08Code": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalSearchGroup": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/SearchNodeDTO"
+                },
+                {
+                  "$ref": "#/components/schemas/SearchElementDTO"
+                },
+                {
+                  "$ref": "#/components/schemas/SearchGroupDTO"
+                }
+              ],
+              "description": "DTO that identifies a search criteria node (abstract)"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
           }
         },
         "additionalProperties": false

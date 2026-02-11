@@ -133,6 +133,350 @@
         }
       }
     },
+    "/api/v1/{environment}/LI/ListinoArticoloLI/searchlistino": {
+      "post": {
+        "tags": [
+          "ListinoArticoloLI"
+        ],
+        "summary": "Search the price list according to reference date",
+        "description": "Search the price list according to reference date",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "DTO that contains filter criteria AND reference date",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchListinoDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchListinoDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Search result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListinoArticoloLIDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListinoArticoloLIDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "In case of errors in the business logic: the content of the response contains the validation messages produced"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/LI/ListinoArticoloLI/addlistinotonewarticolo": {
+      "post": {
+        "tags": [
+          "ListinoArticoloLI"
+        ],
+        "summary": "add a price list to a new item",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "DTO that contains price list params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddListinoToNewArticoloLIDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AddListinoToNewArticoloLIDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "In case of errors in the business logic: the content of the response contains the validation messages produced"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/LI/ListinoArticoloLI/search": {
+      "post": {
+        "tags": [
+          "ListinoArticoloLI"
+        ],
+        "summary": "Search",
+        "description": "Search among object of type",
+        "parameters": [
+          {
+            "name": "loadEntireDomain",
+            "in": "query",
+            "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "getTotalCount",
+            "in": "query",
+            "description": "Specify 'gettotalcount=true' if you want the total number of elements",
+            "style": "form",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Search criteria to apply",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The list of object of type as result of search",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListinoArticoloLIDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListinoArticoloLIDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the search criteria is not supplied"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/LI/PriceParametricLI/search": {
       "post": {
         "tags": [
@@ -356,6 +700,388 @@
   },
   "components": {
     "schemas": {
+      "AddListinoToNewArticoloLIDTO": {
+        "type": "object",
+        "properties": {
+          "codiceArticolo": {
+            "type": "string",
+            "description": "Item code",
+            "nullable": true
+          },
+          "opzioneMg5e": {
+            "type": "string",
+            "description": "Variant code",
+            "nullable": true
+          },
+          "codiceListino": {
+            "type": "number",
+            "description": "List code",
+            "format": "double"
+          },
+          "prezzo": {
+            "type": "number",
+            "description": "Price",
+            "format": "double",
+            "nullable": true
+          },
+          "dataInizioVal": {
+            "type": "string",
+            "description": "Validity start date",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dataFineVal": {
+            "type": "string",
+            "description": "Validity end date",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isVendita": {
+            "type": "boolean",
+            "description": "Sales"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BrandWHDTO": {
+        "required": [
+          "codMarca"
+        ],
+        "type": "object",
+        "properties": {
+          "codMarca": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG64_CODMARCA - Codice marca"
+          },
+          "descrmarca": {
+            "type": "string",
+            "description": "MG64_DESCRMARCA - Descrizione",
+            "nullable": true
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG64_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG64_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "idprov": {
+            "type": "integer",
+            "description": "MG64_IDPROV - IdProv (Required only in PUT/PATCH)",
+            "format": "int32",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG64_MARCHEART - Marca<br>Proprietà chiave:<ul><li><b>CodMarca</b></li><li><b>DittaCg18</b></li></ul>"
+      },
+      "CurrencyCODTO": {
+        "required": [
+          "codice"
+        ],
+        "type": "object",
+        "properties": {
+          "cambiofisso": {
+            "type": "number",
+            "description": "CG08_CAMBIOFISSO - Cambio fisso",
+            "format": "double",
+            "nullable": true
+          },
+          "codice": {
+            "minLength": 1,
+            "type": "string",
+            "description": "CG08_CODICE - Codice"
+          },
+          "dataattuem": {
+            "type": "string",
+            "description": "CG08_DATAATTUEM - Data attuazione valuta UEM",
+            "format": "date-time",
+            "nullable": true
+          },
+          "descr": {
+            "type": "string",
+            "description": "CG08_DESCR - Descrizione",
+            "nullable": true
+          },
+          "flgValuem": {
+            "type": "number",
+            "description": "CG08_FLGVALUEM - Flag valuta UEM",
+            "format": "double",
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "CG08_IDMEDIA_CG99 - ID HyperMedia",
+            "format": "double",
+            "nullable": true
+          },
+          "indCertoincerto": {
+            "type": "integer",
+            "description": "CG08_INDCERTOINCERTO - Cambio incerto per certo",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "indSepmigl": {
+            "type": "number",
+            "description": "CG08_INDSEPMIGL - Separatore migliaia<br><ul><li><i>0</i> - .</li><li><i>1</i> - ,</li></ul>",
+            "format": "double",
+            "default": "0",
+            "nullable": true
+          },
+          "indValuem": {
+            "type": "number",
+            "description": "CG08_INDVALUEM - Tipo valuta UEM<br><ul><li><i>0</i> - No valuta UEM</li><li><i>1</i> - Franco belga</li><li><i>2</i> - Marco tedesco</li><li><i>3</i> - Peseta spagnola</li><li><i>4</i> - Franco francese</li><li><i>5</i> - Sterlina irlandese</li><li><i>6</i> - Lira italiana</li><li><i>7</i> - Fiorino olandese</li><li><i>8</i> - Scellino austriaco</li><li><i>9</i> - Escudo portoghese</li><li><i>10</i> - Marco finlandese</li><li><i>11</i> - Franco lussemburghese</li><li><i>12</i> - Dracma greca</li><li><i>13</i> - Tallero sloveno</li><li><i>14</i> - Lira cipriota</li><li><i>15</i> - Lira maltese</li><li><i>16</i> - Corona slovacca</li><li><i>17</i> - Corona estone</li><li><i>18</i> - Lats lettone</li><li><i>19</i> - Litas lituano</li></ul>",
+            "format": "double",
+            "default": "0",
+            "nullable": true
+          },
+          "numdec": {
+            "type": "number",
+            "description": "CG08_NUMDEC - Numeri Decimali",
+            "format": "double",
+            "nullable": true
+          },
+          "sigla": {
+            "type": "string",
+            "description": "CG08_SIGLA - Sigla",
+            "nullable": true
+          },
+          "exchangeRateCO": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExchangeRateCODTO"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "CG08_TABVALUTE - Valuta<br>Proprietà chiave:<ul><li><b>Codice</b></li></ul>"
+      },
+      "ExchangeRateCODTO": {
+        "required": [
+          "anno",
+          "codiceCg08",
+          "codicerifCg08",
+          "currencyCO",
+          "giorno",
+          "indCertoincerto",
+          "mese"
+        ],
+        "type": "object",
+        "properties": {
+          "adegcambio": {
+            "type": "number",
+            "description": "CG09_ADEGCAMBIO -  Cambio UIC Annuale",
+            "format": "double",
+            "nullable": true
+          },
+          "anno": {
+            "type": "number",
+            "description": "CG09_ANNO - Anno",
+            "format": "double"
+          },
+          "cambio": {
+            "type": "number",
+            "description": "CG09_CAMBIO - Cambio",
+            "format": "double",
+            "nullable": true
+          },
+          "codiceCg08": {
+            "minLength": 1,
+            "type": "string",
+            "description": "CG09_CODICE_CG08 - Codice valuta"
+          },
+          "codicerifCg08": {
+            "minLength": 1,
+            "type": "string",
+            "description": "CG09_CODICERIF_CG08 - CodicerifCg08"
+          },
+          "giorno": {
+            "type": "number",
+            "description": "CG09_GIORNO - Giorno",
+            "format": "double"
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "CG09_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "indCertoincerto": {
+            "type": "integer",
+            "description": "CG09_INDCERTOINCERTO - Cambio incerto per certo",
+            "format": "int32"
+          },
+          "mese": {
+            "type": "number",
+            "description": "CG09_MESE - Mese",
+            "format": "double"
+          },
+          "rowversion": {
+            "type": "string",
+            "description": "CG09_ROWVERSION - RowVersion",
+            "format": "byte",
+            "nullable": true
+          },
+          "currencyCO": {
+            "$ref": "#/components/schemas/CurrencyCODTO"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "CG09_TABCAMBI - ExchangeRateCO<br>Proprietà chiave:<ul><li><b>Anno</b></li><li><b>CodiceCg08</b></li><li><b>CodicerifCg08</b></li><li><b>Giorno</b></li><li><b>Mese</b></li></ul>"
+      },
+      "FamilyWHDTO": {
+        "required": [
+          "codFam",
+          "descrfam"
+        ],
+        "type": "object",
+        "properties": {
+          "idprov": {
+            "type": "integer",
+            "description": "MG53_IDPROV - Identity progressive descriptions in language - property is ReadOnly",
+            "format": "int32",
+            "nullable": true
+          },
+          "codFam": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG53_CODFAM - Codice famiglia"
+          },
+          "descrfam": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG53_DESCRFAM - Descrizione"
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG53_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG53_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG53_FAMIGLIE - Famiglia<br>Proprietà chiave:<ul><li><b>CodFam</b></li><li><b>DittaCg18</b></li></ul>"
+      },
+      "FiscalGroupWHDTO": {
+        "required": [
+          "codGrupfis"
+        ],
+        "type": "object",
+        "properties": {
+          "codGrupfis": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG61_CODGRUPFIS - Codice gruppo fiscale"
+          },
+          "descrgrufis": {
+            "type": "string",
+            "description": "MG61_DESCRGRUFIS - Descrizione",
+            "nullable": true
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG61_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG61_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "idprov": {
+            "type": "integer",
+            "description": "MG61_IDPROV - IdProv (Required only in PUT/PATCH)",
+            "format": "int32",
+            "nullable": true
+          },
+          "um": {
+            "type": "string",
+            "description": "MG61_UM - Unità di misura",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG61_GRUPPIFIS - Gruppo fiscale<br>Proprietà chiave:<ul><li><b>CodGrupfis</b></li><li><b>DittaCg18</b></li></ul>"
+      },
       "ImportExportHeadResultDTO": {
         "type": "object",
         "properties": {
@@ -569,6 +1295,2084 @@
           }
         },
         "additionalProperties": false
+      },
+      "ItemBarCodeWHDTO": {
+        "required": [
+          "codBarcode"
+        ],
+        "type": "object",
+        "properties": {
+          "codArtMg66": {
+            "type": "string",
+            "description": "MG65_CODART_MG66 - Codice Articolo",
+            "nullable": true
+          },
+          "codBarcode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG65_CODBARCODE - Barcode"
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG65_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgCheckdig": {
+            "type": "number",
+            "description": "MG65_FLGCHECKDIG - Calcolo checkdigit",
+            "format": "double",
+            "default": 1,
+            "nullable": true
+          },
+          "flgInviocas": {
+            "type": "number",
+            "description": "MG65_FLGINVIOCAS - Invio cassa",
+            "format": "double",
+            "default": 1,
+            "nullable": true
+          },
+          "flgStampa": {
+            "type": "number",
+            "description": "MG65_FLGSTAMPA - Stampa etichette",
+            "format": "double",
+            "default": 1,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG65_IDMEDIA_CG99 - ID HyperMedia",
+            "format": "double",
+            "nullable": true
+          },
+          "indProven": {
+            "type": "number",
+            "description": "MG65_INDPROVEN - Provenienza<br><ul><li><i>0</i> - Barcode manuale</li><li><i>1</i> - Barcode Automatico</li><li><i>2</i> - Barcode del fornitore</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "indTipogest": {
+            "type": "number",
+            "description": "MG65_INDTIPOGEST - Tipo gestione<br><ul><li><i>0</i> - Standard</li><li><i>1</i> - A quantità</li><li><i>2</i> - A prezzo</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "numpzconf": {
+            "type": "number",
+            "description": "MG65_NUMPZCONF - Pezzi per confezione",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "opzioneMg5e": {
+            "type": "string",
+            "description": "MG65_OPZIONE_MG5E - Codice variante",
+            "nullable": true
+          },
+          "tipobarcodeMg4b": {
+            "type": "number",
+            "description": "MG65_TIPOBARCODE_MG4B - Tipo Barcode<br><ul><li><i>0</i> - EAN 13</li><li><i>1</i> - EAN 8</li><li><i>2</i> - UPC</li><li><i>3</i> - UPC/EAN</li><li><i>4</i> - UPC/EAN + 2 digits</li><li><i>5</i> - UPC/EAN + 5 digits</li><li><i>6</i> - Code 128</li><li><i>7</i> - Standard 3/9</li><li><i>8</i> - Interleaved 2/5</li><li><i>9</i> - Monarch</li><li><i>10</i> - Pako</li><li><i>11</i> - T.B.D. 5</li><li><i>12</i> - Industrial 2/5</li><li><i>13</i> - Matrix 2/5</li><li><i>14</i> - IBM</li><li><i>15</i> - MSI</li><li><i>16</i> - Zellweger</li><li><i>17</i> - Code 93</li><li><i>18</i> - ITF 14</li><li><i>19</i> - T.B.D. 2</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG65_BARCODE - Barcode<br>Proprietà chiave:<ul><li><b>CodBarcode</b></li><li><b>DittaCg18</b></li></ul>"
+      },
+      "ItemDescriptionWHDTO": {
+        "required": [
+          "codArtMg66",
+          "descart"
+        ],
+        "type": "object",
+        "properties": {
+          "codArtMg66": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG87_CODART_MG66 - Codice Articolo"
+          },
+          "descart": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG87_DESCART - Descrizione articolo"
+          },
+          "descartest": {
+            "type": "string",
+            "description": "MG87_DESCARTEST - Descrizione aggiuntiva",
+            "nullable": true
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG87_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "linguaMg52": {
+            "type": "string",
+            "description": "MG87_LINGUA_MG52 - Codice lingua per le note(INVIO per lingua standard)",
+            "nullable": true
+          },
+          "noteart": {
+            "type": "string",
+            "description": "MG87_NOTEART - Note",
+            "nullable": true
+          },
+          "opzioneMg5e": {
+            "type": "string",
+            "description": "MG87_OPZIONE_MG5E - Codice variante",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG87_ARTDESC - Descrizione articolo<br>Proprietà chiave:<ul><li><b>CodArtMg66</b></li><li><b>DittaCg18</b></li><li><b>LinguaMg52</b></li><li><b>OpzioneMg5e</b></li></ul>"
+      },
+      "ItemDummyClassificationWHDTO": {
+        "required": [
+          "indFittizio"
+        ],
+        "type": "object",
+        "properties": {
+          "descr": {
+            "type": "string",
+            "description": "MG6L_DESCR - Descrizione",
+            "nullable": true
+          },
+          "indFittizio": {
+            "type": "integer",
+            "description": "MG6L_INDFITTIZIO - Codice classificazione articolo fittizio",
+            "format": "int32"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG6L_CLASSARTFITZ - Classificazione articoli fittizi<br>Proprietà chiave:<ul><li><b>IndFittizio</b></li></ul>"
+      },
+      "ItemGroupWHDTO": {
+        "required": [
+          "codFamMg53",
+          "codGruppo",
+          "codSfamMg54",
+          "descrgruppo"
+        ],
+        "type": "object",
+        "properties": {
+          "codFamMg53": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG55_CODFAM_MG53 - Codice famiglia"
+          },
+          "codGruppo": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG55_CODGRUPPO - Codice gruppo"
+          },
+          "codSfamMg54": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG55_CODSFAM_MG54 - Codice sottofamiglia"
+          },
+          "descrgruppo": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG55_DESCRGRUPPO - Descrizione"
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG55_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG55_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "idprov": {
+            "type": "integer",
+            "description": "MG55_IDPROV - IdProv (Required only in PUT/PATCH)",
+            "format": "int32",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG55_GRUPPI - Gruppo<br>Proprietà chiave:<ul><li><b>CodFamMg53</b></li><li><b>CodGruppo</b></li><li><b>CodSfamMg54</b></li><li><b>DittaCg18</b></li></ul>"
+      },
+      "ItemIntrastatWHDTO": {
+        "required": [
+          "codArtMg66"
+        ],
+        "type": "object",
+        "properties": {
+          "codArtMg66": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG98_CODART_MG66 - Codice Articolo"
+          },
+          "conversionUmAdditional": {
+            "type": "number",
+            "description": "MG98_FATCONVUMSUPPL - Fattore di conversione per il calcolo dell'unità di misura supplementare",
+            "format": "double",
+            "nullable": true
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG98_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "indUmSupplementary": {
+            "type": "number",
+            "description": "MG98_INDUMSUPPL - Indicatore UM supplementare<br><ul><li><i>0</i> - Non gestita</li><li><i>1</i> - Qtà 1 documento * fatt. conv</li><li><i>2</i> - Qtà 1 documento / fatt. conv</li><li><i>3</i> - Colli documento * fatt. conv</li><li><i>4</i> - Colli documento / fatt. conv</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "netMass": {
+            "type": "number",
+            "description": "MG98_MASSANETTA - Massa netta",
+            "format": "double",
+            "nullable": true
+          },
+          "nomenclature": {
+            "type": "string",
+            "description": "MG98_NOMENCL - Codice nomenclatura combinata",
+            "nullable": true
+          },
+          "percStatisticalAdjustment": {
+            "type": "number",
+            "description": "MG98_INDSTAINTRA - Percentuale adeguamento valore statistico",
+            "format": "double",
+            "nullable": true
+          },
+          "originCountry": {
+            "$ref": "#/components/schemas/NationCODTO"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG98_MAGINTRA - Dati Intrastat<br>Proprietà chiave:<ul><li><b>CodArtMg66</b></li><li><b>DittaCg18</b></li></ul>"
+      },
+      "ItemPackagingWHDTO": {
+        "required": [
+          "codArtMg66",
+          "codConfezMg96",
+          "packagingWH"
+        ],
+        "type": "object",
+        "properties": {
+          "altez": {
+            "type": "number",
+            "description": "MG68_ALTEZ - Altezza",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "altezcollo": {
+            "type": "number",
+            "description": "MG68_ALTEZCOLLO - Altezza del collo",
+            "format": "double",
+            "nullable": true
+          },
+          "capac": {
+            "type": "number",
+            "description": "MG68_CAPAC - Capacità",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "classemaxstoc": {
+            "type": "number",
+            "description": "MG68_CLASSEMAXSTOC - Classe di massimo stoccaggio",
+            "format": "double",
+            "nullable": true
+          },
+          "codArtMg66": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG68_CODART_MG66 - Codice Articolo"
+          },
+          "codConfezMg96": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG68_CODCONFEZ_MG96 - Codice confezione"
+          },
+          "collixbancale": {
+            "type": "number",
+            "description": "MG68_COLLIXBANCALE - Colli per bancale",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "collixstrato": {
+            "type": "number",
+            "description": "MG68_COLLIXSTRATO - Colli per strato",
+            "format": "double",
+            "nullable": true
+          },
+          "confxcollo": {
+            "type": "number",
+            "description": "MG68_CONFXCOLLO - Confezioni per collo",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG68_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgConfpref": {
+            "type": "number",
+            "description": "MG68_FLGCONFPREF - Confezione preferenziale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG68_IDMEDIA_CG99 - ID HyperMedia",
+            "format": "double",
+            "nullable": true
+          },
+          "largh": {
+            "type": "number",
+            "description": "MG68_LARGH - Laghezza",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "larghcollo": {
+            "type": "number",
+            "description": "MG68_LARGHCOLLO - Laghezza del collo",
+            "format": "double",
+            "nullable": true
+          },
+          "opzioneMg5e": {
+            "type": "string",
+            "description": "MG68_OPZIONE_MG5E - Codice variante",
+            "nullable": true
+          },
+          "pesol": {
+            "type": "number",
+            "description": "MG68_PESOL - Peso lordo",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "peson": {
+            "type": "number",
+            "description": "MG68_PESON - Peso netto",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "prof": {
+            "type": "number",
+            "description": "MG68_PROF - Profondità",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "profcollo": {
+            "type": "number",
+            "description": "MG68_PROFCOLLO - Profondità del collo",
+            "format": "double",
+            "nullable": true
+          },
+          "pzconf": {
+            "type": "number",
+            "description": "MG68_PZCONF - Pezzi per confezione",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "umcapac": {
+            "type": "string",
+            "description": "MG68_UMCAPAC - UM capacità",
+            "nullable": true
+          },
+          "umdimen": {
+            "type": "string",
+            "description": "MG68_UMDIMEN - Unità di misura dimensioni confezione",
+            "nullable": true
+          },
+          "umpeso": {
+            "type": "string",
+            "description": "MG68_UMPESO - Unità di misura del peso",
+            "nullable": true
+          },
+          "umvolume": {
+            "type": "string",
+            "description": "MG68_UMVOLUME - UM Volume",
+            "nullable": true
+          },
+          "volume": {
+            "type": "number",
+            "description": "MG68_VOLUME - Volume",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "packagingWH": {
+            "$ref": "#/components/schemas/PackagingWHDTO"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG68_CONFART - Confezioni articolo<br>Proprietà chiave:<ul><li><b>CodArtMg66</b></li><li><b>CodConfezMg96</b></li><li><b>DittaCg18</b></li><li><b>OpzioneMg5e</b></li></ul>"
+      },
+      "ItemStatusWHDTO": {
+        "required": [
+          "indStato"
+        ],
+        "type": "object",
+        "properties": {
+          "descr": {
+            "type": "string",
+            "description": "MG6W_DESCR - Descrizione",
+            "nullable": true
+          },
+          "indStato": {
+            "type": "number",
+            "description": "MG6W_INDSTATO - Indicatore stato articolo",
+            "format": "double"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG6W_STATIART - Stato articolo<br>Proprietà chiave:<ul><li><b>IndStato</b></li></ul>"
+      },
+      "ItemSubGroupWHDTO": {
+        "required": [
+          "codFamMg53",
+          "codGruppoMg55",
+          "codSfamMg54",
+          "codSgruppo",
+          "descrsgruppo"
+        ],
+        "type": "object",
+        "properties": {
+          "codFamMg53": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG56_CODFAM_MG53 - Codice famiglia"
+          },
+          "codGruppoMg55": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG56_CODGRUPPO_MG55 - Codice gruppo"
+          },
+          "codSfamMg54": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG56_CODSFAM_MG54 - Codice sottofamiglia"
+          },
+          "codSgruppo": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG56_CODSGRUPPO - Codice sottogruppo"
+          },
+          "descrsgruppo": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG56_DESCRSGRUPPO - Descrizione"
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG56_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG56_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "idprov": {
+            "type": "integer",
+            "description": "MG56_IDPROV - IdProv (Required only in PUT/PATCH)",
+            "format": "int32",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG56_SOTTOGRUPPI - Sottogruppo<br>Proprietà chiave:<ul><li><b>CodFamMg53</b></li><li><b>CodGruppoMg55</b></li><li><b>CodSfamMg54</b></li><li><b>CodSgruppo</b></li><li><b>DittaCg18</b></li></ul>"
+      },
+      "ItemWHDTO": {
+        "required": [
+          "codiceArticoloMG",
+          "dtcreaz",
+          "dtultagganag",
+          "indfittizio",
+          "indicatoreFittizio",
+          "itemStatusWH",
+          "vatCodeCO"
+        ],
+        "type": "object",
+        "properties": {
+          "guid": {
+            "type": "string",
+            "description": "MG66_GUID - GUID",
+            "format": "uuid"
+          },
+          "cmeacqesCg24": {
+            "type": "string",
+            "description": "MG66_CMEACQES_CG24 - Codice conto per acquisti Estero",
+            "nullable": true
+          },
+          "cmeacqitCg24": {
+            "type": "string",
+            "description": "MG66_CMEACQIT_CG24 - Codice conto per acquisti Italia",
+            "nullable": true
+          },
+          "cmevenesCg24": {
+            "type": "string",
+            "description": "MG66_CMEVENES_CG24 - Codice conto per vendite Estero",
+            "nullable": true
+          },
+          "cmevenitCg24": {
+            "type": "string",
+            "description": "MG66_CMEVENIT_CG24 - Codice conto per vendite Italia",
+            "nullable": true
+          },
+          "codabcacq": {
+            "type": "string",
+            "description": "MG66_CODABCACQ - Codice ABC valore acquisti",
+            "nullable": true
+          },
+          "codabcprod": {
+            "type": "string",
+            "description": "MG66_CODABCPROD - Codice ABC valore produzione",
+            "nullable": true
+          },
+          "codabcriman": {
+            "type": "string",
+            "description": "MG66_CODABCRIMAN - Codice ABC valore rimanenze",
+            "nullable": true
+          },
+          "codabcvend": {
+            "type": "string",
+            "description": "MG66_CODABCVEND - Codice ABC valore vendite",
+            "nullable": true
+          },
+          "codcheckgiac": {
+            "type": "string",
+            "description": "MG66_CODCHECKGIAC - Codice di priorità per check giacenze",
+            "nullable": true
+          },
+          "codiceArticoloMG": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG66_CODART - Codice Articolo"
+          },
+          "codinterno": {
+            "type": "string",
+            "description": "MG66_CODINTERNO - Alias",
+            "nullable": true
+          },
+          "codspacq": {
+            "type": "string",
+            "description": "MG66_CODSPACQ - Codice spese di acquisto",
+            "nullable": true
+          },
+          "codspven": {
+            "type": "string",
+            "description": "MG66_CODSPVEN - Codice spese di vendita",
+            "nullable": true
+          },
+          "codtabprov": {
+            "type": "number",
+            "description": "MG66_CODTABPROV - Codice tabella provvigioni",
+            "format": "double",
+            "nullable": true
+          },
+          "creacqesCg24": {
+            "type": "string",
+            "description": "MG66_CREACQES_CG24 - Codice conto per reso acquisti Estero",
+            "nullable": true
+          },
+          "creacqitCg24": {
+            "type": "string",
+            "description": "MG66_CREACQIT_CG24 - Codice conto per reso acquisti Italia",
+            "nullable": true
+          },
+          "crevenesCg24": {
+            "type": "string",
+            "description": "MG66_CREVENES_CG24 - Codice conto per reso vendite Estero",
+            "nullable": true
+          },
+          "crevenitCg24": {
+            "type": "string",
+            "description": "MG66_CREVENIT_CG24 - Codice conto per reso vendite Italia",
+            "nullable": true
+          },
+          "currentDescription": {
+            "type": "string",
+            "description": "Descrizione articolo in lingua",
+            "nullable": true
+          },
+          "ditta": {
+            "type": "number",
+            "description": "MG66_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "divprez": {
+            "type": "number",
+            "description": "MG66_DIVPREZ - Divisore prezzo",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "dtcreaz": {
+            "type": "string",
+            "description": "MG66_DTCREAZ - Data creazione dell'articolo",
+            "format": "date-time"
+          },
+          "dtdismisart": {
+            "type": "string",
+            "description": "MG66_DTDISMISART - Data dismissione dell'articolo",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dtultagganag": {
+            "type": "string",
+            "description": "MG66_DTULTAGGANAG - Data ultimo agg. anagrafica",
+            "format": "date-time"
+          },
+          "fattconv": {
+            "type": "number",
+            "description": "MG66_FATTCONV - Fattore di conversione",
+            "format": "double",
+            "nullable": true
+          },
+          "flgAlter": {
+            "type": "integer",
+            "description": "MG66_FLGALTER - Articoli alternativi<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgArrprz": {
+            "type": "number",
+            "description": "MG66_FLGARRPRZ - Arrotondamento prezzi<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgArtcli": {
+            "type": "integer",
+            "description": "MG66_FLGARTCLI - Articoli clienti<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgArtesaur": {
+            "type": "integer",
+            "description": "MG66_FLGARTESAUR - Articolo in esaurimento<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgArtfor": {
+            "type": "integer",
+            "description": "MG66_FLGARTFOR - Articoli fornitori<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgArtprzero": {
+            "type": "integer",
+            "description": "MG66_FLGARTPRZERO - Consenti prezzo zero<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgBasevar": {
+            "type": "integer",
+            "description": "MG66_FLGBASEVAR - Gestione prezzi con base, variante, moltiplicatore<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgCalopeso": {
+            "type": "integer",
+            "description": "MG66_FLGCALOPESO - Flag gestione calo peso<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgCamart": {
+            "type": "integer",
+            "description": "MG66_FLGCAMART - Campagne per articolo<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgCampgru": {
+            "type": "integer",
+            "description": "MG66_FLGCAMPGRU - Flag gestione campagne per gruppo di articoli<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgConc": {
+            "type": "integer",
+            "description": "MG66_FLGCONC - Articoli concorrenti<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgConfmult": {
+            "type": "integer",
+            "description": "MG66_FLGCONFMULT - Confezioni multiple<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgContribinteg": {
+            "type": "integer",
+            "description": "MG66_FLGCONTRIBINTEG - Contributo integrativo<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgContribprev": {
+            "type": "integer",
+            "description": "MG66_FLGCONTRIBPREV - Contributo previdenziale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgEsclscpiede": {
+            "type": "integer",
+            "description": "MG66_FLGESCLSCPIEDE - Esclusione assoggettamento sc. piede<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgExscorm": {
+            "type": "integer",
+            "description": "MG66_FLGEXSCORM - Esclusione dal calcolo della sottoscorta<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgInvpre0": {
+            "type": "integer",
+            "description": "MG66_FLGINVPRE0 - Inventariato a prezzo 0<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgIvacomp": {
+            "type": "integer",
+            "description": "MG66_FLGIVACOMP - Flag gestione aliquota IVA di compensazione<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgIvarid": {
+            "type": "integer",
+            "description": "MG66_FLGIVARID - Flag gestione aliquota IVA ridotta<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgNoscmag": {
+            "type": "integer",
+            "description": "MG66_FLGNOSCMAG - Ometti sconti e maggiorazioni<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgQtaneg": {
+            "type": "integer",
+            "description": "MG66_FLGQTANEG - Movimenti con quantità negative<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgQualita": {
+            "type": "integer",
+            "description": "MG66_FLGQUALITA - Soggetto a controllo qualità<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgRicgiac": {
+            "type": "integer",
+            "description": "MG66_FLGRICGIAC - Ricalcolo giacenze<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgRicgiacCosti": {
+            "type": "integer",
+            "description": "MG66_FLGRICGIAC_COSTI - Ricalcolo giacenze in tempo reale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgRitacc": {
+            "type": "integer",
+            "description": "MG66_FLGRITACC - Ritenuta d'acconto<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgRitenas": {
+            "type": "integer",
+            "description": "MG66_FLGRITENAS - Ritenuta Enasarco<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgSoloimpr": {
+            "type": "integer",
+            "description": "MG66_FLGSOLOIMPR - Movimenti di solo importo<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgSost": {
+            "type": "integer",
+            "description": "MG66_FLGSOST - Articoli sostitutivi<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgStagion": {
+            "type": "integer",
+            "description": "MG66_FLGSTAGION - Flag articolo stagionale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgStgior": {
+            "type": "integer",
+            "description": "MG66_FLGSTGIOR - Stampa giornale di magazzino<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgStinv": {
+            "type": "integer",
+            "description": "MG66_FLGSTINV - Stampa inventario di magazzino<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgUbicdinam": {
+            "type": "integer",
+            "description": "MG66_FLGUBICDINAM - Ubicazioni multiple<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgVarart": {
+            "type": "integer",
+            "description": "MG66_FLGVARART - Gestione varianti<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgVardesc": {
+            "type": "integer",
+            "description": "MG66_FLGVARDESC - Variazione descrizione<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgVariato": {
+            "type": "integer",
+            "description": "MG66_FLGVARIATO - Art. variato<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "ggrifcalop": {
+            "type": "number",
+            "description": "MG66_GGRIFCALOP - Giorni di riferimento per la percentuale del calo peso",
+            "format": "double",
+            "nullable": true
+          },
+          "grucamp": {
+            "type": "string",
+            "description": "MG66_GRUCAMP - Codice per campagne di gruppo",
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG66_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "indcalcpre1": {
+            "type": "integer",
+            "description": "MG66_INDCALCPRE1 - Modalità di calcolo del prezzo 1<br><ul><li><i>99</i> - Come da parametri di magazzino</li><li><i>0</i> - Non gestito</li><li><i>1</i> - Da richiedere</li><li><i>2</i> - Prezzo2 x Fattore di conversione</li><li><i>3</i> - Prezzo2 : Fattore di conversione</li><li><i>4</i> - Prezzo cliente/fornit. x Fatt. di conv. cl./forn.</li><li><i>5</i> - Prezzo cliente/fornit. : Fatt. di conv. cl./forn.</li></ul>",
+            "format": "int32",
+            "default": 99,
+            "nullable": true
+          },
+          "indcalcpre2": {
+            "type": "integer",
+            "description": "MG66_INDCALCPRE2 - Modalità di calcolo del prezzo 2<br><ul><li><i>99</i> - Come da parametri di magazzino</li><li><i>0</i> - Non gestito</li><li><i>1</i> - Da richiedere</li><li><i>2</i> - Prezzo1 x Fattore di conversione</li><li><i>3</i> - Prezzo1 : Fattore di conversione</li><li><i>4</i> - Prezzo cliente/fornit. x Fatt. di conv. cl./forn.</li><li><i>5</i> - Prezzo cliente/fornit. : Fatt. di conv. cl./forn.</li></ul>",
+            "format": "int32",
+            "default": 99,
+            "nullable": true
+          },
+          "indcalcqta1": {
+            "type": "integer",
+            "description": "MG66_INDCALCQTA1 - Modalità di calcolo della quantità 1<br><ul><li><i>99</i> - Come da parametri di magazzino</li><li><i>0</i> - Non gestita</li><li><i>1</i> - Da richiedere</li><li><i>2</i> - Colli x Pezzi confezione</li><li><i>3</i> - Qta2 x Fattore di conversione</li><li><i>4</i> - Qta2 : Fattore di conversione</li><li><i>5</i> - Qta cl./forn. x Fatt. conv. cl./forn.</li><li><i>6</i> - Qta cl./forn. : Fatt. conv. cl./forn.</li></ul>",
+            "format": "int32",
+            "default": 99,
+            "nullable": true
+          },
+          "indcalcqta2": {
+            "type": "integer",
+            "description": "MG66_INDCALCQTA2 - Modalità di calcolo della quantità 2<br><ul><li><i>0</i> - Non gestita</li><li><i>1</i> - Da richiedere</li><li><i>2</i> - Colli x Pezzi confezione</li><li><i>3</i> - Qta1 x Fattore di conversione</li><li><i>4</i> - Qta1 : Fattore di conversione</li><li><i>5</i> - Qta cl./forn. x Fatt. conv. cl./forn.</li><li><i>6</i> - Qta cl./forn. : Fatt. conv. cl./forn.</li><li><i>99</i> - Come da parametri di magazzino</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "inddecqta": {
+            "type": "integer",
+            "description": "MG66_INDDECQTA - Numero di decimali per le quantità",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "indfatconv": {
+            "type": "integer",
+            "description": "MG66_INDFATCONV - Modalità di gestione del fattore di conversione<br><ul><li><i>0</i> - No gestione</li><li><i>1</i> - Si gestione</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "indfittizio": {
+            "type": "integer",
+            "description": "MG66_INDFITTIZIO - Articolo fittizio",
+            "format": "int32"
+          },
+          "indgenvardiba": {
+            "type": "integer",
+            "description": "MG66_INDGENVARDIBA - Modalità di generazione variante su DiBa<br><ul><li><i>0</i> - Automatica</li><li><i>1</i> - Manuale</li><li><i>2</i> - Automatica per singola subvariante</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "indmerceart62": {
+            "type": "integer",
+            "description": "MG66_INDMERCEART62 - Indicatore merce articolo 62<br><ul><li><i>0</i> - Non soggetto</li><li><i>1</i> - Deperibile</li><li><i>2</i> - Non deperibile</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "indqtamul": {
+            "type": "integer",
+            "description": "MG66_INDQTAMUL - Modalità di gestione delle quantità multiple<br><ul><li><i>0</i> - No gestione</li><li><i>1</i> - Si, solo vendite</li><li><i>2</i> - Si, solo acquisti</li><li><i>3</i> - Si, vendite e acquisti</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "indspacq": {
+            "type": "integer",
+            "description": "MG66_INDSPACQ - Modalità di gestione delle spese di acquisto<br><ul><li><i>0</i> - Non gestite</li><li><i>1</i> - Fisse per articolo</li><li><i>2</i> - Spese * qta' movimentate</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "indspven": {
+            "type": "integer",
+            "description": "MG66_INDSPVEN - Modalità di gestione delle spese di vendita<br><ul><li><i>0</i> - Non gestite</li><li><i>1</i> - Fisse per articolo</li><li><i>2</i> - Spese * qta' movimentate</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "indtotart": {
+            "type": "integer",
+            "description": "MG66_INDTOTART - Indicatore totalizzazione merce<br><ul><li><i>1</i> - Totale 1</li><li><i>0</i> - No totalizzazione</li><li><i>2</i> - Totale 2</li><li><i>3</i> - Totale 3</li><li><i>4</i> - Totale 4</li></ul>",
+            "format": "int32",
+            "default": 1,
+            "nullable": true
+          },
+          "indum2": {
+            "type": "integer",
+            "description": "MG66_INDUM2 - Modalità di gestione dell'unità di misura 2<br><ul><li><i>0</i> - No gestione</li><li><i>1</i> - Si gestione</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "indvareridiba": {
+            "type": "integer",
+            "description": "MG66_INDVARERIDIBA - Modalità di ereditarietà DiBa<br><ul><li><i>0</i> - Dall'alto in basso</li><li><i>1</i> - Dal basso in alto</li><li><i>2</i> - Non gestita</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "lastchange": {
+            "type": "string",
+            "description": "MG66_LASTCHANGE - Data ultima variazione",
+            "format": "date-time",
+            "nullable": true
+          },
+          "moltbase": {
+            "type": "number",
+            "description": "MG66_MOLTBASE - Moltiplicatore base prezzo",
+            "format": "double",
+            "nullable": true
+          },
+          "opzioneMg5e": {
+            "type": "string",
+            "description": "Codice variante",
+            "nullable": true
+          },
+          "perccalop": {
+            "type": "number",
+            "description": "MG66_PERCCALOP - Percentuale del calo peso",
+            "format": "double",
+            "nullable": true
+          },
+          "perprov": {
+            "type": "number",
+            "description": "MG66_PERPROV - Percentuale provvigione",
+            "format": "double",
+            "nullable": true
+          },
+          "qtaminacq": {
+            "type": "number",
+            "description": "MG66_QTAMINACQ - Quantità minima per gli acquisti",
+            "format": "double",
+            "nullable": true
+          },
+          "qtaminvend": {
+            "type": "number",
+            "description": "MG66_QTAMINVEND - Quantità minima per le vendite",
+            "format": "double",
+            "nullable": true
+          },
+          "qtamulacq": {
+            "type": "number",
+            "description": "MG66_QTAMULACQ - Quantità multipla per gli acquisti ",
+            "format": "double",
+            "nullable": true
+          },
+          "qtamulven": {
+            "type": "number",
+            "description": "MG66_QTAMULVEN - Quantità multipla per le vendite",
+            "format": "double",
+            "nullable": true
+          },
+          "regprov": {
+            "type": "number",
+            "description": "MG66_REGPROV - Regime provvigioni<br><ul><li><i>0</i> - No calcolo provvigioni</li><li><i>1</i> - % dall'agente</li><li><i>2</i> - % dal cliente</li><li><i>3</i> - % dall'anagrafica articolo</li><li><i>4</i> - % dall'anagrafica articolo/agente</li><li><i>5</i> - % da listino fisso</li><li><i>6</i> - % da listino anag. su cli./for.</li><li><i>7</i> - % da listino fisso e scagl. sc./magg.</li><li><i>8</i> - % da listino utilizzato</li><li><i>9</i> - % da listino utilizzato: solo gest. scagl. di sc./magg.</li><li><i>99</i> - Come regime agente/articolo</li><li><i>10</i> - % da listino utilizzato: provv. list. + scagl. di sc./magg.</li><li><i>13</i> - % da scaglioni di fatturato</li><li><i>14</i> - % da condizioni multiple</li><li><i>15</i> - % da listini parametrici</li></ul>",
+            "format": "double",
+            "default": "0",
+            "nullable": true
+          },
+          "rigacolprov": {
+            "type": "number",
+            "description": "MG66_RIGACOLPROV - Riga colonna provvigioni",
+            "format": "double",
+            "nullable": true
+          },
+          "stagaggmm": {
+            "type": "number",
+            "description": "MG66_STAGAGGMM - A giorno/mese generazione ordine a fornitori",
+            "format": "double",
+            "nullable": true
+          },
+          "stagdaggmm": {
+            "type": "number",
+            "description": "MG66_STAGDAGGMM - Da giorno/mese generazione ordine a fornitori",
+            "format": "double",
+            "nullable": true
+          },
+          "um1": {
+            "type": "string",
+            "description": "MG66_UM1 - Unità di misura",
+            "nullable": true
+          },
+          "um2": {
+            "type": "string",
+            "description": "MG66_UM2 - Unità di misura 2",
+            "nullable": true
+          },
+          "variante": {
+            "type": "string",
+            "description": "MG66_VARIANTE - Variante",
+            "nullable": true
+          },
+          "idExtendedAttributeEntity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idExtendedAttributeSubEntity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "brandWH": {
+            "$ref": "#/components/schemas/BrandWHDTO"
+          },
+          "codIvaCOCompensativa": {
+            "$ref": "#/components/schemas/VatCodeCODTO"
+          },
+          "codIvaCORidotta": {
+            "$ref": "#/components/schemas/VatCodeCODTO"
+          },
+          "datoDescrizione": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemDescriptionWHDTO"
+            },
+            "nullable": true
+          },
+          "datoItemBarCode": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemBarCodeWHDTO"
+            },
+            "nullable": true
+          },
+          "datoPackagingWH": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemPackagingWHDTO"
+            },
+            "nullable": true
+          },
+          "familyWH": {
+            "$ref": "#/components/schemas/FamilyWHDTO"
+          },
+          "indicatoreFittizio": {
+            "$ref": "#/components/schemas/ItemDummyClassificationWHDTO"
+          },
+          "itemGroupWH": {
+            "$ref": "#/components/schemas/ItemGroupWHDTO"
+          },
+          "itemIntrastatWH": {
+            "$ref": "#/components/schemas/ItemIntrastatWHDTO"
+          },
+          "itemStatusWH": {
+            "$ref": "#/components/schemas/ItemStatusWHDTO"
+          },
+          "itemSubGroupWH": {
+            "$ref": "#/components/schemas/ItemSubGroupWHDTO"
+          },
+          "itemWH_FiscalGroupWH": {
+            "$ref": "#/components/schemas/FiscalGroupWHDTO"
+          },
+          "statisticalGroup1WH": {
+            "$ref": "#/components/schemas/StatisticalGroup1WHDTO"
+          },
+          "statisticalGroup2WH": {
+            "$ref": "#/components/schemas/StatisticalGroup2WHDTO"
+          },
+          "statisticalGroup3WH": {
+            "$ref": "#/components/schemas/StatisticalGroup3WHDTO"
+          },
+          "statisticalGroup4WH": {
+            "$ref": "#/components/schemas/StatisticalGroup4WHDTO"
+          },
+          "statoAttualeCO": {
+            "$ref": "#/components/schemas/StatoAttualeDTO"
+          },
+          "stockWH": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StockWHDTO"
+            },
+            "nullable": true
+          },
+          "subFamilyWH": {
+            "$ref": "#/components/schemas/SubFamilyWHDTO"
+          },
+          "vatCodeCO": {
+            "$ref": "#/components/schemas/VatCodeCODTO"
+          },
+          "extensionData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StringObjectKeyValuePair"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG66_ANAGRART - Articolo<br>Proprietà chiave:<ul><li><b>CodiceArticoloMG</b></li><li><b>Ditta</b></li></ul>"
+      },
+      "LanguageDescriptionWHDTO": {
+        "required": [
+          "codLinguaMg52",
+          "descrizione",
+          "idprov",
+          "providFw4a"
+        ],
+        "type": "object",
+        "properties": {
+          "codLinguaMg52": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG0S_CODLINGUA_MG52 - Codice lingua"
+          },
+          "descrizione": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG0S_DESCRIZIONE - Descrizione"
+          },
+          "iddeslin": {
+            "type": "integer",
+            "description": "MG0S_IDDESLIN - Iddeslin (Required only in PUT/PATCH)",
+            "format": "int32",
+            "nullable": true
+          },
+          "idprov": {
+            "type": "integer",
+            "description": "MG0S_IDPROV - IdProv",
+            "format": "int32"
+          },
+          "providFw4a": {
+            "type": "number",
+            "description": "MG0S_PROVID_FW4A - ProvId",
+            "format": "double"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG0S_DESLINGUA - Descrizione in lingua<br>Proprietà chiave:<ul><li><b>Iddeslin</b></li></ul>"
+      },
+      "ListinoArticoloLIDTO": {
+        "required": [
+          "codArtMg66",
+          "datafineval",
+          "datainizioval",
+          "dittaCg18",
+          "flgDaconf",
+          "flgList",
+          "flgPerson",
+          "flgProvv",
+          "flgUsodecor",
+          "flgVariato",
+          "flgVendacq",
+          "indArrot",
+          "indRicalpr",
+          "indTipolis",
+          "indTipovar",
+          "indUm",
+          "itemWH",
+          "mag1per",
+          "mag2per",
+          "magimp",
+          "numlist",
+          "opzioneMg5e",
+          "perricdelta",
+          "provimp",
+          "provper",
+          "sc1per",
+          "sc2per",
+          "sc3per",
+          "sc4per",
+          "sc5per",
+          "sc6per",
+          "scimp"
+        ],
+        "type": "object",
+        "properties": {
+          "bvmbase": {
+            "type": "number",
+            "description": "LI10_BVMBASE - Base prezzo",
+            "format": "double",
+            "nullable": true
+          },
+          "bvmmolt": {
+            "type": "number",
+            "description": "LI10_BVMMOLT - Moltiplicatore",
+            "format": "double",
+            "nullable": true
+          },
+          "bvmvar": {
+            "type": "number",
+            "description": "LI10_BVMVAR - Variante articolo",
+            "format": "double",
+            "nullable": true
+          },
+          "codArtMg66": {
+            "minLength": 1,
+            "type": "string",
+            "description": "LI10_CODART_MG66 - Articolo"
+          },
+          "datacreaz": {
+            "type": "string",
+            "description": "LI10_DATACREAZ - Data creazione",
+            "format": "date-time",
+            "nullable": true
+          },
+          "datafineval": {
+            "type": "string",
+            "description": "LI10_DATAFINEVAL - Data fine validità",
+            "format": "date-time"
+          },
+          "datainizioval": {
+            "type": "string",
+            "description": "LI10_DATAINIZIOVAL - Data inizio validità",
+            "format": "date-time"
+          },
+          "datastlis": {
+            "type": "string",
+            "description": "LI10_DATASTLIS - Data stampa listino",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dataultagg": {
+            "type": "string",
+            "description": "LI10_DATAULTAGG - Data ultimo aggiornamento",
+            "format": "date-time",
+            "nullable": true
+          },
+          "deposMg58": {
+            "minLength": 1,
+            "type": "string",
+            "description": "LI10_DEPOS_MG58 - Deposito",
+            "default": " ",
+            "nullable": true
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "LI10_DITTA_CG18 - Ditta",
+            "format": "double"
+          },
+          "flgDaconf": {
+            "type": "integer",
+            "description": "LI10_FLGDACONF - Prezzo da confermare",
+            "format": "int32"
+          },
+          "flgList": {
+            "type": "number",
+            "description": "LI10_FLGLIST - Flag gestione dati listino",
+            "format": "double"
+          },
+          "flgPerson": {
+            "type": "number",
+            "description": "LI10_FLGPERSON - Indicatore 1 Appl.Pers",
+            "format": "double"
+          },
+          "flgProvv": {
+            "type": "number",
+            "description": "LI10_FLGPROVV - Indicatore regime provvigione",
+            "format": "double"
+          },
+          "flgUsodecor": {
+            "type": "number",
+            "description": "LI10_FLGUSODECOR - Attivazione listino a decorrere",
+            "format": "double"
+          },
+          "flgVariato": {
+            "type": "number",
+            "description": "LI10_FLGVARIATO - Flag listino variato",
+            "format": "double"
+          },
+          "flgVendacq": {
+            "type": "number",
+            "description": "LI10_FLGVENDACQ - Vendita/Acquisto",
+            "format": "double"
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "LI10_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "indArrot": {
+            "type": "number",
+            "description": "LI10_INDARROT - Codice scaglione arrotondamento prezzi",
+            "format": "double"
+          },
+          "indRicalpr": {
+            "type": "number",
+            "description": "LI10_INDRICALPR - Indicatore aggiornamento prezzi e sconti variati",
+            "format": "double"
+          },
+          "indTipolis": {
+            "type": "number",
+            "description": "LI10_INDTIPOLIS - Tipo listino",
+            "format": "double"
+          },
+          "indTipovar": {
+            "type": "number",
+            "description": "LI10_INDTIPOVAR - Aggiornamento listino",
+            "format": "double"
+          },
+          "indUm": {
+            "type": "number",
+            "description": "LI10_INDUM - Indicatore unità di misura",
+            "format": "double"
+          },
+          "lastchange": {
+            "type": "string",
+            "description": "LI10_LASTCHANGE - Ultimo aggiornamento",
+            "format": "date-time",
+            "nullable": true
+          },
+          "liberoval": {
+            "type": "number",
+            "description": "LI10_LIBEROVAL - Valore libero",
+            "format": "double",
+            "nullable": true
+          },
+          "mag1per": {
+            "type": "number",
+            "description": "LI10_MAG1PER - Maggiorazione 1",
+            "format": "double"
+          },
+          "mag2per": {
+            "type": "number",
+            "description": "LI10_MAG2PER - Maggiorazione 2",
+            "format": "double"
+          },
+          "magimp": {
+            "type": "number",
+            "description": "LI10_MAGIMP - Maggiorazione importo",
+            "format": "double"
+          },
+          "note": {
+            "type": "string",
+            "description": "LI10_NOTE - Note",
+            "nullable": true
+          },
+          "numlist": {
+            "type": "number",
+            "description": "LI10_NUMLIST - Numero listino",
+            "format": "double"
+          },
+          "numpagst": {
+            "type": "number",
+            "description": "LI10_NUMPAGST - Numero di pagina del listino",
+            "format": "double",
+            "nullable": true
+          },
+          "opzioneMg5e": {
+            "minLength": 1,
+            "type": "string",
+            "description": "LI10_OPZIONE_MG5E - Variante"
+          },
+          "perricdelta": {
+            "type": "number",
+            "description": "LI10_PERRICDELTA - % Ricarica/Delta",
+            "format": "double"
+          },
+          "prezzo": {
+            "type": "number",
+            "description": "LI10_PREZZO - Prezzo",
+            "format": "double",
+            "nullable": true
+          },
+          "provimp": {
+            "type": "number",
+            "description": "LI10_PROVIMP - Provvigione importo",
+            "format": "double"
+          },
+          "provper": {
+            "type": "number",
+            "description": "LI10_PROVPER - % Provvigione",
+            "format": "double"
+          },
+          "provvscPa10": {
+            "type": "string",
+            "description": "LI10_PROVVSC_PA10 - Codice tabella provvigione su sconti",
+            "nullable": true
+          },
+          "sc1per": {
+            "type": "number",
+            "description": "LI10_SC1PER - Sconto 1",
+            "format": "double"
+          },
+          "sc2per": {
+            "type": "number",
+            "description": "LI10_SC2PER - Sconto 2",
+            "format": "double"
+          },
+          "sc3per": {
+            "type": "number",
+            "description": "LI10_SC3PER - Sconto 3",
+            "format": "double"
+          },
+          "sc4per": {
+            "type": "number",
+            "description": "LI10_SC4PER - Sconto 4",
+            "format": "double"
+          },
+          "sc5per": {
+            "type": "number",
+            "description": "LI10_SC5PER - Sconto 5",
+            "format": "double"
+          },
+          "sc6per": {
+            "type": "number",
+            "description": "LI10_SC6PER - Sconto 6",
+            "format": "double"
+          },
+          "scaglMg02": {
+            "type": "number",
+            "description": "LI10_SCAGL_MG02 - Scaglioni di arrotondamento prezzi",
+            "format": "double",
+            "nullable": true
+          },
+          "scimp": {
+            "type": "number",
+            "description": "LI10_SCIMP - Sconto importo",
+            "format": "double"
+          },
+          "itemWH": {
+            "$ref": "#/components/schemas/ItemWHDTO"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "LI10_LISTARTIC - ListinoArticoloLI<br>Proprietà chiave:<ul><li><b>CodArtMg66</b></li><li><b>Datafineval</b></li><li><b>Datainizioval</b></li><li><b>DeposMg58</b></li><li><b>DittaCg18</b></li><li><b>FlgUsodecor</b></li><li><b>FlgVendacq</b></li><li><b>IndTipolis</b></li><li><b>Numlist</b></li><li><b>OpzioneMg5e</b></li></ul>"
+      },
+      "LocationWHDTO": {
+        "required": [
+          "codDepMg58",
+          "descubicaz",
+          "ubicaz"
+        ],
+        "type": "object",
+        "properties": {
+          "altezza": {
+            "type": "number",
+            "description": "MG97_ALTEZZA - Altezza",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "codClassestoc": {
+            "type": "number",
+            "description": "MG97_CODCLASSESTOC - Classe stoccaggio",
+            "format": "double",
+            "nullable": true
+          },
+          "codDepMg58": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG97_CODDEP_MG58 - Codice deposito"
+          },
+          "codPriorriemp": {
+            "type": "number",
+            "description": "MG97_CODPRIORRIEMP - Priorità di riempimento",
+            "format": "double",
+            "nullable": true
+          },
+          "coordin1": {
+            "type": "string",
+            "description": "MG97_COORDIN1 - Coordinata 1",
+            "nullable": true
+          },
+          "coordin2": {
+            "type": "string",
+            "description": "MG97_COORDIN2 - Coordinata 2",
+            "nullable": true
+          },
+          "coordin3": {
+            "type": "string",
+            "description": "MG97_COORDIN3 - Coordinata 3",
+            "nullable": true
+          },
+          "descubicaz": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG97_DESCUBICAZ - Descrizione ubicazione"
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG97_DITTA_CG18 - Codice ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "indTipoubicaz": {
+            "type": "number",
+            "description": "MG97_INDTIPOUBICAZ - Tipo ubicazione<br><ul><li><i>0</i> - Di prelevamento</li><li><i>1</i> - Di scorta</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "larghezza": {
+            "type": "number",
+            "description": "MG97_LARGHEZZA - Larghezza",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "maxpeso": {
+            "type": "number",
+            "description": "MG97_MAXPESO - Massimo peso",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "profondita": {
+            "type": "number",
+            "description": "MG97_PROFONDITA - Profondità",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "ubicaz": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG97_UBICAZ - Codice ubicazione"
+          },
+          "umdimens": {
+            "type": "string",
+            "description": "MG97_UMDIMENS - UM dimensione",
+            "nullable": true
+          },
+          "umpeso": {
+            "type": "string",
+            "description": "MG97_UMPESO - UM Peso",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG97_UBICAZ - Ubicazione<br>Proprietà chiave:<ul><li><b>CodDepMg58</b></li><li><b>DittaCg18</b></li><li><b>Ubicaz</b></li></ul>"
+      },
+      "NationCODTO": {
+        "required": [
+          "codice"
+        ],
+        "type": "object",
+        "properties": {
+          "a2iso3166": {
+            "type": "string",
+            "description": "CG07_A2ISO3166 - Alpha-2 ISO 3166",
+            "nullable": true
+          },
+          "a3iso3166": {
+            "type": "string",
+            "description": "CG07_A3ISO3166 - Alpha-3 ISO 3166",
+            "nullable": true
+          },
+          "codice": {
+            "type": "number",
+            "description": "CG07_CODICE - Codice",
+            "format": "double"
+          },
+          "codiceCg08": {
+            "type": "string",
+            "description": "CG07_CODICE_CG08 - Divisa",
+            "nullable": true
+          },
+          "codIso": {
+            "type": "string",
+            "description": "CG07_CODISO - Codice ISO",
+            "nullable": true
+          },
+          "codSian": {
+            "type": "number",
+            "description": "CG07_CODSIAN - Codice SIAN",
+            "format": "double",
+            "nullable": true
+          },
+          "crtpiva": {
+            "type": "string",
+            "description": "CG07_CRTPIVA - Caratteri lunghezza partita IVA (separati da /)",
+            "nullable": true
+          },
+          "datacee": {
+            "type": "string",
+            "description": "CG07_DATACEE - Data ingresso CEE",
+            "format": "date-time",
+            "nullable": true
+          },
+          "datafinblacklist": {
+            "type": "string",
+            "description": "CG07_DATAFINBLACKLIST - Data uscita Black List",
+            "format": "date-time",
+            "nullable": true
+          },
+          "datainiblacklist": {
+            "type": "string",
+            "description": "CG07_DATAINIBLACKLIST - Data ingresso Black List",
+            "format": "date-time",
+            "nullable": true
+          },
+          "descr": {
+            "type": "string",
+            "description": "CG07_DESCR - Descrizione",
+            "nullable": true
+          },
+          "desiso3166": {
+            "type": "string",
+            "description": "CG07_DESISO3166 - Descrizione Stato ISO 3166",
+            "nullable": true
+          },
+          "flgIban": {
+            "type": "integer",
+            "description": "CG07_FLGIBAN - Utilizzo IBAN<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": "0",
+            "nullable": true
+          },
+          "flgSepa": {
+            "type": "integer",
+            "description": "CG07_FLGSEPA - Utilizzo standard SEPA<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": "0",
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "CG07_IDMEDIA_CG99 - ID HyperMedia",
+            "format": "double",
+            "nullable": true
+          },
+          "indTipostato": {
+            "type": "number",
+            "description": "CG07_INDTIPOSTATO - Tipo Nazione<br><ul><li><i>0</i> - Extracomunitario</li><li><i>1</i> - Intracomunitario</li><li><i>2</i> - Rep. San Marino</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "leniban": {
+            "type": "integer",
+            "description": "CG07_LENIBAN - Lunghezza IBAN",
+            "format": "int32",
+            "nullable": true
+          },
+          "numiso3166": {
+            "type": "string",
+            "description": "CG07_NUMISO3166 - Number ISO 3166",
+            "nullable": true
+          },
+          "currencyCO": {
+            "$ref": "#/components/schemas/CurrencyCODTO"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "CG07_TABSTATIEST - Stati esteri<br>Proprietà chiave:<ul><li><b>Codice</b></li></ul>"
+      },
+      "NatureAssCODTO": {
+        "required": [
+          "codice",
+          "descr",
+          "idassosw",
+          "idCg2m"
+        ],
+        "type": "object",
+        "properties": {
+          "codice": {
+            "minLength": 1,
+            "type": "string",
+            "description": "CG2N_CODICE - Codice"
+          },
+          "datafineval": {
+            "type": "string",
+            "description": "CG2N_DATAFINEVAL - Data di fine validità",
+            "format": "date-time",
+            "nullable": true
+          },
+          "datainival": {
+            "type": "string",
+            "description": "CG2N_DATAINIVAL - Data inizio validità",
+            "format": "date-time",
+            "nullable": true
+          },
+          "descr": {
+            "minLength": 1,
+            "type": "string",
+            "description": "CG2N_DESCR - Descrizione"
+          },
+          "idassosw": {
+            "type": "integer",
+            "description": "CG2N_IDASSOSW - ID",
+            "format": "int32"
+          },
+          "idCg2m": {
+            "type": "integer",
+            "description": "CG2N_ID_CG2M - Codice natura",
+            "format": "int32"
+          },
+          "rowversion": {
+            "type": "string",
+            "description": "CG2N_ROWVERSION - RowVersion",
+            "format": "byte",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "CG2N_NATURAASSOSW - Natura Assosoftware<br>Proprietà chiave:<ul><li><b>Idassosw</b></li></ul>"
+      },
+      "NatureEsCODTO": {
+        "required": [
+          "codice",
+          "descr",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "codice": {
+            "minLength": 1,
+            "type": "string",
+            "description": "CG2M_CODICE - Codice"
+          },
+          "datafineval": {
+            "type": "string",
+            "description": "CG2M_DATAFINEVAL - Data di fine validità",
+            "format": "date-time",
+            "nullable": true
+          },
+          "datainival": {
+            "type": "string",
+            "description": "CG2M_DATAINIVAL - Data inizio validità",
+            "format": "date-time",
+            "nullable": true
+          },
+          "descr": {
+            "minLength": 1,
+            "type": "string",
+            "description": "CG2M_DESCR - Descrizione"
+          },
+          "id": {
+            "type": "integer",
+            "description": "CG2M_ID - Codice",
+            "format": "int32"
+          },
+          "rowversion": {
+            "type": "string",
+            "description": "CG2M_ROWVERSION - RowVersion",
+            "format": "byte",
+            "nullable": true
+          },
+          "natureAssCO": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NatureAssCODTO"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "CG2M_NATURA - Tipo Esenzione<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
+      },
+      "PackagingWHDTO": {
+        "required": [
+          "codConfez"
+        ],
+        "type": "object",
+        "properties": {
+          "codConfez": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG96_CODCONFEZ - Codice confezione"
+          },
+          "descconfez": {
+            "type": "string",
+            "description": "MG96_DESCCONFEZ - Descrizione confezione",
+            "nullable": true
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG96_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgStetic": {
+            "type": "number",
+            "description": "MG96_FLGSTETIC - Indicatore stampa etichette<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmedia": {
+            "type": "string",
+            "description": "MG96_IDMEDIA - ID HyperMedia",
+            "nullable": true
+          },
+          "idprov": {
+            "type": "integer",
+            "description": "MG96_IDPROV - IdProv (Required only in PUT/PATCH)",
+            "format": "int32",
+            "nullable": true
+          },
+          "descrizioniLingua": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LanguageDescriptionWHDTO"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG96_CONFDESC - Confezione<br>Proprietà chiave:<ul><li><b>CodConfez</b></li><li><b>DittaCg18</b></li></ul>"
       },
       "PriceParametricLIDTO": {
         "required": [
@@ -1761,6 +4565,849 @@
         "additionalProperties": false,
         "description": "PricePriorityRowLI<br>Proprietà chiave:<ul><li><b>IdPriceList</b></li></ul>"
       },
+      "SearchComparer": {
+        "type": "integer",
+        "description": "Comparer operator: Equal = 0, NotEqual = 1, GreaterThan = 10, LessThan = 11, GreaterOrEqualThan = 12, LessOrEqualThan = 13, Contains = 20, NotContains = 21, StartsWith = 30, EndsWith = 40, In = 50, NotIn = 51, Between = 60, NotBetween = 61Null = 70NotNull = 71",
+        "format": "int32"
+      },
+      "SearchDTO": {
+        "type": "object",
+        "properties": {
+          "filters": {
+            "$ref": "#/components/schemas/SearchGroupDTO"
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": {},
+            "description": "List of key value filters that will be applied to the query (example: {'param1': Value}\")",
+            "nullable": true
+          },
+          "orderingProperties": {
+            "type": "object",
+            "additionalProperties": {},
+            "description": "\"Order by\" properties list",
+            "format": "IDictionary<string, long>",
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Page number to retun",
+            "format": "int32"
+          },
+          "pageNumber": {
+            "type": "integer",
+            "description": "Number of elements per page to return",
+            "format": "int32"
+          },
+          "selectList": {
+            "type": "string",
+            "nullable": true
+          },
+          "visibleColumns": {
+            "type": "string",
+            "nullable": true
+          },
+          "idRow": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "DTO that contains the filter criteria"
+      },
+      "SearchElementDTO": {
+        "required": [
+          "comparer",
+          "propertyName",
+          "value"
+        ],
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SearchNodeDTO"
+          }
+        ],
+        "properties": {
+          "propertyName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Property on witch apply the filter"
+          },
+          "comparer": {
+            "$ref": "#/components/schemas/SearchComparer"
+          },
+          "value": {
+            "$ref": "#/components/schemas/SearchNodeValueDTO"
+          }
+        },
+        "additionalProperties": false,
+        "description": "DTO that identifies a search criteria"
+      },
+      "SearchGroupDTO": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SearchNodeDTO"
+          }
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/SearchNodeDTO"
+                },
+                {
+                  "$ref": "#/components/schemas/SearchElementDTO"
+                },
+                {
+                  "$ref": "#/components/schemas/SearchGroupDTO"
+                }
+              ],
+              "description": "DTO that identifies a search criteria node (abstract)"
+            },
+            "description": "Items list to apply: any element can be a 'SearchGroupDTO' or a 'SearchElementDTO'",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "DTO that identifies a group of search criteria"
+      },
+      "SearchListinoDTO": {
+        "type": "object",
+        "properties": {
+          "dataRiferimento": {
+            "type": "string",
+            "description": "Reference date",
+            "format": "date-time"
+          },
+          "filters": {
+            "$ref": "#/components/schemas/SearchGroupDTO"
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": {},
+            "description": "List of key value filters that will be applied to the query (example: {'param1': Value}\")",
+            "nullable": true
+          },
+          "orderingProperties": {
+            "type": "object",
+            "additionalProperties": {},
+            "description": "\"Order by\" properties list",
+            "format": "IDictionary<string, long>",
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Page number to retun",
+            "format": "int32"
+          },
+          "pageNumber": {
+            "type": "integer",
+            "description": "Number of elements per page to return",
+            "format": "int32"
+          },
+          "selectList": {
+            "type": "string",
+            "nullable": true
+          },
+          "visibleColumns": {
+            "type": "string",
+            "nullable": true
+          },
+          "idRow": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "DTO that contains the filter criteria"
+      },
+      "SearchLogicalOperators": {
+        "type": "integer",
+        "description": "Logical operator: And = 1, Or = 2, Not = 3",
+        "format": "int32"
+      },
+      "SearchNodeDTO": {
+        "type": "object",
+        "properties": {
+          "operator": {
+            "$ref": "#/components/schemas/SearchLogicalOperators"
+          }
+        },
+        "additionalProperties": false,
+        "description": "DTO that identifies a search criteria node (abstract)"
+      },
+      "SearchNodeValueDTO": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "StatisticalGroup1WHDTO": {
+        "required": [
+          "codGrustat1"
+        ],
+        "type": "object",
+        "properties": {
+          "codGrustat1": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG74_CODGRUSTAT1 - Codice gruppo statistico 1"
+          },
+          "desgrustat1": {
+            "type": "string",
+            "description": "MG74_DESGRUSTAT1 - Descrizione",
+            "nullable": true
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG74_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG74_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "idprov": {
+            "type": "integer",
+            "description": "MG74_IDPROV - IdProv (Required only in PUT/PATCH)",
+            "format": "int32",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG74_GRUSTAT1 - Gruppo statistico 1<br>Proprietà chiave:<ul><li><b>CodGrustat1</b></li><li><b>DittaCg18</b></li></ul>"
+      },
+      "StatisticalGroup2WHDTO": {
+        "required": [
+          "codGrustat2"
+        ],
+        "type": "object",
+        "properties": {
+          "codGrustat2": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG75_CODGRUSTAT2 - Codice gruppo statistico 2"
+          },
+          "desgrustat2": {
+            "type": "string",
+            "description": "MG75_DESGRUSTAT2 - Descrizione",
+            "nullable": true
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG75_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG75_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "idprov": {
+            "type": "integer",
+            "description": "MG75_IDPROV - IdProv (Required only in PUT/PATCH)",
+            "format": "int32",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG75_GRUSTAT2 - Gruppo statistico 2<br>Proprietà chiave:<ul><li><b>CodGrustat2</b></li><li><b>DittaCg18</b></li></ul>"
+      },
+      "StatisticalGroup3WHDTO": {
+        "required": [
+          "codGrustat3"
+        ],
+        "type": "object",
+        "properties": {
+          "codGrustat3": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG76_CODGRUSTAT3 - Codice gruppo statistico 3"
+          },
+          "desgrustat3": {
+            "type": "string",
+            "description": "MG76_DESGRUSTAT3 - Descrizione",
+            "nullable": true
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG76_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG76_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "idprov": {
+            "type": "integer",
+            "description": "MG76_IDPROV - IdProv (Required only in PUT/PATCH)",
+            "format": "int32",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG76_GRUSTAT3 - Gruppo statistico 3<br>Proprietà chiave:<ul><li><b>CodGrustat3</b></li><li><b>DittaCg18</b></li></ul>"
+      },
+      "StatisticalGroup4WHDTO": {
+        "required": [
+          "codGrustat4",
+          "desgrustat4"
+        ],
+        "type": "object",
+        "properties": {
+          "codGrustat4": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG77_CODGRUSTAT4 - Codice gruppo statistico 4"
+          },
+          "desgrustat4": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG77_DESGRUSTAT4 - Descrizione"
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG77_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG77_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "idprov": {
+            "type": "integer",
+            "description": "MG77_IDPROV - IdProv (Required only in PUT/PATCH)",
+            "format": "int32",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG77_GRUSTAT4 - Gruppo statistico 4<br>Proprietà chiave:<ul><li><b>CodGrustat4</b></li><li><b>DittaCg18</b></li></ul>"
+      },
+      "StatoAttualeDTO": {
+        "required": [
+          "statiDisponibili",
+          "statoCorrente"
+        ],
+        "type": "object",
+        "properties": {
+          "statoCorrente": {
+            "$ref": "#/components/schemas/StatoDTO"
+          },
+          "statiDisponibili": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StatoDTO"
+            },
+            "description": "Lista di stati disponibili raggiungibili dallo stato corrente."
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Stato attuale di un'entità."
+      },
+      "StatoDTO": {
+        "required": [
+          "idStato",
+          "indTipoStato",
+          "seq"
+        ],
+        "type": "object",
+        "properties": {
+          "idStato": {
+            "type": "integer",
+            "description": "Codice stato",
+            "format": "int32"
+          },
+          "seq": {
+            "type": "integer",
+            "description": "Numero sequenziale di stato",
+            "format": "int32"
+          },
+          "indTipoStato": {
+            "type": "integer",
+            "description": "Indicatore tipo stato: 0 - stato standard, 1 - stato decisionale, 2 - stato autorizzato, 3 -  stato non autorizzato",
+            "format": "int32"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Anagrafica stato"
+      },
+      "StockWHDTO": {
+        "required": [
+          "codArtMg66",
+          "codDepMg58",
+          "storageWH"
+        ],
+        "type": "object",
+        "properties": {
+          "codArtMg66": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG67_CODART_MG66 - Codice Articolo"
+          },
+          "codDepMg58": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG67_CODDEP_MG58 - Codice deposito"
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG67_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgConsMens": {
+            "type": "integer",
+            "description": "MG67_FLGCONSMENS - Flag gestione consumi mensili<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgDepPref": {
+            "type": "integer",
+            "description": "MG67_FLGDEPPREF - Deposito pianificazione<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgScorSicur": {
+            "type": "integer",
+            "description": "MG67_FLGSCORSICUR - Flag gestione scorta di sicurezza<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgScorteAut": {
+            "type": "integer",
+            "description": "MG67_FLGSCORTEAUT - Flag memorizzazione automatica quantità scorte<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "frazMRP": {
+            "type": "number",
+            "description": "MG67_FRAZMRP - Tipo frazionamento lotti per MRP<br><ul><li><i>0</i> - Nessuno</li><li><i>1</i> - Lotto minimo</li><li><i>2</i> - Lotto multiplo</li><li><i>3</i> - Lotto economico</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "ggArrMerce": {
+            "type": "number",
+            "description": "MG67_GGARRMERCE - Lead Time acquisti",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "ggCoperLotto": {
+            "type": "number",
+            "description": "MG67_GGCOPERLOTTO - Giorni di copertura lotto",
+            "format": "double",
+            "nullable": true
+          },
+          "idMediaCg99": {
+            "type": "number",
+            "description": "MG67_IDMEDIA_CG99 - ID HyperMedia",
+            "format": "double",
+            "nullable": true
+          },
+          "indCalQtaFabb": {
+            "type": "integer",
+            "description": "MG67_INDCALQTAFABB - Tipo di calcolo del fabbisogno<br><ul><li><i>0</i> - Fabbisogno</li><li><i>1</i> - Lotto di riordino</li><li><i>2</i> - Lotto economico</li><li><i>3</i> - Scorta massima con lotto di riordino</li><li><i>4</i> - GG copertura con lotto di riordino</li><li><i>5</i> - Fabbisogno mensile con lotto di riordino</li><li><i>6</i> - Riga ordine con lotto di riordino</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "indCopertura": {
+            "type": "number",
+            "description": "MG67_INDCOPERTURA - Indice di copertura",
+            "format": "double",
+            "nullable": true
+          },
+          "indDepPrelVers": {
+            "type": "number",
+            "description": "MG67_INDDEPPRELVERS - Tipo di deposito prelievo/versamento<br><ul><li><i>0</i> - Nessuno</li><li><i>1</i> - Prelievo</li><li><i>2</i> - Versamento</li><li><i>3</i> - Entrambi</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "indGesLotto": {
+            "type": "integer",
+            "description": "MG67_INDGESLOTTO - Modalità di aggiornamento del lotto di riordino<br><ul><li><i>0</i> - Lotto fisso(manuale)</li><li><i>1</i> - Ricalc. dai mov. di vendita</li><li><i>2</i> - Ricalc. dai cons. effettivi</li><li><i>3</i> - Ricalc. dai cons. previsti</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "indGesScorFab": {
+            "type": "integer",
+            "description": "MG67_INDGESSCORFAB - Modalità di gestione scorte o fabbisogni<br><ul><li><i>1</i> - Fabbisogni</li><li><i>0</i> - Scorte</li></ul>",
+            "format": "int32",
+            "default": 1,
+            "nullable": true
+          },
+          "indRotazione": {
+            "type": "number",
+            "description": "MG67_INDROTAZIONE - Indice di rotazione",
+            "format": "double",
+            "nullable": true
+          },
+          "livelloRiord": {
+            "type": "number",
+            "description": "MG67_LIVELLORIORD - Livello di riordino",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "lottoEconom": {
+            "type": "number",
+            "description": "MG67_LOTTOECONOM - Lotto economico",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "lottoMinRiod": {
+            "type": "number",
+            "description": "MG67_LOTTOMINRIOD - Lotto minimo di riordino",
+            "format": "double",
+            "nullable": true
+          },
+          "lottoRiod": {
+            "type": "number",
+            "description": "MG67_LOTTORIOD - Lotto multiplo di riordino",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "opzioneMg5e": {
+            "type": "string",
+            "description": "MG67_OPZIONE_MG5E - Codice variante",
+            "nullable": true
+          },
+          "percIncCons01": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS01 - Percinccons01",
+            "format": "double",
+            "nullable": true
+          },
+          "percIncCons02": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS02 - Percinccons02",
+            "format": "double",
+            "nullable": true
+          },
+          "percIncCons03": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS03 - Percinccons03",
+            "format": "double",
+            "nullable": true
+          },
+          "percIncCons04": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS04 - Percinccons04",
+            "format": "double",
+            "nullable": true
+          },
+          "percIncCons05": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS05 - Percinccons05",
+            "format": "double",
+            "nullable": true
+          },
+          "percIncCons06": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS06 - Percinccons06",
+            "format": "double",
+            "nullable": true
+          },
+          "percIncCons07": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS07 - Percinccons07",
+            "format": "double",
+            "nullable": true
+          },
+          "percIncCons08": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS08 - Percinccons08",
+            "format": "double",
+            "nullable": true
+          },
+          "percIncCons09": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS09 - Percinccons09",
+            "format": "double",
+            "nullable": true
+          },
+          "percIncCons10": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS10 - Percinccons10",
+            "format": "double",
+            "nullable": true
+          },
+          "percIncCons11": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS11 - Percinccons11",
+            "format": "double",
+            "nullable": true
+          },
+          "percIncCons12": {
+            "type": "number",
+            "description": "MG67_PERCINCCONS12 - Percinccons12",
+            "format": "double",
+            "nullable": true
+          },
+          "percVarCons": {
+            "type": "number",
+            "description": "MG67_PERCVARCONS - Percvarcons",
+            "format": "double",
+            "nullable": true
+          },
+          "percVarTempo": {
+            "type": "number",
+            "description": "MG67_PERCVARTEMPO - Percvartempo",
+            "format": "double",
+            "nullable": true
+          },
+          "qtaStanProd": {
+            "type": "number",
+            "description": "MG67_QTASTANPROD - Quantità standard di produzione",
+            "format": "double",
+            "nullable": true
+          },
+          "scortaMax": {
+            "type": "number",
+            "description": "MG67_SCORTAMAX - Scorta massima",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "scortaMin": {
+            "type": "number",
+            "description": "MG67_SCORTAMIN - Scorta minima",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "scortaSicur": {
+            "type": "number",
+            "description": "MG67_SCORTASICUR - Scorta di sicurezza",
+            "format": "double",
+            "nullable": true
+          },
+          "tempoFixProd": {
+            "type": "number",
+            "description": "MG67_TEMPOFIXPROD - Tempo fisso di produzione (tempo di attrezzaggio). Lead Time di produzione fisso",
+            "format": "double",
+            "nullable": true
+          },
+          "tempoVarProd": {
+            "type": "number",
+            "description": "MG67_TEMPOVARPROD - Tempo variabile di produzione. Lead Time di produzione variabile",
+            "format": "double",
+            "nullable": true
+          },
+          "storageWH": {
+            "$ref": "#/components/schemas/StorageWHDTO"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG67_SCORTE - Scorte articolo<br>Proprietà chiave:<ul><li><b>CodArtMg66</b></li><li><b>CodDepMg58</b></li><li><b>DittaCg18</b></li><li><b>OpzioneMg5e</b></li></ul>"
+      },
+      "StorageWHDTO": {
+        "required": [
+          "codDep",
+          "dataatt"
+        ],
+        "type": "object",
+        "properties": {
+          "capdep": {
+            "type": "string",
+            "description": "MG58_CAPDEP - Cap",
+            "nullable": true
+          },
+          "codDep": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG58_CODDEP - Codice deposito"
+          },
+          "dataatt": {
+            "type": "string",
+            "description": "MG58_DATAATT - Data attivazione",
+            "format": "date-time"
+          },
+          "datacess": {
+            "type": "string",
+            "description": "MG58_DATACESS - Data cessazione",
+            "format": "date-time",
+            "nullable": true
+          },
+          "descrdep": {
+            "type": "string",
+            "description": "MG58_DESCRDEP - Descrizione",
+            "nullable": true
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG58_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "faxnumdep": {
+            "type": "string",
+            "description": "MG58_FAXNUMDEP - Fax",
+            "nullable": true
+          },
+          "flgDepprinc": {
+            "type": "number",
+            "description": "MG58_FLGDEPPRINC - Deposito principale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "indEmail": {
+            "type": "string",
+            "description": "MG58_INDEMAIL - Email",
+            "nullable": true
+          },
+          "indIdep": {
+            "type": "string",
+            "description": "MG58_INDIDEP - Indirizzo deposito",
+            "nullable": true
+          },
+          "indInterest": {
+            "type": "number",
+            "description": "MG58_INDINTEREST - Tipo deposito<br><ul><li><i>0</i> - Interno</li><li><i>1</i> - Esterno</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "locdep": {
+            "type": "string",
+            "description": "MG58_LOCDEP - Località",
+            "nullable": true
+          },
+          "provdep": {
+            "type": "string",
+            "description": "MG58_PROVDEP - Prov.",
+            "nullable": true
+          },
+          "respdep": {
+            "type": "string",
+            "description": "MG58_RESPDEP - Responsabile",
+            "nullable": true
+          },
+          "telnumdep": {
+            "type": "string",
+            "description": "MG58_TELNUMDEP - Telefono",
+            "nullable": true
+          },
+          "locationWH": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationWHDTO"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG58_DEPOSITI - Deposito<br>Proprietà chiave:<ul><li><b>CodDep</b></li><li><b>DittaCg18</b></li></ul>"
+      },
       "StringObjectKeyValuePair": {
         "type": "object",
         "properties": {
@@ -1773,6 +5420,62 @@
           }
         },
         "additionalProperties": false
+      },
+      "SubFamilyWHDTO": {
+        "required": [
+          "codFamMg53",
+          "codSfam",
+          "descrsfam"
+        ],
+        "type": "object",
+        "properties": {
+          "idprov": {
+            "type": "integer",
+            "description": "MG54_IDPROV - Identity progressive descriptions in language - property is ReadOnly",
+            "format": "int32",
+            "nullable": true
+          },
+          "codFamMg53": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG54_CODFAM_MG53 - Codice famiglia"
+          },
+          "codSfam": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG54_CODSFAM - Codice sottofamiglia"
+          },
+          "descrsfam": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG54_DESCRSFAM - Descrizione"
+          },
+          "dittaCg18": {
+            "type": "number",
+            "description": "MG54_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idmediaCg99": {
+            "type": "number",
+            "description": "MG54_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG54_SOTTOFAM - Sottofamiglia<br>Proprietà chiave:<ul><li><b>CodFamMg53</b></li><li><b>CodSfam</b></li><li><b>DittaCg18</b></li></ul>"
       },
       "ValidateDTO": {
         "type": "object",
@@ -1836,6 +5539,298 @@
         },
         "additionalProperties": false,
         "description": "DTO for property validation task"
+      },
+      "VatCodeCODTO": {
+        "required": [
+          "codice",
+          "descrizione"
+        ],
+        "type": "object",
+        "properties": {
+          "aliqivavent": {
+            "type": "number",
+            "description": "CG28_ALIQIVAVENT - % acquisti in ventilazione",
+            "format": "double",
+            "nullable": true
+          },
+          "annotazioni": {
+            "type": "string",
+            "description": "CG28_ANNOTAZIONI - Annotazioni su fatture di vendita e sui registri IVA art.21 comma 6 DPR 633/72",
+            "nullable": true
+          },
+          "codice": {
+            "minLength": 1,
+            "type": "string",
+            "description": "CG28_CODICE - Codice aliquota"
+          },
+          "codiceagr": {
+            "type": "string",
+            "description": "CG28_CODICEAGR - Codice IVA per compensazione agricoltura",
+            "nullable": true
+          },
+          "codiceOss": {
+            "type": "string",
+            "description": "CG28_OSSCOD_CG28 - Codice IVA correlato",
+            "nullable": true
+          },
+          "codPlafond": {
+            "type": "number",
+            "description": "CG28_CODPLAFOND - Plafond<br><ul><li><i>0</i> - No plafond</li><li><i>1</i> - Esportazioni art.8 1°c. a/b, 9 1°c.-Cessioni art.8 1°c. c,2°c.</li><li><i>2</i> - Acquisti interni art.8 2°c., 8 bis 2°c., 9 2°c.</li><li><i>3</i> - Importazioni art.8 2°c., 68 l.a, 8 bis, 9 2°c.</li><li><i>4</i> - Acquisti intracomunitari art. 42 1°c.</li><li><i>5</i> - Cessioni intracomunitarie art. 41 2°c.</li><li><i>6</i> - Cessioni art.8 bis, 1°c. (no lettera intento)</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "descrizione": {
+            "minLength": 1,
+            "type": "string",
+            "description": "CG28_DESCR - Descrizione"
+          },
+          "flgAgri": {
+            "type": "number",
+            "description": "CG28_FLGAGRI - Indicare se codice IVA utilizzato per agricoltura<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgAllclifor": {
+            "type": "number",
+            "description": "CG28_FLGALLCLIFOR - Progressivi aliquota IVA inclusi negli allegati clienti fornitori<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgAssport398": {
+            "type": "number",
+            "description": "CG28_FLGASSPORT398 - Soc. sportiva dilettantistica (L.398/91)<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgAutoue": {
+            "type": "number",
+            "description": "CG28_FLGAUTOUE - Vendita auto UE L. 286<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgCorrVent": {
+            "type": "number",
+            "description": "CG28_FLGCORRVENT - Aliquota IVA utilizzata per la registrazione dei corrispettivi da ventilare<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgEscludiblacklist": {
+            "type": "number",
+            "description": "CG28_FLGESCLUDIBLACKLIST - Escludi da black list<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgImpostadibollo": {
+            "type": "integer",
+            "description": "CG28_FLGIMPOSTADIBOLLO - Imposta di bollo applicabile<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgIndet": {
+            "type": "number",
+            "description": "CG28_FLGINDET - IVA indetraibile<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgIvaedit": {
+            "type": "number",
+            "description": "CG28_FLGIVAEDIT - Indicare se codice IVA utilizzato per editoria<br><ul><li><i>0</i> - Non movimentato</li><li><i>1</i> - Movimentato</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgMonofasersm": {
+            "type": "number",
+            "description": "CG28_FLGMONOFASERSM - Monofase Repubblica di San Marino",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgMossgest": {
+            "type": "integer",
+            "description": "CG28_FLGMOSSGEST - One Stop Shop (OSS)<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgMossrid": {
+            "type": "integer",
+            "description": "CG28_FLGMOSSRID - Aliquota ridotta<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "nullable": true
+          },
+          "flgNotvar": {
+            "type": "number",
+            "description": "CG28_FLGNOTVAR - Indicare se codice IVA utilizzato per note variazioni IVA<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "flgSospimp": {
+            "type": "number",
+            "description": "CG28_FLGSOSPIMP - IVA esigibilità differita<br><ul><li><i>0</i> - Immediata</li><li><i>1</i> - Differita Enti Pubblici</li><li><i>2</i> - Differita altre società</li><li><i>3</i> - Enti pubblici Art.17-ter (Split Payment)</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "idprov": {
+            "type": "number",
+            "description": "CG28_IDPROV - IdProv (Required only in PUT/PATCH)",
+            "format": "double",
+            "nullable": true
+          },
+          "impostamonofasersm": {
+            "type": "number",
+            "description": "CG28_IMPOSTAMONOFASERSM - Importo imposta fissa",
+            "format": "double",
+            "nullable": true
+          },
+          "indNatassoswCg2n": {
+            "type": "integer",
+            "description": "CG28_INDNATASSOSW_CG2N - Natura Assosoftware",
+            "format": "int32",
+            "nullable": true
+          },
+          "indNatura": {
+            "type": "integer",
+            "description": "CG28_INDNATURA - Natura",
+            "format": "int32",
+            "nullable": true
+          },
+          "indStaper": {
+            "type": "number",
+            "description": "CG28_INDSTAPER - Standard/Pers.<br><ul><li><i>0</i> - Standard</li><li><i>1</i> - Personalizzato</li></ul>",
+            "format": "double",
+            "default": "0",
+            "nullable": true
+          },
+          "indtipopart": {
+            "type": "number",
+            "description": "CG28_INDTIPOPART - Indtipopart<br><ul><li><i>0</i> - NessunValore</li><li><i>1</i> - Operazioni con IVA non esposta in fattura</li><li><i>2</i> - Operazioni imponibili (es.: reverse charge)</li></ul>",
+            "format": "double",
+            "default": 0,
+            "nullable": true
+          },
+          "mosscodCg07": {
+            "type": "number",
+            "description": "CG28_MOSSCOD_CG07 - Codice Stato",
+            "format": "double",
+            "nullable": true
+          },
+          "mossperc": {
+            "type": "number",
+            "description": "CG28_MOSSPERC - VAT rate (%)",
+            "format": "double",
+            "nullable": true
+          },
+          "note": {
+            "type": "string",
+            "description": "CG28_NOTE - Note",
+            "nullable": true
+          },
+          "percforf": {
+            "type": "number",
+            "description": "CG28_PERCFORF - % forfetizzazione editoria/agricoltura",
+            "format": "double",
+            "nullable": true
+          },
+          "percindet": {
+            "type": "number",
+            "description": "CG28_PERCINDET - % assoggettamento ad indetraibilità",
+            "format": "double",
+            "nullable": true
+          },
+          "perciva": {
+            "type": "number",
+            "description": "CG28_PERCIVA - % assoggettamento aliquota",
+            "format": "double",
+            "nullable": true
+          },
+          "percmonofasersm": {
+            "type": "number",
+            "description": "CG28_PERCMONOFASERSM - % Monofase",
+            "format": "double",
+            "nullable": true
+          },
+          "rowVersion": {
+            "type": "string",
+            "description": "CG28_ROWVERSION - RowVersion",
+            "format": "byte",
+            "nullable": true
+          },
+          "stdcodivarifCg28": {
+            "type": "string",
+            "description": "CG28_STDCODIVARIF_CG28 - StdcodivarifCg28",
+            "nullable": true
+          },
+          "tipologia": {
+            "type": "number",
+            "description": "CG28_TIPOLOGIA - Tipologia<br><ul><li><i>1</i> - Imponibile</li><li><i>2</i> - Non imponibile</li><li><i>3</i> - Esente</li><li><i>4</i> - Escluso</li><li><i>5</i> - Fuori campo IVA</li></ul>",
+            "format": "double",
+            "default": 1,
+            "nullable": true
+          },
+          "verslynfa": {
+            "type": "string",
+            "description": "CG28_VERSLYNFA - Verslynfa",
+            "nullable": true
+          },
+          "idExtendedAttributeEntity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idExtendedAttributeSubEntity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nationCO": {
+            "$ref": "#/components/schemas/NationCODTO"
+          },
+          "natureAssCO": {
+            "$ref": "#/components/schemas/NatureAssCODTO"
+          },
+          "natureEsCO": {
+            "$ref": "#/components/schemas/NatureEsCODTO"
+          },
+          "vatCodeCOAgr": {
+            "$ref": "#/components/schemas/VatCodeCODTO"
+          },
+          "vatCodeCOAIRif": {
+            "$ref": "#/components/schemas/VatCodeCODTO"
+          },
+          "vatCodeCOOss": {
+            "$ref": "#/components/schemas/VatCodeCODTO"
+          },
+          "extensionData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StringObjectKeyValuePair"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "CG28_TABCODIVA - Codice IVA<br>Proprietà chiave:<ul><li><b>Codice</b></li></ul>"
       }
     },
     "securitySchemes": {
@@ -1868,6 +5863,10 @@
     {
       "name": "IEImportLI",
       "description": "Service for importing Price Lists"
+    },
+    {
+      "name": "ListinoArticoloLI",
+      "description": "Collection of services for Item Price Lists"
     },
     {
       "name": "PriceParametricLI",
