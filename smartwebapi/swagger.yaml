@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "TeamSystem Enterprise Cloud WebApi Smart - Documentation",
-    "version": "1.0.2",
+    "version": "1.0.2000",
     "description": "This is Application Flow for interact with TeamSystem Enterprise's Smart WebApi.",
     "contact": {
       "email": "info@teamsystem.com",
