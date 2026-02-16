@@ -4133,6 +4133,116 @@
         }
       }
     },
+    "/api/v1/{environment}/FI/COAAccountFI/COAAccountFIUpdateBalanceSheetAccountCategory": {
+      "post": {
+        "tags": [
+          "COAAccountFI"
+        ],
+        "summary": "Update Balance Sheet Account Category",
+        "description": "Updates the balance sheet category for a specific account",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters for updating balance sheet account category",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/COAAccountFIUpdateBalanceSheetAccountCategoryParametersDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/COAAccountFIUpdateBalanceSheetAccountCategoryParametersDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "409": {
+            "description": "In case of errors in the business logic: the content of the response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/FI/COAAccountFI/{id}": {
       "get": {
         "tags": [
@@ -60661,6 +60771,107 @@
         }
       }
     },
+    "/api/v1/{environment}/FI/GLEntryFI/bizvalidator": {
+      "post": {
+        "tags": [
+          "GLEntryFI"
+        ],
+        "summary": "Validate new object of type GLEntryFIDTO",
+        "description": "Validate new object of type GLEntryFIDTO",
+        "parameters": [
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Validate new object of type GLEntryFIDTO ",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GLEntryFIDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/GLEntryFIDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/FI/GLEntryFI/{id}": {
       "get": {
         "tags": [
@@ -66578,6 +66789,107 @@
         }
       }
     },
+    "/api/v1/{environment}/FI/InstalmentFI/bizvalidator": {
+      "post": {
+        "tags": [
+          "InstalmentFI"
+        ],
+        "summary": "Validate new object of type InstalmentFIDTO",
+        "description": "Validate new object of type InstalmentFIDTO",
+        "parameters": [
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Validate new object of type InstalmentFIDTO ",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstalmentFIDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/InstalmentFIDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/FI/InstalmentFI/{id}": {
       "get": {
         "tags": [
@@ -70784,6 +71096,107 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/FI/InstalmentStageFI/bizvalidator": {
+      "post": {
+        "tags": [
+          "InstalmentStageFI"
+        ],
+        "summary": "Validate new object of type InstalmentStageFIDTO",
+        "description": "Validate new object of type InstalmentStageFIDTO",
+        "parameters": [
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Validate new object of type InstalmentStageFIDTO ",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstalmentStageFIDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/InstalmentStageFIDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
           }
         }
       }
@@ -77608,6 +78021,30 @@
         },
         "additionalProperties": false,
         "description": "CG24_TABPDC - Conto contabile<br>Proprietà chiave:<ul><li><b>Idconto</b></li></ul>"
+      },
+      "COAAccountFIUpdateBalanceSheetAccountCategoryParametersDTO": {
+        "type": "object",
+        "properties": {
+          "idContoCg24": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "targetBalanceSheetCategory": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "COAAccountMaskParametersDTO": {
         "type": "object",

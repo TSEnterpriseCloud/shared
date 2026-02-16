@@ -10890,14 +10890,7 @@
             ]
           },
           "vat-row": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/MovementInvoiceVatLine"
-              },
-              {
-                "type": "null"
-              }
-            ]
+            "$ref": "#/components/schemas/MovementInvoiceVatLine"
           }
         }
       },
@@ -10907,6 +10900,7 @@
           "tax-code",
           "tax-base"
         ],
+        "description": "VAT amount relating to an accounting line of an invoice movement",
         "properties": {
           "tax-row": {
             "type": "integer",
@@ -10921,7 +10915,7 @@
               "string",
               "null"
             ],
-            "description": "Tax Code for Item",
+            "description": "VAT Code",
             "example": "22",
             "pattern": "^[A-Za-z0-9 ]{1,100}$",
             "maxLength": 4
@@ -10929,7 +10923,7 @@
           "tax-base": {
             "type": "number",
             "format": "float",
-            "description": "Amount of the tax row",
+            "description": "VAT Amount",
             "default": 0,
             "examples": [
               22,
