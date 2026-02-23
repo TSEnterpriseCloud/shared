@@ -26277,6 +26277,11 @@
             "format": "double",
             "nullable": true
           },
+          "ufficiopaCg1m": {
+            "type": "string",
+            "description": "DO11_UFFICIOPA_CG1M - Codice ufficio",
+            "nullable": true
+          },
           "valutaCg08": {
             "type": "string",
             "description": "DO11_VALUTA_CG08 - Codice valuta",
