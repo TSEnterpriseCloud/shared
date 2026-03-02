@@ -22606,7 +22606,8 @@
       },
       "DocumentTransformationGeneralDataDTO": {
         "required": [
-          "qtaTransf"
+          "qtaTransf",
+          "valueTrasf"
         ],
         "type": "object",
         "properties": {
@@ -22635,6 +22636,11 @@
           "qtaTransf": {
             "type": "number",
             "description": "QTATRANSF - Transformation Qta ",
+            "format": "double"
+          },
+          "valueTrasf": {
+            "type": "number",
+            "description": "TRASFVALORE - Value to be evaded for value evasions. ",
             "format": "double"
           },
           "price1": {
