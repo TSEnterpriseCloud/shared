@@ -22696,6 +22696,60 @@
             "description": "RowNotEvad - Row will be not evadible",
             "default": false,
             "nullable": true
+          },
+          "lots": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DocumentTransformationLotDTO"
+            },
+            "description": "lots -  detail a row",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DocumentTransformationLotDTO": {
+        "type": "object",
+        "properties": {
+          "lotCode": {
+            "type": "string",
+            "description": "CodLottoMg4g - Lot Code for transformation",
+            "nullable": true
+          },
+          "serialNumber": {
+            "type": "string",
+            "description": "Sernum - Serial Number for transformation",
+            "nullable": true
+          },
+          "packagingCode": {
+            "type": "string",
+            "description": "CodConfezMg96 - Packaging Code for transformation",
+            "nullable": true
+          },
+          "palletsCode": {
+            "type": "string",
+            "description": "CodPallets - Pallets Code for transformation",
+            "nullable": true
+          },
+          "materialsDyeingCode": {
+            "type": "string",
+            "description": "CodBagnomat  - Materials Dyeing Code for transformation",
+            "nullable": true
+          },
+          "locationCode": {
+            "type": "string",
+            "description": "UbicazMg97 - Location Code for transformation",
+            "nullable": true
+          },
+          "qty1": {
+            "type": "number",
+            "description": "Qty1 - Quantity1 for in transformation",
+            "format": "double"
+          },
+          "qty2": {
+            "type": "number",
+            "description": "Qty2 - Quantity2 for in transformation",
+            "format": "double"
           }
         },
         "additionalProperties": false
