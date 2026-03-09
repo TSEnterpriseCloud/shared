@@ -22596,9 +22596,8 @@
             "nullable": true
           },
           "numDocOrig": {
-            "type": "number",
+            "type": "string",
             "description": "NumDocOrig (In compile: Document orig. number)",
-            "format": "double",
             "nullable": true
           }
         },
