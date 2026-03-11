@@ -14759,6 +14759,107 @@
         }
       }
     },
+    "/api/v1/{environment}/MG/Documento/bizvalidator": {
+      "post": {
+        "tags": [
+          "Documento"
+        ],
+        "summary": "Validate new object of type DocumentoTestataMGDTO",
+        "description": "Validate new object of type DocumentoTestataMGDTO",
+        "parameters": [
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Validate new object of type DocumentoTestataMGDTO ",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DocumentoTestataMGDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/DocumentoTestataMGDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/MG/DocumentService/docprocessingstatus": {
       "post": {
         "tags": [
@@ -22604,10 +22705,6 @@
         "additionalProperties": false
       },
       "DocumentTransformationGeneralDataDTO": {
-        "required": [
-          "qtaTransf",
-          "valueTrasf"
-        ],
         "type": "object",
         "properties": {
           "progrRiga": {
@@ -22622,11 +22719,6 @@
             "format": "int32",
             "nullable": true
           },
-          "descart": {
-            "type": "string",
-            "description": "DESCART - Row Description",
-            "nullable": true
-          },
           "codartMg66": {
             "type": "string",
             "description": "CODART_MG66 - CodartMg66",
@@ -22637,10 +22729,15 @@
             "description": "QTATRANSF - Transformation Qta ",
             "format": "double"
           },
-          "valueTrasf": {
+          "valTransf": {
             "type": "number",
-            "description": "TRASFVALORE - Value to be evaded for value evasions. ",
+            "description": "VALORETRANSF - Value to be evaded for value evasions. ",
             "format": "double"
+          },
+          "descart": {
+            "type": "string",
+            "description": "DESCART - Row Description",
+            "nullable": true
           },
           "price1": {
             "type": "number",
