@@ -3265,7 +3265,10 @@
                       "esclusioneIvaTestata": false,
                       "disableLetterOfIntent": false,
                       "esclusioneSpeseTestiCliFor": false,
-                      "flgDisableItemControl": false
+                      "flgDisableItemControl": false,
+                      "enableAdditionalValidations": false,
+                      "enableEditingInstalments": false,
+                      "disablePrevailingRecipient": false
                     },
                     "bancaCg12": 0,
                     "cambio": 0,
@@ -8432,7 +8435,11 @@
                       "esclusioneIvaTestata": false,
                       "flgLockOnDocExist": false,
                       "disableLetterOfIntent": false,
-                      "EsclusioneSpeseTestiCliFor": true
+                      "esclusioneSpeseTestiCliFor": true,
+                      "flgDisableItemControl": false,
+                      "enableAdditionalValidations": false,
+                      "enableEditingInstalments": false,
+                      "disablePrevailingRecipient": false
                     },
                     "righe": [
                       {
@@ -8774,7 +8781,10 @@
                       "esclusioneIvaTestata": false,
                       "disableLetterOfIntent": false,
                       "esclusioneSpeseTestiCliFor": false,
-                      "flgDisableItemControl": false
+                      "flgDisableItemControl": false,
+                      "enableAdditionalValidations": false,
+                      "enableEditingInstalments": false,
+                      "disablePrevailingRecipient": false
                     },
                     "bancaCg12": 0,
                     "cambio": 0,
@@ -13941,7 +13951,11 @@
                       "esclusioneIvaTestata": false,
                       "flgLockOnDocExist": false,
                       "disableLetterOfIntent": false,
-                      "EsclusioneSpeseTestiCliFor": true
+                      "esclusioneSpeseTestiCliFor": true,
+                      "flgDisableItemControl": false,
+                      "enableAdditionalValidations": false,
+                      "enableEditingInstalments": false,
+                      "disablePrevailingRecipient": false
                     },
                     "righe": [
                       {
@@ -22419,6 +22433,12 @@
           "enableEditingInstalments": {
             "type": "boolean",
             "description": "EnableEditingInstalments (default false): Parameter to enable editing of document installments",
+            "default": "false",
+            "nullable": true
+          },
+          "disablePrevailingRecipient": {
+            "type": "boolean",
+            "description": "DisablePrevailingRecipient (default false): set to true to disable automatic setting of prevailing recipient",
             "default": "false",
             "nullable": true
           }
