@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "TeamSystem Enterprise Cloud WebApi Smart - Documentation",
-    "version": "1.0.2000",
+    "version": "1.003.000",
     "description": "This is Application Flow for interact with TeamSystem Enterprise's Smart WebApi.",
     "contact": {
       "email": "info@teamsystem.com",
@@ -43,19 +43,6 @@
       "description": "TeamSystem Enterprise Smart WebApi"
     }
   ],
-  "x-security-headers": {
-    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
-    "X-Frame-Options": "DENY",
-    "X-Content-Type-Options": "nosniff",
-    "X-XSS-Protection": "1; mode=block",
-    "Content-Security-Policy": "default-src 'self'",
-    "Referrer-Policy": "strict-origin-when-cross-origin"
-  },
-  "x-rate-limiting": {
-    "policy": "per-user",
-    "requests-per-minute": 60,
-    "burst-limit": 10
-  },
   "tags": [
     {
       "name": "Auth",
@@ -1491,16 +1478,6 @@
           "required": true
         },
         "responses": {
-          "201": {
-            "description": "Customers created successfully.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EntityCreationResponses"
-                }
-              }
-            }
-          },
           "202": {
             "description": "Accepted async request to create customer/s.",
             "content": {
@@ -3026,16 +3003,6 @@
           "required": true
         },
         "responses": {
-          "201": {
-            "description": "Suppliers created successfully.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EntityCreationResponses"
-                }
-              }
-            }
-          },
           "202": {
             "description": "Accepted async request to create customer/s.",
             "content": {
@@ -4067,7 +4034,7 @@
           }
         ],
         "responses": {
-          "200": {
+          "204": {
             "description": "Warehouse item deleted successfully."
           },
           "400": {
@@ -4529,16 +4496,6 @@
           "required": true
         },
         "responses": {
-          "201": {
-            "description": "Warehouse items created successfully.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EntityCreationResponses"
-                }
-              }
-            }
-          },
           "202": {
             "description": "Accepted async request to create customer/s.",
             "content": {
@@ -4734,52 +4691,6 @@
               }
             }
           },
-          "201": {
-            "description": "Warehouse item batch creation has been accepted and is being processed.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string",
-                      "example": "Batch creation accepted. Processing in progress."
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "207": {
-            "description": "Warehouse items batch processing is still in progress. The response includes the status of the batch operation.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "enum": [
-                        "processing",
-                        "completed",
-                        "partial failed",
-                        "failed"
-                      ]
-                    },
-                    "message": {
-                      "type": "string",
-                      "examples": [
-                        "Batch processing is still in progress. Please check back later.",
-                        "Batch processing has been completed successfully.",
-                        "Batch processing completed with some failures.",
-                        "Batch processing has failed."
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
           "400": {
             "description": "The request is invalid. Check the input parameters and try again.",
             "content": {
@@ -4934,7 +4845,7 @@
             "explode": true,
             "schema": {
               "type": "string",
-              "example": "accounting-reason,date-registry,description,currency,sectional,rows"
+              "example": "accounting-reason,date-registry,description,currency,rows"
             }
           },
           {
@@ -5008,8 +4919,8 @@
           }
         ],
         "responses": {
-          "202": {
-            "description": "Order creation request accepted for asynchronous processing.",
+          "200": {
+            "description": "Movement items retrieved successfully.",
             "content": {
               "application/json": {
                 "schema": {
@@ -5175,7 +5086,7 @@
             "explode": true,
             "schema": {
               "type": "string",
-              "example": "accounting-reason,date-registry,description,currency,sectional,rows"
+              "example": "accounting-reason,date-registry,description,currency,rows"
             }
           },
           {
@@ -5209,8 +5120,8 @@
           }
         ],
         "responses": {
-          "202": {
-            "description": "Order creation request accepted for asynchronous processing.",
+          "200": {
+            "description": "Movement response for the specified id.",
             "content": {
               "application/json": {
                 "schema": {
@@ -5413,30 +5324,13 @@
                     "currency": "EUR",
                     "rows": [
                       {
-                        "sign": "D",
-                        "amount": 150.5,
-                        "account-code": "2400150005"
-                      },
-                      {
-                        "sign": "A",
-                        "amount": 150.5,
-                        "account-code": "2400050001"
-                      }
-                    ]
-                  }
-                },
-                "Simple request": {
-                  "summary": "Minimal movement update with required fields",
-                  "value": {
-                    "accounting-reason": "109",
-                    "currency": "EUR",
-                    "rows": [
-                      {
+                        "row-number": 1,
                         "sign": "D",
                         "account-code": "2400150005",
                         "amount": 150.5
                       },
                       {
+                        "row-number": 2,
                         "sign": "A",
                         "account-code": "2400050001",
                         "amount": 150.5
@@ -5691,8 +5585,8 @@
           }
         ],
         "responses": {
-          "202": {
-            "description": "Order creation request accepted for asynchronous processing.",
+          "200": {
+            "description": "Invoice movements retrived successfully.",
             "content": {
               "application/json": {
                 "schema": {
@@ -5892,8 +5786,8 @@
           }
         ],
         "responses": {
-          "202": {
-            "description": "Order creation request accepted for asynchronous processing.",
+          "200": {
+            "description": "Movement response for the specified id.",
             "content": {
               "application/json": {
                 "schema": {
@@ -6092,56 +5986,48 @@
                   "value": {
                     "accounting-reason": "1",
                     "date-registry": "2026-01-05",
-                    "document-number": "1",
-                    "progressive-number": "1",
-                    "sectional": "00",
                     "document-date": "2026-01-05",
+                    "document-number": "1",
+                    "sectional": "00",
+                    "progressive-number": "1",
                     "description": "Updated Invoice Registration",
                     "customer-supplier": 1,
                     "currency": "EUR",
                     "amount": 1220,
                     "rows": [
                       {
+                        "row-number": 1,
                         "sign": "D",
-                        "operation-type": "taxable",
-                        "amount": 1000
+                        "operation-type": "total",
+                        "account-code": "1400000001",
+                        "amount": 1220
                       },
                       {
-                        "sign": "D",
-                        "operation-type": "tax",
-                        "amount": 220,
+                        "row-number": 2,
+                        "sign": "A",
+                        "operation-type": "taxable",
+                        "account-code": "5500280005",
+                        "amount": 1000,
                         "vat-row": {
+                          "tax-row": 1,
                           "tax-code": "22",
-                          "tax-base": 1000
+                          "tax-base": 220
                         }
                       },
                       {
+                        "row-number": 3,
                         "sign": "A",
-                        "operation-type": "total",
-                        "amount": 1220,
-                        "account-code": "2400050001"
+                        "operation-type": "tax",
+                        "account-code": "4800050045",
+                        "amount": 220
                       }
-                    ]
-                  }
-                },
-                "Simple request": {
-                  "summary": "Minimal invoice movement update",
-                  "value": {
-                    "accounting-reason": "1",
-                    "currency": "EUR",
-                    "document-number": "1",
-                    "progressive-number": "1",
-                    "sectional": "00",
-                    "rows": [
+                    ],
+                    "instalments": [
                       {
-                        "sign": "D",
-                        "operation-type": "taxable",
-                        "amount": 1000
-                      },
-                      {
-                        "sign": "A",
-                        "operation-type": "total",
-                        "amount": 1000
+                        "due-date": "2026-10-31",
+                        "type": 13,
+                        "original-amount": 1220,
+                        "amount-to-pay": 1220
                       }
                     ]
                   }
@@ -6263,7 +6149,6 @@
           "accounting-reason": "109",
           "date-registry": "2026-01-05",
           "description": "Accountant simple transfer",
-          "sectional": "00",
           "currency": "EUR",
           "rows": [
             {
@@ -6400,7 +6285,7 @@
         },
         "responses": {
           "201": {
-            "description": "response",
+            "description": "Movement created successfully.",
             "content": {
               "application/json": {
                 "schema": {
@@ -6644,16 +6529,6 @@
           "required": true
         },
         "responses": {
-          "201": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EntityCreationResponse"
-                }
-              }
-            }
-          },
           "202": {
             "description": "Accepted async request to create customer/s.",
             "content": {
@@ -7093,7 +6968,7 @@
                     ]
                   }
                 },
-                "Recording an sale invoice": {
+                "Recording a sale invoice": {
                   "value": {
                     "accounting-reason": "1",
                     "sectional": "00",
@@ -7136,7 +7011,7 @@
                     ]
                   }
                 },
-                "Recording an sale invoice with manual instalments": {
+                "Recording a sale invoice with manual instalments": {
                   "value": {
                     "accounting-reason": "1",
                     "sectional": "00",
@@ -7189,7 +7064,7 @@
                     ]
                   }
                 },
-                "Recording an purchase invoice": {
+                "Recording a purchase invoice": {
                   "value": {
                     "accounting-reason": "31",
                     "sectional": "00",
@@ -7529,7 +7404,7 @@
                     }
                   ]
                 },
-                "Recording an sale invoice": {
+                "Recording a sale invoice": {
                   "value": [
                     {
                       "accounting-reason": "1",
@@ -7574,7 +7449,7 @@
                     }
                   ]
                 },
-                "Recording an sale invoice with manual instalments": {
+                "Recording a sale invoice with manual instalments": {
                   "value": [
                     {
                       "accounting-reason": "1",
@@ -7629,7 +7504,7 @@
                     }
                   ]
                 },
-                "Recording an purchase invoice": {
+                "Recording a purchase invoice": {
                   "value": [
                     {
                       "accounting-reason": "31",
@@ -7671,16 +7546,6 @@
           "required": true
         },
         "responses": {
-          "201": {
-            "description": "Invoice movements created successfully.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EntityCreationResponses"
-                }
-              }
-            }
-          },
           "202": {
             "description": "Accepted async request to create invoice movements.",
             "content": {
@@ -8187,6 +8052,8 @@
         "x-ai-sample": {
           "accounting-reason": "109",
           "date-registry": "2025-12-18",
+          "document-number": "ASS-2025-001",
+          "progressive-number": "1",
           "sectional": "00",
           "document-date": "2025-12-18",
           "description": "Incasso/Pagamento",
@@ -8351,16 +8218,6 @@
           "required": true
         },
         "responses": {
-          "201": {
-            "description": "Payments created successfully",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EntityCreationResponses"
-                }
-              }
-            }
-          },
           "202": {
             "description": "Accepted async request to create payments.",
             "content": {
@@ -9137,8 +8994,8 @@
           "document-date": "2025-11-28",
           "registry-date": "2025-11-28",
           "document-number": "0",
-          "sectional-code": "00",
           "customer-supplier": 1,
+          "sectional-code": "00",
           "storage-code": "00",
           "payment-term-code": "201",
           "rows": [
@@ -9146,10 +9003,11 @@
               "row-number": 1,
               "row-type": 0,
               "item-code": "ART001",
-              "description": "Product description",
+              "item-variant-id": "",
+              "description": "Updated product description",
               "delivery-date": "2025-12-15",
               "quantity": 10,
-              "price": 100.5,
+              "price": 100,
               "vat-code": "22"
             }
           ]
@@ -9260,8 +9118,8 @@
                   "summary": "Default (complete)",
                   "value": {
                     "model-code": "CLI-ORDINE",
-                    "document-date": "2026-01-13",
-                    "registry-date": "2026-01-13",
+                    "document-date": "2025-11-28",
+                    "registry-date": "2025-11-28",
                     "document-number": 0,
                     "customer-supplier": "1",
                     "sectional-code": "00",
@@ -9274,30 +9132,10 @@
                         "item-code": "ART001",
                         "item-variant-id": "",
                         "description": "Updated product description",
-                        "delivery-date": "2026-02-20",
+                        "delivery-date": "2025-12-15",
                         "quantity": 10,
                         "price": 100,
                         "vat-code": "22"
-                      }
-                    ]
-                  }
-                },
-                "Simple request": {
-                  "summary": "Minimal order update with required fields only",
-                  "value": {
-                    "model-code": "CLI-ORDINE",
-                    "document-date": "2026-01-13",
-                    "registry-date": "2026-01-13",
-                    "customer-supplier": "1",
-                    "sectional-code": "00",
-                    "storage-code": "00",
-                    "payment-term-code": "201",
-                    "rows": [
-                      {
-                        "item-code": "ART001",
-                        "quantity": 1,
-                        "row-number": 1,
-                        "row-type": 0
                       }
                     ]
                   }
@@ -9585,8 +9423,8 @@
             "document-date": "2025-11-28",
             "registry-date": "2025-11-28",
             "document-number": "0",
-            "sectional-code": "00",
             "customer-supplier": 1,
+            "sectional-code": "00",
             "storage-code": "00",
             "payment-term-code": "201",
             "rows": [
@@ -9594,10 +9432,11 @@
                 "row-number": 1,
                 "row-type": 0,
                 "item-code": "ART001",
+                "item-variant-id": "",
                 "description": "Product description",
                 "delivery-date": "2025-12-15",
                 "quantity": 10,
-                "price": 100.5,
+                "price": 100,
                 "vat-code": "22"
               }
             ]
@@ -9691,8 +9530,8 @@
                   "value": [
                     {
                       "model-code": "CLI-ORDINE",
-                      "document-date": "2026-01-13",
-                      "registry-date": "2026-01-13",
+                      "document-date": "2025-11-28",
+                      "registry-date": "2025-11-28",
                       "document-number": 0,
                       "customer-supplier": "1",
                       "sectional-code": "00",
@@ -9704,8 +9543,8 @@
                           "row-type": 0,
                           "item-code": "ART001",
                           "item-variant-id": "",
-                          "description": "Updated product description",
-                          "delivery-date": "2026-02-20",
+                          "description": "Product description",
+                          "delivery-date": "2025-12-15",
                           "quantity": 10,
                           "price": 100,
                           "vat-code": "22"
@@ -9715,7 +9554,7 @@
                   ]
                 },
                 "Simple request": {
-                  "summary": "Minimal order update with required fields only",
+                  "summary": "Minimal order with required fields only",
                   "value": [
                     {
                       "model-code": "CLI-ORDINE",
@@ -9727,10 +9566,10 @@
                       "payment-term-code": "201",
                       "rows": [
                         {
-                          "item-code": "ART001",
-                          "quantity": 1,
                           "row-number": 1,
-                          "row-type": 0
+                          "row-type": 0,
+                          "item-code": "ART001",
+                          "vat-code": "22"
                         }
                       ]
                     }
@@ -9954,7 +9793,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BatchResponse"
+                  "$ref": "#/components/schemas/BatchResponseDocuments"
                 }
               }
             }
@@ -10093,6 +9932,49 @@
         "maxItems": 1000
       },
       "BatchResponse": {
+        "properties": {
+          "statecode": {
+            "type": "integer",
+            "example": 0
+          },
+          "statedescription": {
+            "type": "string",
+            "example": "In Progress ..."
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BatchResponseItem"
+            }
+          }
+        }
+      },
+      "BatchResponseItem": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "6880a6bfe313334780920039"
+          },
+          "guidforelabasync": {
+            "type": "string",
+            "format": "uuid",
+            "example": "d21a27e3-c71b-492b-811d-e6be781adadd"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2025-07-23T09:09:18Z"
+          },
+          "hateos": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorCO"
+          }
+        }
+      },
+      "BatchResponseDocuments": {
         "type": "object",
         "properties": {
           "_id": {
@@ -10476,9 +10358,7 @@
           "href": {
             "type": "string",
             "description": "href path",
-            "examples": [
-              "/resource/id"
-            ]
+            "example": "/resource/id"
           },
           "rel": {
             "type": "string",
@@ -10487,17 +10367,13 @@
           "type": {
             "type": "string",
             "description": "verb \n * `get` - get \n * `put` - modify all data\n * `patch` - modify single data\n * `delete` - delete \n",
-            "examples": [
-              "get"
-            ],
+            "example": "get",
             "default": "get"
           },
           "message": {
             "type": "string",
             "description": "link message",
-            "examples": [
-              "All additional informations with relevant value"
-            ],
+            "example": "All additional informations with relevant value",
             "default": ""
           }
         }
@@ -10586,10 +10462,7 @@
             "minLength": 1,
             "type": "string",
             "description": "Accounting Reason",
-            "examples": [
-              "1",
-              "2"
-            ]
+            "example": "1"
           },
           "date-registry": {
             "type": "string",
@@ -10636,10 +10509,7 @@
             "minLength": 1,
             "type": "string",
             "description": "Accounting Reason",
-            "examples": [
-              "1",
-              "2"
-            ]
+            "example": "1"
           },
           "date-registry": {
             "type": "string",
@@ -10652,10 +10522,7 @@
           "document-number": {
             "type": "string",
             "maxLength": 200,
-            "examples": [
-              "12345",
-              "INV2023-001"
-            ]
+            "example": "INV2023-001"
           },
           "sectional": {
             "type": "string",
@@ -10666,17 +10533,12 @@
             "type": "string",
             "maxLength": 200,
             "pattern": "^(?!0+$)[0-9]{1,200}$",
-            "examples": [
-              "1"
-            ]
+            "example": "1"
           },
           "description": {
             "type": "string",
             "maxLength": 200,
-            "examples": [
-              "Invoice for services rendered",
-              "Purchase of goods"
-            ]
+            "example": "Invoice for services rendered"
           },
           "customer-supplier": {
             "type": [
@@ -10684,10 +10546,7 @@
               "null"
             ],
             "format": "int32",
-            "examples": [
-              1,
-              500
-            ]
+            "example": 1
           },
           "currency": {
             "type": "string",
@@ -10703,10 +10562,7 @@
             "format": "float",
             "description": "Amount of the row",
             "default": 0,
-            "examples": [
-              100,
-              200.5
-            ]
+            "example": 200.5
           },
           "rows": {
             "type": "array",
@@ -10770,20 +10626,14 @@
             "format": "float",
             "description": "Amount of instalment",
             "default": 0,
-            "examples": [
-              100,
-              200.5
-            ]
+            "example": 200.5
           },
           "amount-to-pay": {
             "type": "number",
             "format": "float",
             "description": "Amount of instalment to pay",
             "default": 0,
-            "examples": [
-              100,
-              200.5
-            ]
+            "example": 200.5
           }
         }
       },
@@ -10798,10 +10648,7 @@
           "row-number": {
             "type": "integer",
             "format": "int32",
-            "examples": [
-              1,
-              2
-            ]
+            "example": 1
           },
           "sign": {
             "enum": [
@@ -10825,10 +10672,7 @@
             "format": "float",
             "description": "Amount of the row",
             "default": 0,
-            "examples": [
-              100,
-              200.5
-            ]
+            "example": 200.5
           }
         }
       },
@@ -10843,10 +10687,7 @@
           "row-number": {
             "type": "integer",
             "format": "int32",
-            "examples": [
-              1,
-              2
-            ]
+            "example": 1
           },
           "sign": {
             "enum": [
@@ -10872,11 +10713,7 @@
               "tax",
               "total"
             ],
-            "examples": [
-              "taxable",
-              "tax",
-              "total"
-            ],
+            "example": "taxable",
             "description": "row type for movements:\n * `taxable` - Taxable row\n * `tax` - Tax row\n * `total` - Total row\n"
           },
           "amount": {
@@ -10884,10 +10721,7 @@
             "format": "float",
             "description": "Amount of the row",
             "default": 0,
-            "examples": [
-              100,
-              200.5
-            ]
+            "example": 200.5
           },
           "vat-row": {
             "$ref": "#/components/schemas/MovementInvoiceVatLine"
@@ -10905,10 +10739,7 @@
           "tax-row": {
             "type": "integer",
             "format": "int32",
-            "examples": [
-              1,
-              2
-            ]
+            "example": 1
           },
           "tax-code": {
             "type": [
@@ -10925,10 +10756,7 @@
             "format": "float",
             "description": "VAT Amount",
             "default": 0,
-            "examples": [
-              22,
-              20.5
-            ]
+            "example": 22
           }
         }
       },
@@ -11185,10 +11013,7 @@
             "minLength": 1,
             "type": "string",
             "description": "Accounting Reason",
-            "examples": [
-              "109",
-              "110"
-            ]
+            "example": "109"
           },
           "date-registry": {
             "type": "string",
@@ -11202,9 +11027,7 @@
           "document-number": {
             "type": "string",
             "maxLength": 200,
-            "examples": [
-              "FAT-2025-001"
-            ]
+            "example": "FAT-2025-001"
           },
           "sectional": {
             "type": "string",
@@ -11213,16 +11036,12 @@
           "progressive-number": {
             "type": "string",
             "maxLength": 200,
-            "examples": [
-              "200"
-            ]
+            "example": "200"
           },
           "description": {
             "type": "string",
             "maxLength": 200,
-            "examples": [
-              "Incasso/Pagamento"
-            ]
+            "example": "Incasso/Pagamento"
           },
           "currency": {
             "type": "string",
@@ -11237,20 +11056,14 @@
             "type": "string",
             "description": "Chart of Account code for payment",
             "default": "2400150005",
-            "examples": [
-              "2400150005",
-              "1400000000"
-            ]
+            "example": "2400150005"
           },
           "amount": {
             "type": "number",
             "format": "float",
             "description": "Amount to pay (zero = total)",
             "default": 0,
-            "examples": [
-              30,
-              200.5
-            ]
+            "example": 200.5
           }
         }
       },
@@ -11267,10 +11080,7 @@
             "minLength": 1,
             "type": "string",
             "description": "Accounting Reason",
-            "examples": [
-              "109",
-              "110"
-            ]
+            "example": "109"
           },
           "date-registry": {
             "type": "string",
@@ -11284,9 +11094,7 @@
           "document-number": {
             "type": "string",
             "maxLength": 200,
-            "examples": [
-              "FAT-2025-001"
-            ]
+            "example": "FAT-2025-001"
           },
           "sectional": {
             "type": "string",
@@ -11295,16 +11103,12 @@
           "progressive-number": {
             "type": "string",
             "maxLength": 200,
-            "examples": [
-              "200"
-            ]
+            "example": "200"
           },
           "description": {
             "type": "string",
             "maxLength": 200,
-            "examples": [
-              "Incasso/Pagamento"
-            ]
+            "example": "Incasso/Pagamento"
           },
           "currency": {
             "type": "string",
@@ -11319,10 +11123,7 @@
             "type": "string",
             "description": "Chart of Account code for payment",
             "default": "2400150005",
-            "examples": [
-              "2400150005",
-              "2400050001"
-            ]
+            "example": "2400150005"
           },
           "instalments-to-pay": {
             "type": [
@@ -11343,10 +11144,7 @@
             "minLength": 1,
             "type": "string",
             "description": "Accounting Reason",
-            "examples": [
-              "109",
-              "110"
-            ]
+            "example": "109"
           },
           "date-registry": {
             "type": "string",
@@ -11360,9 +11158,7 @@
           "document-number": {
             "type": "string",
             "maxLength": 200,
-            "examples": [
-              "FAT-2025-001"
-            ]
+            "example": "FAT-2025-001"
           },
           "sectional": {
             "type": "string",
@@ -11371,16 +11167,12 @@
           "progressive-number": {
             "type": "string",
             "maxLength": 200,
-            "examples": [
-              "200"
-            ]
+            "example": "200"
           },
           "description": {
             "type": "string",
             "maxLength": 200,
-            "examples": [
-              "Incasso/Pagamento"
-            ]
+            "example": "Incasso/Pagamento"
           },
           "currency": {
             "type": "string",
@@ -11410,10 +11202,7 @@
           "row-number": {
             "type": "integer",
             "format": "int32",
-            "examples": [
-              1,
-              2
-            ]
+            "example": 1
           },
           "sign": {
             "enum": [
@@ -11438,10 +11227,7 @@
             "format": "float",
             "description": "Amount of the row",
             "default": 0,
-            "examples": [
-              30,
-              200.5
-            ]
+            "example": 200.5
           },
           "instalments-to-pay": {
             "type": [
@@ -11462,29 +11248,20 @@
             "type": "integer",
             "format": "int32",
             "description": "Instalment ID",
-            "examples": [
-              1700,
-              1701
-            ]
+            "example": 1700
           },
           "pay": {
             "type": "number",
             "format": "float",
             "description": "Amount to pay for this instalment (zero = total amount due)",
             "default": 0,
-            "examples": [
-              10,
-              20
-            ]
+            "example": 10
           },
           "payment-account-code": {
             "type": "string",
             "description": "Chart of Account code for payment",
             "default": "2400150005",
-            "examples": [
-              "2400150005",
-              "1400000000"
-            ]
+            "example": "2400150005"
           }
         },
         "required": [
