@@ -95063,126 +95063,154 @@
             "format": "int64",
             "nullable": true
           },
-          "art62": {
-            "type": "boolean",
+          "valuta": {
+            "type": "string",
+            "description": "Currency Code",
             "nullable": true
-          },
-          "cambio": {
-            "type": "number",
-            "format": "double"
           },
           "idCliFor": {
             "type": "integer",
+            "description": "Customer/Supplier ID",
             "format": "int32",
+            "nullable": true
+          },
+          "escludiScaglioniPagamento": {
+            "type": "boolean",
+            "description": "Retrieve payment condition from Customer/Supplier (default = true)",
             "nullable": true
           },
           "codPag": {
             "type": "string",
+            "description": "Payment condition code if not provided by Customer/Supplier",
             "nullable": true
+          },
+          "dataDoc": {
+            "type": "string",
+            "description": "Document Date (for reference date calculation)",
+            "format": "date-time"
+          },
+          "totImponibileEuro": {
+            "type": "number",
+            "description": "Total Taxable Amount in EURO",
+            "format": "double"
+          },
+          "totIvaEuro": {
+            "type": "number",
+            "description": "Total VAT Amount in EURO",
+            "format": "double"
+          },
+          "totImponibileValuta": {
+            "type": "number",
+            "description": "Total Taxable Amount in Currency",
+            "format": "double"
+          },
+          "totIvaValuta": {
+            "type": "number",
+            "description": "Total VAT Amount in Currency",
+            "format": "double"
+          },
+          "art62": {
+            "type": "boolean",
+            "description": "Article 62 Indicator (default false)",
+            "nullable": true
+          },
+          "cambio": {
+            "type": "number",
+            "description": "Exchange Rate",
+            "format": "double"
           },
           "dataBolla": {
             "type": "string",
+            "description": "DDT Date (for reference date calculation)",
             "format": "date-time",
             "nullable": true
           },
           "dataConsegna": {
             "type": "string",
+            "description": "Delivery Date (for reference date calculation)",
             "format": "date-time",
             "nullable": true
           },
-          "dataDoc": {
-            "type": "string",
-            "format": "date-time"
-          },
           "dataOrdine": {
             "type": "string",
+            "description": "Order Date (for reference date calculation)",
             "format": "date-time",
             "nullable": true
           },
           "dataRichiesta": {
             "type": "string",
+            "description": "Request Date (for reference date calculation)",
             "format": "date-time",
-            "nullable": true
-          },
-          "escludiScaglioniPagamento": {
-            "type": "boolean",
             "nullable": true
           },
           "idBancaAziendale": {
             "type": "integer",
+            "description": "Company Bank ID",
             "format": "int64",
             "nullable": true
           },
           "idBancaCliFor": {
             "type": "integer",
+            "description": "Customer/Supplier Bank ID",
             "format": "int32",
             "nullable": true
           },
           "idCodPag": {
             "type": "integer",
+            "description": "Not managed",
             "format": "int64"
           },
           "importoFissoEuro": {
             "type": "number",
+            "description": "Fixed Amount in EURO",
             "format": "double"
           },
           "importoFissoValuta": {
             "type": "number",
+            "description": "Fixed Amount in Currency",
             "format": "double"
           },
           "isIvaSplitPayment": {
             "type": "boolean",
+            "description": "Split Payment IVA Indicator (default false)",
             "nullable": true
           },
           "modalitaImportoFisso": {
             "type": "integer",
+            "description": "Fixed Amount Mode",
             "format": "int32",
             "nullable": true
           },
           "sottotipoSpesa": {
             "type": "integer",
+            "description": "Expense Subtype",
             "format": "int32"
           },
           "tipoCF": {
             "type": "integer",
+            "description": "Customer/Supplier Type",
             "format": "int32",
             "nullable": true
           },
-          "totImponibileEuro": {
-            "type": "number",
-            "format": "double"
-          },
-          "totImponibileValuta": {
-            "type": "number",
-            "format": "double"
-          },
-          "totIvaEuro": {
-            "type": "number",
-            "format": "double"
-          },
-          "totIvaValuta": {
-            "type": "number",
-            "format": "double"
-          },
           "totNonSoggEuro": {
             "type": "number",
+            "description": "Total Non-Taxable Amount in EURO",
             "format": "double"
           },
           "totNonSoggValuta": {
             "type": "number",
+            "description": "Total Non-Taxable Amount in Currency",
             "format": "double"
           },
           "totRitenuteEuro": {
             "type": "number",
+            "description": "Total Withholdings in EURO",
             "format": "double"
           },
           "totRitenuteValuta": {
             "type": "number",
+            "description": "Total Withholdings in Currency",
             "format": "double"
-          },
-          "valuta": {
-            "type": "string",
-            "nullable": true
           },
           "additionalData": {
             "type": "object",
@@ -95196,64 +95224,78 @@
           }
         },
         "additionalProperties": false,
-        "description": "Parameters for calculating deadlines"
+        "description": "Parameters for calculating instalments"
       },
       "InstalmentCalculationResultElementDTO": {
         "type": "object",
         "properties": {
           "tipoEffetto": {
             "type": "number",
-            "format": "double"
+            "description": "EF01_TIPOEFF - Type<br><ul><li><i>1</i> - Cash</li><li><i>2</i> - Bank receipt</li><li><i>3</i> - Draft</li><li><i>4</i> - Accepted draft</li><li><i>5</i> - Assignment</li><li><i>6</i> - Bill of exchange</li><li><i>7</i> - Credit card</li><li><i>8</i> - Debit card</li><li><i>9</i> - Cash on delivery</li><li><i>10</i> - Letter of credit</li><li><i>11</i> - SDD</li><li><i>12</i> - Leasing</li><li><i>13</i> - Direct remittance</li><li><i>14</i> - Bank transfer</li><li><i>15</i> - Postal account</li><li><i>16</i> - MAV</li></ul>",
+            "format": "double",
+            "default": "1"
           },
           "sottotipoEffetto": {
             "type": "number",
+            "description": "EF01_STIPOEFF - Subtype",
             "format": "double",
             "nullable": true
           },
           "descSottotipoEffetto": {
             "type": "string",
+            "description": "Subtype Description",
             "nullable": true
           },
           "dataScadenza": {
             "type": "string",
+            "description": "EF01_SCADE_S - Due date",
             "format": "date-time"
           },
           "idBancaAziendale": {
             "type": "integer",
+            "description": "EF01_ID_EF08 - Company bank",
             "format": "int64",
             "nullable": true
           },
           "idBancaCliFor": {
             "type": "integer",
+            "description": "EF01_ID_MG35 - Customer/Supplier bank",
             "format": "int32",
             "nullable": true
           },
           "importoScadenzaEuro": {
             "type": "number",
+            "description": "EF01_IMPEFFORIG - Instalment amount in EURO",
             "format": "double"
           },
           "importoScadenzaValuta": {
             "type": "number",
+            "description": "EF01_IMPEFFORIGVAL - Instalment amount in currency",
             "format": "double"
           },
           "importoIvaEuro": {
             "type": "number",
+            "description": "EF01_IMPEFFIVA - VAT amount in EURO",
             "format": "double"
           },
           "importoIvaValuta": {
             "type": "number",
+            "description": "EF01_IMPEFFIVA_VAL - VAT amount in currency",
             "format": "double"
           },
           "importoRitenutaEuro": {
             "type": "number",
+            "description": "EF01_IMPRITACC - Withholding amount in EURO",
             "format": "double"
           },
           "importoRitenutaValuta": {
             "type": "number",
+            "description": "EF01_IMPRITACCVAL - Withholding amount in currency",
             "format": "double"
           },
           "dataDecorrenza": {
             "type": "string",
+            "description": "EF01_DATADECORR - Effective date",
             "format": "date-time"
           }
         },
@@ -95270,11 +95312,13 @@
             "items": {
               "$ref": "#/components/schemas/InstalmentCalculationResultElementDTO"
             },
+            "description": "List of calculated instalments",
             "nullable": true,
             "readOnly": true
           },
           "codPagUtilizzato": {
             "type": "string",
+            "description": "Payment code derived from the Customer/Supplier (if EscludiScaglioniPagamento = false)",
             "nullable": true
           },
           "additionalData": {
@@ -95289,7 +95333,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Results of the deadline calculation"
+        "description": "Result of the calculated instalments"
       },
       "InstalmentChangeExpirationDateFIParametersDTO": {
         "type": "object",

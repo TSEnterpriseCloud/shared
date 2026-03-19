@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "TeamSystem Enterprise Cloud WebApi Smart - Documentation",
-    "version": "1.003.000",
+    "version": "1.004.000",
     "description": "This is Application Flow for interact with TeamSystem Enterprise's Smart WebApi.",
     "contact": {
       "email": "info@teamsystem.com",
@@ -5438,6 +5438,175 @@
             }
           }
         }
+      },
+      "delete": {
+        "summary": "Delete a movement by ID",
+        "tags": [
+          "Finance"
+        ],
+        "description": "Delete a movement by its unique identifier in the specified product and version environment.",
+        "operationId": "delete-movement-by-id",
+        "x-ai-purpose": "movement_deletion",
+        "x-ai-entity": "Movement",
+        "x-ai-intent": "delete",
+        "x-ai-sample": {
+          "movement-id": "202500002014"
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the movement will be retrieved. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the movement will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "movementId",
+            "in": "path",
+            "description": "The unique identifier of the movement (registration number).",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string",
+              "maxLength": 12
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Movement deleted successfully."
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Movement not found. The specified registration number does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error. An unexpected error occurred while processing the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/{product}/{version}/company/{companyId}/finance/movements/invoice": {
@@ -6113,6 +6282,175 @@
           },
           "429": {
             "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an invoice movement by ID",
+        "tags": [
+          "Finance"
+        ],
+        "description": "Delete an invoice movement by its unique identifier in the specified product and version environment.",
+        "operationId": "delete-invoice-movement-by-id",
+        "x-ai-purpose": "invoice_movement_deletion",
+        "x-ai-entity": "InvoiceMovement",
+        "x-ai-intent": "delete",
+        "x-ai-sample": {
+          "movement-id": "202500002014"
+        },
+        "parameters": [
+          {
+            "name": "product",
+            "in": "path",
+            "description": "The product name where the movement will be retrieved. Supported values are tse10 and tse12.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "tse10",
+              "enum": [
+                "tse10",
+                "tse12"
+              ]
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company.",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "int32",
+              "maxLength": 5
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The version of the product where the movement will be retrieved.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "minLength": 1,
+              "maxLength": 10,
+              "pattern": "^[A-Za-z0-9]{1,10}$"
+            }
+          },
+          {
+            "name": "movementId",
+            "in": "path",
+            "description": "The unique identifier of the movement (registration number).",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string",
+              "maxLength": 12
+            }
+          },
+          {
+            "name": "accept-language",
+            "in": "header",
+            "description": "The language preference for the response. Supported values are it-IT and en-GB.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "it-IT",
+              "enum": [
+                "it-IT",
+                "en-GB"
+              ]
+            },
+            "example": "it-IT"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "The username of the user performing the operation.",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "maxLength": 50,
+              "pattern": "^[A-Za-z0-9]{3,50}$"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Movement deleted successfully."
+          },
+          "400": {
+            "description": "The request is invalid. Check the input parameters and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized. Ensure the correct authorization credentials are provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden. The user does not have permission to perform this operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Movement not found. The specified registration number does not exist in the system.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests. The request limit has been exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Logs"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error. An unexpected error occurred while processing the request.",
             "content": {
               "application/json": {
                 "schema": {
