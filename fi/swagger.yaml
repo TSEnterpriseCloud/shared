@@ -74153,6 +74153,12 @@
             "format": "double",
             "nullable": true
           },
+          "imptotiva": {
+            "type": "number",
+            "description": "IE84_IMPTOTIVA - Importo totale IVA",
+            "format": "double",
+            "nullable": true
+          },
           "naturaciL": {
             "type": "string",
             "description": "IE84_NATURACI_L - NaturaciL",
