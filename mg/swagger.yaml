@@ -22465,7 +22465,7 @@
             "type": "number",
             "description": "DO79_TIPOEFF - Tipo<br><ul><li><i>1</i> - Contanti</li><li><i>2</i> - Ricevuta bancaria</li><li><i>3</i> - Tratta</li><li><i>4</i> - Tratta accettata</li><li><i>5</i> - Cessione</li><li><i>6</i> - Cambiale</li><li><i>7</i> - Carta di credito</li><li><i>8</i> - Bancomat</li><li><i>9</i> - Contrassegno</li><li><i>10</i> - Lettera di credito</li><li><i>11</i> - SDD</li><li><i>12</i> - Leasing</li><li><i>13</i> - Rimessa diretta</li><li><i>14</i> - Bonifico Bancario</li><li><i>15</i> - C/C postale</li><li><i>16</i> - MAV</li></ul>",
             "format": "double",
-            "default": 1,
+            "default": 13,
             "nullable": true
           },
           "billGroupingNotes": {

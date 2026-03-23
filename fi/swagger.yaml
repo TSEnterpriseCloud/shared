@@ -74002,10 +74002,35 @@
             "description": "IE84_CIG_L - CigL",
             "nullable": true
           },
+          "cliCap": {
+            "type": "string",
+            "description": "IE84_CLI_CAP - Cap",
+            "nullable": true
+          },
+          "cliComune": {
+            "type": "string",
+            "description": "IE84_CLI_COMUNE - Comune",
+            "nullable": true
+          },
           "cliforCg44": {
             "type": "number",
             "description": "IE84_CLIFOR_CG44 - CliforCg44",
             "format": "double",
+            "nullable": true
+          },
+          "cliIndirizzo": {
+            "type": "string",
+            "description": "IE84_CLI_INDIRIZZO - Indirizzo",
+            "nullable": true
+          },
+          "cliNazione": {
+            "type": "string",
+            "description": "IE84_CLI_NAZIONE - Nazione",
+            "nullable": true
+          },
+          "cliProvincia": {
+            "type": "string",
+            "description": "IE84_CLI_PROV - Provincia",
             "nullable": true
           },
           "codDep": {
@@ -74101,6 +74126,31 @@
             "type": "integer",
             "description": "IE84_FLGCLIFORMAN - FlgCliforman",
             "format": "int32"
+          },
+          "forCap": {
+            "type": "string",
+            "description": "IE84_FOR_CAP - Cap",
+            "nullable": true
+          },
+          "forComune": {
+            "type": "string",
+            "description": "IE84_FOR_COMUNE - Comune",
+            "nullable": true
+          },
+          "forIndirizzo": {
+            "type": "string",
+            "description": "IE84_FOR_INDIRIZZO - Indirizzo",
+            "nullable": true
+          },
+          "forNazione": {
+            "type": "string",
+            "description": "IE84_FOR_NAZIONE - Nazione",
+            "nullable": true
+          },
+          "forProvincia": {
+            "type": "string",
+            "description": "IE84_FOR_PROV - Provincia",
+            "nullable": true
           },
           "id": {
             "type": "integer",
@@ -88713,6 +88763,11 @@
           "filedocnum": {
             "type": "string",
             "description": "IE83_FILEDOCNUM - Filedocnum",
+            "nullable": true
+          },
+          "fileft": {
+            "type": "string",
+            "description": "IE83_FILEFT - Contenuto del file codificato in Base64",
             "nullable": true
           },
           "filename": {
