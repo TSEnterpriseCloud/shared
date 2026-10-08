@@ -1,9 +1,9 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.4",
   "info": {
     "title": "TSE Cloud - IN",
     "description": "This is Swagger Docs for Integration WebApi Teamsystemn Enterprise Cloud, more detail at [https://swagger.io](https://swagger.io).",
-    "version": "v2025.3000",
+    "version": "v2026.1000",
     "termsOfService": "https://www.teamsystem.com/terms-conditions/",
     "contact": {
       "name": "Supporto TeamSystem",
@@ -24,7 +24,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -33,7 +32,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -43,7 +41,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -136,7 +133,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -145,7 +141,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -155,7 +150,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -214,7 +208,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -223,7 +216,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -233,7 +225,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -288,7 +279,6 @@
             "name": "dtoname",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -297,7 +287,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -307,7 +296,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -316,7 +304,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -325,7 +312,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -334,7 +320,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -344,7 +329,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -388,7 +372,6 @@
             "name": "dtoname",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -397,7 +380,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -407,7 +389,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -416,7 +397,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -425,7 +405,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -434,7 +413,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -444,7 +422,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -488,7 +465,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -498,7 +474,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -507,7 +482,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -516,7 +490,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -525,7 +498,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -535,7 +507,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -579,7 +550,6 @@
             "name": "moduleAcron",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -589,7 +559,6 @@
             "in": "path",
             "description": "Lookup's name",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -598,7 +567,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -607,7 +575,6 @@
             "name": "metadata",
             "in": "query",
             "description": "Allows you to get lookup's metadata structure.",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -616,7 +583,6 @@
             "name": "pageNumber",
             "in": "query",
             "description": "Page number to return.",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -625,7 +591,6 @@
             "name": "pageSize",
             "in": "query",
             "description": "Define the number of elements per page to return.",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -634,7 +599,6 @@
             "name": "filter",
             "in": "query",
             "description": "(optional parameter) Text filter to apply. Will be applied to key and description properties of DTO.",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -644,7 +608,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -653,7 +616,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -662,7 +624,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -671,7 +632,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -681,7 +641,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -711,7 +670,6 @@
             "name": "moduleAcron",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -721,7 +679,6 @@
             "in": "path",
             "description": "Lookup's name",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -730,7 +687,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -739,7 +695,6 @@
             "name": "_op",
             "in": "query",
             "description": "Set the value to 'search' or 'fulltextsearch' to enable advanced features",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -748,7 +703,6 @@
             "name": "metadata",
             "in": "query",
             "description": "Allows you to get lookup's metadata structure.",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -758,7 +712,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -767,7 +720,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -776,7 +728,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -785,7 +736,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -795,7 +745,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -840,7 +789,6 @@
             "in": "path",
             "description": "Name of the dtoname for which to retrieve the metadata",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -849,7 +797,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -859,7 +806,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -868,7 +814,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -877,7 +822,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -886,7 +830,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -896,7 +839,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -930,6 +872,299 @@
           },
           "404": {
             "description": "If the indicated resource was not found"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/{moduleAcron}/RuntimeScript/execute": {
+      "post": {
+        "tags": [
+          "RuntimeScript"
+        ],
+        "summary": "Execute runtime script",
+        "description": "Executes a runtime script",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "moduleAcron",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RuntimeScriptExecutionRequestDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/RuntimeScriptExecutionRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Script execution result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectRuntimeScriptExecutionResultDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectRuntimeScriptExecutionResultDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/{moduleAcron}/RuntimeScript/services": {
+      "get": {
+        "tags": [
+          "RuntimeScript"
+        ],
+        "summary": "Get available runtime script services",
+        "description": "Returns a list of all available runtime script services with their names and descriptions",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "moduleAcron",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of available services",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuntimeScriptServicesListDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuntimeScriptServicesListDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/{moduleAcron}/RuntimeScript/contexts": {
+      "get": {
+        "tags": [
+          "RuntimeScript"
+        ],
+        "summary": "Get available runtime script contexts",
+        "description": "Returns a list of all registered script contexts with their input and output schema",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "moduleAcron",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of available contexts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuntimeScriptContextsListDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/RuntimeScriptContextsListDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
           }
         }
       }
@@ -1053,6 +1288,46 @@
           "parametersQueryDescriptor": {
             "type": "string",
             "description": "List of parameter QD might have",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ObjectRuntimeScriptExecutionResultDTO": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          },
+          "returnValue": {
+            "nullable": true
+          },
+          "elapsed": {
+            "type": "string",
+            "format": "date-span"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "scriptMissing": {
+            "type": "boolean"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
             "nullable": true
           }
         },
@@ -1274,6 +1549,233 @@
         },
         "additionalProperties": false
       },
+      "RuntimeScriptContextInfoDTO": {
+        "type": "object",
+        "properties": {
+          "contextName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "inputType": {
+            "$ref": "#/components/schemas/RuntimeScriptSchemaInfoDTO"
+          },
+          "outputType": {
+            "$ref": "#/components/schemas/RuntimeScriptSchemaInfoDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeScriptContextsListDTO": {
+        "type": "object",
+        "properties": {
+          "contexts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RuntimeScriptContextInfoDTO"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeScriptExecutionRequestDTO": {
+        "type": "object",
+        "properties": {
+          "scriptCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "scriptContext": {
+            "type": "string",
+            "nullable": true
+          },
+          "scriptContent": {
+            "type": "string",
+            "nullable": true
+          },
+          "input": {
+            "type": "string",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeScriptPropertyInfoDTO": {
+        "type": "object",
+        "properties": {
+          "propertyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "propertyType": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "format": {
+            "type": "string",
+            "nullable": true
+          },
+          "example": {
+            "type": "string",
+            "nullable": true
+          },
+          "nullable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeScriptSchemaInfoDTO": {
+        "type": "object",
+        "properties": {
+          "typeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RuntimeScriptPropertyInfoDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeScriptServiceInfoDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "typeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "methods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RuntimeScriptServiceMethodDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeScriptServiceMethodDTO": {
+        "type": "object",
+        "properties": {
+          "methodName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "example": {
+            "type": "string",
+            "nullable": true
+          },
+          "returnType": {
+            "type": "string",
+            "nullable": true
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RuntimeScriptServiceMethodParameterDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeScriptServiceMethodParameterDTO": {
+        "type": "object",
+        "properties": {
+          "parameterName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "example": {
+            "type": "string",
+            "nullable": true
+          },
+          "parameterType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeScriptServicesListDTO": {
+        "type": "object",
+        "properties": {
+          "services": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RuntimeScriptServiceInfoDTO"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "StringObjectKeyValuePair": {
         "type": "object",
         "properties": {
@@ -1297,21 +1799,17 @@
       "Bearer": {
         "type": "http",
         "description": "Bearer Authorization header.\r\n\r\nEnter your token in the text input below.",
-        "scheme": "bearer",
+        "scheme": "Bearer",
         "bearerFormat": "JWT"
       }
     }
   },
   "security": [
     {
-      "Basic": [
-        "Basic"
-      ]
+      "Basic": []
     },
     {
-      "Bearer": [
-        "Bearer"
-      ]
+      "Bearer": []
     }
   ],
   "tags": [
@@ -1330,6 +1828,9 @@
     {
       "name": "MetadataDTO",
       "description": "Reading service for Metadata structures"
+    },
+    {
+      "name": "RuntimeScript"
     }
   ],
   "servers": [

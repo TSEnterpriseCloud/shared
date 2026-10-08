@@ -1,9 +1,9 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.4",
   "info": {
     "title": "TSE Cloud - FW",
     "description": "This is Swagger Docs for Framework WebApi Teamsystemn Enterprise Cloud, more detail at [https://swagger.io](https://swagger.io).",
-    "version": "v2025.3000",
+    "version": "v2026.1000",
     "termsOfService": "https://www.teamsystem.com/terms-conditions/",
     "contact": {
       "name": "Supporto TeamSystem",
@@ -24,7 +24,6 @@
             "in": "path",
             "description": "Id to get the object",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -33,7 +32,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -42,7 +40,6 @@
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -51,7 +48,6 @@
             "name": "dlevelkey",
             "in": "query",
             "description": "Serialization level key",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -60,7 +56,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -70,7 +65,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -79,7 +73,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -88,7 +81,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -97,7 +89,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -107,7 +98,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -152,7 +142,6 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -161,7 +150,6 @@
             "name": "force",
             "in": "query",
             "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -170,7 +158,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -179,7 +166,6 @@
             "name": "_op",
             "in": "query",
             "description": "Set 'reload', if you want the DTO updated in the response request",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -188,7 +174,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -198,7 +183,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -207,7 +191,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -216,7 +199,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -225,7 +207,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -235,7 +216,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -314,7 +294,6 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -323,7 +302,6 @@
             "name": "force",
             "in": "query",
             "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -332,7 +310,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -341,7 +318,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -351,7 +327,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -360,7 +335,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -369,7 +343,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -378,7 +351,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -388,7 +360,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -439,7 +410,6 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -448,7 +418,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -457,7 +426,6 @@
             "name": "force",
             "in": "query",
             "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -466,7 +434,6 @@
             "name": "_op",
             "in": "query",
             "description": "Set 'reload', if you want the DTO updated in the response request",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -475,7 +442,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -485,7 +451,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -494,7 +459,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -503,7 +467,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -512,7 +475,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -522,7 +484,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -588,7 +549,6 @@
             "in": "query",
             "description": "The value must be 'new'",
             "required": true,
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -598,7 +558,6 @@
             "in": "query",
             "description": "Specify optional parameters that will be used during entity creation",
             "required": true,
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -607,7 +566,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -617,7 +575,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -626,7 +583,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -635,7 +591,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -644,7 +599,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -654,7 +608,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -696,7 +649,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -705,7 +657,6 @@
             "name": "_op",
             "in": "query",
             "description": "Set 'reload', if you want the DTO updated in the response request",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -714,7 +665,6 @@
             "name": "force",
             "in": "query",
             "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -723,7 +673,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -733,7 +682,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -742,7 +690,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -751,7 +698,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -760,7 +706,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -770,7 +715,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -848,7 +792,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -858,7 +801,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -867,7 +809,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -876,7 +817,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -885,7 +825,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -895,7 +834,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -961,7 +899,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -971,7 +908,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -980,7 +916,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -989,7 +924,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -998,7 +932,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1008,7 +941,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1087,7 +1019,6 @@
             "name": "loadEntireDomain",
             "in": "query",
             "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -1096,7 +1027,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -1105,7 +1035,6 @@
             "name": "getTotalCount",
             "in": "query",
             "description": "Specify 'gettotalcount=true' if you want the total number of elements",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -1114,7 +1043,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1124,7 +1052,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1133,7 +1060,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1142,7 +1068,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1151,7 +1076,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1161,7 +1085,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1224,7 +1147,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -1233,7 +1155,6 @@
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1242,7 +1163,6 @@
             "name": "dlevelkey",
             "in": "query",
             "description": "Serialization level key",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1251,7 +1171,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1261,7 +1180,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1270,7 +1188,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1279,7 +1196,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1288,7 +1204,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1298,7 +1213,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1371,7 +1285,6 @@
             "in": "path",
             "description": "Id to get the object",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1380,7 +1293,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -1389,7 +1301,6 @@
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1398,7 +1309,6 @@
             "name": "dlevelkey",
             "in": "query",
             "description": "Serialization level key",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1407,7 +1317,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1417,7 +1326,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1426,7 +1334,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1435,7 +1342,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1444,7 +1350,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1454,7 +1359,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1499,7 +1403,6 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1508,7 +1411,6 @@
             "name": "force",
             "in": "query",
             "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1517,7 +1419,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -1526,7 +1427,6 @@
             "name": "_op",
             "in": "query",
             "description": "Set 'reload', if you want the DTO updated in the response request",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1535,7 +1435,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1545,7 +1444,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1554,7 +1452,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1563,7 +1460,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1572,7 +1468,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1582,7 +1477,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1661,7 +1555,6 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1670,7 +1563,6 @@
             "name": "force",
             "in": "query",
             "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1679,7 +1571,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -1688,7 +1579,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1698,7 +1588,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1707,7 +1596,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1716,7 +1604,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1725,7 +1612,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1735,7 +1621,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1786,7 +1671,6 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1795,7 +1679,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -1804,7 +1687,6 @@
             "name": "force",
             "in": "query",
             "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1813,7 +1695,6 @@
             "name": "_op",
             "in": "query",
             "description": "Set 'reload', if you want the DTO updated in the response request",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1822,7 +1703,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1832,7 +1712,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1841,7 +1720,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1850,7 +1728,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1859,7 +1736,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1869,7 +1745,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -1935,7 +1810,6 @@
             "in": "query",
             "description": "The value must be 'new'",
             "required": true,
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1945,7 +1819,6 @@
             "in": "query",
             "description": "Specify optional parameters that will be used during entity creation",
             "required": true,
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1954,7 +1827,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1964,7 +1836,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -1973,7 +1844,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1982,7 +1852,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -1991,7 +1860,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2001,7 +1869,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2043,7 +1910,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -2052,7 +1918,6 @@
             "name": "_op",
             "in": "query",
             "description": "Set 'reload', if you want the DTO updated in the response request",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2061,7 +1926,6 @@
             "name": "force",
             "in": "query",
             "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2070,7 +1934,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2080,7 +1943,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2089,7 +1951,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2098,7 +1959,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2107,7 +1967,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2117,7 +1976,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2195,7 +2053,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2205,7 +2062,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2214,7 +2070,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2223,7 +2078,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2232,7 +2086,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2242,7 +2095,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2308,7 +2160,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2318,7 +2169,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2327,7 +2177,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2336,7 +2185,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2345,7 +2193,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2355,7 +2202,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2434,7 +2280,6 @@
             "name": "loadEntireDomain",
             "in": "query",
             "description": "Specify 'loadEntireDomain=true' if you want all the aggregate",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -2443,7 +2288,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -2452,7 +2296,6 @@
             "name": "getTotalCount",
             "in": "query",
             "description": "Specify 'gettotalcount=true' if you want the total number of elements",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -2461,7 +2304,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2471,7 +2313,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2480,7 +2321,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2489,7 +2329,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2498,7 +2337,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2508,7 +2346,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2571,7 +2408,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -2580,7 +2416,6 @@
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2589,7 +2424,6 @@
             "name": "dlevelkey",
             "in": "query",
             "description": "Serialization level key",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2598,7 +2432,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2608,7 +2441,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2617,7 +2449,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2626,7 +2457,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2635,7 +2465,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2645,7 +2474,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2716,7 +2544,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2726,7 +2553,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2735,7 +2561,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2744,7 +2569,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2753,7 +2577,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2763,7 +2586,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2812,7 +2634,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "OK"
           },
           "401": {
             "description": "Unauthorized access"
@@ -2821,7 +2643,7 @@
             "description": "Forbidden access"
           },
           "415": {
-            "description": "Client Error"
+            "description": "Unsupported Media Type"
           }
         }
       }
@@ -2837,7 +2659,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2847,7 +2668,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2856,7 +2676,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2865,7 +2684,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2874,7 +2692,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2884,7 +2701,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2909,7 +2725,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "OK"
           },
           "401": {
             "description": "Unauthorized access"
@@ -2934,7 +2750,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2944,7 +2759,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -2953,7 +2767,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2962,7 +2775,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -2971,7 +2783,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -2981,7 +2792,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -3004,7 +2814,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "OK"
           },
           "401": {
             "description": "Unauthorized access"
@@ -3029,7 +2839,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -3039,7 +2848,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -3048,7 +2856,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -3057,7 +2864,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -3066,7 +2872,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -3076,7 +2881,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -3138,7 +2942,6 @@
             "in": "path",
             "description": "Id to get the object",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -3147,7 +2950,6 @@
             "name": "ignoreCompanyPolicyFilter",
             "in": "query",
             "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
-            "style": "form",
             "schema": {
               "type": "boolean"
             }
@@ -3156,7 +2958,6 @@
             "name": "dlevel",
             "in": "query",
             "description": "Serialization level",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -3165,7 +2966,6 @@
             "name": "dlevelkey",
             "in": "query",
             "description": "Serialization level key",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -3174,7 +2974,6 @@
             "name": "environment",
             "in": "path",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -3184,7 +2983,6 @@
             "in": "header",
             "description": "The environment where this operation will be executed. This must match with the environment in the url.",
             "required": true,
-            "style": "simple",
             "schema": {
               "type": "string"
             }
@@ -3193,7 +2991,6 @@
             "name": "company",
             "in": "query",
             "description": "Company code",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -3202,7 +2999,6 @@
             "name": "user",
             "in": "query",
             "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
-            "style": "form",
             "schema": {
               "type": "string"
             }
@@ -3211,7 +3007,6 @@
             "name": "Accept-Language",
             "in": "header",
             "description": "Specifies the UI culture to be used for localization of messages.",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -3221,7 +3016,6 @@
             "name": "Accept-Territory",
             "in": "header",
             "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
-            "style": "simple",
             "schema": {
               "type": "string",
               "default": "it-IT"
@@ -3344,8 +3138,7 @@
             "type": "integer",
             "description": "DetailLifeHours - Detaillifehours",
             "format": "int32",
-            "default": 0,
-            "nullable": true
+            "default": 0
           },
           "groupname": {
             "minLength": 1,
@@ -3420,8 +3213,11 @@
           "isDisabled": {
             "type": "boolean",
             "description": "IsDisabled - Disabilitato<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
-            "default": "0",
-            "nullable": true
+            "x-enum-values": [
+              0,
+              1
+            ],
+            "x-default": 0
           },
           "lastexecutionutc": {
             "type": "string",
@@ -3482,8 +3278,7 @@
             "minLength": 1,
             "type": "string",
             "description": "Fixed path type (only UserFileTemp value managed)",
-            "default": "UserFileTemp",
-            "nullable": true
+            "default": "UserFileTemp"
           },
           "relativePath": {
             "type": "string",
@@ -3500,8 +3295,7 @@
             "minLength": 1,
             "type": "string",
             "description": "Fixed path type (only UserFileTemp value managed)",
-            "default": "UserFileTemp",
-            "nullable": true
+            "default": "UserFileTemp"
           },
           "relativePath": {
             "type": "string",
@@ -3548,8 +3342,7 @@
             "minLength": 1,
             "type": "string",
             "description": "Fixed path type (only UserFileTemp value managed)",
-            "default": "UserFileTemp",
-            "nullable": true
+            "default": "UserFileTemp"
           },
           "relativePath": {
             "type": "string",
@@ -3572,7 +3365,9 @@
           },
           "parameters": {
             "type": "object",
-            "additionalProperties": {},
+            "additionalProperties": {
+              "nullable": true
+            },
             "description": "List of key value filters that will be applied to the query (example: {'param1': Value}\")",
             "nullable": true
           },
@@ -3610,62 +3405,66 @@
         "description": "DTO that contains the filter criteria"
       },
       "SearchElementDTO": {
-        "required": [
-          "comparer",
-          "propertyName",
-          "value"
-        ],
-        "type": "object",
         "allOf": [
           {
             "$ref": "#/components/schemas/SearchNodeDTO"
+          },
+          {
+            "required": [
+              "comparer",
+              "propertyName",
+              "value"
+            ],
+            "type": "object",
+            "properties": {
+              "propertyName": {
+                "minLength": 1,
+                "type": "string",
+                "description": "Property on witch apply the filter"
+              },
+              "comparer": {
+                "$ref": "#/components/schemas/SearchComparer"
+              },
+              "value": {
+                "$ref": "#/components/schemas/SearchNodeValueDTO"
+              }
+            },
+            "additionalProperties": false
           }
         ],
-        "properties": {
-          "propertyName": {
-            "minLength": 1,
-            "type": "string",
-            "description": "Property on witch apply the filter"
-          },
-          "comparer": {
-            "$ref": "#/components/schemas/SearchComparer"
-          },
-          "value": {
-            "$ref": "#/components/schemas/SearchNodeValueDTO"
-          }
-        },
-        "additionalProperties": false,
         "description": "DTO that identifies a search criteria"
       },
       "SearchGroupDTO": {
-        "type": "object",
         "allOf": [
           {
             "$ref": "#/components/schemas/SearchNodeDTO"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/SearchNodeDTO"
+                    },
+                    {
+                      "$ref": "#/components/schemas/SearchElementDTO"
+                    },
+                    {
+                      "$ref": "#/components/schemas/SearchGroupDTO"
+                    }
+                  ],
+                  "description": "DTO that identifies a search criteria node (abstract)"
+                },
+                "description": "Items list to apply: any element can be a 'SearchGroupDTO' or a 'SearchElementDTO'",
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
           }
         ],
-        "properties": {
-          "items": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/SearchNodeDTO"
-                },
-                {
-                  "$ref": "#/components/schemas/SearchElementDTO"
-                },
-                {
-                  "$ref": "#/components/schemas/SearchGroupDTO"
-                }
-              ],
-              "description": "DTO that identifies a search criteria node (abstract)"
-            },
-            "description": "Items list to apply: any element can be a 'SearchGroupDTO' or a 'SearchElementDTO'",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
         "description": "DTO that identifies a group of search criteria"
       },
       "SearchLogicalOperators": {
@@ -3773,32 +3572,20 @@
       "Bearer": {
         "type": "http",
         "description": "Bearer Authorization header.\r\n\r\nEnter your token in the text input below.",
-        "scheme": "bearer",
+        "scheme": "Bearer",
         "bearerFormat": "JWT"
       }
     }
   },
   "security": [
     {
-      "Basic": [
-        "Basic"
-      ]
+      "Basic": []
     },
     {
-      "Bearer": [
-        "Bearer"
-      ]
+      "Bearer": []
     }
   ],
   "tags": [
-    {
-      "name": "EditPathFW",
-      "description": "Collection of services for Upload/Download Cloud Files"
-    },
-    {
-      "name": "LicenseFW",
-      "description": "Collection of services for license"
-    },
     {
       "name": "AsyncCatalogFW",
       "description": "Collection of services for Schedulable Operations"
@@ -3806,6 +3593,14 @@
     {
       "name": "AsyncSchedulerFW",
       "description": "Collection of services for Scheduled Processes"
+    },
+    {
+      "name": "EditPathFW",
+      "description": "Collection of services for Upload/Download Cloud Files"
+    },
+    {
+      "name": "LicenseFW",
+      "description": "Collection of services for license"
     }
   ],
   "servers": [
