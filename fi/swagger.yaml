@@ -8959,6 +8959,109 @@
         }
       }
     },
+    "/api/v1/{environment}/FI/GLEntryFI/WriteDocConsumptionEvents": {
+      "post": {
+        "tags": [
+          "GLEntryFI"
+        ],
+        "summary": "Write document consumption events",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Input parameters for consumption events",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WriteDocConsumptionEventsParamsDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/WriteDocConsumptionEventsParamsDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResultDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResultDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing body parameter"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/FI/GLEntryFI/RestoreInvoiceFepaPassFI": {
       "post": {
         "tags": [
@@ -61614,6 +61717,42 @@
           "importoEnasarcoAzienda": {
             "type": "number",
             "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WriteDocConsumptionEventsParamsDTO": {
+        "type": "object",
+        "properties": {
+          "eventCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "hubId": {
+            "type": "string",
+            "nullable": true
+          },
+          "invoiceEntityType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountLines": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vatLines": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
             "nullable": true
           }
         },
