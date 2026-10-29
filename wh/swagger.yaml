@@ -12050,6 +12050,322 @@
         }
       }
     },
+    "/api/v1/{environment}/WH/ProgressiveQuantityWH/{id}": {
+      "get": {
+        "tags": [
+          "ProgressiveQuantityWH"
+        ],
+        "summary": "Get by ID",
+        "description": "Get an object of type corresponding the requested id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id to get the object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "dlevel",
+            "in": "query",
+            "description": "Serialization level",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dlevelkey",
+            "in": "query",
+            "description": "Serialization level key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ItemVariantCode",
+            "in": "query",
+            "description": "Default: \"\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "StorageCode",
+            "in": "query",
+            "description": "StorageCode Mandatory to execute current action",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProgressiveType",
+            "in": "query",
+            "description": "Default: 1=RealTime - (0=Consolidated 1=RealTime 2=ConsolidatedByYear)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Year",
+            "in": "query",
+            "description": "Default: 0  (Mandatory with ProgressiveType=2)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "QuantityType",
+            "in": "query",
+            "description": "Default: 1=Quantity Um1 - (1=Quantity Um1 2=Quantity Um2)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The object of type requested",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgressiveQuantityViewWHDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgressiveQuantityViewWHDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/WH/ProgressiveWH/{id}": {
+      "get": {
+        "tags": [
+          "ProgressiveWH"
+        ],
+        "summary": "Get by ID",
+        "description": "Get an object of type corresponding the requested id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id to get the object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "dlevel",
+            "in": "query",
+            "description": "Serialization level",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dlevelkey",
+            "in": "query",
+            "description": "Serialization level key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ItemVariantCode",
+            "in": "query",
+            "description": "Default: \"\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "StorageCode",
+            "in": "query",
+            "description": "StorageCode Mandatory to execute current action",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProgressiveType",
+            "in": "query",
+            "description": "Default: 1=RealTime - (0=Consolidated 1=RealTime 2=ConsolidatedByYear)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Year",
+            "in": "query",
+            "description": "Default: 0  (Mandatory with ProgressiveType=2)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The object of type requested",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgressiveWHDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgressiveWHDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/WH/StatisticalGroup1WH/{id}": {
       "get": {
         "tags": [
@@ -27126,6 +27442,1370 @@
         "additionalProperties": false,
         "description": "CG63_CONDPAGDET - PaymentTermDetailCO<br>Proprietà chiave:<ul><li><b>Id</b></li></ul>"
       },
+      "ProgressiveFKWHDTO": {
+        "type": "object",
+        "properties": {
+          "initialStockInputType": {
+            "type": "number",
+            "description": "MG83_INDVALGINIZ - Valorizzazione giacenza iniziale<br><ul><li><i>0</i> - Nessuna valorizzazione</li><li><i>1</i> - Costo ult./prod. di tutti i depositi</li><li><i>2</i> - Costo ult./prod. del deposito</li><li><i>3</i> - Costo standard di tutti i depositi</li><li><i>4</i> - Costo standard del deposito</li><li><i>5</i> - Magg. ult. 2 costi acq. tutti i depositi</li><li><i>6</i> - Magg. ult. 2 costi acq. del deposito</li><li><i>7</i> - Costo medio di tutti i depositi</li><li><i>8</i> - Costo medio del deposito</li><li><i>9</i> - Costo fifo anno in corso di tutti i dep.</li><li><i>10</i> - Costo fifo anno in corso del deposito</li><li><i>11</i> - Costo fifo storico di tutti i depositi</li><li><i>12</i> - Costo fifo storico del deposito</li><li><i>13</i> - Costo LIFO di tutti i depositi</li><li><i>14</i> - Costo LIFO del deposito</li><li><i>15</i> - Costo medio fornitori</li><li><i>16</i> - Listino di acquisto</li><li><i>17</i> - Listino di vendita</li><li><i>18</i> - Costo al dettaglio</li></ul>",
+            "format": "double",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18
+            ]
+          },
+          "lastIssueDate": {
+            "type": "string",
+            "description": "MG83_DTULTSCA - Data ultimo scarico",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastLedgersPrintDate": {
+            "type": "string",
+            "description": "MG83_DATAPART - Data ultima stampa partitari",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastReceiptDate": {
+            "type": "string",
+            "description": "MG83_DTULTCAR - Data ultimo carico",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastStockCheckDate": {
+            "type": "string",
+            "description": "MG83_DTCHECKGIAC - Data ultimo check della giacenza",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdateToFifoCostDate": {
+            "type": "string",
+            "description": "MG83_DTULTAGGFIFO - Data ultimo aggiornamento costo FIFO",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdateToLastCostDate": {
+            "type": "string",
+            "description": "MG83_DTULTAGGCOSUL - Data ultimo aggiornamento costo ultimo",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdateToSalePriceDate": {
+            "type": "string",
+            "description": "MG83_DTULTAGGPREVE - Data ultimo aggiornamento prezzo di vendita",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastWeightLossCalculationDate": {
+            "type": "string",
+            "description": "MG83_DTULTCALCPESO - Data ultimo calcolo del calo peso",
+            "format": "date-time",
+            "nullable": true
+          },
+          "ledgerBalanceQuantity1": {
+            "type": "number",
+            "description": "MG83_QTA1PART - Saldo partitario quantità 1",
+            "format": "double",
+            "default": 0
+          },
+          "ledgerBalanceQuantity2": {
+            "type": "number",
+            "description": "MG83_QTA2PART - Saldo partitario quantità 2",
+            "format": "double",
+            "default": 0
+          },
+          "ledgersPrintLastPage": {
+            "type": "number",
+            "description": "MG83_PAGPART - Ultima pagina stampa partitari",
+            "format": "double",
+            "default": 0
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG83_PROGDEPOS - ProgStorageWH"
+      },
+      "ProgressiveQuantityViewWHDTO": {
+        "required": [
+          "itemCode",
+          "storageCode"
+        ],
+        "type": "object",
+        "properties": {
+          "progressiveForWarehouse": {
+            "$ref": "#/components/schemas/ProgressiveFKWHDTO"
+          },
+          "actualStockQuantity": {
+            "type": "number",
+            "description": "MG70_QGIACEFF - Giacenza effettiva",
+            "format": "double",
+            "default": 0
+          },
+          "availableQuantity": {
+            "type": "number",
+            "description": "MG70_QDISPONIB - Disponibile",
+            "format": "double",
+            "default": 0
+          },
+          "blockedOrderedToProductionQuantity": {
+            "type": "number",
+            "description": "MG70_QODPBLOC - Ordinato a produzione bloccato",
+            "format": "double",
+            "default": 0
+          },
+          "blockedOrderedToSupplierQuantity": {
+            "type": "number",
+            "description": "MG70_QODFBLOC - Ordinato a fornitore bloccato",
+            "format": "double",
+            "default": 0
+          },
+          "blockedStockQuantity": {
+            "type": "number",
+            "description": "MG70_QGIACBLOC - Giacenza bloccata",
+            "format": "double",
+            "default": 0
+          },
+          "companyCode": {
+            "type": "number",
+            "description": "MG70_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0
+          },
+          "consignmentIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QUSCDEP - Uscita c/deposito",
+            "format": "double",
+            "default": 0
+          },
+          "consignmentReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QENCDEP - Entrata c/deposito",
+            "format": "double",
+            "default": 0
+          },
+          "currentStockQuantity": {
+            "type": "number",
+            "description": "MG70_QGIACATT - Giacenza attuale",
+            "format": "double",
+            "default": 0
+          },
+          "customerPreReservedQuantity": {
+            "type": "number",
+            "description": "MG70_QPREIMPCLI - Preimpegni clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerReservedQuantity": {
+            "type": "number",
+            "description": "MG70_QIMPCLI - Impegnato clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerReturnReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARESORCLI - Carico reso clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerSubcontractingIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCACLAVCLI - Scarico c/lavoro clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerSubcontractingReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARCLAVCLI - Carico c/lavoro clienti",
+            "format": "double",
+            "default": 0
+          },
+          "evaluationIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QUSCCVIS - Uscita c/visione",
+            "format": "double",
+            "default": 0
+          },
+          "fiscalStockQuantity": {
+            "type": "number",
+            "description": "MG70_QGIACFIS - Giacenza fiscale",
+            "format": "double",
+            "default": 0
+          },
+          "freeIssue1Quantity": {
+            "type": "number",
+            "description": "MG70_QSCALIB1 - Scarico libero 1",
+            "format": "double",
+            "default": 0
+          },
+          "freeIssue2Quantity": {
+            "type": "number",
+            "description": "MG70_QSCALIB2 - Scarico libero 2",
+            "format": "double",
+            "default": 0
+          },
+          "freeReceipt1Quantity": {
+            "type": "number",
+            "description": "MG70_QCARLIB1 - Carico libero 1",
+            "format": "double",
+            "default": 0
+          },
+          "freeReceipt2Quantity": {
+            "type": "number",
+            "description": "MG70_QCARLIB2 - Carico libero 2",
+            "format": "double",
+            "default": 0
+          },
+          "genericIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCAGENER - Scarico generico",
+            "format": "double",
+            "default": 0
+          },
+          "genericReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARGENER - Carico generico",
+            "format": "double",
+            "default": 0
+          },
+          "giftIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCAOMAGQ - Scarico per omaggi",
+            "format": "double",
+            "default": 0
+          },
+          "giftReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCAROMAG - Carico omaggi",
+            "format": "double",
+            "default": 0
+          },
+          "hyperMediaId": {
+            "type": "number",
+            "description": "MG70_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "initialStockQuantity": {
+            "type": "number",
+            "description": "MG70_QGIACINI - Giacenza iniziale",
+            "format": "double",
+            "default": 0
+          },
+          "itemCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG70_CODART_MG66 - Codice Articolo"
+          },
+          "itemVariantCode": {
+            "type": "string",
+            "description": "MG70_OPZIONE_MG5E - Codice variante",
+            "nullable": true
+          },
+          "orderedToSupplierQuantity": {
+            "type": "number",
+            "description": "MG70_QORDFOR - Ordinato a fornitore",
+            "format": "double",
+            "default": 0
+          },
+          "productionIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCAPROD - Scarico produzione",
+            "format": "double",
+            "default": 0
+          },
+          "productionOrderedQuantity": {
+            "type": "number",
+            "description": "MG70_QORDPROD - Ordinato produzione",
+            "format": "double",
+            "default": 0
+          },
+          "productionReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARPROD - Carico produzione",
+            "format": "double",
+            "default": 0
+          },
+          "productionReservedQuantity": {
+            "type": "number",
+            "description": "MG70_QIMPPROD - Impegnato produzione",
+            "format": "double",
+            "default": 0
+          },
+          "progressiveType": {
+            "type": "number",
+            "description": "MG70_TIPOPROG - Tipo progressivi<br><ul><li><i>1</i> - tempo reale</li><li><i>0</i> - Consolidati</li><li><i>2</i> - Consolidati per anno</li></ul>",
+            "format": "double",
+            "default": 1,
+            "x-enum-values": [
+              1,
+              0,
+              2
+            ]
+          },
+          "purchaseReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARACQ - Carico acquisti",
+            "format": "double",
+            "default": 0
+          },
+          "quantityType": {
+            "type": "number",
+            "description": "MG70_TIPOQTA - Tipo quantità<br><ul><li><i>1</i> - Quantità 1 </li><li><i>2</i> - Quantità 2 </li></ul>",
+            "format": "double",
+            "default": 1,
+            "x-enum-values": [
+              1,
+              2
+            ]
+          },
+          "rentalIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QUSCNOLO - Uscita c/nolo",
+            "format": "double",
+            "default": 0
+          },
+          "rentalReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QENCNOLO - Entrata c/nolo",
+            "format": "double",
+            "default": 0
+          },
+          "repairIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QUSCCRIP - Uscita c/riparazione",
+            "format": "double",
+            "default": 0
+          },
+          "repairReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QENTCRIP - Entrata c/riparazione",
+            "format": "double",
+            "default": 0
+          },
+          "replacementIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCASOST - Scarico per sostituzione",
+            "format": "double",
+            "default": 0
+          },
+          "replacementReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARSOST - Carico per sostituzione",
+            "format": "double",
+            "default": 0
+          },
+          "salesIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCAVEN - Scarico vendite",
+            "format": "double",
+            "default": 0
+          },
+          "scrapIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCASCART - Scarico per scarti",
+            "format": "double",
+            "default": 0
+          },
+          "shippingBlockQuantity": {
+            "type": "number",
+            "description": "MG70_QBLOCSPED - Blocco spedizione",
+            "format": "double",
+            "default": 0
+          },
+          "storageCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG70_CODDEP_MG58 - Codice deposito"
+          },
+          "supplierPrereservatQuantity": {
+            "type": "number",
+            "description": "MG70_QPREIMPFOR - Preimpegni fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "supplierReturnIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCARESOFOR - Scarico per reso a fornitore",
+            "format": "double",
+            "default": 0
+          },
+          "supplierSubcontractingIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCACLAVFOR - Scarico c/lavoro fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "supplierSubcontractingReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARCLAVFOR - Carico c/lavoro fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "supplierSubcontractingReservedQuantity": {
+            "type": "number",
+            "description": "MG70_QIMPCLAVFOR - Impegnato c/lavoro fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "testingReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QENTCVIS - Entrata c/visione",
+            "format": "double",
+            "default": 0
+          },
+          "toEnterQuantity": {
+            "type": "number",
+            "description": "MG70_QDAVAL - Da valorizzare",
+            "format": "double",
+            "default": 0
+          },
+          "toVerifyQuantity": {
+            "type": "number",
+            "description": "MG70_QDACONTR - Da controllare",
+            "format": "double",
+            "default": 0
+          },
+          "transferIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCATRASF - Scarico per trasferimento",
+            "format": "double",
+            "default": 0
+          },
+          "transferReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARTRASF - Carico da trasferimento",
+            "format": "double",
+            "default": 0
+          },
+          "year": {
+            "type": "number",
+            "description": "MG70_ANNO - Anno",
+            "format": "double",
+            "default": 0
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG70_MAGPROQTA - ProgQtaWH<br>Proprietà chiave:<ul><li><b>CompanyCode</b></li><li><b>ItemCode</b></li><li><b>ItemVariantCode</b></li><li><b>ProgressiveType</b></li><li><b>QuantityType</b></li><li><b>StorageCode</b></li><li><b>Year</b></li></ul>"
+      },
+      "ProgressiveQuantityWHDTO": {
+        "required": [
+          "itemCode",
+          "storageCode"
+        ],
+        "type": "object",
+        "properties": {
+          "actualStockQuantity": {
+            "type": "number",
+            "description": "MG70_QGIACEFF - Giacenza effettiva",
+            "format": "double",
+            "default": 0
+          },
+          "availableQuantity": {
+            "type": "number",
+            "description": "MG70_QDISPONIB - Disponibile",
+            "format": "double",
+            "default": 0
+          },
+          "blockedOrderedToProductionQuantity": {
+            "type": "number",
+            "description": "MG70_QODPBLOC - Ordinato a produzione bloccato",
+            "format": "double",
+            "default": 0
+          },
+          "blockedOrderedToSupplierQuantity": {
+            "type": "number",
+            "description": "MG70_QODFBLOC - Ordinato a fornitore bloccato",
+            "format": "double",
+            "default": 0
+          },
+          "blockedStockQuantity": {
+            "type": "number",
+            "description": "MG70_QGIACBLOC - Giacenza bloccata",
+            "format": "double",
+            "default": 0
+          },
+          "companyCode": {
+            "type": "number",
+            "description": "MG70_DITTA_CG18 - Ditta",
+            "format": "double",
+            "default": 0
+          },
+          "consignmentIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QUSCDEP - Uscita c/deposito",
+            "format": "double",
+            "default": 0
+          },
+          "consignmentReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QENCDEP - Entrata c/deposito",
+            "format": "double",
+            "default": 0
+          },
+          "currentStockQuantity": {
+            "type": "number",
+            "description": "MG70_QGIACATT - Giacenza attuale",
+            "format": "double",
+            "default": 0
+          },
+          "customerPreReservedQuantity": {
+            "type": "number",
+            "description": "MG70_QPREIMPCLI - Preimpegni clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerReservedQuantity": {
+            "type": "number",
+            "description": "MG70_QIMPCLI - Impegnato clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerReturnReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARESORCLI - Carico reso clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerSubcontractingIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCACLAVCLI - Scarico c/lavoro clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerSubcontractingReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARCLAVCLI - Carico c/lavoro clienti",
+            "format": "double",
+            "default": 0
+          },
+          "evaluationIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QUSCCVIS - Uscita c/visione",
+            "format": "double",
+            "default": 0
+          },
+          "fiscalStockQuantity": {
+            "type": "number",
+            "description": "MG70_QGIACFIS - Giacenza fiscale",
+            "format": "double",
+            "default": 0
+          },
+          "freeIssue1Quantity": {
+            "type": "number",
+            "description": "MG70_QSCALIB1 - Scarico libero 1",
+            "format": "double",
+            "default": 0
+          },
+          "freeIssue2Quantity": {
+            "type": "number",
+            "description": "MG70_QSCALIB2 - Scarico libero 2",
+            "format": "double",
+            "default": 0
+          },
+          "freeReceipt1Quantity": {
+            "type": "number",
+            "description": "MG70_QCARLIB1 - Carico libero 1",
+            "format": "double",
+            "default": 0
+          },
+          "freeReceipt2Quantity": {
+            "type": "number",
+            "description": "MG70_QCARLIB2 - Carico libero 2",
+            "format": "double",
+            "default": 0
+          },
+          "genericIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCAGENER - Scarico generico",
+            "format": "double",
+            "default": 0
+          },
+          "genericReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARGENER - Carico generico",
+            "format": "double",
+            "default": 0
+          },
+          "giftIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCAOMAGQ - Scarico per omaggi",
+            "format": "double",
+            "default": 0
+          },
+          "giftReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCAROMAG - Carico omaggi",
+            "format": "double",
+            "default": 0
+          },
+          "hyperMediaId": {
+            "type": "number",
+            "description": "MG70_IDMEDIA_CG99 - Hypermedia",
+            "format": "double",
+            "nullable": true
+          },
+          "initialStockQuantity": {
+            "type": "number",
+            "description": "MG70_QGIACINI - Giacenza iniziale",
+            "format": "double",
+            "default": 0
+          },
+          "itemCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG70_CODART_MG66 - Codice Articolo"
+          },
+          "itemVariantCode": {
+            "type": "string",
+            "description": "MG70_OPZIONE_MG5E - Codice variante",
+            "nullable": true
+          },
+          "orderedToSupplierQuantity": {
+            "type": "number",
+            "description": "MG70_QORDFOR - Ordinato a fornitore",
+            "format": "double",
+            "default": 0
+          },
+          "productionIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCAPROD - Scarico produzione",
+            "format": "double",
+            "default": 0
+          },
+          "productionOrderedQuantity": {
+            "type": "number",
+            "description": "MG70_QORDPROD - Ordinato produzione",
+            "format": "double",
+            "default": 0
+          },
+          "productionReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARPROD - Carico produzione",
+            "format": "double",
+            "default": 0
+          },
+          "productionReservedQuantity": {
+            "type": "number",
+            "description": "MG70_QIMPPROD - Impegnato produzione",
+            "format": "double",
+            "default": 0
+          },
+          "progressiveType": {
+            "type": "number",
+            "description": "MG70_TIPOPROG - Tipo progressivi<br><ul><li><i>1</i> - tempo reale</li><li><i>0</i> - Consolidati</li><li><i>2</i> - Consolidati per anno</li></ul>",
+            "format": "double",
+            "default": 1,
+            "x-enum-values": [
+              1,
+              0,
+              2
+            ]
+          },
+          "purchaseReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARACQ - Carico acquisti",
+            "format": "double",
+            "default": 0
+          },
+          "quantityType": {
+            "type": "number",
+            "description": "MG70_TIPOQTA - Tipo quantità<br><ul><li><i>1</i> - Quantità 1 </li><li><i>2</i> - Quantità 2 </li></ul>",
+            "format": "double",
+            "default": 1,
+            "x-enum-values": [
+              1,
+              2
+            ]
+          },
+          "rentalIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QUSCNOLO - Uscita c/nolo",
+            "format": "double",
+            "default": 0
+          },
+          "rentalReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QENCNOLO - Entrata c/nolo",
+            "format": "double",
+            "default": 0
+          },
+          "repairIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QUSCCRIP - Uscita c/riparazione",
+            "format": "double",
+            "default": 0
+          },
+          "repairReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QENTCRIP - Entrata c/riparazione",
+            "format": "double",
+            "default": 0
+          },
+          "replacementIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCASOST - Scarico per sostituzione",
+            "format": "double",
+            "default": 0
+          },
+          "replacementReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARSOST - Carico per sostituzione",
+            "format": "double",
+            "default": 0
+          },
+          "salesIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCAVEN - Scarico vendite",
+            "format": "double",
+            "default": 0
+          },
+          "scrapIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCASCART - Scarico per scarti",
+            "format": "double",
+            "default": 0
+          },
+          "shippingBlockQuantity": {
+            "type": "number",
+            "description": "MG70_QBLOCSPED - Blocco spedizione",
+            "format": "double",
+            "default": 0
+          },
+          "storageCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG70_CODDEP_MG58 - Codice deposito"
+          },
+          "supplierPrereservatQuantity": {
+            "type": "number",
+            "description": "MG70_QPREIMPFOR - Preimpegni fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "supplierReturnIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCARESOFOR - Scarico per reso a fornitore",
+            "format": "double",
+            "default": 0
+          },
+          "supplierSubcontractingIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCACLAVFOR - Scarico c/lavoro fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "supplierSubcontractingReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARCLAVFOR - Carico c/lavoro fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "supplierSubcontractingReservedQuantity": {
+            "type": "number",
+            "description": "MG70_QIMPCLAVFOR - Impegnato c/lavoro fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "testingReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QENTCVIS - Entrata c/visione",
+            "format": "double",
+            "default": 0
+          },
+          "toEnterQuantity": {
+            "type": "number",
+            "description": "MG70_QDAVAL - Da valorizzare",
+            "format": "double",
+            "default": 0
+          },
+          "toVerifyQuantity": {
+            "type": "number",
+            "description": "MG70_QDACONTR - Da controllare",
+            "format": "double",
+            "default": 0
+          },
+          "transferIssueQuantity": {
+            "type": "number",
+            "description": "MG70_QSCATRASF - Scarico per trasferimento",
+            "format": "double",
+            "default": 0
+          },
+          "transferReceiptQuantity": {
+            "type": "number",
+            "description": "MG70_QCARTRASF - Carico da trasferimento",
+            "format": "double",
+            "default": 0
+          },
+          "year": {
+            "type": "number",
+            "description": "MG70_ANNO - Anno",
+            "format": "double",
+            "default": 0
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG70_MAGPROQTA - ProgQtaWH<br>Proprietà chiave:<ul><li><b>CompanyCode</b></li><li><b>ItemCode</b></li><li><b>ItemVariantCode</b></li><li><b>ProgressiveType</b></li><li><b>QuantityType</b></li><li><b>StorageCode</b></li><li><b>Year</b></li></ul>"
+      },
+      "ProgressiveValueWHDTO": {
+        "required": [
+          "currencyCode",
+          "currentYearFifoCost",
+          "externalManufTotalCost",
+          "itemCode",
+          "lastNetCost",
+          "lastNetSalePrice",
+          "machinesCost",
+          "previousYearFifoCost",
+          "productionCost",
+          "standardCost",
+          "storageCode",
+          "workforceCost"
+        ],
+        "type": "object",
+        "properties": {
+          "companyCode": {
+            "type": "number",
+            "description": "MG71_DITTA_CG18 - Azienda",
+            "format": "double",
+            "default": 0
+          },
+          "consignmentIssueValue": {
+            "type": "number",
+            "description": "MG71_VUSCDEP - Uscita c/deposito",
+            "format": "double",
+            "default": 0
+          },
+          "consignmentReceiptValue": {
+            "type": "number",
+            "description": "MG71_VENCDEP - Entrata c/deposito",
+            "format": "double",
+            "default": 0
+          },
+          "currencyCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG71_VALUTA_CG08 - Codice valuta"
+          },
+          "currentYearFifoCost": {
+            "type": "number",
+            "description": "MG71_COSFIFOAINC - Costo fifo anno in corso",
+            "format": "double"
+          },
+          "customerPreReservedValue": {
+            "type": "number",
+            "description": "MG71_VPREIMPCLI - Preimpegni clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerReservedValue": {
+            "type": "number",
+            "description": "MG71_VIMPCLI - Impegnato clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerReturnReceiptValue": {
+            "type": "number",
+            "description": "MG71_VCARESORCLI - Carico reso clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerSubcontractingIssueValue": {
+            "type": "number",
+            "description": "MG71_VSCACLAVCLI - Scarico c/lavoro clienti",
+            "format": "double",
+            "default": 0
+          },
+          "customerSubcontractingReceiptValue": {
+            "type": "number",
+            "description": "MG71_VCARCLAVCLI - Carico c/lavoro clienti",
+            "format": "double",
+            "default": 0
+          },
+          "evaluationIssueValue": {
+            "type": "number",
+            "description": "MG71_VUSCVIS - Uscita c/visione",
+            "format": "double",
+            "default": 0
+          },
+          "externalManufTotalCost": {
+            "type": "number",
+            "description": "MG71_COSTOLAVEST - Costo tot. lavoraz. est.",
+            "format": "double"
+          },
+          "freeIssue1Value": {
+            "type": "number",
+            "description": "MG71_VSCALIB1 - Scarico libero 1",
+            "format": "double",
+            "default": 0
+          },
+          "freeIssue2Value": {
+            "type": "number",
+            "description": "MG71_VSCALIB2 - Scarico libero 2",
+            "format": "double",
+            "default": 0
+          },
+          "freeReceipt1Value": {
+            "type": "number",
+            "description": "MG71_VCARLIB1 - Carico libero 1",
+            "format": "double",
+            "default": 0
+          },
+          "freeReceipt2Value": {
+            "type": "number",
+            "description": "MG71_VCARLIB2 - Carico libero 2",
+            "format": "double",
+            "default": 0
+          },
+          "genericIssueValue": {
+            "type": "number",
+            "description": "MG71_VSCAGENER - Scarico generico",
+            "format": "double",
+            "default": 0
+          },
+          "genericReceiptValue": {
+            "type": "number",
+            "description": "MG71_VCARGENER - Carico generico",
+            "format": "double",
+            "default": 0
+          },
+          "giftIssueValue": {
+            "type": "number",
+            "description": "MG71_VSCAOMAG - Scarico per omaggi",
+            "format": "double",
+            "default": 0
+          },
+          "giftReceiptValue": {
+            "type": "number",
+            "description": "MG71_VCAROMAG - Carico omaggi",
+            "format": "double",
+            "default": 0
+          },
+          "hyperMediaId": {
+            "type": "number",
+            "description": "MG71_IDMEDIA_CG99 - ID media",
+            "format": "double",
+            "nullable": true
+          },
+          "initialStockValue": {
+            "type": "number",
+            "description": "MG71_VGIACINI - Giacenza iniziale",
+            "format": "double",
+            "default": 0
+          },
+          "itemCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG71_CODART_MG66 - Codice articolo di magazzino"
+          },
+          "itemVariantCode": {
+            "type": "string",
+            "description": "MG71_OPZIONE_MG5E - Codice variante",
+            "nullable": true
+          },
+          "lastNetCost": {
+            "type": "number",
+            "description": "MG71_ULTCOSNET - Ultimo costo netto",
+            "format": "double"
+          },
+          "lastNetSalePrice": {
+            "type": "number",
+            "description": "MG71_ULTVENNET - Ultimo prezzo di vendita netto",
+            "format": "double"
+          },
+          "machinesCost": {
+            "type": "number",
+            "description": "MG71_COSMACCHINE - Costo macchine",
+            "format": "double"
+          },
+          "orderedToSupplierValue": {
+            "type": "number",
+            "description": "MG71_VORDFOR - Ordinato a fornitore",
+            "format": "double",
+            "default": 0
+          },
+          "previousYearFifoCost": {
+            "type": "number",
+            "description": "MG71_COSFIFOAPRE - Costo fifo anno precedente",
+            "format": "double"
+          },
+          "productionCost": {
+            "type": "number",
+            "description": "MG71_COSMATER - Costo produzione",
+            "format": "double"
+          },
+          "productionIssueValue": {
+            "type": "number",
+            "description": "MG71_VSCAPROD - Scarico produzione",
+            "format": "double",
+            "default": 0
+          },
+          "productionOrderedValue": {
+            "type": "number",
+            "description": "MG71_VORDPRO - Ordinato produzione",
+            "format": "double",
+            "default": 0
+          },
+          "productionReceiptValue": {
+            "type": "number",
+            "description": "MG71_VCARPROD - Carico produzione",
+            "format": "double",
+            "default": 0
+          },
+          "productionReservedValue": {
+            "type": "number",
+            "description": "MG71_VIMPPROD - Impegnato produzione",
+            "format": "double",
+            "default": 0
+          },
+          "progressiveType": {
+            "type": "number",
+            "description": "MG71_TIPOPROG - Tipo progressivi<br><ul><li><i>1</i> - tempo reale</li><li><i>0</i> - Consolidati</li><li><i>2</i> - Consolidati per anno</li></ul>",
+            "format": "double",
+            "default": 1,
+            "x-enum-values": [
+              1,
+              0,
+              2
+            ]
+          },
+          "purchaseReceiptValue": {
+            "type": "number",
+            "description": "MG71_VCARACQ - Carico acquisti",
+            "format": "double",
+            "default": 0
+          },
+          "replacementIssueValue": {
+            "type": "number",
+            "description": "MG71_VSCASOST - Scarico per sostituzione",
+            "format": "double",
+            "default": 0
+          },
+          "replacementReceiptValue": {
+            "type": "number",
+            "description": "MG71_VCARSOST - Carico per sostituzione",
+            "format": "double",
+            "default": 0
+          },
+          "salesIssueValue": {
+            "type": "number",
+            "description": "MG71_VSCAVEN - Scarico vendite",
+            "format": "double",
+            "default": 0
+          },
+          "scrapIssueValue": {
+            "type": "number",
+            "description": "MG71_VSCASCART - Scarico per scarti",
+            "format": "double",
+            "default": 0
+          },
+          "shippingBlockValue": {
+            "type": "number",
+            "description": "MG71_VBLOCSPED - Blocco spedizione",
+            "format": "double",
+            "default": 0
+          },
+          "standardCost": {
+            "type": "number",
+            "description": "MG71_COSSTAND - Costo standard",
+            "format": "double"
+          },
+          "storageCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG71_CODDEP_MG58 - Codice deposito"
+          },
+          "supplierPrereservatValue": {
+            "type": "number",
+            "description": "MG71_VPREIMPFOR - Preimpegni fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "supplierReturnIssueValue": {
+            "type": "number",
+            "description": "MG71_VSCARESOFOR - Scarico per reso a fornitore",
+            "format": "double",
+            "default": 0
+          },
+          "supplierSubcontractingIssueValue": {
+            "type": "number",
+            "description": "MG71_VSCACLAVFOR - Scarico c/lavoro fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "supplierSubcontractingReceiptValue": {
+            "type": "number",
+            "description": "MG71_VCARCLAVFOR - Carico c/lavoro fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "supplierSubcontractingReservedValue": {
+            "type": "number",
+            "description": "MG71_VIMPCLAVFOR - Impegnato c/lavoro fornitori",
+            "format": "double",
+            "default": 0
+          },
+          "testingReceiptValue": {
+            "type": "number",
+            "description": "MG71_VENCVIS - Entrata c/visione",
+            "format": "double",
+            "default": 0
+          },
+          "transferIssueValue": {
+            "type": "number",
+            "description": "MG71_VSCATRASF - Scarico per trasferimento",
+            "format": "double",
+            "default": 0
+          },
+          "transferReceiptValue": {
+            "type": "number",
+            "description": "MG71_VCARTRASF - Carico da trasferimento",
+            "format": "double",
+            "default": 0
+          },
+          "workforceCost": {
+            "type": "number",
+            "description": "MG71_COSMANODOP - Costo manodopera",
+            "format": "double"
+          },
+          "year": {
+            "type": "number",
+            "description": "MG71_ANNO - Anno",
+            "format": "double",
+            "default": 0
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG71_MAGPROVAL - ProgValWH<br>Proprietà chiave:<ul><li><b>CompanyCode</b></li><li><b>CurrencyCode</b></li><li><b>ItemCode</b></li><li><b>ItemVariantCode</b></li><li><b>ProgressiveType</b></li><li><b>StorageCode</b></li><li><b>Year</b></li></ul>"
+      },
+      "ProgressiveWHDTO": {
+        "required": [
+          "companyCode",
+          "itemCode",
+          "storageCode"
+        ],
+        "type": "object",
+        "properties": {
+          "companyCode": {
+            "type": "number",
+            "description": "MG83_DITTA_CG18 - Azienda",
+            "format": "double"
+          },
+          "hyperMediaId": {
+            "type": "number",
+            "description": "MG83_IDMEDIA_CG99 - ID media",
+            "format": "double",
+            "nullable": true
+          },
+          "initialStockInputType": {
+            "type": "number",
+            "description": "MG83_INDVALGINIZ - Valorizzazione giacenza iniziale<br><ul><li><i>0</i> - Nessuna valorizzazione</li><li><i>1</i> - Costo ult./prod. di tutti i depositi</li><li><i>2</i> - Costo ult./prod. del deposito</li><li><i>3</i> - Costo standard di tutti i depositi</li><li><i>4</i> - Costo standard del deposito</li><li><i>5</i> - Magg. ult. 2 costi acq. tutti i depositi</li><li><i>6</i> - Magg. ult. 2 costi acq. del deposito</li><li><i>7</i> - Costo medio di tutti i depositi</li><li><i>8</i> - Costo medio del deposito</li><li><i>9</i> - Costo fifo anno in corso di tutti i dep.</li><li><i>10</i> - Costo fifo anno in corso del deposito</li><li><i>11</i> - Costo fifo storico di tutti i depositi</li><li><i>12</i> - Costo fifo storico del deposito</li><li><i>13</i> - Costo LIFO di tutti i depositi</li><li><i>14</i> - Costo LIFO del deposito</li><li><i>15</i> - Costo medio fornitori</li><li><i>16</i> - Listino di acquisto</li><li><i>17</i> - Listino di vendita</li><li><i>18</i> - Costo al dettaglio</li></ul>",
+            "format": "double",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18
+            ]
+          },
+          "itemCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG83_CODART_MG66 - Codice articolo di magazzino"
+          },
+          "itemVariantCode": {
+            "type": "string",
+            "description": "MG83_OPZIONE_MG5E - Codice variante",
+            "nullable": true
+          },
+          "lastIssueDate": {
+            "type": "string",
+            "description": "MG83_DTULTSCA - Data ultimo scarico",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastLedgersPrintDate": {
+            "type": "string",
+            "description": "MG83_DATAPART - Data ultima stampa partitari",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastReceiptDate": {
+            "type": "string",
+            "description": "MG83_DTULTCAR - Data ultimo carico",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastStockCheckDate": {
+            "type": "string",
+            "description": "MG83_DTCHECKGIAC - Data ultimo check della giacenza",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdateToFifoCostDate": {
+            "type": "string",
+            "description": "MG83_DTULTAGGFIFO - Data ultimo aggiornamento costo FIFO",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdateToLastCostDate": {
+            "type": "string",
+            "description": "MG83_DTULTAGGCOSUL - Data ultimo aggiornamento costo ultimo",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdateToSalePriceDate": {
+            "type": "string",
+            "description": "MG83_DTULTAGGPREVE - Data ultimo aggiornamento prezzo di vendita",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastWeightLossCalculationDate": {
+            "type": "string",
+            "description": "MG83_DTULTCALCPESO - Data ultimo calcolo del calo peso",
+            "format": "date-time",
+            "nullable": true
+          },
+          "ledgerBalanceQuantity1": {
+            "type": "number",
+            "description": "MG83_QTA1PART - Saldo partitario quantità 1",
+            "format": "double",
+            "default": 0
+          },
+          "ledgerBalanceQuantity2": {
+            "type": "number",
+            "description": "MG83_QTA2PART - Saldo partitario quantità 2",
+            "format": "double",
+            "default": 0
+          },
+          "ledgersPrintLastPage": {
+            "type": "number",
+            "description": "MG83_PAGPART - Ultima pagina stampa partitari",
+            "format": "double",
+            "default": 0
+          },
+          "progressiveType": {
+            "type": "number",
+            "description": "MG83_TIPOPROG - Tipo progressivi<br><ul><li><i>1</i> - tempo reale</li><li><i>0</i> - Consolidati</li><li><i>2</i> - Consolidati per anno</li></ul>",
+            "format": "double",
+            "default": 1,
+            "x-enum-values": [
+              1,
+              0,
+              2
+            ]
+          },
+          "storageCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG83_CODDEP_MG58 - Codice deposito"
+          },
+          "year": {
+            "type": "number",
+            "description": "MG83_ANNO - Anno",
+            "format": "double",
+            "default": 0
+          },
+          "progressiveQuantities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProgressiveQuantityWHDTO"
+            },
+            "nullable": true
+          },
+          "progressiveValues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProgressiveValueWHDTO"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG83_PROGDEPOS - ProgStorageWH<br>Proprietà chiave:<ul><li><b>CompanyCode</b></li><li><b>ItemCode</b></li><li><b>ItemVariantCode</b></li><li><b>ProgressiveType</b></li><li><b>StorageCode</b></li><li><b>Year</b></li></ul>"
+      },
       "SearchComparer": {
         "type": "integer",
         "description": "Comparer operator: Equal = 0, NotEqual = 1, GreaterThan = 10, LessThan = 11, GreaterOrEqualThan = 12, LessOrEqualThan = 13, Contains = 20, NotContains = 21, StartsWith = 30, EndsWith = 40, In = 50, NotIn = 51, Between = 60, NotBetween = 61Null = 70NotNull = 71",
@@ -29016,6 +30696,14 @@
     {
       "name": "KitWH",
       "description": "Collection of services for Kit Products"
+    },
+    {
+      "name": "ProgressiveQuantityWH",
+      "description": "Collection of progressives by item/warehouse by quantity"
+    },
+    {
+      "name": "ProgressiveWH",
+      "description": "Collection of progressives by item/warehouse"
     },
     {
       "name": "StatisticalGroup1WH",
