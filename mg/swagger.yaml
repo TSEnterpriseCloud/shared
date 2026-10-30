@@ -12031,6 +12031,9 @@
           "cliForFatturazione": {
             "$ref": "#/components/schemas/CustomerSupplierMGDTO"
           },
+          "datiAccompagnamento": {
+            "$ref": "#/components/schemas/CliForDatiAccompagnamentoMGDTO"
+          },
           "fixedExp1": {
             "$ref": "#/components/schemas/SpesaVariaMGDTO"
           },
@@ -15465,6 +15468,11 @@
             "minLength": 1,
             "type": "string",
             "description": "DO30_NUMREG_CO99 - Numero registrazione"
+          },
+          "oneStopShopData": {
+            "type": "string",
+            "description": "DO30_OSSDATA - One Stop Shop (OSS)",
+            "nullable": true
           },
           "opzioneMg5e": {
             "type": "string",

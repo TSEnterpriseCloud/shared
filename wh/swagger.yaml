@@ -18377,6 +18377,674 @@
           }
         }
       }
+    },
+    "/api/v1/{environment}/WH/VariantConfigWH/{id}": {
+      "get": {
+        "tags": [
+          "VariantConfigWH"
+        ],
+        "summary": "Get by ID",
+        "description": "Get an object of type corresponding the requested id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id to get the object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "dlevel",
+            "in": "query",
+            "description": "Serialization level",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dlevelkey",
+            "in": "query",
+            "description": "Serialization level key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The object of type requested",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VariantConfigWHDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/VariantConfigWHDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "VariantConfigWH"
+        ],
+        "summary": "Update",
+        "description": "Updating an object of type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VariantConfigWHDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/VariantConfigWHDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "If object has been updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VariantConfigWHDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/VariantConfigWHDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the object has not been updated: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been updated due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "VariantConfigWH"
+        ],
+        "summary": "Delete",
+        "description": "Deleting object of type ",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "If object has been deleted"
+          },
+          "400": {
+            "description": "if object has not been deleted: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been deleted due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "VariantConfigWH"
+        ],
+        "summary": "Update partial",
+        "description": "Patching an object of type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to patch",
+          "content": {
+            "application/json": {
+              "schema": {}
+            },
+            "application/xml": {
+              "schema": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "If object has been updated"
+          },
+          "400": {
+            "description": "If the object has not been patched: the content response contains the validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          },
+          "409": {
+            "description": "If object has not been patched due to business rules violation: the content response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/WH/VariantConfigWH": {
+      "post": {
+        "tags": [
+          "VariantConfigWH"
+        ],
+        "summary": "Create",
+        "description": "Creating new object of type",
+        "parameters": [
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "_op",
+            "in": "query",
+            "description": "Set 'reload', if you want the DTO updated in the response request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "The warning/s code to bypass (separated by ‘,’) during the execution",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object of type to create",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VariantConfigWHDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/VariantConfigWHDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "If object has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VariantConfigWHDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/VariantConfigWHDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the object has not been created: the content response contains validation messages"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "409": {
+            "description": "If object has not been created due to business rules violation: the content response contains validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -27009,6 +27677,55 @@
         "additionalProperties": false,
         "description": "CG1M_UFFICIOPA - Uffici e riferimenti amministrativi<br>Proprietà chiave:<ul><li><b>CodDestin</b></li><li><b>Codice</b></li><li><b>CodiceCg16</b></li><li><b>TipocfCg44</b></li></ul>"
       },
+      "OptionWHDTO": {
+        "required": [
+          "companyCode",
+          "description",
+          "variantConfigurationCode",
+          "variantValue"
+        ],
+        "type": "object",
+        "properties": {
+          "companyCode": {
+            "type": "number",
+            "description": "MG5E_DITTA_CG18 - Ditta",
+            "format": "double"
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG5E_DESCR - Descrizione codice elemento"
+          },
+          "hyperMediaId": {
+            "type": "number",
+            "description": "MG5E_IDMEDIA_CG99 - ID HyperMedia",
+            "format": "double",
+            "nullable": true
+          },
+          "variantConfigurationCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG5E_CODICEVAR_MG5F - Progressivo posizione variante"
+          },
+          "variantValue": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG5E_OPZIONE - Codice elemento"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG5E_OPZIONI - Opzione<br>Proprietà chiave:<ul><li><b>CompanyCode</b></li><li><b>VariantConfigurationCode</b></li><li><b>VariantValue</b></li></ul>"
+      },
       "PackagingWHDTO": {
         "required": [
           "codConfez"
@@ -29943,6 +30660,265 @@
         "additionalProperties": false,
         "description": "DTO for property validation task"
       },
+      "VariantConfigWHDTO": {
+        "required": [
+          "companyCode",
+          "description",
+          "variantConfigurationCode"
+        ],
+        "type": "object",
+        "properties": {
+          "bodyLineGenModeType": {
+            "type": "number",
+            "description": "MG5F_INDGENGRIDDOC - Modalità generazione righe corpo documenti<br><ul><li><i>0</i> - Righe di corpo analitiche</li><li><i>1</i> - Unica riga senza mov. progressivi</li><li><i>2</i> - Unica riga con mov. progressivi</li></ul>",
+            "format": "double",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1,
+              2
+            ]
+          },
+          "bomVariantType": {
+            "type": "integer",
+            "description": "MG5F_INDEREDIBA - Variante su distinta base<br><ul><li><i>0</i> - Nessuna attribuzione</li><li><i>1</i> - Subvariante padre se non presente su legame</li><li><i>2</i> - Subvariante padre sempre</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1,
+              2
+            ]
+          },
+          "companyCode": {
+            "type": "number",
+            "description": "MG5F_DITTA_CG18 - Ditta",
+            "format": "double"
+          },
+          "compositionType": {
+            "type": "number",
+            "description": "MG5F_INDDESCRART - Indicatore modalità composizione descrizione<br><ul><li><i>0</i> - Non concorre</li><li><i>1</i> - Automatica, accodamento</li><li><i>3</i> - Automatica clifor, accodamento</li><li><i>4</i> - Automatica clifor/interna, accodamento</li><li><i>2</i> - Fissa con intervallo</li></ul>",
+            "format": "double",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1,
+              3,
+              4,
+              2
+            ]
+          },
+          "customerSupplierDescriptionSourceType": {
+            "type": "integer",
+            "description": "MG5F_INDPRCLIFOR - Provenienza descrizione cliente/fornitore<br><ul><li><i>0</i> - Automatica</li><li><i>1</i> - Cliente pref.</li><li><i>3</i> - Cli./Forn. pref.</li><li><i>2</i> - Fornitore pref.</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1,
+              3,
+              2
+            ]
+          },
+          "decimalNumbers": {
+            "type": "number",
+            "description": "MG5F_NUMDEC - Numero decimali",
+            "format": "double",
+            "nullable": true
+          },
+          "defaultValue": {
+            "type": "string",
+            "description": "MG5F_VARDEFAULT - Valore predefinito",
+            "nullable": true
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG5F_DESCR_VAR - Descrizone variante"
+          },
+          "dimension": {
+            "type": "number",
+            "description": "MG5F_SIZE - Dimensione",
+            "format": "double",
+            "default": "2",
+            "nullable": true
+          },
+          "endPositionDescription": {
+            "type": "number",
+            "description": "MG5F_POSFINDESCR - Posizione finale per composizione descrizione",
+            "format": "double",
+            "nullable": true
+          },
+          "gridHandlingType": {
+            "type": "number",
+            "description": "MG5F_INDGRIGLIA - Gestione in griglia<br><ul><li><i>0</i> - No</li><li><i>1</i> - 1° livello (dettaglio)</li><li><i>2</i> - 2° livello (selezione manuale)</li><li><i>3</i> - 2° livello (visualizzazione automatica)</li><li><i>4</i> - 2° livello (varianti su griglia)</li></ul>",
+            "format": "double",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "hyperMediaId": {
+            "type": "number",
+            "description": "MG5F_IDMEDIA_CG99 - ID HyperMedia",
+            "format": "double",
+            "nullable": true
+          },
+          "integerNumbers": {
+            "type": "number",
+            "description": "MG5F_NUMINT - Numero interi",
+            "format": "double",
+            "nullable": true
+          },
+          "isAutomaticVariant": {
+            "type": "number",
+            "description": "MG5F_FLGVARAUTO - Variante automatica<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1
+            ]
+          },
+          "isBomManagementByVariantRanges": {
+            "type": "number",
+            "description": "MG5F_FLGINTERVVAR - Gestione distinta base per intervalli di variante<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1
+            ]
+          },
+          "isConfirmationRequest": {
+            "type": "integer",
+            "description": "MG5F_FLGCONFERMAVARAUTO - Richiesta di conferma<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1
+            ]
+          },
+          "isDefaultValue": {
+            "type": "number",
+            "description": "MG5F_FLGDEFAULT - Valore predefinito<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1
+            ]
+          },
+          "isGrouping": {
+            "type": "number",
+            "description": "MG5F_FLGRAGGR - Raggruppamento<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": "0",
+            "nullable": true,
+            "x-enum-values": [
+              0,
+              1
+            ]
+          },
+          "isOptionsOpeningInLinkedManagement": {
+            "type": "integer",
+            "description": "MG5F_FLGDESCRVARAUTO - Apertura opzioni in gestione collegata<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1
+            ]
+          },
+          "isRequiredVariant": {
+            "type": "number",
+            "description": "MG5F_FLGOBBLIG - Variante obbligatoria<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "double",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1
+            ]
+          },
+          "isVariantAllocatedForConfig": {
+            "type": "integer",
+            "description": "MG5F_INDPROGCONFIG - Variante riservata per configurazione<br><ul><li><i>0</i> - No</li><li><i>1</i> - Si</li></ul>",
+            "format": "int32",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1
+            ]
+          },
+          "natureType": {
+            "type": "number",
+            "description": "MG5F_INDNATURA - Natura della variante<br><ul><li><i>0</i> - Alfanumerica</li><li><i>1</i> - Numerica</li></ul>",
+            "format": "double",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1
+            ]
+          },
+          "sequence": {
+            "type": "number",
+            "description": "MG5F_SEQDESCR - Sequenza di composizione descrizione",
+            "format": "double",
+            "nullable": true
+          },
+          "showCodeDescriptionType": {
+            "type": "number",
+            "description": "MG5F_INDMOSTRACOD - Indicatore Mostra codice/descrizione variante<br><ul><li><i>0</i> - Codice e descrizione</li><li><i>1</i> - Solo codice</li><li><i>2</i> - Solo descrizione</li></ul>",
+            "format": "double",
+            "default": 0,
+            "x-enum-values": [
+              0,
+              1,
+              2
+            ]
+          },
+          "startPositionDescription": {
+            "type": "number",
+            "description": "MG5F_POSINIZDESCR - Posizione iniziale per composizione descrizione",
+            "format": "double",
+            "nullable": true
+          },
+          "valid": {
+            "type": "string",
+            "description": "MG5F_VALIDO - Valido",
+            "nullable": true
+          },
+          "variantConfigurationCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "MG5F_CODICEVAR - Progressivo dimensione"
+          },
+          "variantOptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OptionWHDTO"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "MG5F_DIMECONF - VariantConfigWH<br>Proprietà chiave:<ul><li><b>CompanyCode</b></li><li><b>VariantConfigurationCode</b></li></ul>"
+      },
       "VatCodeCODTO": {
         "required": [
           "codice",
@@ -30728,6 +31704,10 @@
     {
       "name": "SubFamilyWH",
       "description": "Collection of services for Subfamilies"
+    },
+    {
+      "name": "VariantConfigWH",
+      "description": "Collection of services for Variant Configuration"
     }
   ],
   "servers": [
