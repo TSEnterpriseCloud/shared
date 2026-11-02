@@ -9713,7 +9713,7 @@
           },
           "balanceSheetAccountCategory": {
             "type": "integer",
-            "description": "CG24_BALANCESHEETACCOUNTCATEGORY - Tipo conto patrimoniale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Attivo</li><li><i>2</i> - Passivo</li></ul>",
+            "description": "CG24_BALANCESHEETACCOUNTCAT - Tipo conto patrimoniale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Attivo</li><li><i>2</i> - Passivo</li></ul>",
             "format": "int32",
             "default": 0,
             "x-enum-values": [
@@ -13580,6 +13580,12 @@
           "lotCode": {
             "type": "string",
             "description": "CodLottoMg4g - Lot Code for transformation",
+            "nullable": true
+          },
+          "lotDueDate": {
+            "type": "string",
+            "description": "BatchDataWH/Datascad - Lot Due Date for transformation",
+            "format": "date-time",
             "nullable": true
           },
           "serialNumber": {
