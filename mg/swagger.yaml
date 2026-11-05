@@ -13588,6 +13588,12 @@
             "format": "date-time",
             "nullable": true
           },
+          "dueDate": {
+            "type": "string",
+            "description": "Scadenza - Item due date for transformation",
+            "format": "date-time",
+            "nullable": true
+          },
           "serialNumber": {
             "type": "string",
             "description": "Sernum - Serial Number for transformation",
