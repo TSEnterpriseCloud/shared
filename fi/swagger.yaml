@@ -11119,6 +11119,238 @@
         }
       }
     },
+    "/api/v1/{environment}/FI/GLEntryFI/DeleteLaborCostStageDetail": {
+      "post": {
+        "tags": [
+          "GLEntryFI"
+        ],
+        "summary": "Delete Labor Cost stage detail row",
+        "description": "Delete a detail row of a Labor Cost entry in stage",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Ids of the stage entry and of the detail row to delete",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LaborCostDeleteStageDetailParamsDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LaborCostDeleteStageDetailParamsDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Result of the delete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExecutionResultMessageDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExecutionResultMessageDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "409": {
+            "description": "In case of errors in the business logic: the content of the response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/{environment}/FI/GLEntryFI/UpdateLaborCostStageDetails": {
+      "post": {
+        "tags": [
+          "GLEntryFI"
+        ],
+        "summary": "Update Labor Cost stage detail rows",
+        "description": "Update account and debit/credit amounts of the detail rows of a Labor Cost entry in stage",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Id of the stage entry and detail rows to update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LaborCostUpdateStageDetailsParamsDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LaborCostUpdateStageDetailsParamsDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Result of the update",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExecutionResultMessageDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExecutionResultMessageDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "409": {
+            "description": "In case of errors in the business logic: the content of the response contains the validation messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/FI/GLEntryFI/{id}": {
       "get": {
         "tags": [
@@ -22956,7 +23188,7 @@
           },
           "flgIvaedit": {
             "type": "number",
-            "description": "CG33_FLGIVAEDIT - IVA editoria<br><ul><li><i>0</i> - Nessuna gestione editoria</li><li><i>1</i> - Forfettizzazione della resa all'incasso</li><li><i>2</i> - Forfettizzazione della resa all'emissione</li></ul>",
+            "description": "CG33_FLGIVAEDIT - IVA editoria<br><ul><li><i>0</i> - No</li><li><i>1</i> - PublishTypeOnCollect</li><li><i>2</i> - PublishTypeOnIssue</li></ul>",
             "format": "double",
             "x-enum-values": [
               0,
@@ -27575,7 +27807,7 @@
           },
           "balanceSheetAccountCategory": {
             "type": "integer",
-            "description": "CG24_BALANCESHEETACCOUNTCAT - Tipo conto patrimoniale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Attivo</li><li><i>2</i> - Passivo</li></ul>",
+            "description": "CG24_BALANCESHEETACCOUNTCATEGORY - Tipo conto patrimoniale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Attivo</li><li><i>2</i> - Passivo</li></ul>",
             "format": "int32",
             "default": 0,
             "x-enum-values": [
@@ -42880,7 +43112,7 @@
           },
           "indProvreg": {
             "type": "integer",
-            "description": "CG41_INDPROVREG - Provenienza<br><ul><li><i>0</i> - Prima nota</li><li><i>1</i> - Procedura esterna</li><li><i>2</i> - Importazione dati</li><li><i>3</i> - Documenti</li><li><i>4</i> - Cespiti</li><li><i>5</i> - Digital invoice</li><li><i>6</i> - Digital banklink</li><li><i>7</i> - Scadenze</li><li><i>8</i> - Ratei e risconti</li><li><i>9</i> - Adeguamento cambi</li><li><i>10</i> - Chiusura/apertura conti</li><li><i>11</i> - Disposizioni bancarie: Generazione file</li><li><i>12</i> - Liquidazione IVA</li><li><i>13</i> - Rettifiche pro-rata di fine anno</li><li><i>14</i> - Iva per cassa vendite</li><li><i>15</i> - Iva per cassa acquisti</li><li><i>16</i> - Incassa Subito</li><li><i>17</i> - Movimenti CBI</li><li><i>18</i> - F24</li><li><i>19</i> - Credito d'imposta</li><li><i>20</i> - DocFinance</li><li><i>21</i> - Documenti da modulo esterno</li><li><i>22</i> - Corrispettivi mensili</li><li><i>23</i> - TS Pay</li><li><i>24</i> - Piani di fatturazione</li><li><i>25</i> - Fatture da file</li><li><i>26</i> - Paghe TeamSystem</li><li><i>27</i> - Costi del personale</li></ul>",
+            "description": "CG41_INDPROVREG - Provenienza<br><ul><li><i>0</i> - Prima nota</li><li><i>1</i> - Procedura esterna</li><li><i>2</i> - Importazione dati</li><li><i>3</i> - Documenti</li><li><i>4</i> - Cespiti</li><li><i>5</i> - Digital invoice</li><li><i>6</i> - Digital banklink</li><li><i>7</i> - Scadenze</li><li><i>8</i> - Ratei e risconti</li><li><i>9</i> - Adeguamento cambi</li><li><i>10</i> - Chiusura/apertura conti</li><li><i>11</i> - Disposizioni bancarie: Generazione file</li><li><i>12</i> - Liquidazione IVA</li><li><i>13</i> - Rettifiche pro-rata di fine anno</li><li><i>14</i> - Iva per cassa vendite</li><li><i>15</i> - Iva per cassa acquisti</li><li><i>16</i> - Incassa Subito</li><li><i>17</i> - Movimenti CBI</li><li><i>18</i> - F24</li><li><i>19</i> - Credito d'imposta</li><li><i>20</i> - DocFinance</li><li><i>21</i> - Documenti da modulo esterno</li><li><i>22</i> - Corrispettivi mensili</li><li><i>23</i> - TS Pay</li><li><i>24</i> - Piani di fatturazione</li><li><i>25</i> - Fatture da file</li><li><i>26</i> - Paghe Teamsystem</li><li><i>27</i> - CostiPersonale</li></ul>",
             "format": "int32",
             "default": 0,
             "x-enum-values": [
@@ -44031,7 +44263,7 @@
           },
           "indProvreg": {
             "type": "integer",
-            "description": "CG41_INDPROVREG - Provenienza<br><ul><li><i>0</i> - Prima nota</li><li><i>1</i> - Procedura esterna</li><li><i>2</i> - Importazione dati</li><li><i>3</i> - Documenti</li><li><i>4</i> - Cespiti</li><li><i>5</i> - Digital invoice</li><li><i>6</i> - Digital banklink</li><li><i>7</i> - Scadenze</li><li><i>8</i> - Ratei e risconti</li><li><i>9</i> - Adeguamento cambi</li><li><i>10</i> - Chiusura/apertura conti</li><li><i>11</i> - Disposizioni bancarie: Generazione file</li><li><i>12</i> - Liquidazione IVA</li><li><i>13</i> - Rettifiche pro-rata di fine anno</li><li><i>14</i> - Iva per cassa vendite</li><li><i>15</i> - Iva per cassa acquisti</li><li><i>16</i> - Incassa Subito</li><li><i>17</i> - Movimenti CBI</li><li><i>18</i> - F24</li><li><i>19</i> - Credito d'imposta</li><li><i>20</i> - DocFinance</li><li><i>21</i> - Documenti da modulo esterno</li><li><i>22</i> - Corrispettivi mensili</li><li><i>23</i> - TS Pay</li><li><i>24</i> - Piani di fatturazione</li><li><i>25</i> - Fatture da file</li><li><i>26</i> - Paghe TeamSystem</li><li><i>27</i> - Costi del personale</li></ul>",
+            "description": "CG41_INDPROVREG - Provenienza<br><ul><li><i>0</i> - Prima nota</li><li><i>1</i> - Procedura esterna</li><li><i>2</i> - Importazione dati</li><li><i>3</i> - Documenti</li><li><i>4</i> - Cespiti</li><li><i>5</i> - Digital invoice</li><li><i>6</i> - Digital banklink</li><li><i>7</i> - Scadenze</li><li><i>8</i> - Ratei e risconti</li><li><i>9</i> - Adeguamento cambi</li><li><i>10</i> - Chiusura/apertura conti</li><li><i>11</i> - Disposizioni bancarie: Generazione file</li><li><i>12</i> - Liquidazione IVA</li><li><i>13</i> - Rettifiche pro-rata di fine anno</li><li><i>14</i> - Iva per cassa vendite</li><li><i>15</i> - Iva per cassa acquisti</li><li><i>16</i> - Incassa Subito</li><li><i>17</i> - Movimenti CBI</li><li><i>18</i> - F24</li><li><i>19</i> - Credito d'imposta</li><li><i>20</i> - DocFinance</li><li><i>21</i> - Documenti da modulo esterno</li><li><i>22</i> - Corrispettivi mensili</li><li><i>23</i> - TS Pay</li><li><i>24</i> - Piani di fatturazione</li><li><i>25</i> - Fatture da file</li><li><i>26</i> - Paghe Teamsystem</li><li><i>27</i> - CostiPersonale</li></ul>",
             "format": "int32",
             "default": 0,
             "x-enum-values": [
@@ -53269,6 +53501,92 @@
           },
           "additionalInfo": {
             "type": "string",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LaborCostDeleteStageDetailParamsDTO": {
+        "type": "object",
+        "properties": {
+          "idAccountingEntryStage": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idDetailEntryStage": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LaborCostStageDetailRowDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idcontoparCg24": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "impDare": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "impAvere": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LaborCostUpdateStageDetailsParamsDTO": {
+        "type": "object",
+        "properties": {
+          "idAccountingEntryStage": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LaborCostStageDetailRowDTO"
+            },
             "nullable": true
           },
           "additionalData": {
