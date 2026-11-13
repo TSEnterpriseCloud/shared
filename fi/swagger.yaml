@@ -23188,7 +23188,7 @@
           },
           "flgIvaedit": {
             "type": "number",
-            "description": "CG33_FLGIVAEDIT - IVA editoria<br><ul><li><i>0</i> - No</li><li><i>1</i> - PublishTypeOnCollect</li><li><i>2</i> - PublishTypeOnIssue</li></ul>",
+            "description": "CG33_FLGIVAEDIT - IVA editoria<br><ul><li><i>0</i> - Nessuna gestione editoria</li><li><i>1</i> - Forfettizzazione della resa all'incasso</li><li><i>2</i> - Forfettizzazione della resa all'emissione</li></ul>",
             "format": "double",
             "x-enum-values": [
               0,
@@ -27807,7 +27807,7 @@
           },
           "balanceSheetAccountCategory": {
             "type": "integer",
-            "description": "CG24_BALANCESHEETACCOUNTCATEGORY - Tipo conto patrimoniale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Attivo</li><li><i>2</i> - Passivo</li></ul>",
+            "description": "CG24_BALANCESHEETACCOUNTCAT - Tipo conto patrimoniale<br><ul><li><i>0</i> - No</li><li><i>1</i> - Attivo</li><li><i>2</i> - Passivo</li></ul>",
             "format": "int32",
             "default": 0,
             "x-enum-values": [
@@ -43112,7 +43112,7 @@
           },
           "indProvreg": {
             "type": "integer",
-            "description": "CG41_INDPROVREG - Provenienza<br><ul><li><i>0</i> - Prima nota</li><li><i>1</i> - Procedura esterna</li><li><i>2</i> - Importazione dati</li><li><i>3</i> - Documenti</li><li><i>4</i> - Cespiti</li><li><i>5</i> - Digital invoice</li><li><i>6</i> - Digital banklink</li><li><i>7</i> - Scadenze</li><li><i>8</i> - Ratei e risconti</li><li><i>9</i> - Adeguamento cambi</li><li><i>10</i> - Chiusura/apertura conti</li><li><i>11</i> - Disposizioni bancarie: Generazione file</li><li><i>12</i> - Liquidazione IVA</li><li><i>13</i> - Rettifiche pro-rata di fine anno</li><li><i>14</i> - Iva per cassa vendite</li><li><i>15</i> - Iva per cassa acquisti</li><li><i>16</i> - Incassa Subito</li><li><i>17</i> - Movimenti CBI</li><li><i>18</i> - F24</li><li><i>19</i> - Credito d'imposta</li><li><i>20</i> - DocFinance</li><li><i>21</i> - Documenti da modulo esterno</li><li><i>22</i> - Corrispettivi mensili</li><li><i>23</i> - TS Pay</li><li><i>24</i> - Piani di fatturazione</li><li><i>25</i> - Fatture da file</li><li><i>26</i> - Paghe Teamsystem</li><li><i>27</i> - CostiPersonale</li></ul>",
+            "description": "CG41_INDPROVREG - Provenienza<br><ul><li><i>0</i> - Prima nota</li><li><i>1</i> - Procedura esterna</li><li><i>2</i> - Importazione dati</li><li><i>3</i> - Documenti</li><li><i>4</i> - Cespiti</li><li><i>5</i> - Digital invoice</li><li><i>6</i> - Digital banklink</li><li><i>7</i> - Scadenze</li><li><i>8</i> - Ratei e risconti</li><li><i>9</i> - Adeguamento cambi</li><li><i>10</i> - Chiusura/apertura conti</li><li><i>11</i> - Disposizioni bancarie: Generazione file</li><li><i>12</i> - Liquidazione IVA</li><li><i>13</i> - Rettifiche pro-rata di fine anno</li><li><i>14</i> - Iva per cassa vendite</li><li><i>15</i> - Iva per cassa acquisti</li><li><i>16</i> - Incassa Subito</li><li><i>17</i> - Movimenti CBI</li><li><i>18</i> - F24</li><li><i>19</i> - Credito d'imposta</li><li><i>20</i> - DocFinance</li><li><i>21</i> - Documenti da modulo esterno</li><li><i>22</i> - Corrispettivi mensili</li><li><i>23</i> - TS Pay</li><li><i>24</i> - Piani di fatturazione</li><li><i>25</i> - Fatture da file</li><li><i>26</i> - Paghe TeamSystem</li><li><i>27</i> - Costi del personale</li></ul>",
             "format": "int32",
             "default": 0,
             "x-enum-values": [
@@ -44263,7 +44263,7 @@
           },
           "indProvreg": {
             "type": "integer",
-            "description": "CG41_INDPROVREG - Provenienza<br><ul><li><i>0</i> - Prima nota</li><li><i>1</i> - Procedura esterna</li><li><i>2</i> - Importazione dati</li><li><i>3</i> - Documenti</li><li><i>4</i> - Cespiti</li><li><i>5</i> - Digital invoice</li><li><i>6</i> - Digital banklink</li><li><i>7</i> - Scadenze</li><li><i>8</i> - Ratei e risconti</li><li><i>9</i> - Adeguamento cambi</li><li><i>10</i> - Chiusura/apertura conti</li><li><i>11</i> - Disposizioni bancarie: Generazione file</li><li><i>12</i> - Liquidazione IVA</li><li><i>13</i> - Rettifiche pro-rata di fine anno</li><li><i>14</i> - Iva per cassa vendite</li><li><i>15</i> - Iva per cassa acquisti</li><li><i>16</i> - Incassa Subito</li><li><i>17</i> - Movimenti CBI</li><li><i>18</i> - F24</li><li><i>19</i> - Credito d'imposta</li><li><i>20</i> - DocFinance</li><li><i>21</i> - Documenti da modulo esterno</li><li><i>22</i> - Corrispettivi mensili</li><li><i>23</i> - TS Pay</li><li><i>24</i> - Piani di fatturazione</li><li><i>25</i> - Fatture da file</li><li><i>26</i> - Paghe Teamsystem</li><li><i>27</i> - CostiPersonale</li></ul>",
+            "description": "CG41_INDPROVREG - Provenienza<br><ul><li><i>0</i> - Prima nota</li><li><i>1</i> - Procedura esterna</li><li><i>2</i> - Importazione dati</li><li><i>3</i> - Documenti</li><li><i>4</i> - Cespiti</li><li><i>5</i> - Digital invoice</li><li><i>6</i> - Digital banklink</li><li><i>7</i> - Scadenze</li><li><i>8</i> - Ratei e risconti</li><li><i>9</i> - Adeguamento cambi</li><li><i>10</i> - Chiusura/apertura conti</li><li><i>11</i> - Disposizioni bancarie: Generazione file</li><li><i>12</i> - Liquidazione IVA</li><li><i>13</i> - Rettifiche pro-rata di fine anno</li><li><i>14</i> - Iva per cassa vendite</li><li><i>15</i> - Iva per cassa acquisti</li><li><i>16</i> - Incassa Subito</li><li><i>17</i> - Movimenti CBI</li><li><i>18</i> - F24</li><li><i>19</i> - Credito d'imposta</li><li><i>20</i> - DocFinance</li><li><i>21</i> - Documenti da modulo esterno</li><li><i>22</i> - Corrispettivi mensili</li><li><i>23</i> - TS Pay</li><li><i>24</i> - Piani di fatturazione</li><li><i>25</i> - Fatture da file</li><li><i>26</i> - Paghe TeamSystem</li><li><i>27</i> - Costi del personale</li></ul>",
             "format": "int32",
             "default": 0,
             "x-enum-values": [
