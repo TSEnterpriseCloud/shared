@@ -11235,6 +11235,110 @@
         }
       }
     },
+    "/api/v1/{environment}/FI/GLEntryFI/DeleteAccountingEntryStages": {
+      "post": {
+        "tags": [
+          "GLEntryFI"
+        ],
+        "summary": "Bulk delete of accounting entry stages",
+        "description": "Deletes the stage entries (CGU1) with the given ids, together with their detail rows (CGU2) and results (CGU3). Each id is processed independently: the response lists the deleted ids and the failures.",
+        "parameters": [
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List of accounting entry stage ids (CGU1_ID) to delete",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteAccountingEntryStagesParamsDTO"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteAccountingEntryStagesParamsDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Result of the deletion, with deleted ids and failures",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteAccountingEntryStagesResultDTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteAccountingEntryStagesResultDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing or empty list of ids"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/FI/GLEntryFI/UpdateLaborCostStageDetails": {
       "post": {
         "tags": [
@@ -38786,6 +38890,88 @@
         },
         "additionalProperties": false
       },
+      "DeleteAccountingEntryStageFailureDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteAccountingEntryStagesParamsDTO": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteAccountingEntryStagesResultDTO": {
+        "type": "object",
+        "properties": {
+          "executionResult": {
+            "type": "boolean"
+          },
+          "deletedIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          },
+          "failures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeleteAccountingEntryStageFailureDTO"
+            },
+            "nullable": true
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "DeleteClosingReopeningParamsDTO": {
         "type": "object",
         "properties": {
@@ -53560,6 +53746,16 @@
           "impAvere": {
             "type": "number",
             "format": "double",
+            "nullable": true
+          },
+          "datainicomp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "datafincomp": {
+            "type": "string",
+            "format": "date-time",
             "nullable": true
           },
           "additionalData": {
