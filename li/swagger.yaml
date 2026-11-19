@@ -37,6 +37,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -153,6 +162,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -255,6 +273,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -372,6 +399,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -563,6 +599,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -728,6 +773,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -925,6 +979,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -1099,6 +1162,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -1226,6 +1298,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -1369,6 +1450,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -1547,6 +1637,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -1772,6 +1871,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -1963,6 +2071,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -2186,6 +2303,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -2386,6 +2512,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -2513,6 +2648,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -2656,6 +2800,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -2863,6 +3016,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -3059,6 +3221,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -3224,6 +3395,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -3421,6 +3601,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -3595,6 +3784,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -3722,6 +3920,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -3865,6 +4072,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -4046,6 +4262,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -4159,6 +4384,15 @@
             }
           },
           {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Company code",
@@ -4260,6 +4494,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
