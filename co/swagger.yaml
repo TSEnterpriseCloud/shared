@@ -21971,6 +21971,136 @@
         }
       }
     },
+    "/api/v1/{environment}/CO/IETranscodingValueCO/{id}": {
+      "get": {
+        "tags": [
+          "IETranscodingValueCO"
+        ],
+        "summary": "Get by ID",
+        "description": "Get an object of type corresponding the requested id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id to get the object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ignoreCompanyPolicyFilter",
+            "in": "query",
+            "description": "Specify 'ignoreCompanyPolicyFilter=true' if you want ignore the company filter",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "dlevel",
+            "in": "query",
+            "description": "Serialization level",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dlevelkey",
+            "in": "query",
+            "description": "Serialization level key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization-scope",
+            "in": "header",
+            "description": "The environment where this operation will be executed. This must match with the environment in the url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-workspace-Id",
+            "in": "header",
+            "description": "Workspace (environment + company) where this operation will be executed. When given, environment and company come from the workspace: 'authorization-scope', when given, must be the environment of the workspace (400), the company of the query string, when given, must be the company of the workspace (409), a workspace id in the url must be the same of the header (400). Unknown workspace: 404.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "company",
+            "in": "query",
+            "description": "Company code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Application user (mandatory if the WebApi user does not have any mapped application user)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Specifies the UI culture to be used for localization of messages.",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          },
+          {
+            "name": "Accept-Territory",
+            "in": "header",
+            "description": "Specifies the culture to be used for data formatting (numbers, dates, currencies). Default: Accept-Language or 'IT'",
+            "schema": {
+              "type": "string",
+              "default": "it-IT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The object of type requested",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IETranscodingValueCODTO"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IETranscodingValueCODTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "403": {
+            "description": "Forbidden access"
+          },
+          "404": {
+            "description": "If object not found"
+          }
+        }
+      }
+    },
     "/api/v1/{environment}/CO/InstalmentCalculationService/InstalmentCalculation": {
       "post": {
         "tags": [
@@ -46938,6 +47068,43 @@
         "additionalProperties": false,
         "description": "IE21_STRUTTURE - IEStructureTypeCO<br>Proprietà chiave:<ul><li><b>CodStructureType</b></li></ul>"
       },
+      "IETranscodingValueCODTO": {
+        "required": [
+          "externalValue",
+          "internalValue",
+          "transcodingCode"
+        ],
+        "type": "object",
+        "properties": {
+          "externalValue": {
+            "minLength": 1,
+            "type": "string",
+            "description": "IE29_VALESTERNO - Valore esterno"
+          },
+          "internalValue": {
+            "minLength": 1,
+            "type": "string",
+            "description": "IE29_VALINTERNO - Valore interno"
+          },
+          "transcodingCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "IE29_CODTRASC_IE28 - Codice trascodifica"
+          },
+          "additionalData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          },
+          "pluginData": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "IE29_TRASCODIFVAL - IETranscodingValueCO<br>Proprietà chiave:<ul><li><b>ExternalValue</b></li><li><b>InternalValue</b></li><li><b>TranscodingCode</b></li></ul>"
+      },
       "ImportAnnualAverageRatesInputDTO": {
         "type": "object",
         "properties": {
@@ -50858,6 +51025,10 @@
     {
       "name": "IEStructureTypeCO",
       "description": "Collection of reading services for Import/Export Structure Types"
+    },
+    {
+      "name": "IETranscodingValueCO",
+      "description": "Collection of reading services for Import/Export Transcoding Values"
     },
     {
       "name": "InstalmentCalculationService",
